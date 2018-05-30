@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import Nav from './components/Nav.js'
 import Homepage from './components/Homepage.js'
@@ -8,57 +7,51 @@ import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 
-
 class App extends Component {
-
   state = {
-    pageActive: 'home',
+    pageActive: 'home'
   }
 
-setActivePage = (event) => this.setState({pageActive:event.target.value})
+setActivePage = (event) => this.setState({pageActive: event.target.value})
 
-  render () {
-
-  if (this.state.pageActive === 'home')
+render () {
+  if (this.state.pageActive === 'home') {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <Homepage  />
+        <Homepage />
       </div>
     )
-
-  else if (this.state.pageActive === 'Atelier')
+  } else if (this.state.pageActive === 'Atelier') {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <Atelier  />
+        <Atelier />
       </div>
     )
-
-  else if (this.state.pageActive === 'Projets')
+  } else if (this.state.pageActive === 'Projets') {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <Projets  />
+        <Projets />
       </div>
     )
-
-  else if (this.state.pageActive === 'LabRusch')
+  } else if (this.state.pageActive === 'LabRusch') {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <LabRusch  />
+        <LabRusch />
       </div>
     )
-
-  else (this.state.pageActive === 'Contact')
+  } else {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <Contact  />
+        <Contact />
       </div>
     )
   }
+}
 }
 
 export default App

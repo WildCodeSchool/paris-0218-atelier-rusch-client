@@ -2,7 +2,6 @@ import React from 'react'
 
 const Nav = ({onPageChange}) =>
   <div>
-    <p>Ceci est une navbar </p>
 
     <button value='home'
       onClick={onPageChange}>

@@ -9,8 +9,6 @@ class Homepage extends Component {
   }
 
   componentDidMount () {
-    console.log('yolo')
-
     fetch('http://localhost:3003/homepage')
       .then(result => result.json())
       .then(data => {
@@ -21,7 +19,6 @@ class Homepage extends Component {
 
   render () {
     return (
-
       <div>
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>

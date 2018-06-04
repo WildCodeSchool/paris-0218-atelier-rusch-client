@@ -9,22 +9,22 @@ const Nav = ({onPageChange}) =>
         Home
     </button>
 
-    <button value='Atelier'
+    <button value='atelier'
       onClick={onPageChange}>
         Atelier
     </button>
 
-    <button value='Projets'
+    <button value='projets'
       onClick={onPageChange}>
         Projets
     </button>
 
-    <button value='LabRusch'
+    <button value='lab'
       onClick={onPageChange}>
         Lab Rusch
     </button>
 
-    <button value='Contact'
+    <button value='contact'
       onClick={onPageChange}>
         Contact
     </button>

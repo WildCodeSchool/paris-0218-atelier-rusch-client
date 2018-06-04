@@ -7,51 +7,29 @@ import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 
+const views = {
+  home: <Homepage />,
+  atelier: <Atelier />,
+  projets: <Projets />,
+  lab: <LabRusch />,
+  contact: <Contact />
+}
+
 class App extends Component {
   state = {
     pageActive: 'home'
   }
 
-setActivePage = (event) => this.setState({pageActive: event.target.value})
+  setActivePage = (event) => this.setState({ pageActive: event.target.value })
 
-render () {
-  if (this.state.pageActive === 'home') {
+  render () {
     return (
       <div className="App">
         <Nav onPageChange = {this.setActivePage} />
-        <Homepage />
-      </div>
-    )
-  } else if (this.state.pageActive === 'Atelier') {
-    return (
-      <div className="App">
-        <Nav onPageChange = {this.setActivePage} />
-        <Atelier />
-      </div>
-    )
-  } else if (this.state.pageActive === 'Projets') {
-    return (
-      <div className="App">
-        <Nav onPageChange = {this.setActivePage} />
-        <Projets />
-      </div>
-    )
-  } else if (this.state.pageActive === 'LabRusch') {
-    return (
-      <div className="App">
-        <Nav onPageChange = {this.setActivePage} />
-        <LabRusch />
-      </div>
-    )
-  } else {
-    return (
-      <div className="App">
-        <Nav onPageChange = {this.setActivePage} />
-        <Contact />
+        {views[this.state.pageActive]}
       </div>
     )
   }
-}
 }
 
 export default App

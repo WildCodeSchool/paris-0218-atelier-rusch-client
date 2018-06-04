@@ -33,7 +33,3 @@ class App extends Component {
 }
 
 export default App
-// fetch(`http://localhost:3003/homepage`)
-//   .then(data => data.json())
-//   .then(fanchon => console.log(fanchon))
-//   .catch(console.error)

@@ -9,10 +9,11 @@ class Homepage extends Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:3003/homepage')
+    fetch(`http://localhost:3003/homepage`)
       .then(result => result.json())
       .then(data => {
-        this.setState({ data: data })
+        console.log(data)
+        this.setState({ data: data[0] })
       })
       .catch(console.error)
   }
@@ -24,7 +25,10 @@ class Homepage extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-      this is the data :{this.state.data}
+      this is the data :{this.state.data.title}
+        </p>
+        <p className="App-intro">
+      {this.state.data.description}
         </p>
       </div>
     )

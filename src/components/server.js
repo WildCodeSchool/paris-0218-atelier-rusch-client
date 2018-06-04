@@ -1,6 +1,5 @@
 // import React from 'react'
 
-
 // export const Api = (path) => {
 //   const url = `http://localhost:3003/${path}`
 

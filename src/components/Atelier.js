@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Article from './Article.js'
 import { store } from '../store'
 
 class Atelier extends Component {
@@ -12,9 +11,6 @@ class Atelier extends Component {
   }
 
   render () {
-    const articles = this.state.articles.map(article =>
-      <Article key={article.id} article={article} />
-    )
     return (
       <div>
         <h2>Ceci est la présentation de l'Atelier Rusch qui devra être administrable: </h2>

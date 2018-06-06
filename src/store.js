@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 const initialState = {
   pageActive: 'home',
   articles: [],
-  data: [],
+  data: []
 }
 
 const reducer = (state, action) => {
@@ -31,4 +31,3 @@ fetch(`http://localhost:3003/article`)
     actions.loadArticles(articles)
   })
   .catch(console.error)
-

@@ -28,7 +28,7 @@ class Homepage extends Component {
       this is the data :{this.state.data.title}
         </p>
         <p className="App-intro">
-      {this.state.data.description}
+          {this.state.data.description}
         </p>
       </div>
     )

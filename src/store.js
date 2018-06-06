@@ -5,10 +5,8 @@ const initialState = {
   articles: []
 }
 
-
-
 const reducer = (state, action) => {
-    // action = { type: 'LOAD_ARTICLES', articles: articles }
+  // action = { type: 'LOAD_ARTICLES', articles: articles }
 
   if (action.type === 'LOAD_ARTICLES') {
     return {
@@ -33,4 +31,3 @@ fetch(`http://localhost:3003/article`)
     actions.loadArticles(articles)
   })
   .catch(console.error)
-

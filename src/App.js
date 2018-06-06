@@ -17,7 +17,7 @@ const views = {
 }
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = store.getState()
     store.subscribe(() => {

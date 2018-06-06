@@ -5,6 +5,7 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
+import { store } from './store'
 import './App.css'
 
 const views = {
@@ -16,8 +17,12 @@ const views = {
 }
 
 class App extends Component {
-  state = {
-    pageActive: 'home'
+  constructor() {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
   }
 
   setActivePage = (event) => this.setState({ pageActive: event.target.value })

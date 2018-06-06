@@ -1,22 +1,17 @@
 import React, { Component } from 'react'
 import Article from './Article.js'
+import { store } from '../store'
+
+
 
 class Atelier extends Component {
-  constructor () {
-    super()
-    this.state = {
-      articles: []
-    }
-  }
 
-  componentDidMount () {
-    fetch(`http://localhost:3003/article`)
-      .then(result => result.json())
-      .then(data => {
-        console.log(data)
-        this.setState({ articles: data})
-      })
-      .catch(console.error)
+  constructor() {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+  })
   }
 
   render () {

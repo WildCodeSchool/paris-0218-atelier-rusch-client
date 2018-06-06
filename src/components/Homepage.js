@@ -1,35 +1,22 @@
 import React, { Component } from 'react'
+import { store } from '../store'
+import LabBlock from './LabBlock.js'
 
 class Homepage extends Component {
   constructor () {
-    super()
-    this.state = {
-      data: []
-    }
-  }
-
-  componentDidMount () {
-    fetch(`http://localhost:3003/homepage`)
-      .then(result => result.json())
-      .then(data => {
-        console.log(data)
-        this.setState({ data: data[0] })
+      super()
+      this.state = store.getState()
+      store.subscribe(() => {
+        this.setState(store.getState())
       })
-      .catch(console.error)
-  }
-
+    }
   render () {
+    const articles = this.state.articles.filter(article => article.section === 'lab').map(article =>
+      <LabBlock key={article.id} article={article} />
+    )
     return (
       <div>
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-      this is the data :{this.state.data.title}
-        </p>
-        <p className="App-intro">
-          {this.state.data.description}
-        </p>
+        {articles}
       </div>
     )
   }

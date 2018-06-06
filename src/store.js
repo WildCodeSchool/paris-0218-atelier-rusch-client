@@ -2,7 +2,8 @@ import { createStore } from 'redux'
 
 const initialState = {
   pageActive: 'home',
-  articles: []
+  articles: [],
+  data: [],
 }
 
 const reducer = (state, action) => {
@@ -21,7 +22,6 @@ export const store = createStore(reducer, initialState)
 
 export const actions = {
   loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
-
 }
 
 fetch(`http://localhost:3003/article`)
@@ -31,3 +31,4 @@ fetch(`http://localhost:3003/article`)
     actions.loadArticles(articles)
   })
   .catch(console.error)
+

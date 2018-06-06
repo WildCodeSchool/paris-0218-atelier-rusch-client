@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { store } from '../store'
+import LabBlock from './LabBlock.js'
 
-const Projets = () =>
-  <div>
-    <header className="App-header">
-
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      Welcome to the projects!
-    </p>
-  </div>
+class Projets extends Component {
+  constructor () {
+      super()
+      this.state = store.getState()
+      store.subscribe(() => {
+        this.setState(store.getState())
+      })
+    }
+  render () {
+    const articles = this.state.articles.filter(article => article.section === 'project').map(article =>
+      <LabBlock key={article.id} article={article} />
+    )
+    return (
+      <div>
+        {articles}
+      </div>
+    )
+  }
+}
 
 export default Projets

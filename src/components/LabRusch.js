@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
+import Article from './Article.js'
+import { store } from '../store'
 
-const LabRusch = () =>
-  <div>
-    <header className="App-header">
+class LabRusch extends Component {
+  constructor () {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
+  }
 
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      Welcome to the Lab Rusch!
-    </p>
-  </div>
+  render () {
+    const articles = this.state.articles.filter(article => article.section === 'lab').map(article =>
+      <Article key={article.id} article={article} />
+    )
+    return (
+      <div>
+        {articles}
+      </div>
+    )
+  }
+}
 
 export default LabRusch

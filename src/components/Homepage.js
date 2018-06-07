@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { store } from '../store'
-import LabBlock from './LabBlock.js'
+import ArticleThumbnail from './ArticleThumbnail.js'
 
 class Homepage extends Component {
   constructor () {
@@ -11,12 +11,12 @@ class Homepage extends Component {
     })
   }
   render () {
-    const articles = this.state.articles.filter(article => article.section === 'lab').map(article =>
-      <LabBlock key={article.id} article={article} />
+    const articleThumbnails = this.state.articles.filter(article => article.section === 'Lab').map(article =>
+      <ArticleThumbnail key={article.id} article={article} />
     )
     return (
-      <div>
-        {articles}
+      <div className="ArticlesBlock">
+        {articleThumbnails}
       </div>
     )
   }

@@ -3,22 +3,69 @@
   padding: 0;
 }
 
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Heimat Mono Xtra Light";
+  src: url("./components/fonts/Heimat Mono ExtraLight.ttf") format("truetype");
 }
 
-.App-intro {
-  font-size: large;
-}
-
-.ArticleBlock {
-  box-shadow: 0px 0 100px rgba(0, 0, 0, 0.1);
-  width: 25vw;
-  height: 25vw;
-  background-color: white;
+@font-face {
+  font-family: "Heimat Mono Xtra Bold";
+  src: url("./components/fonts/Heimat Mono ExtraBold.ttf") format("truetype");
 }
 
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
+}
+
+.ArticleBlock {
+  box-shadow: 0px 0 200px rgba(0, 0, 0, 0.075);
+  width: 25vw;
+  height: 25vw;
+  background-color: white;
+  text-align: center;
+  transition: 0.2s ease-out;
+}
+
+.ArticleBlock:hover {
+  background-color: #fbd052;
+  transition: 0.2s ease-in;
+}
+
+.ArticleBlock:hover .ArticleSection, .ArticleBlock:hover .ArticleDate{
+  color: #2b2b2b;
+  transition: 0.2s ease-in;
+}
+
+/*.ArticleBlock:hover .ArticleTitle{
+  color: white;
+  transition: 0.1s ease-in;
+}*/
+
+.ArticleSection {
+  font-family: "Heimat Mono Xtra Light";
+  color: #fbd052;
+  font-size: 0.8rem;
+  padding-top: 17%;
+  transition: 0.2s ease-out;
+}
+
+.ArticleTitle {
+  color: #2b2b2b;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1.4rem;
+  font-family: "Heimat Mono Xtra Bold", sans-serif;
+  padding: 1rem 2.5rem 0 2.5rem;
+  height: 35%;
+  /*background-color: red;*/
+}
+
+.ArticleDate {
+  font-family: "Heimat Mono Xtra Light";
+  color: #fbd052;
+  font-size: 0.8rem;
+  padding-top: 25%;
+  transition: 0.2s ease-out;
 }

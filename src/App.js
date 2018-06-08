@@ -6,7 +6,7 @@ import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import { store } from './store'
-import './App.css'
+import './components/css/App.css'
 
 const views = {
   home: <Homepage />,

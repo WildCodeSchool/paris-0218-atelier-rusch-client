@@ -1,31 +1,34 @@
 import React from 'react'
+import './css/Nav.css'
 
 const Nav = ({onPageChange}) =>
   <div className="NavBar">
-    <div className="Logo">RUSCH</div>
-    <div className="NavBarLinks">
 
-      <button value='home'
-        onClick={onPageChange}>
-          Home
+    <div className='Logo'>
+      <button className='HomeLink' value='home'
+      onClick={onPageChange}>
+        RUSCH
       </button>
+    </div>
 
-      <button value='atelier'
+    <div className="NavBarLinksContainer">
+
+      <button className='NavBarLink' value='atelier'
         onClick={onPageChange}>
           Atelier
       </button>
 
-      <button value='projets'
+      <button className='NavBarLink' value='projets'
         onClick={onPageChange}>
           Projets
       </button>
 
-      <button value='lab'
+      <button className='NavBarLink' value='lab'
         onClick={onPageChange}>
           Lab Rusch
       </button>
 
-      <button value='contact'
+      <button className='NavBarLink' value='contact'
         onClick={onPageChange}>
           Contact
       </button>

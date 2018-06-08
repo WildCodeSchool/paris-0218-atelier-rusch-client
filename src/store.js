@@ -1,4 +1,5 @@
 import { createStore } from 'redux'
+import fetchedArticles from './mocks/articles.json'
 
 const initialState = {
   pageActive: 'home',
@@ -20,14 +21,21 @@ const reducer = (state, action) => {
 
 export const store = createStore(reducer, initialState)
 
+// export const actions = {
+//   loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
+// }
+
 export const actions = {
-  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
+  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: fetchedArticles })
 }
 
-fetch(`http://localhost:3456/articles`)
-  .then(result => result.json())
-  .then(articles => {
-    console.log(articles)
-    actions.loadArticles(articles)
-  })
-  .catch(console.error)
+// fetch(`http://localhost:3456/articles`)
+//   .then(result => result.json())
+//   .then(articles => {
+//     console.log(articles)
+//     actions.loadArticles(articles)
+//   })
+//   .catch(console.error)
+
+actions.loadArticles(fetchedArticles)
+

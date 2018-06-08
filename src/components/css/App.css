@@ -9,13 +9,13 @@
 }
 
 @font-face {
-  font-family: "Heimat Mono Xtra Bold";
-  src: url("../fonts/HeimatMonoExtraBold.ttf") format("truetype");
+  font-family: "Heimat Mono Bold";
+  src: url("../fonts/HeimatMonoBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Heimat Mono Xtra Light";
-  src: url("../fonts/HeimatMonoExtraLight.ttf") format("truetype");
+  font-family: "Heimat Mono Xtra Bold";
+  src: url("../fonts/HeimatMonoExtraBold.ttf") format("truetype");
 }
 
 @font-face {

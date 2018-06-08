@@ -24,7 +24,7 @@ export const actions = {
   loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
 }
 
-fetch(`http://localhost:3003/article`)
+fetch(`http://localhost:3456/articles`)
   .then(result => result.json())
   .then(articles => {
     console.log(articles)

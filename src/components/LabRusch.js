@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import { store } from '../store'
 import FiltersSection from './FiltersSection.js'
+import SectionTitleBlock from './SectionTitleBlock.js'
 
 class LabRusch extends Component {
   constructor () {
@@ -20,6 +21,7 @@ class LabRusch extends Component {
       <div>
         <FiltersSection />
         <div className="ArticlesBlock">
+          <SectionTitleBlock />
           {articleThumbnails}
         </div>
       </div>

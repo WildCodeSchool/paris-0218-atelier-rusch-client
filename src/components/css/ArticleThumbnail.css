@@ -1,6 +1,7 @@
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 15.5vw; /* padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
 }
 
 .ArticleBlock {
@@ -21,11 +22,6 @@
   color: #2b2b2b;
   transition: 0.2s ease-in;
 }
-
-/*.ArticleBlock:hover .ArticleTitle{
-  color: white;
-  transition: 0.1s ease-in;
-}*/
 
 .ArticleSection {
   font-family: "Heimat Mono Xtra Light";

@@ -1,9 +1,11 @@
 import { createStore } from 'redux'
 import fetchedArticles from './mocks/articles.json'
+import fetchedFilters from './mocks/filters.json'
 
 const initialState = {
   pageActive: 'home',
   articles: [],
+  filters: [],
   data: []
 }
 
@@ -13,6 +15,13 @@ const reducer = (state, action) => {
   if (action.type === 'LOAD_ARTICLES') {
     return {
       articles: action.articles
+    }
+
+  }
+
+  if (action.type === 'LOAD_FILTERS') {
+    return {
+      filters: action.filters
     }
   }
 
@@ -26,7 +35,8 @@ export const store = createStore(reducer, initialState)
 // }
 
 export const actions = {
-  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: fetchedArticles })
+  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: fetchedArticles }),
+  loadFilters: filters => store.dispatch({ type: 'LOAD_FILTERS', filters: fetchedFilters })
 }
 
 // fetch(`http://localhost:3456/articles`)
@@ -37,5 +47,5 @@ export const actions = {
 //   })
 //   .catch(console.error)
 
-actions.loadArticles(fetchedArticles)
-
+// actions.loadArticles(fetchedArticles)
+actions.loadFilters(fetchedFilters)

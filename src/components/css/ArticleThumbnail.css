@@ -1,7 +1,7 @@
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 15.5vw; /* padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
+  /*padding-top: 15.5vw;  padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
 }
 
 .ArticleBlock {

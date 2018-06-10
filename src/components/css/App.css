@@ -32,3 +32,11 @@ button {
   border: none;
   outline: 0;
 }
+
+.green {
+  color: #5aff6e;
+}
+
+.HeimatBold {
+  font-family: 'Heimat Mono Bold';
+}

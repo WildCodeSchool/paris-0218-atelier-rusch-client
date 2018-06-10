@@ -47,5 +47,5 @@ export const actions = {
 //   })
 //   .catch(console.error)
 
-// actions.loadArticles(fetchedArticles)
-actions.loadFilters(fetchedFilters)
+actions.loadArticles(fetchedArticles)
+// actions.loadFilters(fetchedFilters)

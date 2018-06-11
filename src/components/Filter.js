@@ -1,9 +1,7 @@
 import React from 'react'
-import './css/FiltersSection.css'
-// import { actions } from '../store'
+import './css/Filter.css'
 
 const Filter = ({ filter }) => {
-
   return (
     <button className="Filter">
       {filter.filterTag}

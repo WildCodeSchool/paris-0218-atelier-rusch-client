@@ -38,7 +38,7 @@ button {
 }
 
 .HeimatBold {
-  font-family: 'Heimat Mono Bold';
+  font-family: 'Heimat Mono Bold', monospace;
 }
 
 .spacer {

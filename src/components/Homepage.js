@@ -27,7 +27,7 @@ class Homepage extends Component {
 
           <div className="IntroBlockLeft">
             <div className="LogoBlock">
-              <img className="LogoImg" src={Logo} />
+              <img className="LogoImg" src={Logo} alt="logo Rusch" />
             </div>
 
             <div className="CarrouselBlock">

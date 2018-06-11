@@ -12,7 +12,6 @@ import { loadArticles } from './actions'
 
 // TODO: rm
 import fetchedArticles from './mocks/articles.json'
-import fetchedFilters from './mocks/filters.json'
 
 const views = {
   home: <Homepage />,

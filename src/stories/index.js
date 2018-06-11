@@ -9,6 +9,8 @@ import { Button, Welcome } from '@storybook/react/demo'
 import Article from '../components/Article'
 import mockedArticles from '../mocks/articles.json'
 
+import FormExemple from '../components/FormExemple'
+
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
 storiesOf('Button', module)
@@ -18,3 +20,6 @@ storiesOf('Button', module)
 storiesOf('Article', module)
   .add('article 1', () => <Article article={mockedArticles[0]} />)
   .add('article 2', () => <Article article={mockedArticles[1]} />)
+
+storiesOf('FormExemple', module)
+  .add('exemple 1', () => <FormExemple />)

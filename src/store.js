@@ -1,8 +1,11 @@
 import { createStore } from 'redux'
+import fetchedArticles from './mocks/articles.json'
+import fetchedFilters from './mocks/filters.json'
 
 const initialState = {
   pageActive: 'home',
   articles: [],
+  filters: [],
   data: []
 }
 
@@ -13,6 +16,13 @@ const reducer = (state, action) => {
     return {
       articles: action.articles
     }
+
+  }
+
+  if (action.type === 'LOAD_FILTERS') {
+    return {
+      filters: action.filters
+    }
   }
 
   return state
@@ -20,14 +30,22 @@ const reducer = (state, action) => {
 
 export const store = createStore(reducer, initialState)
 
+// export const actions = {
+//   loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
+// }
+
 export const actions = {
-  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: articles })
+  loadArticles: articles => store.dispatch({ type: 'LOAD_ARTICLES', articles: fetchedArticles }),
+  loadFilters: filters => store.dispatch({ type: 'LOAD_FILTERS', filters: fetchedFilters })
 }
 
-fetch(`http://localhost:3456/articles`)
-  .then(result => result.json())
-  .then(articles => {
-    console.log(articles)
-    actions.loadArticles(articles)
-  })
-  .catch(console.error)
+// fetch(`http://localhost:3456/articles`)
+//   .then(result => result.json())
+//   .then(articles => {
+//     console.log(articles)
+//     actions.loadArticles(articles)
+//   })
+//   .catch(console.error)
+
+actions.loadArticles(fetchedArticles)
+// actions.loadFilters(fetchedFilters)

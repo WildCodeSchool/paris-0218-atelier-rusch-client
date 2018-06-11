@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import Article from './Article.js'
-import { store } from '../store'
+import ArticleThumbnail from './ArticleThumbnail.js'
+import Filter from './FiltersSection.js'
+import SectionTitleBlock from './SectionTitleBlock.js'
+import { store } from '../store.js'
 
 class LabRusch extends Component {
   constructor () {
@@ -12,12 +14,27 @@ class LabRusch extends Component {
   }
 
   render () {
-    const articles = this.state.articles.filter(article => article.section === 'lab').map(article =>
-      <Article key={article.id} article={article} />
+
+    const articleThumbnails = this.state.articles.filter(article => article.section === 'Lab').map(article =>
+      <ArticleThumbnail key={article.id} article={article} />
     )
+
+    // const filters = this.state.filters.filter(filter => filter.section === 'Lab').map(filter =>
+    //   <Filter filter={filter} />
+    // )
+
     return (
       <div>
-        {articles}
+
+        <div className="FiltersSection">
+
+        </div>
+
+        <div className="ArticlesBlock">
+          <SectionTitleBlock />
+          {articleThumbnails}
+        </div>
+
       </div>
     )
   }

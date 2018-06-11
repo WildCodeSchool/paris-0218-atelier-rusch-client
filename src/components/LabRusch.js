@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
-import Filter from './FiltersSection.js'
+import Filter from './Filter.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import { store } from '../store.js'
 

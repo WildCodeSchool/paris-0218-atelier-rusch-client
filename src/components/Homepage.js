@@ -15,7 +15,9 @@ class Homepage extends Component {
   }
 
   render () {
-    const articleThumbnails = this.state.articles
+    const { articles } = this.state.app
+
+    const articleThumbnails = articles
       .filter(article => article.section === 'Lab')
       .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} />)
 
@@ -28,7 +30,7 @@ class Homepage extends Component {
               <img className="LogoImg" src={Logo} />
             </div>
 
-          <div className="CarrouselBlock">
+            <div className="CarrouselBlock">
 
             </div>
           </div>

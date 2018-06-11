@@ -9,7 +9,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: center;
-	padding: 7.5vw 4vw 1.6vw 4vw; /* padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
+	padding: 1.6vw 4vw 1.6vw 4vw; 
 }
 
 .Filter {

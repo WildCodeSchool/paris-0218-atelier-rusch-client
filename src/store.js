@@ -21,6 +21,7 @@ const reducer = (state, action) => {
 
   if (action.type === 'LOAD_FILTERS') {
     return {
+      ...state,
       filters: action.filters
     }
   }
@@ -48,4 +49,4 @@ export const actions = {
 //   .catch(console.error)
 
 actions.loadArticles(fetchedArticles)
-// actions.loadFilters(fetchedFilters)
+actions.loadFilters(fetchedFilters)

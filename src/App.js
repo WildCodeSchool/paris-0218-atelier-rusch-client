@@ -28,10 +28,19 @@ class App extends Component {
   setActivePage = (event) => this.setState({ pageActive: event.target.value })
 
   render () {
+
+    const GetNavBar = document.getElementById('NavBar')
+    console.log(GetNavBar)
+
     return (
       <div className="App">
+
         <Nav onPageChange = {this.setActivePage} />
+
+        <div className="spacer"></div>
+
         {views[this.state.pageActive]}
+
       </div>
     )
   }

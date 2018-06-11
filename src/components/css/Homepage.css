@@ -6,25 +6,33 @@
 
 .IntroBlockLeft {
 	width: 50vw;
+	height: 80vh;
+}
+
+.CarrouselBlock {
+	height: 40vh;
+	background-color: darkgrey;
 }
 
 .IntroBlockRight {
 	width: 50vw;
-	/*background-color: red;*/
 	font-family: 'Heimat Mono Xtra Light';
 	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .IntroBlockRight p {
 	font-family: 'Heimat Mono Xtra Light';
 	font-size: 1.5rem;
-	padding: 6.5rem 4rem 0 6rem;
+	padding: 0 4rem 0 6rem;
 	line-height: 3.1rem;
 }
 
 .LogoBlock {
 	width: 50vw;
-	height: 45vh;
+	height: 40vh;
 	background-color: #fbd052;
 	display: flex;
 	justify-content: center;
@@ -34,5 +42,3 @@
 .LogoImg {
 	width: 20vw;
 }
-
-

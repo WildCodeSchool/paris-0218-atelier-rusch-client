@@ -14,14 +14,13 @@ class LabRusch extends Component {
   }
 
   render () {
+    const articleThumbnails = this.state.articles
+      .filter(article => article.section === 'Lab')
+      .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} />)
 
-    const articleThumbnails = this.state.articles.filter(article => article.section === 'Lab').map(article =>
-      <ArticleThumbnail key={article.id} article={article} />
-    )
-
-    const filters = this.state.filters.filter(filter => filter.section === 'Lab').map(filter =>
-      <Filter filter={filter} />
-    )
+    const filters = this.state.filters
+      .filter(filter => filter.section === 'Lab')
+      .map(filter => <Filter filter={filter} />)
 
     return (
       <div>

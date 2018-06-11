@@ -1,9 +1,9 @@
 import React from 'react'
 import './css/ArticleThumbnail.css'
 
-const ArticleThumbnail = ({ article }) => {
+const ArticleThumbnail = ({ article, index }) => {
   return (
-    <div className="ArticleBlock" style={{ zIndex: article.id }}>
+    <div className="ArticleBlock" style={{ zIndex: index }} >
 
       <div className="ArticleSectionAndTitle">
         <p className="ArticleSection">

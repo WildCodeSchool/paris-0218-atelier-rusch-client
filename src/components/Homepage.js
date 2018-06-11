@@ -13,10 +13,12 @@ class Homepage extends Component {
       this.setState(store.getState())
     })
   }
+
   render () {
-    const articleThumbnails = this.state.articles.filter(article => article.section === 'Lab').map(article =>
-      <ArticleThumbnail key={article.id} article={article} />
-    )
+    const articleThumbnails = this.state.articles
+      .filter(article => article.section === 'Lab')
+      .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} />)
+
     return (
       <div>
         <div className="IntroBlocks">

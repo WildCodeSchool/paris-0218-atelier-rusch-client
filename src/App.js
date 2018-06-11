@@ -8,10 +8,11 @@ import Projets from './components/Projets.js'
 import './components/css/App.css'
 
 import { store } from './store'
-import { loadArticles } from './actions'
+import { loadArticles, loadFilters } from './actions'
 
 // TODO: rm
 import fetchedArticles from './mocks/articles.json'
+import fetchedFilters from './mocks/filters.json'
 
 const views = {
   home: <Homepage />,
@@ -38,6 +39,8 @@ class App extends Component {
     //   .then(articles => store.dispatch(loadArticles(articles)))
 
     store.dispatch(loadArticles(fetchedArticles))
+    store.dispatch(loadFilters(fetchedFilters))
+
   }
 
   render () {

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { store } from '../store'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
-import Filter from './Filter.js'
+import FiltersSection from './FiltersSection.js'
 
 class Projets extends Component {
   constructor () {
@@ -19,16 +19,10 @@ class Projets extends Component {
       .filter(article => article.section === 'Projet')
       .map(article => <ArticleThumbnail key={article.id} article={article} />)
 
-    const filters = this.state.filters
-      .filter(filter => filter.section === 'Lab')
-      .map(filter => <Filter filter={filter} />)
-
     return (
       <div>
 
-        <div className="FiltersSection">
-          {filters}
-        </div>
+        <FiltersSection />
 
         <div className="ArticlesBlock">
           <SectionTitleBlock />

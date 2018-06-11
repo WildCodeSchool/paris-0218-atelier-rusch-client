@@ -5,8 +5,14 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import { store } from './store'
 import './components/css/App.css'
+
+import { store } from './store'
+import { loadArticles } from './actions'
+
+// TODO: rm
+import fetchedArticles from './mocks/articles.json'
+import fetchedFilters from './mocks/filters.json'
 
 const views = {
   home: <Homepage />,
@@ -27,10 +33,16 @@ class App extends Component {
 
   setActivePage = (event) => this.setState({ pageActive: event.target.value })
 
-  render () {
+  componentDidMount = () => {
+    // fetch('.../articles')
+    //   .then(res => res.json())
+    //   .then(articles => store.dispatch(loadArticles(articles)))
 
-    const GetNavBar = document.getElementById('NavBar')
-    console.log(GetNavBar)
+    store.dispatch(loadArticles(fetchedArticles))
+  }
+
+  render () {
+    console.log({state: this.state})
 
     return (
       <div className="App">

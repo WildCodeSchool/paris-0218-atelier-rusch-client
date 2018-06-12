@@ -3,7 +3,6 @@ import Filter from './Filter.js'
 import { store } from '../store.js'
 import './css/Filter.css'
 
-
 class FiltersSection extends Component {
   constructor () {
     super()
@@ -14,7 +13,6 @@ class FiltersSection extends Component {
   }
 
   render () {
-
     const { filters } = this.state.app
 
     const { pageActive } = this.state
@@ -27,11 +25,10 @@ class FiltersSection extends Component {
 
     return (
       <div className="FiltersSection">
-          {filtersNames}
+        {filtersNames}
       </div>
     )
   }
 }
 
 export default FiltersSection
-

@@ -1,9 +1,6 @@
 import React from 'react'
-import { store } from '../store'
 
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
 
 import Article from '../components/Article'
 import ArticleThumbnail from '../components/ArticleThumbnail'

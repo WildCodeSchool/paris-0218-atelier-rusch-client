@@ -40,7 +40,6 @@ class App extends Component {
 
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
-
   }
 
   render () {

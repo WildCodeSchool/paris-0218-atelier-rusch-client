@@ -1,8 +1,6 @@
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
-
-  /*padding-top: 15.5vw;  padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
 }
 
 .ArticleBlock {
@@ -22,7 +20,24 @@
   transition: 0.2s ease-in;
 }
 
-.ArticleBlock:hover .ArticleSection, .ArticleBlock:hover .ArticleDate{
+.ArticleSection {
+  font-family: "Heimat Mono Xtra Light", monospace;
+  color: #fbd052;
+  font-size: 0.8rem;
+  transition: 0.2s ease-out;
+}
+
+.ArticleDate {
+  font-family: "Heimat Mono Xtra Light", monospace;
+  color: #fbd052;
+  font-size: 0.8rem;
+  transition: 0.2s ease-out;
+  align-self: flex-end;
+  padding-bottom: 7%;
+}
+
+.ArticleBlock:hover .ArticleSection,
+.ArticleBlock:hover .ArticleDate {
   color: #2b2b2b;
   transition: 0.2s ease-in;
 }
@@ -35,13 +50,6 @@
   margin-top: 17%;
 }
 
-.ArticleSection {
-  font-family: "Heimat Mono Xtra Light";
-  color: #fbd052;
-  font-size: 0.8rem;
-  transition: 0.2s ease-out;
-}
-
 .ArticleTitle {
   color: #2b2b2b;
   font-size: 0.75rem;
@@ -50,13 +58,4 @@
   line-height: 1.4rem;
   font-family: "Heimat Mono Xtra Bold", sans-serif;
   padding: 1rem 2.5rem 0 2.5rem;
-}
-
-.ArticleDate {
-  font-family: "Heimat Mono Xtra Light";
-  color: #fbd052;
-  font-size: 0.8rem;
-  transition: 0.2s ease-out;
-  align-self: flex-end;
-  padding-bottom: 7%;
 }

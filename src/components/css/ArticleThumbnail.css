@@ -1,61 +1,39 @@
-.ArticlesBlock {
+.ArticleThumbnail {
   display: flex;
   flex-wrap: wrap;
-}
-
-.ArticleBlock {
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
   width: 25vw;
   height: 25vw;
   background-color: white;
   text-align: center;
-  transition: 0.2s ease-out;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.ArticleBlock:hover {
+.ArticleThumbnail:hover {
   background-color: #fbd052;
-  transition: 0.2s ease-in;
 }
 
 .ArticleSection {
-  font-family: "Heimat Mono Xtra Light", monospace;
   color: #fbd052;
   font-size: 0.8rem;
-  transition: 0.2s ease-out;
-}
-
-.ArticleDate {
-  font-family: "Heimat Mono Xtra Light", monospace;
-  color: #fbd052;
-  font-size: 0.8rem;
-  transition: 0.2s ease-out;
-  align-self: flex-end;
-  padding-bottom: 7%;
-}
-
-.ArticleBlock:hover .ArticleSection,
-.ArticleBlock:hover .ArticleDate {
-  color: #2b2b2b;
-  transition: 0.2s ease-in;
-}
-
-.ArticleSectionAndTitle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  margin-top: 17%;
 }
 
 .ArticleTitle {
   color: #2b2b2b;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0.25rem;
   line-height: 1.4rem;
-  font-family: "Heimat Mono Xtra Bold", sans-serif;
-  padding: 1rem 2.5rem 0 2.5rem;
+  padding: 0 1.5rem;
+}
+
+.ArticleDate {
+  color: #fbd052;
+  font-size: 0.8rem;
+}
+
+.ArticleThumbnail:hover .ArticleSection,
+.ArticleThumbnail:hover .ArticleDate {
+  color: #2b2b2b;
 }

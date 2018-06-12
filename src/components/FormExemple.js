@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { store } from '../store'
+import store from '../store'
 
 class FormExemple extends Component {
   constructor () {
     super()
+
     this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
   }
 
   handleChange = event => {
@@ -29,6 +27,16 @@ class FormExemple extends Component {
 
     console.log('SUBMIT', newArticle)
     // fetch('/articles', { method: 'POST', body: JSON.stringify(newArticle) })
+  }
+
+  componentWillMount () {
+    this.unsubscribe = store.subscribe(() => {
+      this.setState(store.getState())
+    })
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
   }
 
   render () {

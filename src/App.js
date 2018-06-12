@@ -5,9 +5,9 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import './components/css/App.css'
+import './App.css'
 
-import { store } from './store'
+import store from './store'
 import { loadArticles, loadFilters } from './actions'
 
 // TODO: rm
@@ -15,11 +15,11 @@ import fetchedArticles from './mocks/articles.json'
 import fetchedFilters from './mocks/filters.json'
 
 const views = {
-  home: <Homepage />,
-  atelier: <Atelier />,
-  projets: <Projets />,
-  lab: <LabRusch />,
-  contact: <Contact />
+  home: Homepage,
+  atelier: Atelier,
+  projets: Projets,
+  lab: LabRusch,
+  contact: Contact
 }
 
 class App extends Component {
@@ -31,8 +31,6 @@ class App extends Component {
     })
   }
 
-  setActivePage = (event) => this.setState({ pageActive: event.target.value })
-
   componentDidMount = () => {
     // fetch('.../articles')
     //   .then(res => res.json())
@@ -43,16 +41,14 @@ class App extends Component {
   }
 
   render () {
-    console.log({state: this.state})
-
     return (
       <div className="App">
 
-        <Nav onPageChange = {this.setActivePage} />
+        <Nav />
 
         <div className="spacer"></div>
 
-        {views[this.state.pageActive]}
+        {views[this.state.router.pageActive](this.state)}
 
       </div>
     )

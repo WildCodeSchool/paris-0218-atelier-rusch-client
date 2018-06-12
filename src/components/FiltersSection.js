@@ -1,34 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Filter from './Filter.js'
-import { store } from '../store.js'
 import './css/Filter.css'
 
-class FiltersSection extends Component {
-  constructor () {
-    super()
-    this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
-  }
+const FiltersSection = (props) => {
 
-  render () {
-    const { filters } = this.state.app
+  const { filters } = this.state.filters
 
-    const { pageActive } = this.state
+  // const { pageActive } = this.state
 
-    console.log(pageActive)
+  console.log(this.state.articles.pageActive)
 
-    const filtersNames = filters
-      .filter(filter => filter.section === pageActive)
-      .map(filter => <Filter filter={filter} />)
+  const filtersNames = filters
+    .filter(filter => filter.section === this.state.articles.pageActive)
+    .map(filter => <Filter filter={filter} />)
 
-    return (
-      <div className="FiltersSection">
-        {filtersNames}
-      </div>
-    )
-  }
+  return (
+    <div className="FiltersSection">
+      {filtersNames}
+    </div>
+  )
 }
 
 export default FiltersSection

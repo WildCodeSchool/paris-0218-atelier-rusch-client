@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { store } from '../store'
+import ArticleThumbnail from './ArticleThumbnail.js'
+import SectionTitleBlock from './SectionTitleBlock.js'
+import FiltersSection from './FiltersSection.js'
 
-const Projets = () =>
-  <div>
-    <header className="App-header">
+class Projets extends Component {
+  constructor () {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
+  }
+  render () {
+    const { articles } = this.state.app
 
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      Welcome to the projects!
-    </p>
-  </div>
+    const articleThumbnails = articles
+      .filter(article => article.section === 'Projet')
+      .map(article => <ArticleThumbnail key={article.id} article={article} />)
+
+    return (
+      <div>
+
+        <FiltersSection />
+
+        <div className="ArticlesBlock">
+          <SectionTitleBlock />
+          {articleThumbnails}
+        </div>
+
+      </div>
+    )
+  }
+}
 
 export default Projets

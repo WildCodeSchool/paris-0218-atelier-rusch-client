@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Heimat Mono Xtra Light";
+  src: url("../fonts/HeimatMonoExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heimat Mono Bold";
+  src: url("../fonts/HeimatMonoBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Heimat Mono Xtra Bold";
+  src: url("../fonts/HeimatMonoExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Regular";
+  src: url("../fonts/IBMPlexSansRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans Medium";
+  src: url("../fonts/IBMPlexSansRegular.ttf") format("truetype");
+}
+
+button {
+  border: none;
+  outline: 0;
+}
+
+.green {
+  color: #5aff6e;
+}
+
+.HeimatBold {
+  font-family: 'Heimat Mono Bold', monospace;
+}
+
+.spacer {
+  width: 100vw;
+  height: 55px;
+}

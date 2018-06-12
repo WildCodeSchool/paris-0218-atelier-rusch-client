@@ -5,7 +5,14 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import './App.css'
+import './components/css/App.css'
+
+import { store } from './store'
+import { loadArticles, loadFilters } from './actions'
+
+// TODO: rm
+import fetchedArticles from './mocks/articles.json'
+import fetchedFilters from './mocks/filters.json'
 
 const views = {
   home: <Homepage />,
@@ -16,17 +23,37 @@ const views = {
 }
 
 class App extends Component {
-  state = {
-    pageActive: 'home'
+  constructor () {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
   }
 
   setActivePage = (event) => this.setState({ pageActive: event.target.value })
 
+  componentDidMount = () => {
+    // fetch('.../articles')
+    //   .then(res => res.json())
+    //   .then(articles => store.dispatch(loadArticles(articles)))
+
+    store.dispatch(loadArticles(fetchedArticles))
+    store.dispatch(loadFilters(fetchedFilters))
+  }
+
   render () {
+    console.log({state: this.state})
+
     return (
       <div className="App">
+
         <Nav onPageChange = {this.setActivePage} />
+
+        <div className="spacer"></div>
+
         {views[this.state.pageActive]}
+
       </div>
     )
   }

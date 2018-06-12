@@ -14,7 +14,7 @@ const Projets = (props) => {
   return (
     <div>
 
-      <FiltersSection />
+      <FiltersSection data={props} />
 
       <div className="ArticlesBlock">
         <SectionTitleBlock />

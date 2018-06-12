@@ -2,16 +2,12 @@ import React from 'react'
 import Filter from './Filter.js'
 import './css/Filter.css'
 
-const FiltersSection = (props) => {
+const FiltersSection = ({ data }) => {
 
-  const { filters } = this.state.filters
+  console.log(data, 'array ?')
 
-  // const { pageActive } = this.state
-
-  console.log(this.state.articles.pageActive)
-
-  const filtersNames = filters
-    .filter(filter => filter.section === this.state.articles.pageActive)
+  const filtersNames = data.filters.filters
+    .filter(filter => filter.section === data.router.pageActive)
     .map(filter => <Filter filter={filter} />)
 
   return (

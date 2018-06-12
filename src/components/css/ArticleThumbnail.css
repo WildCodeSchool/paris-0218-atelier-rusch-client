@@ -1,11 +1,3 @@
-.ArticleThumbnail, .ArticleThumbnail * {
-  transition: background-color 0.2s ease-out, color 0.2s ease-out;
-}
-
-.ArticleThumbnail:hover, .ArticleThumbnail *:hover {
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
-}
-
 .ArticleThumbnail {
   display: flex;
   flex-wrap: wrap;
@@ -20,11 +12,6 @@
 
 .ArticleThumbnail:hover {
   background-color: #fbd052;
-}
-
-.ArticleThumbnail:hover .ArticleSection,
-.ArticleThumbnail:hover .ArticleDate {
-  color: #2b2b2b;
 }
 
 .ArticleSection {
@@ -44,4 +31,9 @@
 .ArticleDate {
   color: #fbd052;
   font-size: 0.8rem;
+}
+
+.ArticleThumbnail:hover .ArticleSection,
+.ArticleThumbnail:hover .ArticleDate {
+  color: #2b2b2b;
 }

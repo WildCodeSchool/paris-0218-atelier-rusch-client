@@ -5,7 +5,6 @@ import SectionTitleBlock from './SectionTitleBlock.js'
 import store from '../store.js'
 
 const LabRusch = () => {
-
   const state = store.getState()
 
   const articleThumbnails = state.articles.allArticles

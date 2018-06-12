@@ -2,7 +2,6 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-
 import Article from '../components/Article'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'

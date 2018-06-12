@@ -29,13 +29,13 @@ class FormExemple extends Component {
     // fetch('/articles', { method: 'POST', body: JSON.stringify(newArticle) })
   }
 
-  componentWillMount() {
+  componentWillMount () {
     this.unsubscribe = store.subscribe(() => {
       this.setState(store.getState())
     })
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.unsubscribe()
   }
 

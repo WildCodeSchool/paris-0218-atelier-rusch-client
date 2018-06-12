@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Atelier = (props) => {
-
   return (
     <div>
       <h2> Présentation de Atelier Rusch qui devra être administrable: </h2>

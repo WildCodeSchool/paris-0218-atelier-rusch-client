@@ -2,19 +2,18 @@ import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
+import store from '../store.js'
 
-const Projets = (props) => {
+const Projets = () => {
+  const state = store.getState()
 
-  const { articles } = props.articles
-
-  const articleThumbnails = articles
+  const articleThumbnails = state.articles.allArticles
     .filter(article => article.section === 'Projet')
     .map(article => <ArticleThumbnail key={article.id} article={article} />)
 
   return (
     <div>
-
-      <FiltersSection data={props} />
+      <FiltersSection />
 
       <div className="ArticlesBlock">
         <SectionTitleBlock />

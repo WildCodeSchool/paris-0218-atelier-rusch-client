@@ -1,5 +1,5 @@
 const initialState = {
-  articles: []
+  allArticles: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
   if (action.type === 'LOAD_ARTICLES') {
     return {
       ...state,
-      articles: action.articles
+      allArticles: action.articles
     }
   }
 

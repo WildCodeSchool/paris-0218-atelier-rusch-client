@@ -1,5 +1,5 @@
 const initialState = {
-  filters: []
+  allFilters: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
   if (action.type === 'LOAD_FILTERS') {
     return {
       ...state,
-      filters: action.filters
+      allFilters: action.filters
     }
   }
 

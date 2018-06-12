@@ -3,12 +3,12 @@ import ArticleThumbnail from './ArticleThumbnail.js'
 import './css/Homepage.css'
 import './css/App.css'
 import Logo from './img/logo-rusch-noir.png'
+import store from '../store.js'
 
-const Homepage = (props) => {
+const Homepage = () => {
+  const state = store.getState()
 
-  const { articles } = props.articles
-
-  const articleThumbnails = articles
+  const articleThumbnails = state.articles.allArticles
     .filter(article => article.section === 'Lab')
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} />)
 

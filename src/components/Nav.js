@@ -6,7 +6,7 @@ const Nav = ({onPageChange}) =>
 
     <div className='Logo'>
       <button className='HomeLink' value='home'
-      onClick={onPageChange}>
+        onClick={onPageChange}>
         RUSCH
       </button>
     </div>

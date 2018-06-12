@@ -1,11 +1,12 @@
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
+
   /*padding-top: 15.5vw;  padding-top: À RETIRER PLUS TARD  -> RÉCUPÉRER EN JS LA HEIGHT DE LA NAVBAR */
 }
 
 .ArticleBlock {
-  box-shadow: 0px 0 200px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
   width: 25vw;
   height: 25vw;
   background-color: white;

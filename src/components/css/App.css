@@ -38,5 +38,10 @@ button {
 }
 
 .HeimatBold {
-  font-family: 'Heimat Mono Bold';
+  font-family: 'Heimat Mono Bold', monospace;
+}
+
+.spacer {
+  width: 100vw;
+  height: 55px;
 }

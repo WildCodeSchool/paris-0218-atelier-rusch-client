@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { store } from '../store'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
+import FiltersSection from './FiltersSection.js'
 
 class Projets extends Component {
   constructor () {
@@ -12,16 +13,16 @@ class Projets extends Component {
     })
   }
   render () {
-    const articleThumbnails = this.state.articles.filter(article => article.section === 'Projet').map(article =>
-      <ArticleThumbnail key={article.id} article={article} />
-    )
+    const { articles } = this.state.app
+
+    const articleThumbnails = articles
+      .filter(article => article.section === 'Projet')
+      .map(article => <ArticleThumbnail key={article.id} article={article} />)
 
     return (
       <div>
 
-        <div className="FiltersSection">
-
-        </div>
+        <FiltersSection />
 
         <div className="ArticlesBlock">
           <SectionTitleBlock />

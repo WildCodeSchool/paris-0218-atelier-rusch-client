@@ -2,12 +2,13 @@
   width: 100vw;
   background-color: white;
   position: fixed;
-  box-shadow: 0px 0 100px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   color: #2b2b2b;
+  height: 55px;
 }
 
 .NavBarLinksContainer {
@@ -21,23 +22,24 @@
 }
 
 .NavBarLink {
-  font-family: "IBM Plex Sans Regular";
+  font-family: "IBM Plex Sans Regular", monospace;
   font-size: 0.8rem;
   border: none;
   margin: 0 4vw 0 4vw;
-  height: 1.1rem;
 }
 
 .NavBarLink:hover, .NavBarLink:active {
   border-bottom: solid 1px #5aff6e;
   cursor: pointer;
   color: #5aff6e;
-  font-family: "IBM Plex Sans Medium"
+  font-family: "IBM Plex Sans Medium", monospace;
 }
 
 .Logo {
   width: 46vw;
-  padding: 2vw;
+  padding-left: 2vw;
+  display: flex;
+  align-content: center;
 }
 
 .HomeLink {

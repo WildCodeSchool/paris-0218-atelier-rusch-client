@@ -1,26 +1,27 @@
 .SectionTitleBlock {
-	width: 50vw;
-	height: 25vw;
+  width: 50vw;
+  height: 25vw;
 }
 
 .FilterBlack {
-	background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .SectionPic {
-	background: no-repeat url("../img/rusch-pic-articles.png");
-	background-size: 90%;
-	background-position: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+  background: no-repeat url("../img/rusch-pic-articles.png");
+  background-size: 90%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .SectionTitle {
-  color: #2b2b2b;
   font-size: 1.7rem;
+
   /*text-transform: uppercase;*/
+
   /*letter-spacing: 2px;*/
   line-height: 3rem;
   font-family: "Heimat Mono Xtra Light", sans-serif;

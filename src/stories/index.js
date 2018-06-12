@@ -1,13 +1,26 @@
 import React from 'react'
+import { store } from '../store'
 
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
-import { Button, Welcome } from '@storybook/react/demo'
+import Article from '../components/Article'
+import ArticleThumbnail from '../components/ArticleThumbnail'
+import mockedArticles from '../mocks/articles.json'
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
+import FormExemple from '../components/FormExemple'
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => <Button onClick={action('clicked')}><span role="img" aria-label= "joli emojis">😀 😎 👍 💯</span></Button>)
+// storiesOf('NavBarLink', module)
+//   .add('normal', () => <NavBarLink />)
+//   .add('hover & active page', () => <NavBarLink />)
+
+storiesOf('article thumbnail', module)
+  .add('with hover effect', () => <ArticleThumbnail article={mockedArticles[0]} />)
+
+storiesOf('Article', module)
+  .add('article 1', () => <Article article={mockedArticles[0]} />)
+  .add('article 2', () => <Article article={mockedArticles[1]} />)
+
+storiesOf('FormExemple', module)
+  .add('exemple 1', () => <FormExemple />)

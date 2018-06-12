@@ -5,7 +5,7 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import './components/css/App.css'
+import './App.css'
 
 import store from './store'
 import { loadArticles, loadFilters } from './actions'

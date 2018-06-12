@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  font-face & font-weight
+
+  https://developer.mozilla.org/fr/docs/Web/CSS/font-weight
+  https://stackoverflow.com/a/28339483
+  https://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/
+*/
+
+@font-face {
+  font-family: "HeimatMono";
+  src: url("./fonts/HeimatMonoExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HeimatMono";
+  src: url("./fonts/HeimatMonoBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HeimatMono";
+  src: url("./fonts/HeimatMonoExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlex";
+  src: url("./fonts/IBMPlexSansRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlex";
+  src: url("./fonts/IBMPlexSansSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: 'HeimatMono', monospace;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+p {
+  font-weight: normal;
+}
+
+button {
+  border: none;
+  outline: 0;
+}
+
+.spacer {
+  width: 100vw;
+  height: 55px;
+}
+
+/* Colors */
+
+.y {
+  color: #fbd052;
+}

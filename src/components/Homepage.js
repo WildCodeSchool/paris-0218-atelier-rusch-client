@@ -1,7 +1,6 @@
 import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import './css/Homepage.css'
-import './css/App.css'
 import Logo from './img/logo-rusch-noir.png'
 import store from '../store.js'
 

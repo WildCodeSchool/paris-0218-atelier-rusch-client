@@ -2,6 +2,7 @@ import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import FiltersSection from './FiltersSection.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
+import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
 
 const LabRusch = () => {
@@ -18,6 +19,7 @@ const LabRusch = () => {
       <div className="ArticlesBlock">
         <SectionTitleBlock />
         {articleThumbnails}
+        <ButtonCreateArticle />
       </div>
 
     </div>

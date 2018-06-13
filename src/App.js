@@ -5,6 +5,7 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
+import ArticleForm from './components/ArticleForm.js'
 import './App.css'
 
 import store from './store'
@@ -19,7 +20,8 @@ const views = {
   atelier: Atelier,
   projets: Projets,
   lab: LabRusch,
-  contact: Contact
+  contact: Contact,
+  articleForm: ArticleForm
 }
 
 class App extends Component {
@@ -35,9 +37,10 @@ class App extends Component {
     // fetch('.../articles')
     //   .then(res => res.json())
     //   .then(articles => store.dispatch(loadArticles(articles)))
-
+    // this.unsubscribe = store.subscribe(() => this.forceUpdate())
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
+
   }
 
   render () {

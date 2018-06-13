@@ -2,6 +2,7 @@ import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
+import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
 
 const Projets = () => {
@@ -18,6 +19,7 @@ const Projets = () => {
       <div className="ArticlesBlock">
         <SectionTitleBlock />
         {articleThumbnails}
+        <ButtonCreateArticle />
       </div>
 
     </div>

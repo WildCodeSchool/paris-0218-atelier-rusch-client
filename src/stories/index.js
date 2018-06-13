@@ -7,6 +7,8 @@ import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'
 
+import RedirectingBlockToAllArticles from '../components/RedirectingBlockToAllArticles'
+
 // import global App stylesheet
 import '../App.css'
 
@@ -14,8 +16,9 @@ import '../App.css'
 //   .add('normal', () => <NavBarLink />)
 //   .add('hover & active page', () => <NavBarLink />)
 
-storiesOf('ArticleThumbnail', module)
-  .add('classic', () => <ArticleThumbnail article={mockedArticles[0]} />)
+storiesOf('Thumbnails', module)
+  .add('article', () => <ArticleThumbnail article={mockedArticles[0]} />)
+  .add('redirection block', () => <RedirectingBlockToAllArticles />)
 
 storiesOf('Article', module)
   .add('article 1', () => <Article article={mockedArticles[0]} />)

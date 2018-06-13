@@ -101,7 +101,13 @@ h6 {
   font-size: 0.8rem;
 }
 
-.link {
+.bigLink {
+  padding-bottom: 1px;
+  border-bottom: solid 3px #5aff6e;
+  cursor: pointer;
+}
+
+.smallLink {
   /* Links in yellow and underlined : on modale page and atelier page */
   font-family: "IBMPlex";
   font-weight: 600;

@@ -29,7 +29,7 @@ const Homepage = () => {
           <h1>
             <span className="green bold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
             <br/>
-            <span className="green bold">→  La suite !</span>
+            <span className="green bold">→  <span className="bigLink">La suite !</span></span>
           </h1>
         </div>
 

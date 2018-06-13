@@ -26,11 +26,11 @@ const Homepage = () => {
         </div>
 
         <div className="IntroBlockRight">
-          <p>
-            <span className="green HeimatBold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
+          <h1>
+            <span className="green bold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
             <br/>
-            <span className="green HeimatBold">→  La suite !</span>
-          </p>
+            <span className="green bold">→  La suite !</span>
+          </h1>
         </div>
 
       </div>

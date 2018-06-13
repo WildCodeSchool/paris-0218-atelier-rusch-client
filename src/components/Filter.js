@@ -4,7 +4,7 @@ import './css/Filter.css'
 const Filter = ({ filter }) => {
   return (
     <button className="Filter">
-      {filter.filterTag}
+      <h6>{filter.filterTag}</h6>
     </button>
   )
 }

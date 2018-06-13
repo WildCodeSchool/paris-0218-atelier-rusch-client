@@ -16,7 +16,7 @@ const LabRusch = () => {
       <FiltersSection />
 
       <div className="ArticlesBlock">
-        <SectionTitleBlock />
+        <SectionTitleBlock message="Plein d'articles super intéressants sur des sujets super intéressants" />
         {articleThumbnails}
       </div>
 

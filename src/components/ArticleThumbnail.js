@@ -4,15 +4,15 @@ import './css/ArticleThumbnail.css'
 const ArticleThumbnail = ({ article, index }) => {
   return (
     <div className="ArticleThumbnail" style={{ zIndex: index }} >
-      <p className="ArticleSection">
+      <h6 className="yellow">
         {article.section}
-      </p>
-      <h3 className="ArticleTitle">
+      </h6>
+      <h5 className="darkgrey">
         {article.title}
-      </h3>
-      <p className="ArticleDate">
+      </h5>
+      <h6 className="yellow">
         {article.createdAt}
-      </p>
+      </h6>
     </div>
   )
 }

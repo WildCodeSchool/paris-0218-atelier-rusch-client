@@ -22,18 +22,18 @@
 }
 
 .NavBarLink {
-  font-family: "IBM Plex Sans Regular", monospace;
+  font-family: "IBMPlex", monospace;
+  font-weight: 400;
   font-size: 0.8rem;
   border: none;
   margin: 0 4vw 0 4vw;
 }
 
-.NavBarLink:hover,
-.NavBarLink:active {
+.NavBarLink:hover {
   border-bottom: solid 1px #5aff6e;
   cursor: pointer;
   color: #5aff6e;
-  font-family: "IBM Plex Sans Medium", monospace;
+  font-weight: 800;
 }
 
 .Logo {

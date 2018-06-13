@@ -16,7 +16,7 @@ const Projets = () => {
       <FiltersSection />
 
       <div className="ArticlesBlock">
-        <SectionTitleBlock />
+        <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
         {articleThumbnails}
       </div>
 

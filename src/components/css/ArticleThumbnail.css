@@ -1,3 +1,8 @@
+.ArticlesBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .ArticleThumbnail {
   display: flex;
   flex-wrap: wrap;
@@ -14,26 +19,7 @@
   background-color: #fbd052;
 }
 
-.ArticleSection {
-  color: #fbd052;
-  font-size: 0.8rem;
-}
-
-.ArticleTitle {
-  color: #2b2b2b;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25rem;
-  line-height: 1.4rem;
-  padding: 0 1.5rem;
-}
-
-.ArticleDate {
-  color: #fbd052;
-  font-size: 0.8rem;
-}
-
-.ArticleThumbnail:hover .ArticleSection,
-.ArticleThumbnail:hover .ArticleDate {
+.ArticleThumbnail:hover h6 {
+  transition: 0.2s ease-in;
   color: #2b2b2b;
 }

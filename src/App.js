@@ -25,34 +25,30 @@ const views = {
 }
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
-  }
 
-  componentDidMount = () => {
+
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => this.forceUpdate())
     // fetch('.../articles')
     //   .then(res => res.json())
     //   .then(articles => store.dispatch(loadArticles(articles)))
-    // this.unsubscribe = store.subscribe(() => this.forceUpdate())
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
 
   }
 
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
+
   render () {
+    const state = store.getState()
+
     return (
       <div className="App">
-
         <Nav />
-
         <div className="spacer"></div>
-
-        {views[this.state.router.pageActive](this.state)}
-
+        {views[state.router.pageActive](state)}
       </div>
     )
   }

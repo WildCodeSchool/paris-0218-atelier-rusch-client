@@ -103,7 +103,19 @@ h6 {
 
 .link {
   /* Links in yellow and underlined : on modale page and atelier page */
+  font-family: "IBMPlex";
+  font-weight: 600;
+  font-size: ;
   border-bottom: solid 1px #fbd052;
+  color: #fbd052;
+}
+
+.quote {
+  /* Quotes in yellow and big size : on modale page and atelier page */
+  font-family: "HeimatMono";
+  font-weight: 700;
+  font-size: ;
+  color: #fbd052;
 }
 
 .bold {

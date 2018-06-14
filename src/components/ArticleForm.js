@@ -30,14 +30,19 @@ const ArticleForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" value={form.name} onChange={handleChange} />
-      </label>
-      <label>
-        Age:
-        <input type="text" name="age" value={form.age} onChange={handleChange} />
-      </label>
+      <h3>Titre:</h3>
+      <input type="text" name="title" value={form.title} onChange={handleChange} />
+      <h3>Description:</h3>
+      <textarea type="text" name="shortDescription" value={form.shortDescription} onChange={handleChange}>
+      </textarea>
+      <h3>Contenu:</h3>
+      <textarea type="text" name="content" value={form.content} onChange={handleChange}>
+      </textarea>
+      <select name="section" value={form.section} onChange={handleChange}>
+        <option value="Choose">Choose</option>
+        <option value="Lab">Lab</option>
+        <option value="Projet">Projet</option>
+      </select>
       <input type="submit" value="Submit" />
     </form>
   )

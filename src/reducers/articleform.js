@@ -1,8 +1,10 @@
 const initialState = {
   forms: {
     ADD_ARTICLE: {
-      name: 'yoann',
-      age: '27'
+      title: '',
+      shortDescription: '',
+      content: '',
+      section: ''
     }
   }
 }

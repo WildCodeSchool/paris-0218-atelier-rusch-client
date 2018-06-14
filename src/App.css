@@ -16,6 +16,10 @@ button {
   height: 55px;
 }
 
+.FilterBlack {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* TYPEFACES
   font-face & font-weight
 

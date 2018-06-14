@@ -7,9 +7,14 @@ import store from '../store.js'
 const Projets = () => {
   const state = store.getState()
 
+  const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
+
   const articleThumbnails = state.articles.allArticles
     .filter(article => article.section === 'Projet')
-    .map(article => <ArticleThumbnail key={article.id} article={article} />)
+    .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
+
+  const FiltersSectionHeight = document.getElementsByClassName('FiltersSection')
+  console.log(FiltersSectionHeight.clientHeight)
 
   return (
     <div>

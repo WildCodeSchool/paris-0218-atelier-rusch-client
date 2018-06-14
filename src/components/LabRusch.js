@@ -9,7 +9,7 @@ const LabRusch = () => {
 
   const articleThumbnails = state.articles.allArticles
     .filter(article => article.section === 'Lab')
-    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} />)
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
   return (
     <div>

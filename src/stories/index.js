@@ -17,7 +17,8 @@ import '../App.css'
 //   .add('hover & active page', () => <NavBarLink />)
 
 storiesOf('Thumbnails', module)
-  .add('article', () => <ArticleThumbnail article={mockedArticles[0]} />)
+  .add('article classic', () => <ArticleThumbnail className="ArticleThumbnailClassic" article={mockedArticles[0]} />)
+  .add('article with star', () => <ArticleThumbnail className="ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack" article={mockedArticles[0]} />)
   .add('redirection block', () => <RedirectingBlockToAllArticles />)
 
 storiesOf('Article', module)

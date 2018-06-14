@@ -1,5 +1,5 @@
 .FiltersSection {
-  position: fixed;
+  /*position: fixed;*/
   z-index: 500;
   background-color: #fbd052;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);

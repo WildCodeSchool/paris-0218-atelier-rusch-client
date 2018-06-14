@@ -13,9 +13,6 @@ const Projets = () => {
     .filter(article => article.section === 'Projet')
     .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
 
-  const FiltersSectionHeight = document.getElementsByClassName('FiltersSection')
-  console.log(FiltersSectionHeight.clientHeight)
-
   return (
     <div>
       <FiltersSection />

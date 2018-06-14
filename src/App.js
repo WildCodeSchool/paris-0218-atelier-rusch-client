@@ -15,11 +15,11 @@ import fetchedArticles from './mocks/articles.json'
 import fetchedFilters from './mocks/filters.json'
 
 const views = {
-  home: Homepage,
-  atelier: Atelier,
-  projets: Projets,
-  lab: LabRusch,
-  contact: Contact
+  Home: Homepage,
+  Atelier: Atelier,
+  Projets: Projets,
+  LabRusch: LabRusch,
+  Contact: Contact
 }
 
 class App extends Component {
@@ -38,6 +38,9 @@ class App extends Component {
 
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
+    // const FiltersSectionHeight = document.getElementsByClassName('FiltersSection')
+    // console.log(FiltersSectionHeight)
+    // console.log(FiltersSectionHeight.clientHeight)
   }
 
   render () {

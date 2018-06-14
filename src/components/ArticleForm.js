@@ -30,7 +30,6 @@ const ArticleForm = () => {
         } })
   }
 
-  }
   const form = state.articleform.forms['ADD_ARTICLE']
 
   return (

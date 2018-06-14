@@ -24,11 +24,13 @@ const ArticleForm = () => {
 
     console.log('SUBMIT', newArticle)
     console.log('SUBMIT', JSON.stringify(newArticle))
+
     fetch('http://localhost:3456/articles', { method: 'post', body: JSON.stringify(newArticle), headers: {
             'Content-Type': 'application/json'
         } })
   }
 
+  }
   const form = state.articleform.forms['ADD_ARTICLE']
 
   return (

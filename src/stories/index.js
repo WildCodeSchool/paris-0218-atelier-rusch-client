@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import Article from '../components/Article'
+import Modale from '../components/Modale'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'
@@ -21,9 +21,9 @@ storiesOf('Thumbnails', module)
   .add('article with star', () => <ArticleThumbnail className="ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack" article={mockedArticles[0]} />)
   .add('redirection block', () => <RedirectingBlockToAllArticles />)
 
-storiesOf('Article', module)
-  .add('article 1', () => <Article article={mockedArticles[0]} />)
-  .add('article 2', () => <Article article={mockedArticles[1]} />)
+storiesOf('Modale', module)
+  .add('Modale Article', () => <Modale article={mockedArticles[3]} />)
+  .add('Modale Projet', () => <Modale article={mockedArticles[8]} />)
 
 storiesOf('FormExemple', module)
   .add('exemple 1', () => <FormExemple />)

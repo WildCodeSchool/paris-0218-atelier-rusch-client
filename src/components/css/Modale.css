@@ -8,6 +8,11 @@
 	background-color: white;
 }
 
+.ModaleHeader {
+	backdrop-filter: saturate(0);
+  	-webkit-backdrop-filter: saturate(0);
+}
+
 .closeModaleBtn {
 	position: fixed;
 	right: 25px;

@@ -13,10 +13,8 @@ const Homepage = () => {
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
   const selectedArticle = state.articles.selectedArticle
-  console.log(selectedArticle)
 
   const displayModale = state.articles.displayModale
-  console.log(displayModale)
 
   return (
     <div>

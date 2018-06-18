@@ -16,7 +16,6 @@
 
 .IntroBlockRight {
   width: 50vw;
-  font-family: 'Heimat Mono Xtra Light', monospace;
   font-size: 2rem;
   display: flex;
   justify-content: center;
@@ -24,9 +23,7 @@
 }
 
 .IntroBlockRight p {
-  font-size: 1.5rem;
   padding: 0 4rem 0 6rem;
-  line-height: 3.1rem;
 }
 
 .LogoBlock {

@@ -1,4 +1,26 @@
-/*
+/* General Items */
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #2b2b2b;
+}
+
+button {
+  border: none;
+  outline: 0;
+}
+
+.spacer {
+  width: 100vw;
+  height: 55px;
+}
+
+.FilterBlack {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* TYPEFACES
   font-face & font-weight
 
   https://developer.mozilla.org/fr/docs/Web/CSS/font-weight
@@ -41,47 +63,96 @@
   font-style: normal;
 }
 
-body {
-  font-family: 'HeimatMono', monospace;
-  font-weight: normal;
-  font-style: normal;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 800;
-}
-
 p {
-  font-weight: normal;
+  font-family: 'IBMPlex';
+  font-weight: 400;
 }
 
-button {
-  border: none;
-  outline: 0;
+h1 {
+  font-family: 'HeimatMono', monospace;  
+  font-weight: 200;
+  font-size: 1.7rem;
+  padding: 0 5rem 0 5rem;
+  line-height: 3.1rem;
 }
 
-.spacer {
-  width: 100vw;
-  height: 55px;
+h2 {
+  /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
+  /* PAGE MODALE = TITLE */
+}
+
+h3 {
+  /* PAGE MODALE = SHORT DESCRIPTION */
+}
+
+h4 {
+  /* PAGE MODALE = PARAGRAPH TITLE */
+}
+
+h5 {
+  font-family: 'HeimatMono', monospace;  
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  line-height: 1.4rem;
+  padding: 0 2rem;
+  transition: 0.2s ease-in;
+}
+
+h6 {
+  font-family: 'HeimatMono', monospace;  
+  font-weight: 200;
+  font-size: 0.8rem;
+}
+
+.bigLink {
+  padding-bottom: 1px;
+  border-bottom: solid 3px #5aff6e;
+  cursor: pointer;
+}
+
+.smallLink {
+  /* Links in yellow and underlined : on modale page and atelier page */
+  font-family: "IBMPlex";
+  font-weight: 600;
+  font-size: ;
+  border-bottom: solid 1px #fbd052;
+  color: #fbd052;
+}
+
+.quote {
+  /* Quotes in yellow and big size : on modale page and atelier page */
+  font-family: "HeimatMono";
+  font-weight: 700;
+  font-size: ;
+  color: #fbd052;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 /* Transitions */
 
 * {
-  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 *:hover {
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
 /* Colors */
 
-.y {
+.yellow {
   color: #fbd052;
 }
+
+.darkgrey {
+  color: #2b2b2b;
+}
+ .green {
+  color: #5aff6e;
+ }
+

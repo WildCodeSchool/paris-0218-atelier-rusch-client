@@ -3,10 +3,6 @@
   height: 25vw;
 }
 
-.FilterBlack {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .SectionPic {
   background: no-repeat url("../img/rusch-pic-articles.png");
   background-size: 90%;
@@ -15,12 +11,4 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.SectionTitle {
-  font-size: 1.7rem;
-  line-height: 3rem;
-  font-family: "Heimat Mono Xtra Light", sans-serif;
-  padding: 4.5rem;
-  color: #5aff6e;
 }

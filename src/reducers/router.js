@@ -1,5 +1,5 @@
 const initialState = {
-  pageActive: 'home'
+  pageActive: 'Home'
 }
 
 const reducer = (state = initialState, action) => {

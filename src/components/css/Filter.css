@@ -1,5 +1,5 @@
 .FiltersSection {
-  position: fixed;
+  /*position: fixed;*/
   z-index: 500;
   background-color: #fbd052;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
@@ -13,16 +13,13 @@
 }
 
 .Filter {
-  font-family: "Heimat Mono Xtra Light", monospace;
-  font-size: 0.7rem;
-  color: #2b2b2b;
   width: 20vw;
   height: 1rem;
   background-color: transparent;
   margin: 2vh 0 2vh 0;
 }
 
-.Filter:hover {
+.Filter:hover h6 {
   cursor: pointer;
-  font-family: "Heimat Mono Bold", monospace;
+  font-weight: 700;
 }

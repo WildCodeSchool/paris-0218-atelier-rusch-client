@@ -16,12 +16,12 @@ import fetchedArticles from './mocks/articles.json'
 import fetchedFilters from './mocks/filters.json'
 
 const views = {
-  home: Homepage,
-  atelier: Atelier,
-  projets: Projets,
-  lab: LabRusch,
-  contact: Contact,
-  articleForm: ArticleForm
+  Home: Homepage,
+  Atelier: Atelier,
+  Projets: Projets,
+  Lab: LabRusch,
+  Contact: Contact,
+  ArticleForm: ArticleForm
 }
 
 class App extends Component {
@@ -34,7 +34,6 @@ class App extends Component {
     //   .then(articles => store.dispatch(loadArticles(articles)))
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
-
   }
 
   componentWillUnmount () {

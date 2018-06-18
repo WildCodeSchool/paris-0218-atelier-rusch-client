@@ -1,18 +1,18 @@
 import React from 'react'
 import './css/ArticleThumbnail.css'
 
-const ArticleThumbnail = ({ article, index }) => {
+const ArticleThumbnail = ({ article, index, className }) => {
   return (
-    <div className="ArticleThumbnail" style={{ zIndex: index }} >
-      <p className="ArticleSection">
+    <div className={className} style={{ zIndex: index }} >
+      <h6>
         {article.section}
-      </p>
-      <h3 className="ArticleTitle">
+      </h6>
+      <h5>
         {article.title}
-      </h3>
-      <p className="ArticleDate">
+      </h5>
+      <h6>
         {article.createdAt}
-      </p>
+      </h6>
     </div>
   )
 }

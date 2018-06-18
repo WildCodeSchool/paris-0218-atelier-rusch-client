@@ -1,4 +1,9 @@
-.ArticleThumbnail {
+.ArticlesBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ArticleThumbnailClassic {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -10,30 +15,40 @@
   text-align: center;
 }
 
-.ArticleThumbnail:hover {
+.ArticleThumbnailClassic h6 {
+  transition: 0.2s ease-in;
+  color: #fbd052;
+}
+
+.ArticleThumbnailClassic:hover {
   background-color: #fbd052;
 }
 
-.ArticleSection {
-  color: #fbd052;
-  font-size: 0.8rem;
-}
-
-.ArticleTitle {
+.ArticleThumbnailClassic:hover h6 {
+  transition: 0.2s ease-in;
   color: #2b2b2b;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25rem;
-  line-height: 1.4rem;
-  padding: 0 1.5rem;
 }
 
-.ArticleDate {
-  color: #fbd052;
-  font-size: 0.8rem;
+.ArticleThumbnailHasStar {
+  background: no-repeat url("../img/rusch-pic-articles.png");
+  background-size: 150%;
+  background-position: center;
 }
 
-.ArticleThumbnail:hover .ArticleSection,
-.ArticleThumbnail:hover .ArticleDate {
-  color: #2b2b2b;
+.ArticleThumbnailHasStar h5 {
+  transition: 0.2s ease-in;
+  color: #5aff6e;
+}
+
+.ArticleThumbnailHasStar h6 {
+  transition: 0.2s ease-in;
+  color: white;
+}
+
+.ArticleThumbnailHasStar:hover h6 {
+  color: white;
+}
+
+.ArticleThumbnailHasStar:hover {
+  background-color: rgba(0, 0, 0, 0.35);
 }

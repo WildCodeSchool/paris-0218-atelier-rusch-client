@@ -1,5 +1,6 @@
 const initialState = {
-  allArticles: []
+  allArticles: [],
+  selectedArticle: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -13,10 +14,18 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === 'FILTER_ARTICLES') {
-
     return {
       ...state,
       allArticles: action.articles.filter(article => article.tags === "Mobilité")
+    }
+  }
+
+  if (action.type === 'LOAD_MODALE'){
+    const selectedArticle = state.allArticles.find(article => article.id === action.id)
+
+    return{
+      ...state,
+      selectedArticle: selectedArticle
     }
   }
 

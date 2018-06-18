@@ -1,5 +1,6 @@
 import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
+import Modale from './Modale.js'
 import './css/Homepage.css'
 import Logo from './img/logo-rusch-noir.png'
 import store from '../store.js'
@@ -10,6 +11,9 @@ const Homepage = () => {
   const articleThumbnails = state.articles.allArticles
     .filter(article => article.section === 'Lab')
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
+
+  const selectedArticle = state.articles.selectedArticle
+  console.log(selectedArticle)
 
   return (
     <div>
@@ -38,7 +42,7 @@ const Homepage = () => {
       <div className="ArticlesBlock">
         {articleThumbnails}
       </div>
-
+      <Modale article={selectedArticle} />
     </div>
   )
 }

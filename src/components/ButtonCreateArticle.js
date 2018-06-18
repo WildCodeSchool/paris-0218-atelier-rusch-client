@@ -1,5 +1,4 @@
 import React from 'react'
-import { actions } from '../store.js'
 import './css/ButtonCreateArticle.css'
 import store from '../store.js'
 import { setActivePage } from '../actions.js'

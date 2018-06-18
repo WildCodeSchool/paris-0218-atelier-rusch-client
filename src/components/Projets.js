@@ -5,7 +5,7 @@ import FiltersSection from './FiltersSection.js'
 import Modale from './Modale.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { filterArticles, setActivePage, loadArticles } from '../actions.js'
+import { filterArticles } from '../actions.js'
 
 const Projets = () => {
   const state = store.getState()

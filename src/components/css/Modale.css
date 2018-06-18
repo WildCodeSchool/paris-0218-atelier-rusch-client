@@ -1,3 +1,9 @@
+.ModaleHeader {
+	backdrop-filter: saturate(0);
+  	-webkit-backdrop-filter: saturate(0);
+}
+
+
 .ModaleBlock {
 	width: 100vw;
 	height: 100vh;
@@ -8,11 +14,6 @@
 	background-color: white;
 }
 
-.ModaleHeader {
-	backdrop-filter: saturate(0);
-  	-webkit-backdrop-filter: saturate(0);
-}
-
 .closeModaleBtn {
 	position: fixed;
 	right: 25px;
@@ -20,4 +21,6 @@
 	font-size: 1.75rem;
 	background-color: transparent;
 	cursor: pointer;
+	z-index: 5000;
 }
+

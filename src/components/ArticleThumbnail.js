@@ -3,9 +3,13 @@ import store from '../store.js'
 import { loadModale } from '../actions.js'
 import './css/ArticleThumbnail.css'
 
-const ArticleThumbnail = ({ article, index, className }) => {
+const ArticleThumbnail = ({ article, index, className, displayModale }) => {
   return (
-    <div className={className} style={{ zIndex: index }} onClick={event => store.dispatch(loadModale(article.id))}>
+    <div className={className} style={{ zIndex: index }}
+      onClick={event => {
+      store.dispatch(loadModale(article.id, displayModale))
+      }
+    }>
       <h6>
         {article.section}
       </h6>

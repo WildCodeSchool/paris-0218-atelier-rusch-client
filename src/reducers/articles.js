@@ -1,6 +1,7 @@
 const initialState = {
   allArticles: [],
-  selectedArticle: []
+  selectedArticle: [],
+  displayModale: 'none'
 }
 
 const reducer = (state = initialState, action) => {
@@ -23,9 +24,17 @@ const reducer = (state = initialState, action) => {
   if (action.type === 'LOAD_MODALE'){
     const selectedArticle = state.allArticles.find(article => article.id === action.id)
 
-    return{
+    return {
       ...state,
-      selectedArticle: selectedArticle
+      selectedArticle: selectedArticle,
+      displayModale: 'block'
+    }
+  }
+
+  if (action.type === 'CLOSE_MODALE') {
+    return {
+      ...state,
+      displayModale: 'none'
     }
   }
 

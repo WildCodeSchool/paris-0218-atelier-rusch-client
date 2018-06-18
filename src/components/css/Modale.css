@@ -1,10 +1,18 @@
 .ModaleBlock {
 	width: 100vw;
-	z-index: 2000;
+	height: 100vh;
+	z-index: 5000;
 	position: fixed;
-	background-size: 100%;
- 	background-position: center;
+	top: 0;
+	overflow: scroll;
+	background-color: white;
 }
 
- .ModaleHeader {
- }
+.closeModaleBtn {
+	position: fixed;
+	right: 25px;
+	top: 20px;
+	font-size: 1.75rem;
+	background-color: transparent;
+	cursor: pointer;
+}

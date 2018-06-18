@@ -15,6 +15,9 @@ const Homepage = () => {
   const selectedArticle = state.articles.selectedArticle
   console.log(selectedArticle)
 
+  const displayModale = state.articles.displayModale
+  console.log(displayModale)
+
   return (
     <div>
       <div className="IntroBlocks">
@@ -42,7 +45,7 @@ const Homepage = () => {
       <div className="ArticlesBlock">
         {articleThumbnails}
       </div>
-      <Modale article={selectedArticle} />
+      <Modale article={selectedArticle} displayModale={displayModale} />
 
     </div>
   )

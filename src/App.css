@@ -66,6 +66,8 @@ button {
 p {
   font-family: 'IBMPlex';
   font-weight: 400;
+  padding: 5rem 15rem;
+  line-height: 1.5rem;
 }
 
 h1 {
@@ -91,7 +93,7 @@ h3 {
   font-family: 'HeimatMono';
   font-weight: 100;
   font-size: 1.5rem;
-  padding: 1.15rem 14rem 4rem 15rem;
+  padding: 1.15rem 14rem 5rem 15rem;
   line-height: 2.25rem;
   color: white;
 }

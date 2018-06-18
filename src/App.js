@@ -21,7 +21,7 @@ const views = {
   Projets: Projets,
   Lab: LabRusch,
   Contact: Contact,
-  ArticleForm: ArticleForm
+  articleForm: ArticleForm
 }
 
 class App extends Component {

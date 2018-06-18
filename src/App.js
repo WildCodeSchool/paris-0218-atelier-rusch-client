@@ -5,6 +5,7 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
+import ArticleForm from './components/ArticleForm.js'
 import './App.css'
 
 import store from './store'
@@ -18,41 +19,35 @@ const views = {
   Home: Homepage,
   Atelier: Atelier,
   Projets: Projets,
-  LabRusch: LabRusch,
-  Contact: Contact
+  Lab: LabRusch,
+  Contact: Contact,
+  ArticleForm: ArticleForm
 }
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
-  }
 
-  componentDidMount = () => {
+
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => this.forceUpdate())
     // fetch('.../articles')
     //   .then(res => res.json())
     //   .then(articles => store.dispatch(loadArticles(articles)))
-
     store.dispatch(loadArticles(fetchedArticles))
     store.dispatch(loadFilters(fetchedFilters))
-    // const FiltersSectionHeight = document.getElementsByClassName('FiltersSection')
-    // console.log(FiltersSectionHeight)
-    // console.log(FiltersSectionHeight.clientHeight)
+  }
+
+  componentWillUnmount () {
+    this.unsubscribe()
   }
 
   render () {
+    const state = store.getState()
+
     return (
       <div className="App">
-
         <Nav />
-
         <div className="spacer"></div>
-
-        {views[this.state.router.pageActive](this.state)}
-
+        {views[state.router.pageActive](state)}
       </div>
     )
   }

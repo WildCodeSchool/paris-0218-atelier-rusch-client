@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
 import articles from './articles'
 import filters from './filters'
-import exemples from './exemples'
+import articleform from './articleform'
 import router from './router'
 
 const reducer = combineReducers({
   articles,
   filters,
   router,
-  exemples
+  articleform
 })
 
 export default reducer

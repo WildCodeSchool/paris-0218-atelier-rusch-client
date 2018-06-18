@@ -2,6 +2,7 @@ import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
+import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
 import { filterArticles, setActivePage, loadArticles } from '../actions.js'
 
@@ -41,6 +42,7 @@ const Projets = () => {
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
         {articleThumbnails}
+        <ButtonCreateArticle />
       </div>
 
     </div>

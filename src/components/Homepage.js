@@ -43,6 +43,7 @@ const Homepage = () => {
         {articleThumbnails}
       </div>
       <Modale article={selectedArticle} />
+
     </div>
   )
 }

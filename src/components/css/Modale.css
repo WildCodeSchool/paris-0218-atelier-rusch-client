@@ -1,0 +1,10 @@
+.ModaleBlock {
+	width: 100vw;
+	z-index: 2000;
+	position: fixed;
+	background-size: 100%;
+ 	background-position: center;
+}
+
+ .ModaleHeader {
+ }

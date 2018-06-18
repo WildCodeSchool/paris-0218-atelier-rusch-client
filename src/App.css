@@ -79,10 +79,21 @@ h1 {
 h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
   /* PAGE MODALE = TITLE */
+  font-family: 'HeimatMono';
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 5rem 14rem 0 15rem;
+  line-height: 3rem;
 }
 
 h3 {
   /* PAGE MODALE = SHORT DESCRIPTION */
+  font-family: 'HeimatMono';
+  font-weight: 100;
+  font-size: 1.5rem;
+  padding: 1.15rem 14rem 4rem 15rem;
+  line-height: 2.25rem;
+  color: white;
 }
 
 h4 {

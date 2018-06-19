@@ -6,6 +6,7 @@ import Modale from '../components/Modale'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'
+import ArticleForm from '../components/ArticleForm'
 
 import RedirectingBlockToAllArticles from '../components/RedirectingBlockToAllArticles'
 
@@ -27,3 +28,7 @@ storiesOf('Modale', module)
 
 storiesOf('FormExemple', module)
   .add('exemple 1', () => <FormExemple />)
+
+storiesOf('ArticleForm', module)
+  .add('exemple 1', () => <ArticleForm />)
+

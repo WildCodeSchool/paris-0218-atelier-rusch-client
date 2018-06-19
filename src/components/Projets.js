@@ -18,6 +18,8 @@ const Projets = () => {
   const articleThumbnails = getProjetsArticles
     .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
 
+  const filteredArticleThumbnails = state.articles.filteredArticles
+    .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
   // const filterArticles = articles => {
   //   articles.filter((article) => article.tags === 'Mobilité')
   // }
@@ -38,9 +40,10 @@ const Projets = () => {
     <div>
       <FiltersSection />
 
-      <button onClick={event => store.dispatch(filterArticles(getProjetsArticles))}> FILTRE </button>
+      <button onClick={event => store.dispatch(filterArticles(getProjetsArticles, "Mobilité"))}> FILTRE </button>
 
       <div className="ArticlesBlock">
+        {filteredArticleThumbnails}
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
         {articleThumbnails}
         <ButtonCreateArticle />

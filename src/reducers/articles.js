@@ -1,6 +1,7 @@
 const initialState = {
   allArticles: [],
   selectedArticle: [],
+  filteredArticles: [],
   displayModale: 'none'
 }
 
@@ -15,9 +16,10 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === 'FILTER_ARTICLES') {
+    const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filterTag)
     return {
       ...state,
-      allArticles: action.articles.filter(article => article.tags === "Mobilité")
+      filteredArticles: [ ...state.filteredArticles, ...addFilteredArticles ]
     }
   }
 

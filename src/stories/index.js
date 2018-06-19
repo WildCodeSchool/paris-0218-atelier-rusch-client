@@ -3,6 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Article from '../components/Article'
+import { ArticlePreview, demoArticle } from '../components/ArticleEditor'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'
@@ -23,3 +24,6 @@ storiesOf('Article', module)
 
 storiesOf('FormExemple', module)
   .add('exemple 1', () => <FormExemple />)
+
+storiesOf('ArticlePreview', module)
+  .add('classic', () => <ArticlePreview article={demoArticle} />)

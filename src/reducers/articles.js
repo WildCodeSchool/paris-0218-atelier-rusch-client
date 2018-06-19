@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) => {
     const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filterTag)
     return {
       ...state,
-      filteredArticles: [ ...state.filteredArticles, ...addFilteredArticles ]
+      filteredArticles: [ ...addFilteredArticles, ...state.filteredArticles ]
     }
   }
 

@@ -28,8 +28,8 @@ const Projets = () => {
       <FiltersSection />
 
       <div className="ArticlesBlock">
-        {filteredArticleThumbnails}
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
+        {filteredArticleThumbnails}
         {articleThumbnails}
         <ButtonCreateArticle />
       </div>

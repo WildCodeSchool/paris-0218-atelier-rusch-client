@@ -18,29 +18,14 @@ const Projets = () => {
   const articleThumbnails = getProjetsArticles
     .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
 
-  const filteredArticleThumbnails = state.articles.filteredArticles
+  const getFilteredArticles = state.articles.filteredArticles
+
+  const filteredArticleThumbnails = getFilteredArticles
     .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
-  // const filterArticles = articles => {
-  //   articles.filter((article) => article.tags === 'Mobilité')
-  // }
-
-  // const filteredArticles = getProjetsArticles
-  //   .filter((article, filter) => article.tags === ('Mobilité'))
-
-  // console.log(filteredArticles, 'ok')
-
-  // const filteredArticles2 = filterArticles(getProjetsArticles)
-
-  // console.log(filteredArticles2, 'ok')
-
-
-
 
   return (
     <div>
       <FiltersSection />
-
-      <button onClick={event => store.dispatch(filterArticles(getProjetsArticles, "Mobilité"))}> FILTRE </button>
 
       <div className="ArticlesBlock">
         {filteredArticleThumbnails}

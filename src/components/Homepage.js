@@ -51,26 +51,3 @@ const Homepage = () => {
 }
 
 export default Homepage
-
-
-
-
-
-
-// import React, { Component } from 'react'
-// import logo from './logo.svg'
-// import './App.css'
-// import { SlideShow } from './components/carousel.js'
-
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//       <p>Yo</p>
-//       <SlideShow images={images} />
-//       </div>
-//     )
-//   }
-// }
-// export default App

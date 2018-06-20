@@ -32,3 +32,11 @@
 .carousel .carousel-status {
   display: none;
 }
+
+.editCarousel {
+  position: relative;
+  bottom: 240px;
+  right: 400px;
+  color: red;
+  text-align: center;  
+}

@@ -1,10 +1,9 @@
 import React from 'react'
 import { actions } from '../store.js'
-import './css/ButtonCreateArticle.css'
 import store from '../store.js'
 import { setActivePage } from '../actions.js'
 
-const ButtonCreateArticle = ({onPageChange}) =>
+const ButtonEditCarousel = ({onPageChange}) =>
 <div className='ButtonCreateArticle'
       onClick={event => store.dispatch(setActivePage('articleForm'))}>
 Créer un nouvel article

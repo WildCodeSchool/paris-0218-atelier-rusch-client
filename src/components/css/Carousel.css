@@ -1,0 +1,34 @@
+.carousel .slide .legend {
+  height: 10px;
+  position: relative;
+  bottom: 350px;
+  background-color: transparent;
+  color: red;
+  font-size: 20px;
+  opacity: 1;
+  text-align: center;
+}
+
+.carousel .slider-wrapper {
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel .thumbs-wrapper  {
+  width: 500px;
+  border: solid yellow 5px;
+  display: none;
+}
+
+ .carousel .control-dots {
+  border: solid red 5px;
+  display: none;
+ }
+
+.thumbs-wrapper .axis-vertical {
+  border: solid red 5px;
+ }
+
+.carousel .carousel-status {
+  display: none;
+}

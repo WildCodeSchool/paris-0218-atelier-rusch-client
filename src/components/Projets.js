@@ -10,6 +10,10 @@ import { filterArticles } from '../actions.js'
 const Projets = () => {
   const state = store.getState()
 
+  const selectedArticle = state.articles.selectedArticle
+
+  const displayModale = state.articles.displayModale
+
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
   const getProjetsArticles = state.articles.allArticles
@@ -33,6 +37,8 @@ const Projets = () => {
         { state.articles.filteredArticles.length === 0 ? allArticleThumbnails : filteredArticleThumbnails }
         <ButtonCreateArticle />
       </div>
+
+      <Modale article={selectedArticle} displayModale={displayModale} />
 
     </div>
   )

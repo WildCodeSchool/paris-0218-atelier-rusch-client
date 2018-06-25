@@ -9,9 +9,9 @@ import store from '../store.js'
 const LabRusch = () => {
   const state = store.getState()
 
-  // const articleThumbnails = state.articles.allArticles
-  //   .filter(article => article.section === 'Lab')
-  //   .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
+  const selectedArticle = state.articles.selectedArticle
+
+  const displayModale = state.articles.displayModale
 
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
@@ -36,6 +36,8 @@ const LabRusch = () => {
         { state.articles.filteredArticles.length === 0 ? allLabArticleThumbnails : filteredLabArticleThumbnails }
         <ButtonCreateArticle />
       </div>
+
+      <Modale article={selectedArticle} displayModale={displayModale} />
 
     </div>
   )

@@ -16,10 +16,24 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === 'FILTER_ARTICLES') {
-    const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filterTag)
-    return {
-      ...state,
-      filteredArticles: [ ...addFilteredArticles, ...state.filteredArticles ]
+    if (action.filter.isActive !== true) {
+      // const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filter.filterTag)
+      const addFilteredArticles = state.allArticles.filter(article => article.tags.includes(action.filter.filterTag))
+
+      // Add a function to check if one if the pushed articles is already in the array filteredArticles
+
+      return {
+        ...state,
+        filteredArticles: [ ...addFilteredArticles, ...state.filteredArticles ],
+      }
+    }
+    else {
+      // const removeFromFilteredArticles = state.filteredArticles.filter(article => article.tags !== action.filter.filterTag)
+      const removeFromFilteredArticles = state.filteredArticles.filter(article => article.tags.includes(!action.filter.filterTag))
+      return {
+        ...state,
+        filteredArticles: removeFromFilteredArticles
+      }
     }
   }
 

@@ -11,7 +11,7 @@ const ArticleThumbnail = ({ article, index, className, displayModale }) => {
       }
     }>
       <h6>
-        {article.section}
+        {article.tags}
       </h6>
       <h5>
         {article.title}

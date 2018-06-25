@@ -1,11 +1,16 @@
 import React from 'react'
 import './css/Filter.css'
 import store from '../store.js'
-import { filterArticles } from '../actions.js'
+import { filterArticles, toggleFilters } from '../actions.js'
 
-const Filter = ({ filter, getProjetsArticles }) => {
+const Filter = ({ filter, articles }) => {
+  const state = store.getState()
+  const toggleFiltersAndFilterArticles = () => {
+    store.dispatch(filterArticles(filter))
+    store.dispatch(toggleFilters(filter.id))
+  }
   return (
-    <button className="Filter" onClick={event => store.dispatch(filterArticles(getProjetsArticles, filter.filterTag))}>
+    <button className={filter.isActive ? "Filter FilterActive" : "Filter"} onClick={ event => toggleFiltersAndFilterArticles()}>
       <h6>{filter.filterTag}</h6>
     </button>
   )

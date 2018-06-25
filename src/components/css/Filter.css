@@ -17,9 +17,10 @@
   height: 1rem;
   background-color: transparent;
   margin: 2vh 0 2vh 0;
+  cursor: pointer;
 }
 
-.Filter:hover h6 {
+.FilterActive h6 {
   cursor: pointer;
   font-weight: 700;
 }

@@ -15,13 +15,14 @@ const Projets = () => {
   const getProjetsArticles = state.articles.allArticles
     .filter(article => article.section === 'Projet')
 
-  const articleThumbnails = getProjetsArticles
-    .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
+  const allArticleThumbnails = getProjetsArticles
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
 
   const getFilteredArticles = state.articles.filteredArticles
+    .filter(article => article.section === 'Projet')
 
   const filteredArticleThumbnails = getFilteredArticles
-    .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
 
   return (
     <div>
@@ -29,8 +30,7 @@ const Projets = () => {
 
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
-        {filteredArticleThumbnails}
-        {articleThumbnails}
+        { state.articles.filteredArticles.length === 0 ? allArticleThumbnails : filteredArticleThumbnails }
         <ButtonCreateArticle />
       </div>
 

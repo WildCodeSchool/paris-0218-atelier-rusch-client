@@ -12,6 +12,16 @@ const reducer = (state = initialState, action) => {
     }
   }
 
+  if (action.type === 'TOGGLE_FILTERS') {
+    const i = state.allFilters.findIndex(filter => filter.id === action.id)
+    const allFilters = [ ...state.allFilters ]
+    allFilters[i] = { ...allFilters[i], isActive: !allFilters[i].isActive }
+
+    return {
+      ...state,
+      allFilters
+    }
+  }
   return state
 }
 

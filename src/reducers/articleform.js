@@ -3,7 +3,7 @@ const initialState = {
     ADD_ARTICLE: {
       title: '',
       shortDescription: '',
-      content: '',
+      headerImage: '',
       section: ''
     }
   }

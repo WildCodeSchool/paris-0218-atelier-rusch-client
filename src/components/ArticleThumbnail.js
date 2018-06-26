@@ -1,11 +1,17 @@
 import React from 'react'
+import store from '../store.js'
+import { loadModale } from '../actions.js'
 import './css/ArticleThumbnail.css'
 
-const ArticleThumbnail = ({ article, index, className }) => {
+const ArticleThumbnail = ({ article, index, className, displayModale }) => {
   return (
-    <div className={className} style={{ zIndex: index }} >
+    <div className={className} style={{ zIndex: index }}
+      onClick={event => {
+      store.dispatch(loadModale(article.id, displayModale))
+      }
+    }>
       <h6>
-        {article.section}
+        {article.tags}
       </h6>
       <h5>
         {article.title}

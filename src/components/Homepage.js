@@ -10,15 +10,17 @@ import { SlideShow } from './Carousel.js'
 const Homepage = () => {
   const state = store.getState()
 
-  const getArticleThumbnails = state.articles.allArticles
+  const labArticles = state.articles.allArticles
     .filter(article => article.section === 'Lab')
 
-  const articleThumbnails = getArticleThumbnails
-    .slice(getArticleThumbnails.length - 3, getArticleThumbnails.length)
+  const articleThumbnails = labArticles
+    .slice(labArticles.length - 3, labArticles.length)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const images = state.slides.allSlides
-  console.log('My images: ', images)
+  const slideshowArticles = state.articles.allArticles
+    .sort((a, b) => Date(b.createdAt) - Date(a.createdAt))
+    .slice(0, 3)
+
   const selectedArticle = state.articles.selectedArticle
 
   const displayModale = state.articles.displayModale
@@ -33,7 +35,7 @@ const Homepage = () => {
           </div>
 
           <div className="CarrouselBlock">
-            <SlideShow images={images} />
+            <SlideShow articles={slideshowArticles} />
           </div>
         </div>
 

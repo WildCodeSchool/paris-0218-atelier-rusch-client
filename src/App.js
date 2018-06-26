@@ -35,12 +35,11 @@ class App extends Component {
 
   componentDidMount () {
     // this.unsubscribe = store.subscribe(() => this.forceUpdate())
+
     fetch('http://localhost:3456/articles')
       .then(res => res.json())
       .then(articles => store.dispatch(loadArticles(articles)))
-    fetch('http://localhost:3456/homepage')
-      .then(res => res.json())
-      .then(slides => store.dispatch(loadSlides(slides)))
+
     fetch('http://localhost:3456/filters')
       .then(res => res.json())
       .then(filters => store.dispatch(loadFilters(filters)))

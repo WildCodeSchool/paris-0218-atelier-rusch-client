@@ -12,9 +12,6 @@ import './App.css'
 import store from './store'
 import { loadArticles, loadFilters, loadSlides } from './actions'
 
-
-
-
 const views = {
   Home: Homepage,
   Atelier: Atelier,
@@ -26,36 +23,32 @@ const views = {
 }
 
 class App extends Component {
-   constructor () {
-     super()
-     this.state =store.getState()
-     store.subscribe(()=> {
-       this.setState(store.getState())
-     })
-   }
-
-
-  componentDidMount() {
-    //this.unsubscribe = store.subscribe(() => this.forceUpdate())
-     fetch('http://localhost:3456/articles')
-        .then(res => res.json())
-        .then(articles => store.dispatch(loadArticles(articles)))
-     fetch('http://localhost:3456/homepage')
-       .then(res => res.json())
-       .then(slides => store.dispatch(loadSlides(slides)))
-     fetch('http://localhost:3456/filters')
-       .then(res => res.json())
-       .then(filters => store.dispatch(loadFilters(filters)))
-
+  constructor () {
+    super()
+    this.state = store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
   }
 
-   // componentWillUnmount () {
-   //   this.unsubscribe()
-   // }
+  componentDidMount () {
+    // this.unsubscribe = store.subscribe(() => this.forceUpdate())
+    fetch('http://localhost:3456/articles')
+      .then(res => res.json())
+      .then(articles => store.dispatch(loadArticles(articles)))
+    fetch('http://localhost:3456/homepage')
+      .then(res => res.json())
+      .then(slides => store.dispatch(loadSlides(slides)))
+    fetch('http://localhost:3456/filters')
+      .then(res => res.json())
+      .then(filters => store.dispatch(loadFilters(filters)))
+  }
+
+  // componentWillUnmount () {
+  //   this.unsubscribe()
+  // }
 
   render () {
-
-
     return (
       <div className="App">
         <Nav />

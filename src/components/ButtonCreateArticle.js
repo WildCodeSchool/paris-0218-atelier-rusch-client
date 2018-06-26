@@ -5,9 +5,9 @@ import store from '../store.js'
 import { setActivePage } from '../actions.js'
 
 const ButtonCreateArticle = ({onPageChange}) =>
-<div className='ButtonCreateArticle'
-      onClick={event => store.dispatch(setActivePage('articleForm'))}>
+  <div className='ButtonCreateArticle'
+    onClick={event => store.dispatch(setActivePage('articleForm'))}>
 Créer un nouvel article
-</div>
+  </div>
 
 export default ButtonCreateArticle

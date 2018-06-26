@@ -13,10 +13,9 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === 'FILTER_ARTICLES') {
-
     return {
       ...state,
-      allArticles: action.articles.filter(article => article.tags === "Mobilité")
+      allArticles: action.articles.filter(article => article.tags === 'Mobilité')
     }
   }
 

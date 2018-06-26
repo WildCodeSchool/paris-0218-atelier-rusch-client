@@ -1,4 +1,4 @@
-/*import React from 'react'
+/* import React from 'react'
 import store from '../store'
 
 const FormExemple = () => {
@@ -43,4 +43,4 @@ const FormExemple = () => {
   )
 }
 
-export default FormExemple*/
+export default FormExemple */

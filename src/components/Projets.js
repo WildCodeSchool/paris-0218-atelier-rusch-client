@@ -30,9 +30,6 @@ const Projets = () => {
 
   // console.log(filteredArticles2, 'ok')
 
-
-
-
   return (
     <div>
       <FiltersSection />

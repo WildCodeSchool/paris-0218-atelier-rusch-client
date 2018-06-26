@@ -9,4 +9,3 @@ export const filterArticles = articles => ({ type: 'FILTER_ARTICLES', articles }
 export const loadSlides = slides => ({ type: 'LOAD_SLIDES', slides })
 
 export const editSlides = slides => ({ type: 'EDIT_SLIDES', slides })
-

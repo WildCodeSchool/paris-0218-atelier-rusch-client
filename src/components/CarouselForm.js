@@ -2,11 +2,9 @@ import React from 'react'
 import store from '../store'
 
 const CarouselForm = () => {
-
   const state = store.getState()
 
   const handleChange = event => {
-
     store.dispatch({
       type: 'FORM_INPUT_CAROUSEL_CHANGED',
       formId: 'EDIT_CAROUSEL',
@@ -21,10 +19,11 @@ const CarouselForm = () => {
     const state = store.getState()
     const newSlide = state.carouselform.forms['EDIT_CAROUSEL']
 
-
-     fetch('http://localhost:3456/homepage', { method: 'post', body: JSON.stringify(newSlide), headers: {
-             'Content-Type': 'application/json'
-         } })
+    fetch('http://localhost:3456/homepage', { method: 'post',
+      body: JSON.stringify(newSlide),
+      headers: {
+        'Content-Type': 'application/json'
+      } })
   }
 
   const form = state.carouselform.forms['EDIT_CAROUSEL']

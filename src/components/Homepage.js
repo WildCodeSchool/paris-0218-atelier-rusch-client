@@ -13,7 +13,7 @@ const Homepage = () => {
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
   const images = state.slides.allSlides
-    console.log('My images: ', images)
+  console.log('My images: ', images)
   return (
     <div>
       <div className="IntroBlocks">

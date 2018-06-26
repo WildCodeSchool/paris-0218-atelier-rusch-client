@@ -20,16 +20,17 @@ const reducer = (state = initialState, action) => {
       // const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filter.filterTag)
       const addFilteredArticles = state.allArticles.filter(article => article.tags.includes(action.filter.filterTag))
 
-      // Add a function to check if one if the pushed articles is already in the array filteredArticles
+      // Function to check if one of the pushed articles is already in the array 'filteredArticles'
+      const addFilteredArticlesWithoutDuplicates = addFilteredArticles.filter(articleArray1 => !state.filteredArticles.find(articleArray2 => articleArray2.id === articleArray1.id))
 
       return {
         ...state,
-        filteredArticles: [ ...addFilteredArticles, ...state.filteredArticles ],
+        filteredArticles: [ ...addFilteredArticlesWithoutDuplicates, ...state.filteredArticles ]
       }
     }
     else {
       // const removeFromFilteredArticles = state.filteredArticles.filter(article => article.tags !== action.filter.filterTag)
-      const removeFromFilteredArticles = state.filteredArticles.filter(article => article.tags.includes(!action.filter.filterTag))
+      const removeFromFilteredArticles = state.filteredArticles.filter(article => !article.tags.includes(action.filter.filterTag))
       return {
         ...state,
         filteredArticles: removeFromFilteredArticles

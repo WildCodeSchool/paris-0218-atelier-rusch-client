@@ -9,10 +9,6 @@ import store from '../store.js'
 const LabRusch = () => {
   const state = store.getState()
 
-  const selectedArticle = state.articles.selectedArticle
-
-  const displayModale = state.articles.displayModale
-
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
   const getProjetsArticles = state.articles.allArticles
@@ -37,7 +33,7 @@ const LabRusch = () => {
         <ButtonCreateArticle />
       </div>
 
-      <Modale article={selectedArticle} displayModale={displayModale} />
+      <Modale article={state.articles.selectedArticle} displayModale={state.articles.displayModale} />
 
     </div>
   )

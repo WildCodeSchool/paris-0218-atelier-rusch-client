@@ -16,6 +16,7 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === 'FILTER_ARTICLES') {
+
     if (action.filter.isActive !== true) {
       // const addFilteredArticles = state.allArticles.filter(article => article.tags === action.filter.filterTag)
       const addFilteredArticles = state.allArticles.filter(article => article.tags.includes(action.filter.filterTag))

@@ -7,7 +7,7 @@ const NavLink = ({ label }) =>
 
   <button className='NavBarLink' value={label}
     onClick={event => store.dispatch(setActivePage(event.target.value))}>
-      {label}
+    {label}
   </button>
 
 export default NavLink

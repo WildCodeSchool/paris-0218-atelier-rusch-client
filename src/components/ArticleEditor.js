@@ -17,11 +17,9 @@ export const demoArticle = {
     { "type": "p", "text": "L’enjeu de la démarche est la réappropriation des squares par ses habitants. L’objectif est de composer avec l’existant et d’apporter des améliorations paysagères et physiques dans les squares." },
     { "type": "blockquote", "text": "Ensemble, réinventions le square de Grenoble !" },
     { "type": "p", "text": "La démarche vise à interroger les habitants et de recueillir leurs attentes et les améliorations souhaitées sur le square de Grenoble et de Belfort. Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble." },
-    { "type": "img", "url": "https://i.imgur.com/WRyn5ee.png" },
-    { "type": "img", "url": "https://i.imgur.com/U3ArH2H.png" },
+    { "type": "imgs", "urls": [ "https://i.imgur.com/WRyn5ee.png", "https://i.imgur.com/U3ArH2H.png" ] },
     { "type": "p", "text": "Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble." },
-    { "type": "img", "url": "https://i.imgur.com/2AfzUUR.png" },
-    { "type": "img", "url": "https://i.imgur.com/qYqkxKH.png" },
+    { "type": "imgs", "urls": [ "https://i.imgur.com/2AfzUUR.png", "https://i.imgur.com/qYqkxKH.png" ] },
     { "type": "p", "text": "La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort. La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort." }
   ]
 }
@@ -31,6 +29,7 @@ const toHTML = {
   p: ({ text }) => <p>{text}</p>,
   blockquote: ({ text }) => <blockquote>{text}</blockquote>,
   img: ({ url }) => <img src={url} />,
+  imgs: ({ urls }) => urls.map(url => <img src={url} />),
 }
 
 const Element = ({ element }) => toHTML[element.type](element)

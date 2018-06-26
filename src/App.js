@@ -7,6 +7,7 @@ import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import ArticleForm from './components/ArticleForm.js'
 import CarouselForm from './components/CarouselForm.js'
+import Modale from './components/Modale.js'
 import './App.css'
 
 import store from './store'
@@ -19,7 +20,8 @@ const views = {
   LabRusch: LabRusch,
   Contact: Contact,
   articleForm: ArticleForm,
-  CarouselForm: CarouselForm
+  CarouselForm: CarouselForm,
+  Modale: Modale
 }
 
 class App extends Component {

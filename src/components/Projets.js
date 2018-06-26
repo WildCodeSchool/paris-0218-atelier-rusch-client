@@ -2,9 +2,10 @@ import React from 'react'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
+import Modale from './Modale.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { filterArticles, setActivePage, loadArticles } from '../actions.js'
+import { filterArticles } from '../actions.js'
 
 const Projets = () => {
   const state = store.getState()
@@ -14,33 +15,26 @@ const Projets = () => {
   const getProjetsArticles = state.articles.allArticles
     .filter(article => article.section === 'Projet')
 
-  const articleThumbnails = getProjetsArticles
-    .map(article => <ArticleThumbnail key={article.id} article={article} className={determineClassName(article)}/>)
+  const allArticleThumbnails = getProjetsArticles
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
 
-  // const filterArticles = articles => {
-  //   articles.filter((article) => article.tags === 'Mobilité')
-  // }
+  const getFilteredArticles = state.articles.filteredArticles
+    .filter(article => article.section === 'Projet')
 
-  // const filteredArticles = getProjetsArticles
-  //   .filter((article, filter) => article.tags === ('Mobilité'))
-
-  // console.log(filteredArticles, 'ok')
-
-  // const filteredArticles2 = filterArticles(getProjetsArticles)
-
-  // console.log(filteredArticles2, 'ok')
+  const filteredArticleThumbnails = getFilteredArticles
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
 
   return (
     <div>
       <FiltersSection />
 
-      <button onClick={event => store.dispatch(filterArticles(getProjetsArticles))}> FILTRE </button>
-
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
-        {articleThumbnails}
+        { state.articles.filteredArticles.length === 0 ? allArticleThumbnails : filteredArticleThumbnails }
         <ButtonCreateArticle />
       </div>
+
+      <Modale article={state.articles.selectedArticle} displayModale={state.articles.displayModale} />
 
     </div>
   )

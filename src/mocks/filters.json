@@ -1,50 +1,62 @@
 [
   {
     "section": "LabRusch",
-    "filterTag": "Design"
+    "filterTag": "Design",
+    "id": 1
   },
   {
     "section": "LabRusch",
-    "filterTag": "Innovation"
+    "filterTag": "Innovation",
+    "id": 2
   },
   {
     "section": "LabRusch",
-    "filterTag": "Urbanisme"
+    "filterTag": "Urbanisme",
+    "id": 3
   },
   {
     "section": "LabRusch",
-    "filterTag": "Social"
+    "filterTag": "Social",
+    "id": 4
   },
   {
     "section": "Projets",
-    "filterTag": "Mobilité"
+    "filterTag": "Mobilité",
+    "id": 5
   },
   {
     "section": "Projets",
-    "filterTag": "Aménagement urbain"
+    "filterTag": "Aménagement urbain",
+    "id": 6
   },
   {
     "section": "Projets",
-    "filterTag": "Logements sociaux"
+    "filterTag": "Logements sociaux",
+    "id": 7
   },
   {
     "section": "Projets",
-    "filterTag": "Programmation"
+    "filterTag": "Programmation",
+    "id": 8
   },
   {
     "section": "Projets",
-    "filterTag": "Services numériques"
+    "filterTag": "Services numériques",
+    "id": 9
   },
   {
     "section": "Projets",
-    "filterTag": "Innovation"
+    "filterTag": "Innovation",
+    "id": 10
   },
   {
     "section": "Projets",
-    "filterTag": "Services urbains"
+    "filterTag": "Services urbains",
+    "id": 11
   },
   {
     "section": "Projets",
-    "filterTag": "Social"
+    "filterTag": "Social",
+    "id": 12
   }
 ]

@@ -40,8 +40,8 @@ const ArticleForm = () => {
       <h3>Description:</h3>
       <textarea type="text" name="shortDescription" value={form.shortDescription} onChange={handleChange}>
       </textarea>
-      <h3>Contenu:</h3>
-      <textarea type="text" name="content" value={form.content} onChange={handleChange}>
+      <h3>URL de l'image de couverture:</h3>
+      <textarea type="text" name="content" value={form.headerImage} onChange={handleChange}>
       </textarea>
       <select name="section" value={form.section} onChange={handleChange}>
         <option value="Choose">Choose</option>

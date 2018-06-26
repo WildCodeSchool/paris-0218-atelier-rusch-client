@@ -66,6 +66,8 @@ button {
 p {
   font-family: 'IBMPlex';
   font-weight: 400;
+  margin: 5rem 15rem;
+  line-height: 1.5rem;
 }
 
 h1 {
@@ -79,10 +81,21 @@ h1 {
 h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
   /* PAGE MODALE = TITLE */
+  font-family: 'HeimatMono';
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 5rem 14rem 0 15rem;
+  line-height: 3rem;
 }
 
 h3 {
   /* PAGE MODALE = SHORT DESCRIPTION */
+  font-family: 'HeimatMono';
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin: 1.15rem 14rem 0 15rem;
+  line-height: 2.25rem;
+  color: white;
 }
 
 h4 {
@@ -96,7 +109,7 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   line-height: 1.4rem;
-  padding: 0 2rem;
+  margin: 0 2rem;
   transition: 0.2s ease-in;
 }
 
@@ -115,10 +128,12 @@ h6 {
 .smallLink {
   /* Links in yellow and underlined : on modale page and atelier page */
   font-family: "IBMPlex";
-  font-weight: 600;
-  font-size: ;
-  border-bottom: solid 1px #fbd052;
+  font-weight: 200;
+  font-size: 0.8rem;
   color: #fbd052;
+  text-decoration: underline;
+  margin: 1.15rem 15rem 5rem 15rem;
+  cursor: pointer;
 }
 
 .quote {

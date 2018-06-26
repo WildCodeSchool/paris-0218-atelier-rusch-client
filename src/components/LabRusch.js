@@ -5,23 +5,25 @@ import Modale from './Modale.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
+import { getActiveFilters, applyFiltersToSection } from './Filtering.js'
+
+
+const determineClassName = article => article.hasStar === 'true'
+  ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack'
+  : 'ArticleThumbnailClassic'
 
 const LabRusch = () => {
   const state = store.getState()
 
-  const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
-
-  const getProjetsArticles = state.articles.allArticles
-    .filter(article => article.section === 'Lab')
-
-  const allLabArticleThumbnails = getProjetsArticles
-    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
-
-    const getFilteredArticles = state.articles.filteredArticles
-    .filter(article => article.section === 'Lab')
+  const getFilteredArticles = applyFiltersToSection('Lab', state)
 
   const filteredLabArticleThumbnails = getFilteredArticles
-    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
+    .map((article, index) =>
+      <ArticleThumbnail
+        key={article.id}
+        article={article}
+        index={index}
+        className={determineClassName(article)}/>)
 
   return (
     <div>
@@ -29,7 +31,7 @@ const LabRusch = () => {
 
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Plein d'articles super intéressants sur des sujets super intéressants" />
-        { state.articles.filteredArticles.length === 0 ? allLabArticleThumbnails : filteredLabArticleThumbnails }
+        { filteredLabArticleThumbnails }
         <ButtonCreateArticle />
       </div>
 

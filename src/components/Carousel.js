@@ -5,19 +5,19 @@ import './css/Carousel.css'
 import store from '../store.js'
 import { setActivePage } from '../actions.js'
 
-export const SlideShow = ({ images }) => {
-  const imagesElements = images.map(image =>
-    <div>
-      <img src={image.image} />
-      <p className="legend">{image.legend}</p>
-      <button className="editCarousel"
-        onClick={event => store.dispatch(setActivePage('CarouselForm'))}>{'Editer le carousel'}</button>
+export const SlideShow = ({ articles }) => {
+  articles.map(a => a.headerImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkU2l91q3f7KceFx1FP7BbXBx_LCOt4Zs79JrS52iSu4k63Py') // TODO: rm
+
+  const imagesElements = articles.map(article =>
+    <div key={article.id} onClick={() => console.log(`open modal for article ${article.id}`)}>
+      <img src={article.headerImage} alt={article.title} />
+      <p className="legend">{article.title}</p>
     </div>
   )
-  console.log('Slideshow: ', images)
+
   return (
-    <Carousel autoPlay interval={(5000)} stopOnHover={true} infiniteLoop={true}>
-      {imagesElements}
+    <Carousel autoPlay interval={5000} stopOnHover={true} infiniteLoop={true}>
+      {articles.length > 0 ? imagesElements : ''}
     </Carousel>
   )
 }

@@ -7,6 +7,9 @@ import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'
 import ArticleForm from '../components/ArticleForm'
+import Contact from '../components/Contact'
+
+
 
 import RedirectingBlockToAllArticles from '../components/RedirectingBlockToAllArticles'
 
@@ -32,3 +35,5 @@ storiesOf('FormExemple', module)
 storiesOf('ArticleForm', module)
   .add('exemple 1', () => <ArticleForm />)
 
+storiesOf('Contact', module)
+  .add('contact page', () => <Contact />)

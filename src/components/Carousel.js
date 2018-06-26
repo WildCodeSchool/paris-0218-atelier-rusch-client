@@ -12,8 +12,6 @@ export const SlideShow = ({ articles }) => {
     <div key={article.id} onClick={() => console.log(`open modal for article ${article.id}`)}>
       <img src={article.headerImage} alt={article.title} />
       <p className="legend">{article.title}</p>
-      <button className="editCarousel"
-        onClick={event => store.dispatch(setActivePage('CarouselForm'))}>{'Editer le carousel'}</button>
     </div>
   )
 

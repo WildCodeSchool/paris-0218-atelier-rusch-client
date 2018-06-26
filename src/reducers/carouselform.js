@@ -20,7 +20,8 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        filters: action.filters
+        image: action.image,
+        legend: action.legend
       }
     }
 

@@ -12,12 +12,8 @@ const Homepage = () => {
     .filter(article => article.section === 'Lab')
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const images = [
-    { src: "http://lorempixel.com/output/cats-q-c-640-480-1.jpg", legend: 'Ceci est un chat' },
-    { src: "http://lorempixel.com/output/cats-q-c-640-480-2.jpg", legend: 'Ceci est un chat' },
-    { src: "http://lorempixel.com/output/cats-q-c-640-480-3.jpg", legend: 'Ceci est un chapacontent' },
-  ]
-
+  const images = state.slides.allSlides
+    console.log('My images: ', images)
   return (
     <div>
       <div className="IntroBlocks">

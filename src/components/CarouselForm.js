@@ -6,7 +6,6 @@ const CarouselForm = () => {
   const state = store.getState()
 
   const handleChange = event => {
-    //console.log({ target: event.target, [event.target.name]: event.target.value })
 
     store.dispatch({
       type: 'FORM_INPUT_CAROUSEL_CHANGED',
@@ -20,14 +19,12 @@ const CarouselForm = () => {
     event.preventDefault()
 
     const state = store.getState()
-    const newArticle = state.articleform.forms['ADD_ARTICLE']
+    const newSlide = state.carouselform.forms['EDIT_CAROUSEL']
 
-    //console.log('SUBMIT', newArticle)
-    //console.log('SUBMIT', JSON.stringify(newArticle))
 
-    // fetch('http://localhost:3456/articles', { method: 'post', body: JSON.stringify(newArticle), headers: {
-    //         'Content-Type': 'application/json'
-    //     } })
+     fetch('http://localhost:3456/homepage', { method: 'post', body: JSON.stringify(newSlide), headers: {
+             'Content-Type': 'application/json'
+         } })
   }
 
   const form = state.carouselform.forms['EDIT_CAROUSEL']

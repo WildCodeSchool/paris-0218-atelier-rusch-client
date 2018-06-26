@@ -10,46 +10,57 @@ import CarouselForm from './components/CarouselForm.js'
 import './App.css'
 
 import store from './store'
-import { loadArticles, loadFilters } from './actions'
+import { loadArticles, loadFilters, loadSlides } from './actions'
 
-// TODO: rm
-import fetchedArticles from './mocks/articles.json'
-import fetchedFilters from './mocks/filters.json'
+
+
 
 const views = {
   Home: Homepage,
   Atelier: Atelier,
   Projets: Projets,
-  Lab: LabRusch,
+  LabRusch: LabRusch,
   Contact: Contact,
   articleForm: ArticleForm,
   CarouselForm: CarouselForm
 }
 
 class App extends Component {
+   constructor () {
+     super()
+     this.state =store.getState()
+     store.subscribe(()=> {
+       this.setState(store.getState())
+     })
+   }
 
 
   componentDidMount() {
-    this.unsubscribe = store.subscribe(() => this.forceUpdate())
-    // fetch('.../articles')
-    //   .then(res => res.json())
-    //   .then(articles => store.dispatch(loadArticles(articles)))
-    store.dispatch(loadArticles(fetchedArticles))
-    store.dispatch(loadFilters(fetchedFilters))
+    //this.unsubscribe = store.subscribe(() => this.forceUpdate())
+     fetch('http://localhost:3456/articles')
+        .then(res => res.json())
+        .then(articles => store.dispatch(loadArticles(articles)))
+     fetch('http://localhost:3456/homepage')
+       .then(res => res.json())
+       .then(slides => store.dispatch(loadSlides(slides)))
+     fetch('http://localhost:3456/filters')
+       .then(res => res.json())
+       .then(filters => store.dispatch(loadFilters(filters)))
+
   }
 
-  componentWillUnmount () {
-    this.unsubscribe()
-  }
+   // componentWillUnmount () {
+   //   this.unsubscribe()
+   // }
 
   render () {
-    const state = store.getState()
+
 
     return (
       <div className="App">
         <Nav />
         <div className="spacer"></div>
-        {views[state.router.pageActive](state)}
+        {views[this.state.router.pageActive](this.state)}
       </div>
     )
   }

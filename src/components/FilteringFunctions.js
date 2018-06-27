@@ -1,8 +1,3 @@
-import React from 'react'
-import store from '../store.js'
-
-const state = store.getState()
-
 export const getActiveFilters = (allFilters) => {
   const activeFilters = allFilters.filter(({ isActive }) => isActive)
 

@@ -15,4 +15,3 @@ export const loadModale = (id, displayModale) => ({ type: 'LOAD_MODALE', id, dis
 // export const closeModale = () => ({ type: 'CLOSE_MODALE' })
 
 export const toggleFilters = id => ({ type: 'TOGGLE_FILTERS', id })
-

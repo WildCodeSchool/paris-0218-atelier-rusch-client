@@ -13,7 +13,6 @@ const Homepage = (props) => {
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'Lab')
 
-
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
@@ -23,10 +22,10 @@ const Homepage = (props) => {
     .slice(0, 3)
 
   const articleId = props.articleId
-    const selectedArticle = labArticles.find(article => String(article.id) === articleId)
-    const modale = selectedArticle !== undefined
-      ? <Modale article={selectedArticle} displayModale={'block'} />
-      : ''
+  const selectedArticle = labArticles.find(article => String(article.id) === articleId)
+  const modale = selectedArticle !== undefined
+    ? <Modale article={selectedArticle} displayModale={'block'} />
+    : ''
 
   return (
     <div>

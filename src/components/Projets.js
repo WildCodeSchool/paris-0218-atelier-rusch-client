@@ -5,7 +5,7 @@ import FiltersSection from './FiltersSection.js'
 import Modale from './Modale.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { getActiveFilters, applyFiltersToSection } from './Filtering.js'
+import { applyFiltersToSection } from './FilteringFunctions.js'
 
 const Projets = (props) => {
   const state = store.getState()

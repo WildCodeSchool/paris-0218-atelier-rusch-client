@@ -7,15 +7,12 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import ArticleForm from './components/ArticleForm.js'
-import Modale from './components/Modale.js'
 import './App.css'
 
 import store from './store'
-import { loadArticles, loadFilters, loadSlides } from './actions'
+import { loadArticles, loadFilters } from './actions'
 
 class App extends Component {
-
   componentDidMount () {
     this.unsubscribe = store.subscribe(() => this.forceUpdate())
 
@@ -35,8 +32,8 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-      <Nav />
-      <div className="spacer"></div>
+        <Nav />
+        <div className="spacer"></div>
         <Router>
           <Homepage path='/Homepage' />
           <Homepage path='/Homepage/:articleId' />

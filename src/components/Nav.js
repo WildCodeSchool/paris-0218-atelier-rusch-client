@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import './css/Nav.css'
-import store from '../store.js'
-import { setActivePage } from '../actions.js'
 import NavLink from './NavLink.js'
 
 const Nav = ({onPageChange}) =>

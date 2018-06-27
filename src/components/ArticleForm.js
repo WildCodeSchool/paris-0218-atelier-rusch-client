@@ -1,5 +1,6 @@
 import React from 'react'
 import store from '../store'
+import Modale from './Modale.js'
 
 const ArticleForm = () => {
   const state = store.getState()
@@ -34,22 +35,40 @@ const ArticleForm = () => {
   const form = state.articleform.forms['ADD_ARTICLE']
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Titre:</h3>
-      <input type="text" name="title" value={form.title} onChange={handleChange} />
-      <h3>Description:</h3>
-      <textarea type="text" name="shortDescription" value={form.shortDescription} onChange={handleChange}>
-      </textarea>
-      <h3>URL de l'image de couverture:</h3>
-      <textarea type="text" name="content" value={form.headerImage} onChange={handleChange}>
-      </textarea>
-      <select name="section" value={form.section} onChange={handleChange}>
-        <option value="Choose">Choose</option>
-        <option value="Lab">Lab</option>
-        <option value="Projet">Projet</option>
-      </select>
-      <input type="submit" value="Submit" />
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h3>Titre:</h3>
+        <input type="text" name="title" value={form.title} onChange={handleChange} />
+        <h3>Description:</h3>
+        <textarea type="text" name="shortDescription" value={form.shortDescription} onChange={handleChange}>
+        </textarea>
+        <h3>URL de l'image de couverture:</h3>
+        <input type="text" name="headerImage" value={form.headerImage} onChange={handleChange}>
+        </input>
+        <select name="section" value={form.section} onChange={handleChange}>
+          <option value="Choose">Choose</option>
+          <option value="Lab">Lab</option>
+          <option value="Projet">Projet</option>
+        </select>
+        <input type="submit" value="Submit" />
+      </form>
+
+      <div>
+        <div className="ModalePic" style={{ background: `center / cover no-repeat url(${form.headerImage})`}}>
+          <div className="ModaleHeader FilterBlack" style={{ padding: '0.1rem 0.75rem' }}>
+            <h2 className="green">
+              {form.title}
+            </h2>
+            <h3>
+              {form.shortDescription}
+            </h3>
+            <p className="smallLink">
+              Site du projet
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

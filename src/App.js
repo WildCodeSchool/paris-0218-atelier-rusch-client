@@ -46,6 +46,7 @@ class App extends Component {
           <LabRusch path='/LabRusch' />
           <LabRusch path='/LabRusch/:articleId' />
           <Contact path='/Contact' />
+          <ArticleForm path='/ArticleForm' />
         </Router>
       </div>
     )

@@ -25,6 +25,10 @@ button {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+a {
+  text-decoration: none;
+}
+
 /* TYPEFACES
   font-face & font-weight
 
@@ -34,35 +38,35 @@ button {
 */
 
 @font-face {
-  font-family: "HeimatMono", monospace;
+  font-family: "HeimatMono";
   src: url("./fonts/HeimatMonoExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HeimatMono", monospace;
+  font-family: "HeimatMono";
   src: url("./fonts/HeimatMonoSemiBold.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HeimatMono", monospace;
+  font-family: "HeimatMono";
   src: url("./fonts/HeimatMonoExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlex", sans-serif;
+  font-family: "IBMPlex";
   src: url("./fonts/IBMPlexSansRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlex", sans-serif;
+  font-family: "IBMPlex";
   src: url("./fonts/IBMPlexSansSemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
@@ -159,7 +163,7 @@ h6 {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Colors */

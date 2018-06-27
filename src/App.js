@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Router } from '@reach/router'
+
 import Nav from './components/Nav.js'
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
@@ -12,27 +14,10 @@ import './App.css'
 import store from './store'
 import { loadArticles, loadFilters, loadSlides } from './actions'
 
-const views = {
-  Home: Homepage,
-  Atelier: Atelier,
-  Projets: Projets,
-  LabRusch: LabRusch,
-  Contact: Contact,
-  articleForm: ArticleForm,
-  Modale: Modale
-}
-
 class App extends Component {
-  constructor () {
-    super()
-    this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
-  }
 
   componentDidMount () {
-    // this.unsubscribe = store.subscribe(() => this.forceUpdate())
+    this.unsubscribe = store.subscribe(() => this.forceUpdate())
 
     fetch('http://localhost:3456/articles')
       .then(res => res.json())
@@ -43,16 +28,25 @@ class App extends Component {
       .then(filters => store.dispatch(loadFilters(filters)))
   }
 
-  // componentWillUnmount () {
-  //   this.unsubscribe()
-  // }
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
 
   render () {
     return (
       <div className="App">
-        <Nav />
-        <div className="spacer"></div>
-        {views[this.state.router.pageActive](this.state)}
+      <Nav />
+      <div className="spacer"></div>
+        <Router>
+          <Homepage path='/Homepage' />
+          <Homepage path='/Homepage/:articleId' />
+          <Atelier path='/Atelier' />
+          <Projets path='/Projets' />
+          <Projets path='/Projets/:articleId' />
+          <LabRusch path='/LabRusch' />
+          <LabRusch path='/LabRusch/:articleId' />
+          <Contact path='/Contact' />
+        </Router>
       </div>
     )
   }

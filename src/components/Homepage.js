@@ -7,11 +7,12 @@ import Logo from './img/logo-rusch-noir.png'
 import store from '../store.js'
 import { SlideShow } from './Carousel.js'
 
-const Homepage = () => {
+const Homepage = (props) => {
   const state = store.getState()
 
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'Lab')
+
 
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)
@@ -21,9 +22,11 @@ const Homepage = () => {
     .sort((a, b) => Date(b.createdAt) - Date(a.createdAt))
     .slice(0, 3)
 
-  const selectedArticle = state.articles.selectedArticle
-
-  const displayModale = state.articles.displayModale
+  const articleId = props.articleId
+    const selectedArticle = labArticles.find(article => String(article.id) === articleId)
+    const modale = selectedArticle !== undefined
+      ? <Modale article={selectedArticle} displayModale={'block'} />
+      : ''
 
   return (
     <div>
@@ -53,7 +56,7 @@ const Homepage = () => {
         {articleThumbnails}
         <RedirectingBlockToAllArticles />
       </div>
-      <Modale article={selectedArticle} displayModale={displayModale} />
+      {modale}
 
     </div>
   )

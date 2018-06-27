@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   color: #2b2b2b;
+  transition: background-color 0.2s ease-out;
+}
+
+*:hover {
+  transition: background-color 0.2s ease-in;
 }
 
 button {
@@ -29,42 +34,42 @@ button {
 */
 
 @font-face {
-  font-family: "HeimatMono";
+  font-family: "HeimatMono", monospace;
   src: url("./fonts/HeimatMonoExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HeimatMono";
+  font-family: "HeimatMono", monospace;
   src: url("./fonts/HeimatMonoSemiBold.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "HeimatMono";
+  font-family: "HeimatMono", monospace;
   src: url("./fonts/HeimatMonoExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlex";
+  font-family: "IBMPlex", sans-serif;
   src: url("./fonts/IBMPlexSansRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlex";
+  font-family: "IBMPlex", sans-serif;
   src: url("./fonts/IBMPlexSansSemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 p {
-  font-family: 'IBMPlex';
+  font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
   margin: 2rem 15rem;
   line-height: 2rem;
@@ -72,7 +77,7 @@ p {
 }
 
 h1 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 200;
   font-size: 1.7rem;
   padding: 0 5rem 0 5rem;
@@ -81,8 +86,9 @@ h1 {
 
 h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
+
   /* PAGE MODALE = TITLE */
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-weight: 400;
   font-size: 2.5rem;
   margin: 5rem 14rem 0 15rem;
@@ -91,7 +97,7 @@ h2 {
 
 h3 {
   /* PAGE MODALE = SHORT DESCRIPTION */
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-weight: 100;
   font-size: 1.5rem;
   margin: 1.15rem 14rem 0 15rem;
@@ -101,15 +107,15 @@ h3 {
 
 h4 {
   /* PAGE MODALE = PARAGRAPH TITLE */
-  font-family: 'IBMPlex';
+  font-family: 'IBMPlex', sans-serif;
   font-weight: 600;
-  margin: 0rem 15rem;
+  margin: 0 15rem;
   padding-top: 5rem;
   font-size: 2rem;
 }
 
 h5 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 800;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -120,7 +126,7 @@ h5 {
 }
 
 h6 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 200;
   font-size: 0.85rem;
 }
@@ -132,19 +138,18 @@ h6 {
 }
 
 .smallLink {
-  font-family: "IBMPlex";
+  font-family: "IBMPlex", sans-serif;
   font-weight: 200;
   font-size: 1rem;
   color: #fbd052;
   text-decoration: underline;
   margin: 1.15rem 15rem 5rem 15rem;
   cursor: pointer;
-  /*border-bottom: solid 1.5px #fbd052;*/
 }
 
 .quote {
   /* Quotes in yellow and big size : on modale page and atelier page */
-  font-family: "HeimatMono";
+  font-family: "HeimatMono", monospace;
   font-weight: 400;
   letter-spacing: 2px;
   font-size: 2.25rem;
@@ -157,16 +162,6 @@ h6 {
   font-weight: 700;
 }
 
-/* Transitions */
-
-* {
-  transition: background-color 0.2s ease-out;
-}
-
-*:hover {
-  transition: background-color 0.2s ease-in;
-}
-
 /* Colors */
 
 .yellow {
@@ -176,7 +171,8 @@ h6 {
 .darkgrey {
   color: #2b2b2b;
 }
- .green {
+
+.green {
   color: #5aff6e;
- }
+}
 

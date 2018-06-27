@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Router } from '@reach/router'
+
 import Nav from './components/Nav.js'
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
@@ -13,16 +15,16 @@ import './App.css'
 import store from './store'
 import { loadArticles, loadFilters, loadSlides } from './actions'
 
-const views = {
-  Home: Homepage,
-  Atelier: Atelier,
-  Projets: Projets,
-  LabRusch: LabRusch,
-  Contact: Contact,
-  articleForm: ArticleForm,
-  CarouselForm: CarouselForm,
-  Modale: Modale
-}
+// const views = {
+//   Home: Homepage,
+//   Atelier: Atelier,
+//   Projets: Projets,
+//   LabRusch: LabRusch,
+//   Contact: Contact,
+//   articleForm: ArticleForm,
+//   CarouselForm: CarouselForm,
+//   Modale: Modale
+// }
 
 class App extends Component {
   constructor () {
@@ -53,9 +55,15 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Nav />
-        <div className="spacer"></div>
-        {views[this.state.router.pageActive](this.state)}
+      <Nav />
+      <div className="spacer"></div>
+        <Router>
+          <Homepage path='/' />
+          <Atelier path='/Atelier' />
+          <Projets path='/Projets' />
+          <LabRusch path='/LabRusch' />
+          <Contact path='/Contact' />
+        </Router>
       </div>
     )
   }

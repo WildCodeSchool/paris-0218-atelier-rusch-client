@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import './css/Nav.css'
 import store from '../store.js'
 import { setActivePage } from '../actions.js'
@@ -8,10 +9,11 @@ const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <button className='HomeLink' value='Home'
-        onClick={event => store.dispatch(setActivePage(event.target.value))}>
-        RUSCH
-      </button>
+      <Link to='/'>
+        <button className='HomeLink' value='Home'>
+          RUSCH
+        </button>
+      </Link>
     </div>
 
     <div className="NavBarLinksContainer">

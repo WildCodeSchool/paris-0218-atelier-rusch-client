@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './css/Carousel.css'
 
 export const SlideShow = ({ articles }) => {
-  articles.map(a => a.headerImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkU2l91q3f7KceFx1FP7BbXBx_LCOt4Zs79JrS52iSu4k63Py') // TODO: rm
+  articles.map(a => a.headerImage)
 
   const imagesElements = articles.map(article =>
     <div key={article.id} onClick={() => console.log(`open modal for article ${article.id}`)}>

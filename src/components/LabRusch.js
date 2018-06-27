@@ -12,8 +12,14 @@ const determineClassName = article => article.hasStar === 'true'
   ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack'
   : 'ArticleThumbnailClassic'
 
-const LabRusch = () => {
+const LabRusch = (props) => {
   const state = store.getState()
+  const articles = state.articles.allArticles
+  const articleId = props.articleId
+  const selectedArticle = articles.find(article => String(article.id) === articleId)
+  const modale = selectedArticle !== undefined
+    ? <Modale article={selectedArticle} displayModale={'block'} />
+    : ''
 
   const getFilteredArticles = applyFiltersToSection('Lab', state)
 
@@ -35,7 +41,7 @@ const LabRusch = () => {
         <ButtonCreateArticle />
       </div>
 
-      <Modale article={state.articles.selectedArticle} displayModale={state.articles.displayModale} />
+      {modale}
 
     </div>
   )

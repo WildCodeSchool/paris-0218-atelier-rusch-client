@@ -41,7 +41,9 @@ class App extends Component {
           <Homepage path='/' />
           <Atelier path='/Atelier' />
           <Projets path='/Projets' />
+          <Projets path='/Projets/:articleId' />
           <LabRusch path='/LabRusch' />
+          <LabRusch path='/LabRusch/:articleId' />
           <Contact path='/Contact' />
         </Router>
       </div>

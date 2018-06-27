@@ -7,8 +7,14 @@ import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
 import { getActiveFilters, applyFiltersToSection } from './Filtering.js'
 
-const Projets = () => {
+const Projets = (props) => {
   const state = store.getState()
+  const articles = state.articles.allArticles
+  const articleId = props.articleId
+  const selectedArticle = articles.find(article => String(article.id) === articleId)
+  const modale = selectedArticle !== undefined
+    ? <Modale article={selectedArticle} displayModale={'block'} />
+    : ''
 
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
@@ -32,7 +38,7 @@ const Projets = () => {
         <ButtonCreateArticle />
       </div>
 
-      <Modale article={state.articles.selectedArticle} displayModale={state.articles.displayModale} />
+      {modale}
 
     </div>
   )

@@ -38,7 +38,8 @@ class App extends Component {
       <Nav />
       <div className="spacer"></div>
         <Router>
-          <Homepage path='/' />
+          <Homepage path='/Homepage' />
+          <Homepage path='/Homepage/:articleId' />
           <Atelier path='/Atelier' />
           <Projets path='/Projets' />
           <Projets path='/Projets/:articleId' />

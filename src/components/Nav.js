@@ -9,7 +9,7 @@ const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <Link to='/'>
+      <Link to='/Homepage'>
         <button className='HomeLink' value='Home'>
           RUSCH
         </button>

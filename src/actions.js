@@ -10,8 +10,8 @@ export const editSlides = slides => ({ type: 'EDIT_SLIDES', slides })
 
 export const loadModale = (id, displayModale) => ({ type: 'LOAD_MODALE', id, displayModale })
 
-// export const loadModale = (id, displayModale) => ({ type: 'LOAD_MODALE', id, displayModale })
+// export const loadModale =  (id, displayModale) => ({ type: 'LOAD_MODALE', id, displayModale })
 
-// export const closeModale = () => ({ type: 'CLOSE_MODALE' })
+// export const closeModale =  () => ({ type: 'CLOSE_MODALE' })
 
 export const toggleFilters = id => ({ type: 'TOGGLE_FILTERS', id })

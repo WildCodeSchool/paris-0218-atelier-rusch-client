@@ -5,24 +5,22 @@ import FiltersSection from './FiltersSection.js'
 import Modale from './Modale.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { filterArticles } from '../actions.js'
+import { getActiveFilters, applyFiltersToSection } from './Filtering.js'
 
 const Projets = () => {
   const state = store.getState()
 
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
-  const getProjetsArticles = state.articles.allArticles
-    .filter(article => article.section === 'Projet')
+  const getFilteredArticles = applyFiltersToSection('Projet', state)
 
-  const allArticleThumbnails = getProjetsArticles
-    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
-
-  const getFilteredArticles = state.articles.filteredArticles
-    .filter(article => article.section === 'Projet')
-
-  const filteredArticleThumbnails = getFilteredArticles
-    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className={determineClassName(article)}/>)
+  const filteredProjetsArticleThumbnails = getFilteredArticles
+    .map((article, index) =>
+      <ArticleThumbnail
+        key={article.id}
+        article={article}
+        index={index}
+        className={determineClassName(article)}/>)
 
   return (
     <div>
@@ -30,7 +28,7 @@ const Projets = () => {
 
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
-        { state.articles.filteredArticles.length === 0 ? allArticleThumbnails : filteredArticleThumbnails }
+        { filteredProjetsArticleThumbnails }
         <ButtonCreateArticle />
       </div>
 

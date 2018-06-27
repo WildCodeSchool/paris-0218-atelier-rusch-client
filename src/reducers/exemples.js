@@ -8,8 +8,6 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-  console.log(`ACTION '${action.type}'`, { action, state })
-
   switch (action.type) {
     case 'FORM_INPUT_CHANGED': {
       const { formId, inputName, inputValue } = action

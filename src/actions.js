@@ -4,8 +4,6 @@ export const loadArticles = articles => ({ type: 'LOAD_ARTICLES', articles })
 
 export const loadFilters = filters => ({ type: 'LOAD_FILTERS', filters })
 
-export const filterArticles = filter => ({ type: 'FILTER_ARTICLES', filter })
-
 export const loadSlides = slides => ({ type: 'LOAD_SLIDES', slides })
 
 export const editSlides = slides => ({ type: 'EDIT_SLIDES', slides })

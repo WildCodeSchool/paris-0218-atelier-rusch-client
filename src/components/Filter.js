@@ -6,7 +6,6 @@ import { filterArticles, toggleFilters } from '../actions.js'
 const Filter = ({ filter, articles }) => {
   const state = store.getState()
   const toggleFiltersAndFilterArticles = () => {
-    store.dispatch(filterArticles(filter))
     store.dispatch(toggleFilters(filter.id))
   }
   return (

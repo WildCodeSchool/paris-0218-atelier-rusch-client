@@ -7,7 +7,7 @@ const Modale = ({ article, displayModale }) => {
   // const index = reversedPathname.indexOf('/')
   // const parentContextPath = reversedPathname.slice(index + 1).reverse().join('')
 
-  const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
+  const parentContextPath = window.location.pathname.replace(/\d+$/, '')
 
   return (
     <div className="ModaleBlock" style={{ display: `${displayModale}` }}>

@@ -12,7 +12,6 @@ export const SlideShow = ({ articles }) => {
       <p className="legend">{article.title}</p>
     </Link>
   )
-    console.log('Carousel: ', articles)
 
   return (
     <Carousel autoPlay interval={5000} stopOnHover={true} infiniteLoop={true}>
@@ -20,8 +19,3 @@ export const SlideShow = ({ articles }) => {
     </Carousel>
   )
 }
-
-
-//onClick={() => console.log(`open modal for article ${article.id}`)}
-// <Link to={String(articles.id)}>
-//console.log(Object.entries(obj))

@@ -4,8 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Modale from '../components/Modale'
 
-import Article from '../components/Article'
-import { ArticlePreview, demoArticle } from '../components/ArticleEditor'
+import { ArticlePreview, demoArticle } from '../components/ArticlePreview'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import FormExemple from '../components/FormExemple'

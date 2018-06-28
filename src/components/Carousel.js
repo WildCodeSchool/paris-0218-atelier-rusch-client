@@ -5,23 +5,23 @@ import './css/Carousel.css'
 import { Link } from '@reach/router'
 
 export const SlideShow = ({ articles }) => {
-  articles.map(a => a.headerImage)
 
   const imagesElements = articles.map(article =>
-    <div key={article.id}>
+    <Link key={article.id} to={String(article.id)}>
       <img src={article.headerImage} alt={article.title} />
       <p className="legend">{article.title}</p>
-    </div>
+    </Link>
   )
+    console.log('Carousel: ', articles)
 
   return (
-    <Link to={String(articles.id)}>
-      <Carousel autoPlay interval={5000} stopOnHover={true} infiniteLoop={true}>
-        {articles.length > 0 ? imagesElements : ''}
-      </Carousel>
-    </Link>
-    )
+    <Carousel autoPlay interval={5000} stopOnHover={true} infiniteLoop={true}>
+      {articles.length > 0 ? imagesElements : ''}
+    </Carousel>
+  )
 }
 
 
 //onClick={() => console.log(`open modal for article ${article.id}`)}
+// <Link to={String(articles.id)}>
+//console.log(Object.entries(obj))

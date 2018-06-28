@@ -1,77 +1,116 @@
-import React from 'react'
+import React, { Component } from 'react'
 import store from '../store'
-import Modale from './Modale.js'
+import ArticlePreview, { demoArticle } from './ArticlePreview.js'
+import './css/ArticleForm.css'
 
-const ArticleForm = () => {
-  const state = store.getState()
+const toInput = {
+  h2: () => <input type="text" />,
+  p: () => <textarea type="text" />,
+  blockquote: () => <input type="text" />,
+  img: () => <input type="text" />,
+  imgs: () => <div><input type="text" /><input type="text" /></div>,
+}
 
-  const handleChange = event => {
-    console.log({ target: event.target, [event.target.name]: event.target.value })
+const Element = ({ element }) => toInput[element.type](element)
 
-    store.dispatch({
-      type: 'FORM_INPUT_CHANGED',
-      formId: 'ADD_ARTICLE',
-      inputName: event.target.name,
-      inputValue: event.target.value
+const freshArticle = {
+  title: '',
+  shortDescription: '',
+  section: '',
+  headerImage: '',
+  content: []
+}
+
+class ArticleForm extends Component {
+  state = {
+    article: freshArticle // demoArticle
+  }
+
+  handleChange = event => {
+    const key = event.target.name
+
+    const article = {
+      ...this.state.article,
+      [key]: event.target.value
+    }
+
+    this.setState({ article })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+
+    const article = this.state.article
+
+    fetch('http://localhost:3456/articles', {
+      method: 'post',
+      body: JSON.stringify(article),
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
   }
 
-  const handleSubmit = event => {
-    event.preventDefault()
+  addInput = type => {
+    const basicContentElement = {
+      h2: { "type": "h2", "text": "" },
+      p: { "type": "p", "text": "" },
+      blockquote: { "type": "blockquote", "text": "" },
+      img: { "type": "img", "url": "" },
+      imgs: { "type": "imgs", "urls": [ "", "" ] },
+    }
 
-    const state = store.getState()
-    const newArticle = state.articleform.forms['ADD_ARTICLE']
+    const article = {
+      ...this.state.article,
+      content: [
+        ...this.state.article.content,
+        basicContentElement[type]
+      ]
+    }
 
-    console.log('SUBMIT', newArticle)
-    console.log('SUBMIT', JSON.stringify(newArticle))
-
-    fetch('http://localhost:3456/articles', { method: 'post',
-      body: JSON.stringify(newArticle),
-      headers: {
-        'Content-Type': 'application/json'
-      } })
+    this.setState({ article })
   }
 
-  const form = state.articleform.forms['ADD_ARTICLE']
+  render () {
+    const article = this.state.article
 
-  return (
-    <div>
+    const buttons = [ 'h2' , 'p', 'blockquote', 'img', 'imgs' ]
+      .map((type, i) => <button key={i} onClick={() => this.addInput(type)}>{type}</button>)
+
+    const dynamicInputs = article.content
+      .map((element, i) => <Element key={i} element={element} />)
+
+    return (
       <div>
-        <form onSubmit={handleSubmit}>
-          <h5>Titre:</h5>
-          <input type="text" name="title" value={form.title} onChange={handleChange} />
-          <h5>Description:</h5>
-          <textarea type="text" name="shortDescription" value={form.shortDescription} onChange={handleChange}>
-          </textarea>
-          <h5>URL de l'image de couverture:</h5>
-          <input type="text" name="headerImage" value={form.headerImage} onChange={handleChange}>
-          </input>
-          <select name="section" value={form.section} onChange={handleChange}>
-            <option value="Choose">Choose</option>
-            <option value="Lab">Lab</option>
-            <option value="Projet">Projet</option>
-          </select>
-          <input type="submit" value="Submit" />
-        </form>
+        <form onSubmit={this.handleSubmit}>
+          <label>Titre:
+            <input type="text" name="title" value={article.title} onChange={this.handleChange} />
+          </label>
+          <label>Description:
+          <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+          </label>
+          <label>URL de l'image de couverture:
+            <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
+          </label>
 
-        <div>
-          <div className="ModalePic" style={{ background: `center / cover no-repeat url(${form.headerImage})`}}>
-            <div className="ModaleHeader FilterBlack" style={{ padding: '0.1rem 0.75rem' }}>
-              <h2 className="green">
-                {form.title}
-              </h2>
-              <h3>
-                {form.shortDescription}
-              </h3>
-              <p className="smallLink"> Site du projet </p>
-            </div>
+          <div>
+            <select name="section" value={article.section} onChange={this.handleChange}>
+              <option value="Choose">Choose</option>
+              <option value="Lab">Lab</option>
+              <option value="Projet">Projet</option>
+            </select>
           </div>
-        </div>
+          {dynamicInputs}
+          <div id="buttons" style={{ backgroundColor: 'cyan' }}>{buttons}</div>
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+        <ArticlePreview article={article} />
       </div>
+    )
+  }
 
-
-    </div>
-  )
 }
 
 export default ArticleForm

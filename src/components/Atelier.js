@@ -5,9 +5,15 @@ import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
 import AnchorLink from './AnchorLink.js'
 import EquipeMember from './EquipeMember.js'
+import store from '../store.js'
 
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
+
+  const state = store.getState()
+
+  const members = state.members.allMembers.map(member => <EquipeMember member={member} />)
+
   return (
     <div>
 
@@ -43,10 +49,7 @@ const Atelier = () => {
 
       <AtelierSection title={'Notre équipe'} bgColor="white">
         <div className="EquipeMembersContainer">
-          <EquipeMember id={1} />
-          <EquipeMember id={2} />
-          <EquipeMember id={3} />
-          <EquipeMember id={4} />
+          {members}
         </div>
       </AtelierSection>
 

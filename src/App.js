@@ -10,7 +10,7 @@ import Projets from './components/Projets.js'
 import './App.css'
 
 import store from './store'
-import { loadArticles, loadFilters } from './actions'
+import { loadArticles, loadFilters, loadMembers } from './actions'
 
 class App extends Component {
   componentDidMount () {
@@ -23,6 +23,10 @@ class App extends Component {
     fetch('http://localhost:3456/filters')
       .then(res => res.json())
       .then(filters => store.dispatch(loadFilters(filters)))
+
+    fetch('http://localhost:3456/equipe')
+      .then(res => res.json())
+      .then(members => store.dispatch(loadMembers(members)))
   }
 
   componentWillUnmount () {

@@ -54,6 +54,9 @@ const Atelier = () => {
       </AtelierSection>
 
       <AtelierSection title={'Notre histoire'} bgColor="white">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin vitae lectus ut commodo. In congue fringilla eros, nec accumsan massa imperdiet quis. In blandit maximus lacus pretium tristique. Nam sit amet pretium purus. Nunc et pulvinar sapien, vitae aliquet leo. Quisque nec mi risus. Sed lobortis lorem nec lacus porta pharetra. Nulla cursus quis eros pellentesque tincidunt. Proin commodo convallis sapien, vitae congue sem.
+        Vestibulum dignissim, elit vitae hendrerit malesuada, justo ipsum faucibus risus, vel mollis justo dui ut eros. Quisque sit amet libero augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent eleifend, augue nec euismod venenatis, metus sapien dignissim quam, sed tincidunt ipsum nisl non magna. Sed ex sapien, aliquam vel nibh eget, elementum laoreet lorem. Etiam quis luctus tortor. Vivamus condimentum convallis odio, et vehicula nisi. Maecenas eget purus sapien. Nullam neque nunc, mattis a ante non, efficitur imperdiet nisl. Nullam lobortis semper luctus. Nullam iaculis, tellus ac pretium accumsan, augue risus vulputate risus, nec gravida sem turpis non lacus. Sed sit amet velit semper, volutpat felis sed, euismod tortor. Ut id justo odio.
+        </p>
       </AtelierSection>
 
       <AtelierSection title={'Notre écosystème'} bgColor="#5aff6e">

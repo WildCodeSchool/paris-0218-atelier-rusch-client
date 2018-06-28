@@ -14,17 +14,18 @@
 	flex-direction: column;
  }
 
+ .memberContainer h6 {
+	text-align: center;
+	padding: 0.5rem 3rem;
+	line-height: 1.25rem;
+}
+
 .memberName {
 	font-family: 'HeimatMono', monospace;
 	font-size: 1.25rem;
 	padding-top: 2.5rem;
 	width: 100%;
 	text-align: center;
-}
-
-.memberContainer h6 {
-	text-align: center;
-	padding: 1rem 2rem;
 }
 
 .memberContent {
@@ -43,7 +44,7 @@
 
 .smallLinksContainer {
 	align-self: flex-start;
-	padding: 2rem 3rem 4rem 3rem;
+	padding: 2rem 3rem 4.5rem 3rem;
 }
 
 .EquipeMembersContainer .smallLink {

@@ -1,5 +1,6 @@
 import React from 'react'
 import './css/Atelier.css'
+import './css/Equipe.css'
 import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
 import AnchorLink from './AnchorLink.js'
@@ -41,7 +42,12 @@ const Atelier = () => {
       </AtelierSection>
 
       <AtelierSection title={'Notre équipe'} bgColor="white">
-        <EquipeMember />
+        <div className="EquipeMembersContainer">
+          <EquipeMember id={1} />
+          <EquipeMember id={2} />
+          <EquipeMember id={3} />
+          <EquipeMember id={4} />
+        </div>
       </AtelierSection>
 
       <AtelierSection title={'Notre histoire'} bgColor="white">

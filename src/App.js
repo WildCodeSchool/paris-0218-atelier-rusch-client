@@ -35,14 +35,14 @@ class App extends Component {
         <Nav />
         <div className="spacer"></div>
         <Router>
-          <Homepage path='/Homepage' />
-          <Homepage path='/Homepage/:articleId' />
-          <Atelier path='/Atelier' />
-          <Projets path='/Projets' />
-          <Projets path='/Projets/:articleId' />
-          <LabRusch path='/LabRusch' />
-          <LabRusch path='/LabRusch/:articleId' />
-          <Contact path='/Contact' />
+          <Homepage path='/' />
+          <Homepage path='/:articleId' />
+          <Atelier path='/atelier' />
+          <Projets path='/projets' />
+          <Projets path='/projets/:articleId' />
+          <LabRusch path='/lab' />
+          <LabRusch path='/lab/:articleId' />
+          <Contact path='/contact' />
         </Router>
       </div>
     )

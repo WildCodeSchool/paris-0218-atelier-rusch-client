@@ -3,16 +3,6 @@ import store from '../store'
 import ArticlePreview, { demoArticle } from './ArticlePreview.js'
 import './css/ArticleForm.css'
 
-const toInput = {
-  h2: () => <input type="text" />,
-  p: () => <textarea type="text" />,
-  blockquote: () => <input type="text" />,
-  img: () => <input type="text" />,
-  imgs: () => <div><input type="text" /><input type="text" /></div>,
-}
-
-const Element = ({ element }) => toInput[element.type](element)
-
 const freshArticle = {
   title: '',
   shortDescription: '',
@@ -21,17 +11,45 @@ const freshArticle = {
   content: []
 }
 
+
+const toInput = {
+  h2: ({ element, onChange, i }) => <input type="text" name={`content-${i}`} value={element.text} onChange={onChange} />,
+  p: () => <textarea type="text" />,
+  blockquote: () => <input type="text" />,
+  img: () => <input type="text" />,
+  imgs: () => <div><input type="text" /><input type="text" /></div>,
+}
+
+const Element = ({ element, onChange, i }) => toInput[element.type]({ element, onChange, i })
+
+
 class ArticleForm extends Component {
   state = {
-    article: freshArticle // demoArticle
+    article: demoArticle
   }
 
   handleChange = event => {
     const key = event.target.name
 
-    const article = {
-      ...this.state.article,
-      [key]: event.target.value
+    let article = {}
+
+    if (key.startsWith('content')) {
+      const index = key.split('-')[1]
+
+      const content = [ ...this.state.article.content ]
+      content[index].text = event.target.value // issue: either text or url or urls
+
+      console.log({ content })
+
+      article = {
+        ...this.state.article,
+        content: content
+      }
+    } else {
+      article = {
+        ...this.state.article,
+        [key]: event.target.value
+      }
     }
 
     this.setState({ article })
@@ -77,36 +95,41 @@ class ArticleForm extends Component {
     const buttons = [ 'h2' , 'p', 'blockquote', 'img', 'imgs' ]
       .map((type, i) => <button key={i} onClick={() => this.addInput(type)}>{type}</button>)
 
+
     const dynamicInputs = article.content
-      .map((element, i) => <Element key={i} element={element} />)
+      .map((element, i) => <Element key={i} i={i} element={element} onChange={this.handleChange} />)
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Titre:
-            <input type="text" name="title" value={article.title} onChange={this.handleChange} />
-          </label>
-          <label>Description:
-          <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
-          </label>
-          <label>URL de l'image de couverture:
-            <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
-          </label>
+      <div className="box">
+        <div className="item-left">
+          <form onSubmit={this.handleSubmit}>
+            <label>Titre:
+              <input type="text" name="title" value={article.title} onChange={this.handleChange} />
+            </label>
+            <label>Description:
+            <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+            </label>
+            <label>URL de l'image de couverture:
+              <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
+            </label>
 
-          <div>
-            <select name="section" value={article.section} onChange={this.handleChange}>
-              <option value="Choose">Choose</option>
-              <option value="Lab">Lab</option>
-              <option value="Projet">Projet</option>
-            </select>
-          </div>
-          {dynamicInputs}
-          <div id="buttons" style={{ backgroundColor: 'cyan' }}>{buttons}</div>
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
-        <ArticlePreview article={article} />
+            <div>
+              <select name="section" value={article.section} onChange={this.handleChange}>
+                <option value="Choose">Choose</option>
+                <option value="Lab">Lab</option>
+                <option value="Projet">Projet</option>
+              </select>
+            </div>
+            {dynamicInputs}
+            <div id="buttons" style={{ backgroundColor: 'cyan' }}>{buttons}</div>
+            <div>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+        <div className="item-right">
+          <ArticlePreview article={article} />
+        </div>
       </div>
     )
   }

@@ -8,3 +8,20 @@ button {
   margin: 0.3rem;
   background: orange;
 }
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-left {
+  margin: 1rem;
+  /*background-color: cyan;*/
+  flex: 1;
+}
+
+.item-right {
+  margin: 1rem;
+  /*background-color: cyan;*/
+  flex: 2;
+}

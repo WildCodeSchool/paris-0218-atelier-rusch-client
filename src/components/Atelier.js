@@ -14,12 +14,12 @@ const Atelier = () => {
         <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
         </h2>
         <div className="anchorLinksContainer">
-          <AnchorLink title={'Notre vison'} href={'#Notre vision'} />
-          <AnchorLink title={'Notre approche'} href={'#Notre approche'} />
-          <AnchorLink title={'Notre équipe'} href={'#Notre équipe'} />
-          <AnchorLink title={'Notre histoire'} href={'#Notre histoire'} />
-          <AnchorLink title={'Notre écosystème'} href={'#Notre écosystème'} />
-          <AnchorLink title={'Nos partenaires'} href={'#Nos partenaires'} />
+          <AnchorLink title={'Notre vision'} />
+          <AnchorLink title={'Notre approche'} />
+          <AnchorLink title={'Notre équipe'} />
+          <AnchorLink title={'Notre histoire'} />
+          <AnchorLink title={'Notre écosystème'} />
+          <AnchorLink title={'Nos partenaires'} />
         </div>
       </div>
 

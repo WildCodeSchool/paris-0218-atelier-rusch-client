@@ -1,6 +1,25 @@
+.headerAtelier {
+  background: no-repeat url("../img/rusch-pic-articles.png");
+  background-size: 100%;
+  /*padding: 5rem 0;*/
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerAtelier h2 {
+  color: white;
+  font-weight: 200;
+  margin-top: 0;
+  /*padding: 5rem 0;*/
+}
+
 .AtelierSection {
   width: 100vw;
   background-color: white;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
   padding-bottom: 5rem;
 }
+

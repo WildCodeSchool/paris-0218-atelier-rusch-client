@@ -1,10 +1,18 @@
 import React from 'react'
 import './css/Atelier.css'
+import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
 
 const Atelier = () => {
+  const viewportHeight = window.innerHeight - 55
   return (
     <div>
+
+      <div className="headerAtelier FilterBlack" style={{height: viewportHeight}}>
+      <h2>
+      <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
+      </h2>
+      </div>
 
       <AtelierSection title={'Notre vision'} bgColor="white">
         <p>

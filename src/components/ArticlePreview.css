@@ -1,0 +1,40 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article header {
+  /*height: 15rem;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 3rem;
+}
+
+.article h1 {
+  color: #00fc81;
+  font-size: 2rem;
+}
+
+.article h4 {
+  color: white;
+}
+
+.article blockquote {
+  color: #ffcb64;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.article footer {}
+
+.article p {
+  white-space: pre-wrap;
+}
+

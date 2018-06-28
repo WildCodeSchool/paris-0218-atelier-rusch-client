@@ -3,6 +3,7 @@ import './css/Atelier.css'
 import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
 import AnchorLink from './AnchorLink.js'
+import EquipeMember from './EquipeMember.js'
 
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
@@ -40,6 +41,7 @@ const Atelier = () => {
       </AtelierSection>
 
       <AtelierSection title={'Notre équipe'} bgColor="white">
+        <EquipeMember />
       </AtelierSection>
 
       <AtelierSection title={'Notre histoire'} bgColor="white">

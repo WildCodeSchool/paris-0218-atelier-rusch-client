@@ -1,0 +1,27 @@
+.memberPic {
+	border-radius: 50%;
+	width: 10vw;
+	margin-top: 5vw;
+}
+
+.memberContainer {
+	box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
+	width: 30vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+ }
+
+.memberName {
+	font-family: 'HeimatMono', monospace;
+	font-size: 1.25rem;
+	padding-top: 2.5rem;
+	width: 100%;
+	text-align: center;
+}
+
+.memberContainer h6 {
+	text-align: center;
+	padding: 1rem 2rem;
+}

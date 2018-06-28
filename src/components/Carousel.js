@@ -5,7 +5,6 @@ import './css/Carousel.css'
 import { Link } from '@reach/router'
 
 export const SlideShow = ({ articles }) => {
-
   const imagesElements = articles.map(article =>
     <Link key={article.id} to={String(article.id)}>
       <img src={article.headerImage} alt={article.title} />

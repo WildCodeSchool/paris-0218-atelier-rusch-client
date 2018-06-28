@@ -19,7 +19,7 @@ const Atelier = () => {
 
       <div className="headerAtelier FilterBlack" style={{height: viewportHeight}}>
         <h2>
-        <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
+          <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
         </h2>
         <div className="anchorLinksContainer">
           <AnchorLink title={'Notre vision'} />

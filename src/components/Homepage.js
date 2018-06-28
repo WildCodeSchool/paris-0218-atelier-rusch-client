@@ -22,7 +22,8 @@ const Homepage = (props) => {
     .slice(0, 3)
 
   const articleId = props.articleId
-  const selectedArticle = labArticles.find(article => String(article.id) === articleId)
+  const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)
+  console.log({articleId, selectedArticle})
   const modale = selectedArticle !== undefined
     ? <Modale article={selectedArticle} displayModale={'block'} />
     : ''

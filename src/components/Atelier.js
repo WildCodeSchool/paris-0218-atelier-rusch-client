@@ -2,6 +2,7 @@ import React from 'react'
 import './css/Atelier.css'
 import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
+import AnchorLink from './AnchorLink.js'
 
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
@@ -9,9 +10,17 @@ const Atelier = () => {
     <div>
 
       <div className="headerAtelier FilterBlack" style={{height: viewportHeight}}>
-      <h2>
-      <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
-      </h2>
+        <h2>
+        <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
+        </h2>
+        <div className="anchorLinksContainer">
+          <AnchorLink title={'Notre vison'} href={'#Notre vision'} />
+          <AnchorLink title={'Notre approche'} href={'#Notre approche'} />
+          <AnchorLink title={'Notre équipe'} href={'#Notre équipe'} />
+          <AnchorLink title={'Notre histoire'} href={'#Notre histoire'} />
+          <AnchorLink title={'Notre écosystème'} href={'#Notre écosystème'} />
+          <AnchorLink title={'Nos partenaires'} href={'#Nos partenaires'} />
+        </div>
       </div>
 
       <AtelierSection title={'Notre vision'} bgColor="white">
@@ -41,6 +50,9 @@ const Atelier = () => {
         L’atelier Rusch fonctionne en collaboration avec un éventail de savoir-faire, y compris techniques et industriels. Dans cette idée, nous avons installés notre bureau au sein d’ICIMontreuil, un atelier solidaire où se cotoient quotidiennement des artisans et makers de différents milieux.<br/>
         Ainsi, nous avons accès à un parc de machine qui nous permettent de facilement prototyper nos projet pour expérimenter nos avancées échelle 1, de développer des outils de facilitations ou des scénographies, ou d’engager nos chantier participatif sur des points techniques difficilement abordables pour un grand public. De plus, nous tissons des partenariats avec les entreprises que nous y croisons quotidiennements, qu’elles soient artisanales ou industriels.
         </p>
+      </AtelierSection>
+
+      <AtelierSection title={'Nos partenaires'} bgColor="white">
       </AtelierSection>
 
     </div>

@@ -98,7 +98,8 @@ class ArticleForm extends Component {
       tags: this.state.article.tags,
       content: JSON.stringify(this.state.article.content)
     }
-    // this.state.article
+    console.log(this.state.article)
+    console.log(article)
 
     fetch('http://localhost:3456/articles', {
       method: 'post',

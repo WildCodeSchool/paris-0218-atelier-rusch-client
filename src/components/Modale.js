@@ -19,6 +19,8 @@ const Modale = ({ article, displayModale }) => {
   // const reversedPathname = window.location.pathname.split('').reverse()
   // const index = reversedPathname.indexOf('/')
   // const parentContextPath = reversedPathname.slice(index + 1).reverse().join('')
+  if (typeof article.content === "string")
+    JSON.parse(article.content)
 
   const content = article.content
     .map((element, i) => <Element key={i} element={element} />)

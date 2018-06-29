@@ -9,6 +9,8 @@ const freshArticle = {
   shortDescription: '',
   section: '',
   headerImage: '',
+  tags:'',
+  hasStar:false,
   content: []
 }
 
@@ -66,7 +68,17 @@ class ArticleForm extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    const article = this.state.article
+    const article = {
+
+      title: this.state.article.title,
+      shortDescription: this.state.article.shortDescription,
+      headerImage: this.state.article.headerImage,
+      section: this.state.article.section,
+      hasStar: this.state.article.hasStar,
+      tags: this.state.article.tags,
+      content: JSON.stringify(this.state.article.content)
+    }
+    // this.state.article
 
     fetch('http://localhost:3456/articles', {
       method: 'post',
@@ -97,6 +109,8 @@ class ArticleForm extends Component {
   }
 
   render () {
+    console.log(this.state.hasStar)
+
     const article = this.state.article
 
     const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
@@ -120,7 +134,10 @@ class ArticleForm extends Component {
               <label>URL de l'image de couverture:
                 <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
               </label>
-
+              <label>Tag:
+                <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
+              </label>
+              <input type="checkbox" name="hasStar" onClick={() => this.setState({hasStar: !this.state.hasStar}) }  />
               <div>
                 <select name="section" value={article.section} onChange={this.handleChange}>
                   <option value="Choose">Choose</option>

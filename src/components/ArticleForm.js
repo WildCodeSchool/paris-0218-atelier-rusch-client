@@ -11,17 +11,26 @@ const freshArticle = {
   content: []
 }
 
+const H2 = ({ element, ...rest }) =>
+  <input type="text" value={element.value} {...rest} />
+
+const P = ({ element, ...rest }) =>
+  <textarea type="text" value={element.value} {...rest} />
+
+const Blockquote = ({ element, ...rest }) =>
+  <input type="text" value={element.value} {...rest} />
+
+const Imgs = ({ element, ...rest }) =>
+  <input type="text" value={element.value} {...rest} />
 
 const toInput = {
-  h2: ({ element, onChange, i }) => <input type="text" name={`content-${i}`} value={element.text} onChange={onChange} />,
-  p: () => <textarea type="text" />,
-  blockquote: () => <input type="text" />,
-  img: () => <input type="text" />,
-  imgs: () => <div><input type="text" /><input type="text" /></div>,
+  h2: (props) => <H2 {...props} />,
+  p: (props) => <P {...props} />,
+  blockquote: (props) => <Blockquote {...props} />,
+  imgs: (props) => <Imgs {...props} />,
 }
 
-const Element = ({ element, onChange, i }) => toInput[element.type]({ element, onChange, i })
-
+const Element = (props) => toInput[props.element.type](props)
 
 class ArticleForm extends Component {
   state = {
@@ -37,9 +46,7 @@ class ArticleForm extends Component {
       const index = key.split('-')[1]
 
       const content = [ ...this.state.article.content ]
-      content[index].text = event.target.value // issue: either text or url or urls
-
-      console.log({ content })
+      content[index].value = event.target.value // issue: either text or url or urls
 
       article = {
         ...this.state.article,
@@ -71,11 +78,10 @@ class ArticleForm extends Component {
 
   addInput = type => {
     const basicContentElement = {
-      h2: { "type": "h2", "text": "" },
-      p: { "type": "p", "text": "" },
-      blockquote: { "type": "blockquote", "text": "" },
-      img: { "type": "img", "url": "" },
-      imgs: { "type": "imgs", "urls": [ "", "" ] },
+      h2: { "type": "h2", "value": "" },
+      p: { "type": "p", "value": "" },
+      blockquote: { "type": "blockquote", "value": "" },
+      imgs: { "type": "imgs", "value": "" },
     }
 
     const article = {
@@ -92,40 +98,39 @@ class ArticleForm extends Component {
   render () {
     const article = this.state.article
 
-    const buttons = [ 'h2' , 'p', 'blockquote', 'img', 'imgs' ]
+    const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
       .map((type, i) => <button key={i} onClick={() => this.addInput(type)}>{type}</button>)
 
-
     const dynamicInputs = article.content
-      .map((element, i) => <Element key={i} i={i} element={element} onChange={this.handleChange} />)
+      .map((element, i) => <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />)
 
     return (
       <div className="box">
         <div className="item-left">
-          <form onSubmit={this.handleSubmit}>
-            <label>Titre:
-              <input type="text" name="title" value={article.title} onChange={this.handleChange} />
-            </label>
-            <label>Description:
-            <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
-            </label>
-            <label>URL de l'image de couverture:
-              <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
-            </label>
-
-            <div>
-              <select name="section" value={article.section} onChange={this.handleChange}>
-                <option value="Choose">Choose</option>
-                <option value="Lab">Lab</option>
-                <option value="Projet">Projet</option>
-              </select>
-            </div>
-            {dynamicInputs}
+          <div className="fixed">
             <div id="buttons" style={{ backgroundColor: 'cyan' }}>{buttons}</div>
-            <div>
+            <form onSubmit={this.handleSubmit}>
+              <label>Titre:
+                <input type="text" name="title" value={article.title} onChange={this.handleChange} />
+              </label>
+              <label>Description:
+              <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+              </label>
+              <label>URL de l'image de couverture:
+                <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
+              </label>
+
+              <div>
+                <select name="section" value={article.section} onChange={this.handleChange}>
+                  <option value="Choose">Choose</option>
+                  <option value="Lab">Lab</option>
+                  <option value="Projet">Projet</option>
+                </select>
+              </div>
+              {dynamicInputs}
               <input type="submit" value="Submit" />
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
         <div className="item-right">
           <ArticlePreview article={article} />

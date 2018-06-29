@@ -25,3 +25,7 @@ button {
   /*background-color: cyan;*/
   flex: 2;
 }
+
+.fixed {
+  position: fixed;
+}

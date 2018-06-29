@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import store from '../store'
 import ArticlePreview, { demoArticle } from './ArticlePreview.js'
+import Modale from './Modale.js'
 import './css/ArticleForm.css'
 
 const freshArticle = {
@@ -133,7 +134,7 @@ class ArticleForm extends Component {
           </div>
         </div>
         <div className="item-right">
-          <ArticlePreview article={article} />
+          <Modale article={article} />
         </div>
       </div>
     )

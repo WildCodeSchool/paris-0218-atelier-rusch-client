@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from '@reach/router'
 import './css/Nav.css'
 import NavLink from './NavLink.js'
+import Logo from './img/logo-rusch-noir.png'
 
 const Nav = ({onPageChange}) =>
   <div className="NavBar">
@@ -9,7 +10,7 @@ const Nav = ({onPageChange}) =>
     <div className='Logo'>
       <Link to='/'>
         <button className='HomeLink' value='Home'>
-          RUSCH
+          <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
         </button>
       </Link>
     </div>

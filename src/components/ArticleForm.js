@@ -34,7 +34,7 @@ const Element = (props) => toInput[props.element.type](props)
 
 class ArticleForm extends Component {
   state = {
-    article: demoArticle
+    article: freshArticle // demoArticle
   }
 
   handleChange = event => {

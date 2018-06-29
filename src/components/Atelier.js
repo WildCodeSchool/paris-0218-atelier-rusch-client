@@ -5,7 +5,14 @@ import './css/ArticleThumbnail.css'
 import AtelierSection from './AtelierSection.js'
 import AnchorLink from './AnchorLink.js'
 import EquipeMember from './EquipeMember.js'
+import Partenaire from './Partenaire.js'
 import store from '../store.js'
+
+import saclay from './img/paris-saclay.jpg'
+import sempervirens from './img/sempervirens.jpg'
+import massy from './img/massy.jpg'
+import jardinspiration from './img/jardinspiration.jpg'
+import erigere from './img/erigere.jpg'
 
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
@@ -67,6 +74,11 @@ const Atelier = () => {
       </AtelierSection>
 
       <AtelierSection title={'Nos partenaires'} bgColor="white">
+        <div className="PartenairesContainer">
+          <Partenaire image={saclay} description={'Partenaire privilégié de Atelier Rusch'} />
+          <Partenaire image={erigere} description={'Acteur responsable dans le domaine du logement social'} />
+          <Partenaire image={massy} description={'Capitale du nord de l’Essonne'} />
+        </div>
       </AtelierSection>
 
     </div>

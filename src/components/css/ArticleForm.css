@@ -28,3 +28,26 @@ button {
 .fixed {
   position: fixed;
 }
+
+input, textarea {
+  height: 35px;
+  width: 400px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+select {
+  height: 35px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: 'IBMPlex';
+}
+
+.addModule {
+  font-family: 'IBMPlex', sans-serif;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}

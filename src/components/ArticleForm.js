@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import store from '../store'
-import ArticlePreview, { demoArticle } from './ArticlePreview.js'
+// import ArticlePreview, { demoArticle } from './ArticlePreview.js'
 import Modale from './Modale.js'
 import './css/ArticleForm.css'
 
@@ -14,17 +14,37 @@ const freshArticle = {
   content: []
 }
 
-const H2 = ({ element, ...rest }) =>
-  <input type="text" value={element.value} {...rest} />
+const H2 = ({ element, ...rest }) => {
+  return (
+    <label>Ajouter un titre de paragraphe :
+    <input type="text" value={element.value} {...rest} />
+  </label>
+  )
+}
 
-const P = ({ element, ...rest }) =>
-  <textarea type="text" value={element.value} {...rest} />
+const P = ({ element, ...rest }) => {
+  return (
+    <label>Ajouter un paragraphe :
+    <textarea type="text" value={element.value} {...rest} />
+    </label>
+  )
+}
 
-const Blockquote = ({ element, ...rest }) =>
-  <input type="text" value={element.value} {...rest} />
+const Blockquote = ({ element, ...rest }) => {
+  return (
+    <label>Ajouter une citation :
+    <input type="text" value={element.value} {...rest} />
+    </label>
+  )
+}
 
-const Imgs = ({ element, ...rest }) =>
-  <input type="text" value={element.value} {...rest} />
+const Imgs = ({ element, ...rest }) => {
+  return (
+    <label>Ajouter des images :
+    <input type="text" value={element.value} {...rest} />
+    </label>
+  )
+}
 
 const toInput = {
   h2: (props) => <H2 {...props} />,
@@ -122,30 +142,34 @@ class ArticleForm extends Component {
     return (
       <div className="box">
         <div className="item-left">
-          <div className="fixed">
-            <div id="buttons" style={{ backgroundColor: 'cyan' }}>{buttons}</div>
+          <div style={{marginTop: '15px'}}>
             <form onSubmit={this.handleSubmit}>
-              <label>Titre:
+              <label>Titre de l'article :<br/>
                 <input type="text" name="title" value={article.title} onChange={this.handleChange} />
               </label>
-              <label>Description:
+              <label>Description de l'article :<br/>
               <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
               </label>
-              <label>URL de l'image de couverture:
+              <label>URL de l'image de couverture:<br/>
                 <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
               </label>
-              <label>Tag:
+              <label>Tags de l'article :<br/>
                 <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
               </label>
-              <input type="checkbox" name="hasStar" onClick={() => this.setState({hasStar: !this.state.hasStar}) }  />
+              <label>
+              <input style={{width: '20px', marginRight: '5px'}} type="checkbox" name="hasStar" onClick={() => this.setState({hasStar: !this.state.hasStar}) } />
+              Mettre à la une</label>
               <div>
                 <select name="section" value={article.section} onChange={this.handleChange}>
-                  <option value="Choose">Choose</option>
+                  <option value="Choose">Choisissez la section</option>
                   <option value="Lab">Lab</option>
                   <option value="Projet">Projet</option>
                 </select>
               </div>
+
+              <div className="addModule yellow">Ajouter un module :</div>
               {dynamicInputs}
+              <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />
             </form>
           </div>

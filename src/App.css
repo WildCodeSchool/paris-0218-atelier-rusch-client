@@ -9,6 +9,7 @@
 button {
   border: none;
   outline: 0;
+  width: 85px;
 }
 
 .spacer {

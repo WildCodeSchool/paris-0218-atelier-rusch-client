@@ -1,0 +1,53 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 0.8rem;
+  margin: 0.3rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-left {
+  margin: 1rem;
+  /*background-color: cyan;*/
+  flex: 1;
+}
+
+.item-right {
+  margin: 1rem;
+  /*background-color: cyan;*/
+  flex: 2;
+}
+
+.fixed {
+  position: fixed;
+}
+
+input, textarea {
+  height: 35px;
+  width: 400px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+select {
+  height: 35px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: 'IBMPlex';
+}
+
+.addModule {
+  font-family: 'IBMPlex', sans-serif;
+  font-size: 1.5rem;
+  margin: 20px 0;
+}

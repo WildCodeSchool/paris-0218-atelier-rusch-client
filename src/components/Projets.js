@@ -35,7 +35,6 @@ const Projets = (props) => {
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Tous nos projets super stylés avec des partenaires super stylés" />
         { filteredProjetsArticleThumbnails }
-        <ButtonCreateArticle />
       </div>
 
       {modale}

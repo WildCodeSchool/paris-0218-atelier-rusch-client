@@ -37,7 +37,6 @@ const LabRusch = (props) => {
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Plein d'articles super intéressants sur des sujets super intéressants" />
         { filteredLabArticleThumbnails }
-        <ButtonCreateArticle />
       </div>
 
       {modale}

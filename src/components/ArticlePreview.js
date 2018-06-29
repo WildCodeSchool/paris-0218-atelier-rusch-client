@@ -29,7 +29,7 @@ const toHTML = {
   p: ({ text }) => <p>{text}</p>,
   blockquote: ({ text }) => <blockquote>{text}</blockquote>,
   img: ({ url }) => <img src={url} />,
-  imgs: ({ urls }) => urls.map(url => <img src={url} />),
+  imgs: ({ urls }) => urls.map((url, i) => <img key={i} src={url} />),
 }
 
 const Element = ({ element }) => toHTML[element.type](element)

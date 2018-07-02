@@ -5,8 +5,6 @@ import { storiesOf } from '@storybook/react'
 import store from '../store.js'
 
 import Modale from '../components/Modale'
-
-import { ArticlePreview, demoArticle } from '../components/ArticlePreview'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import mockedMembers from '../mocks/members.json'

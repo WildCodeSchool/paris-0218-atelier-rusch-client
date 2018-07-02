@@ -14,8 +14,8 @@ const EquipeMember = ({member}) =>
       <u>Son parcours</u> :&nbsp;
       {member.carreer}</div>
     <div className="smallLinksContainer">
-      <a href={member.linkedIn} className="smallLink">Son LinkedIn</a>
-      <a href={member.portfolio} className="smallLink">Son Portfolio</a>
+      <a href={member.linkedIn} target='_blank' className="smallLink">Son LinkedIn</a>
+      <a href={member.portfolio} target='_blank' className="smallLink">Son Portfolio</a>
     </div>
   </div>
 

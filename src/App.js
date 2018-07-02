@@ -7,6 +7,7 @@ import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
+import Footer from './components/Footer.js'
 import './App.css'
 
 import store from './store'
@@ -48,6 +49,7 @@ class App extends Component {
           <LabRusch path='/lab/:articleId' />
           <Contact path='/contact' />
         </Router>
+        <Footer />
       </div>
     )
   }

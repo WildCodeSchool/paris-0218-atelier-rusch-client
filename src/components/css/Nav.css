@@ -2,6 +2,8 @@
   width: 100vw;
   background-color: white;
   position: fixed;
+  top: 0;
+  left: 0;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   display: flex;
@@ -24,9 +26,10 @@
 .NavBarLink {
   font-family: "IBMPlex", monospace;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border: none;
   margin: 0 4vw 0 4vw;
+  background-color: transparent;
 }
 
 .NavBarLink:hover {
@@ -42,7 +45,12 @@
   align-content: center;
 }
 
+.LogoImg {
+  width: 100px;
+}
+
 .HomeLink {
   cursor: pointer;
   font-size: 1rem;
+  background-color: transparent;
 }

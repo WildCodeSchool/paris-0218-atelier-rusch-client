@@ -1,0 +1,37 @@
+.headerAtelier {
+  background: no-repeat url("../img/rusch-pic-articles.png");
+  background-size: 100%;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.headerAtelier h2 {
+  color: white;
+  font-weight: 200;
+  margin-top: 0;
+  align-self: center;
+  padding-top: 15vh;
+}
+
+.AtelierSection {
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
+  padding-bottom: 5rem;
+}
+
+.anchorLinksContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  padding-bottom: 6vh;
+  align-self: flex-end;
+}
+
+.headerAtelier .smallLink {
+  margin: 0;
+}

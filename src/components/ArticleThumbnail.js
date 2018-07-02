@@ -1,25 +1,22 @@
 import React from 'react'
-import store from '../store.js'
-import { loadModale } from '../actions.js'
 import './css/ArticleThumbnail.css'
+import { Link } from '@reach/router'
 
 const ArticleThumbnail = ({ article, index, className, displayModale }) => {
   return (
-    <div className={className} style={{ zIndex: index }}
-      onClick={event => {
-      store.dispatch(loadModale(article.id, displayModale))
-      }
-    }>
-      <h6>
-        {article.tags}
-      </h6>
-      <h5>
-        {article.title}
-      </h5>
-      <h6>
-        {article.createdAt}
-      </h6>
-    </div>
+    <Link to={String(article.id)}>
+      <div className={className} style={{ zIndex: index }}>
+        <h6>
+          {article.tags}
+        </h6>
+        <h5>
+          {article.title}
+        </h5>
+        <h6>
+          {article.createdAt}
+        </h6>
+      </div>
+    </Link>
   )
 }
 

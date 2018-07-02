@@ -1,0 +1,37 @@
+.Footer {
+	width: 94vw;
+	height: 55px;
+	display: flex;
+	background-color: #2b2b2b;
+	color: white;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 3rem; 
+}
+
+.LogoRuschBlanc {
+	width: 75px;
+}
+
+.FooterText {
+	font-family: 'IBMPlex', sans-serif;
+	color: white;
+}
+
+.FooterText:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.SocialNetworks {
+	filter: invert(100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.SocialNetworks img {
+	width: 27px;
+	margin: 0 10px;
+}

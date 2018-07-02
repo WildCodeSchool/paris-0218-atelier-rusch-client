@@ -1,61 +1,56 @@
 import React, { Component } from 'react'
+import { Router } from '@reach/router'
+import ArticleForm from './components/ArticleForm'
 import Nav from './components/Nav.js'
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
-import ArticleForm from './components/ArticleForm.js'
-import CarouselForm from './components/CarouselForm.js'
-import Modale from './components/Modale.js'
+import Footer from './components/Footer.js'
 import './App.css'
 
 import store from './store'
-import { loadArticles, loadFilters, loadSlides } from './actions'
-
-const views = {
-  Home: Homepage,
-  Atelier: Atelier,
-  Projets: Projets,
-  LabRusch: LabRusch,
-  Contact: Contact,
-  articleForm: ArticleForm,
-  CarouselForm: CarouselForm,
-  Modale: Modale
-}
+import { loadArticles, loadFilters, loadMembers } from './actions'
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = store.getState()
-    store.subscribe(() => {
-      this.setState(store.getState())
-    })
-  }
-
   componentDidMount () {
-    // this.unsubscribe = store.subscribe(() => this.forceUpdate())
+    this.unsubscribe = store.subscribe(() => this.forceUpdate())
+
     fetch('http://localhost:3456/articles')
       .then(res => res.json())
       .then(articles => store.dispatch(loadArticles(articles)))
-    fetch('http://localhost:3456/homepage')
-      .then(res => res.json())
-      .then(slides => store.dispatch(loadSlides(slides)))
+
     fetch('http://localhost:3456/filters')
       .then(res => res.json())
       .then(filters => store.dispatch(loadFilters(filters)))
+
+    fetch('http://localhost:3456/equipe')
+      .then(res => res.json())
+      .then(members => store.dispatch(loadMembers(members)))
   }
 
-  // componentWillUnmount () {
-  //   this.unsubscribe()
-  // }
+  componentWillUnmount () {
+    this.unsubscribe()
+  }
 
   render () {
     return (
       <div className="App">
         <Nav />
         <div className="spacer"></div>
-        {views[this.state.router.pageActive](this.state)}
+        <Router>
+          <Homepage path='/Homepage' />
+          <Homepage path='/Homepage/:articleId' />
+          <Atelier path='/Atelier' />
+          <Projets path='/Projets' />
+          <Projets path='/Projets/:articleId' />
+          <LabRusch path='/LabRusch' />
+          <LabRusch path='/LabRusch/:articleId' />
+          <Contact path='/Contact' />
+          <ArticleForm path='/ArticleForm' />
+        </Router>
+        <Footer />
       </div>
     )
   }

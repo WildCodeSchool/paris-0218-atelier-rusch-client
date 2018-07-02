@@ -1,8 +1,8 @@
 import React from 'react'
 import './css/Contact.css'
-import Facebook from './img/facebook.png'
-import Instagram from './img/instagram.svg'
-import Linkedin from './img/linkedin.svg'
+import Facebook from './img/fb.png'
+import Instagram from './img/instagram.png'
+import Linkedin from './img/linkedin.png'
 
 const Contact = () =>
   <div>

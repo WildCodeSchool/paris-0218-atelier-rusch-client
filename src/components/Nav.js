@@ -1,24 +1,25 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import './css/Nav.css'
-import store from '../store.js'
-import { setActivePage } from '../actions.js'
 import NavLink from './NavLink.js'
+import Logo from './img/logo-rusch-noir.png'
 
 const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <button className='HomeLink' value='Home'
-        onClick={event => store.dispatch(setActivePage(event.target.value))}>
-        RUSCH
-      </button>
+      <Link to='/Homepage'>
+        <button className='HomeLink' value='Home'>
+          <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
+        </button>
+      </Link>
     </div>
 
     <div className="NavBarLinksContainer">
-      <NavLink label='Atelier' />
-      <NavLink label='Projets' />
-      <NavLink label='LabRusch' />
-      <NavLink label='Contact' />
+      <NavLink to='Atelier' label='Atelier' />
+      <NavLink to='Projets' label='Projets' />
+      <NavLink to='LabRusch' label='LabRusch' />
+      <NavLink to='Contact' label='Contact' />
     </div>
 
   </div>

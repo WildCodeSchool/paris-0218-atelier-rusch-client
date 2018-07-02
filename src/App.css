@@ -4,6 +4,11 @@
   margin: 0;
   padding: 0;
   color: #2b2b2b;
+  transition: background-color 0.2s ease-out;
+}
+
+*:hover {
+  transition: background-color 0.2s ease-in;
 }
 
 button {
@@ -18,6 +23,15 @@ button {
 
 .FilterBlack {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+a {
+  text-decoration: none;
+}
+
+[tabindex] {
+  outline: 0;
+  width: 100vw;
 }
 
 /* TYPEFACES
@@ -37,8 +51,8 @@ button {
 
 @font-face {
   font-family: "HeimatMono";
-  src: url("./fonts/HeimatMonoBold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("./fonts/HeimatMonoSemiBold.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -64,14 +78,15 @@ button {
 }
 
 p {
-  font-family: 'IBMPlex';
+  font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
-  margin: 5rem 15rem;
-  line-height: 1.5rem;
+  margin: 2rem 15rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
 }
 
 h1 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 200;
   font-size: 1.7rem;
   padding: 0 5rem 0 5rem;
@@ -80,17 +95,18 @@ h1 {
 
 h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
+
   /* PAGE MODALE = TITLE */
-  font-family: 'HeimatMono';
-  font-weight: 600;
-  font-size: 2rem;
+  font-family: 'HeimatMono', monospace;
+  font-weight: 400;
+  font-size: 2.5rem;
   margin: 5rem 14rem 0 15rem;
-  line-height: 3rem;
+  line-height: 3.5rem;
 }
 
 h3 {
   /* PAGE MODALE = SHORT DESCRIPTION */
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-weight: 100;
   font-size: 1.5rem;
   margin: 1.15rem 14rem 0 15rem;
@@ -100,23 +116,28 @@ h3 {
 
 h4 {
   /* PAGE MODALE = PARAGRAPH TITLE */
+  font-family: 'IBMPlex', sans-serif;
+  font-weight: 600;
+  margin: 0 15rem;
+  padding-top: 5rem;
+  font-size: 2rem;
 }
 
 h5 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 800;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
   margin: 0 2rem;
   transition: 0.2s ease-in;
 }
 
 h6 {
-  font-family: 'HeimatMono', monospace;  
+  font-family: 'HeimatMono', monospace;
   font-weight: 200;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .bigLink {
@@ -126,10 +147,9 @@ h6 {
 }
 
 .smallLink {
-  /* Links in yellow and underlined : on modale page and atelier page */
-  font-family: "IBMPlex";
+  font-family: "IBMPlex", sans-serif;
   font-weight: 200;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #fbd052;
   text-decoration: underline;
   margin: 1.15rem 15rem 5rem 15rem;
@@ -138,24 +158,17 @@ h6 {
 
 .quote {
   /* Quotes in yellow and big size : on modale page and atelier page */
-  font-family: "HeimatMono";
-  font-weight: 700;
-  font-size: ;
+  font-family: "HeimatMono", monospace;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 2.25rem;
+  line-height: 3rem;
+  padding: 3rem 7rem;
   color: #fbd052;
 }
 
 .bold {
-  font-weight: 700;
-}
-
-/* Transitions */
-
-* {
-  transition: background-color 0.2s ease-out;
-}
-
-*:hover {
-  transition: background-color 0.2s ease-in;
+  font-weight: 400;
 }
 
 /* Colors */
@@ -167,7 +180,8 @@ h6 {
 .darkgrey {
   color: #2b2b2b;
 }
- .green {
+
+.green {
   color: #5aff6e;
- }
+}
 

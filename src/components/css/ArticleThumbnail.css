@@ -15,6 +15,15 @@
   text-align: center;
 }
 
+.ArticleThumbnailClassic > * {
+  width: 25vw;
+}
+
+.ArticleThumbnailHasStar h6 {
+  transition: 0.2s ease-in;
+  color: white;
+}
+
 .ArticleThumbnailClassic h6 {
   transition: 0.2s ease-in;
   color: #fbd052;
@@ -38,11 +47,6 @@
 .ArticleThumbnailHasStar h5 {
   transition: 0.2s ease-in;
   color: #5aff6e;
-}
-
-.ArticleThumbnailHasStar h6 {
-  transition: 0.2s ease-in;
-  color: white;
 }
 
 .ArticleThumbnailHasStar:hover h6 {

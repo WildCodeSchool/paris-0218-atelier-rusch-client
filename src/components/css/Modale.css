@@ -1,26 +1,25 @@
 .ModaleHeader {
-	backdrop-filter: saturate(0);
-  	-webkit-backdrop-filter: saturate(0);
+  backdrop-filter: saturate(0);
+  -webkit-backdrop-filter: saturate(0);
 }
 
-
 .ModaleBlock {
-	width: 100vw;
-	height: 100vh;
-	z-index: 5000;
-	position: fixed;
-	top: 0;
-	overflow: scroll;
-	background-color: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5000;
+  position: fixed;
+  top: 0;
+  overflow: scroll;
+  background-color: white;
 }
 
 .closeModaleBtn {
-	position: fixed;
-	right: 25px;
-	top: 20px;
-	font-size: 1.75rem;
-	background-color: transparent;
-	cursor: pointer;
-	z-index: 5000;
+  position: fixed;
+  right: 25px;
+  top: 20px;
+  font-size: 1.75rem;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 5000;
 }
 

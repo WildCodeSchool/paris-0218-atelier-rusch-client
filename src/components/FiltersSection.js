@@ -8,7 +8,7 @@ const FiltersSection = () => {
 
   const filtersNames = state.filters.allFilters
     .filter(filter => filter.section === state.router.pageActive)
-    .map(filter => <Filter filter={filter} articles={state.articles.allArticles} />)
+    .map((filter, i) => <Filter key={i} filter={filter} articles={state.articles.allArticles} />)
 
   return (
     <div className="FiltersSection">

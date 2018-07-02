@@ -1,33 +1,33 @@
 .RedirectingBlockToAllArticles {
-	width: 25vw;
-	height: 25vw;
-	background-color: #5aff6e;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-end;
+  width: 25vw;
+  height: 25vw;
+  background-color: #5aff6e;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .arrow {
-	width: 25vw;
-	text-align: center;
-	align-self: center;
-	padding-top: 6rem;
-	font-size: 4rem;
-	font-family: sans-serif;
+  width: 25vw;
+  text-align: center;
+  align-self: center;
+  padding-top: 6rem;
+  font-size: 4rem;
+  font-family: sans-serif;
 }
 
 .RedirectingBlockToAllArticles h6 {
-	padding-bottom: 2.5rem;
-	text-align: center;
+  padding-bottom: 2.5rem;
+  text-align: center;
 }
 
 .RedirectingBlockToAllArticles:hover {
-	background-color: #2b2b2b;
+  background-color: #2b2b2b;
 }
 
 .RedirectingBlockToAllArticles:hover h6,
 .RedirectingBlockToAllArticles:hover .arrow {
-	color: #5aff6e;
+  color: #5aff6e;
 }

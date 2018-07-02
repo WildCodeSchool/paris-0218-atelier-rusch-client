@@ -14,20 +14,20 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.carousel .thumbs-wrapper  {
+.carousel .thumbs-wrapper {
   width: 500px;
   border: solid yellow 5px;
   display: none;
 }
 
- .carousel .control-dots {
+.carousel .control-dots {
   border: solid red 5px;
   display: none;
- }
+}
 
 .thumbs-wrapper .axis-vertical {
   border: solid red 5px;
- }
+}
 
 .carousel .carousel-status {
   display: none;
@@ -38,5 +38,5 @@
   bottom: 240px;
   right: 400px;
   color: red;
-  text-align: center;  
+  text-align: center;
 }

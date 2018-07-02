@@ -1,7 +1,6 @@
 import React from 'react'
 import './css/Modale.css'
-import store from '../store.js'
-import { Link, redirectTo } from "@reach/router"
+import { Link } from '@reach/router'
 
 const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
@@ -15,7 +14,6 @@ const Element = ({ element }) => toHTML[element.type](element)
 
 
 const Modale = ({ article, displayModale }) => {
-
   // const reversedPathname = window.location.pathname.split('').reverse()
   // const index = reversedPathname.indexOf('/')
   // const parentContextPath = reversedPathname.slice(index + 1).reverse().join('')
@@ -26,12 +24,12 @@ const Modale = ({ article, displayModale }) => {
     .map((element, i) => <Element key={i} element={element} />)
 
 
-  const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
+  const parentContextPath = window.location.pathname.replace(/\d+$/, '')
 
   return (
     <div className="ModaleBlock">
       <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
-      <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
+      <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})` }}>
         <div className="ModaleHeader FilterBlack" style={{ padding: '0.1rem 0.75rem' }}>
           <h2 className="green">
             {article.title}
@@ -50,4 +48,3 @@ const Modale = ({ article, displayModale }) => {
 }
 
 export default Modale
-

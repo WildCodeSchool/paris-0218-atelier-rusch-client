@@ -1,0 +1,52 @@
+.memberPic {
+  border-radius: 50%;
+  width: 10vw;
+  margin-top: 5vw;
+}
+
+.memberContainer {
+  box-shadow: -10px 7px 50px rgba(0, 0, 0, 0.075);
+  width: 30vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.memberContainer h6 {
+  text-align: center;
+  padding: 0.5rem 3rem;
+  line-height: 1.25rem;
+}
+
+.memberName {
+  font-family: 'HeimatMono', monospace;
+  font-size: 1.25rem;
+  padding-top: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.memberContent {
+  font-family: 'IBMPlex', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  padding: 1rem 3rem 0 3rem;
+}
+
+.EquipeMembersContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 3rem 15rem;
+}
+
+.smallLinksContainer {
+  align-self: flex-start;
+  padding: 2rem 3rem 4.5rem 3rem;
+}
+
+.EquipeMembersContainer .smallLink {
+  margin: 0 4.5rem 0 0;
+}

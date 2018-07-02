@@ -1,8 +1,6 @@
 import React from 'react'
-import store from '../store.js'
 import './css/ArticleThumbnail.css'
 import { Link } from '@reach/router'
-
 
 const ArticleThumbnail = ({ article, index, className, displayModale }) => {
   return (

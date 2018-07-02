@@ -5,8 +5,7 @@ import Modale from './Modale.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { getActiveFilters, applyFiltersToSection } from './Filtering.js'
-
+import { applyFiltersToSection } from './FilteringFunctions.js'
 
 const determineClassName = article => article.hasStar === 'true'
   ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack'
@@ -38,7 +37,6 @@ const LabRusch = (props) => {
       <div className="ArticlesBlock">
         <SectionTitleBlock message="Plein d'articles super intéressants sur des sujets super intéressants" />
         { filteredLabArticleThumbnails }
-        <ButtonCreateArticle />
       </div>
 
       {modale}

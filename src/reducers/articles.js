@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     }
   }
 
-  if (action.type === 'LOAD_MODALE'){
+  if (action.type === 'LOAD_MODALE') {
     const selectedArticle = state.allArticles.find(article => article.id === action.id)
 
     return {

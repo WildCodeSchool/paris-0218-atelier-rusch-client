@@ -3,7 +3,7 @@ form {
   flex-direction: column;
 }
 
-button {
+form button {
   padding: 0.8rem;
   margin: 0.3rem;
 }

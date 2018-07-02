@@ -21,8 +21,6 @@ const Modale = ({ article, displayModale }) => {
   // const parentContextPath = reversedPathname.slice(index + 1).reverse().join('')
   // if (typeof article.content === "string")
   //   JSON.parse(article.content)
-  console.log("COUCOU", article.content)
-  console.log("baare ouate", JSON.parse(article.content))
 
   const parseContent = JSON.parse(article.content)
 

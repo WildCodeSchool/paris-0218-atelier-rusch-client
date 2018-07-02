@@ -11,7 +11,6 @@ import store from '../store.js'
 import saclay from './img/paris-saclay.jpg'
 import sempervirens from './img/sempervirens.jpg'
 import massy from './img/massy.jpg'
-import jardinspiration from './img/jardinspiration.jpg'
 import erigere from './img/erigere.jpg'
 
 const Atelier = () => {

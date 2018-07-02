@@ -8,7 +8,7 @@ const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <Link to='/'>
+      <Link to='/Homepage'>
         <button className='HomeLink' value='Home'>
           <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
         </button>
@@ -16,10 +16,10 @@ const Nav = ({onPageChange}) =>
     </div>
 
     <div className="NavBarLinksContainer">
-      <NavLink to='atelier' label='Atelier' />
-      <NavLink to='projets' label='Projets' />
-      <NavLink to='lab' label='LabRusch' />
-      <NavLink to='contact' label='Contact' />
+      <NavLink to='Atelier' label='Atelier' />
+      <NavLink to='Projets' label='Projets' />
+      <NavLink to='LabRusch' label='LabRusch' />
+      <NavLink to='Contact' label='Contact' />
     </div>
 
   </div>

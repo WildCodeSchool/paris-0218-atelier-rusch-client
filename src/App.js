@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
-
+import ArticleForm from './components/ArticleForm'
 import Nav from './components/Nav.js'
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
@@ -40,14 +40,15 @@ class App extends Component {
         <Nav />
         <div className="spacer"></div>
         <Router>
-          <Homepage path='/' />
-          <Homepage path='/:articleId' />
-          <Atelier path='/atelier' />
-          <Projets path='/projets' />
-          <Projets path='/projets/:articleId' />
-          <LabRusch path='/lab' />
-          <LabRusch path='/lab/:articleId' />
+          <Homepage path='/Homepage' />
+          <Homepage path='/Homepage/:articleId' />
+          <Atelier path='/Atelier' />
+          <Projets path='/Projets' />
+          <Projets path='/Projets/:articleId' />
+          <LabRusch path='/LabRusch' />
+          <LabRusch path='/LabRusch/:articleId' />
           <Contact path='/contact' />
+          <ArticleForm path='/ArticleForm' />
         </Router>
         <Footer />
       </div>

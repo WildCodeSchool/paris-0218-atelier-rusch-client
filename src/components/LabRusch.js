@@ -5,7 +5,7 @@ import Modale from './Modale.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
-import { applyFiltersToSection } from './FilteringFunctions.js'
+import { getActiveFilters, applyFiltersToSection } from './FilteringFunctions.js'
 
 const determineClassName = article => article.hasStar === 'true'
   ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack'

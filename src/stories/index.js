@@ -9,8 +9,6 @@ import FormExemple from '../components/FormExemple'
 import ArticleForm from '../components/ArticleForm'
 import Contact from '../components/Contact'
 
-
-
 import RedirectingBlockToAllArticles from '../components/RedirectingBlockToAllArticles'
 
 // import global App stylesheet

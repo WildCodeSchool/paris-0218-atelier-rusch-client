@@ -1,0 +1,13 @@
+img
+{
+    display: inline;
+    /* flex-wrap: wrap; */
+    width: 2rem;
+    margin: 2rem;    
+}
+
+
+iframe
+{
+    filter: sepia(40%);
+}

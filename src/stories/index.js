@@ -8,8 +8,7 @@ import Modale from '../components/Modale'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import mockedArticles from '../mocks/articles.json'
 import mockedMembers from '../mocks/members.json'
-import FormExemple from '../components/FormExemple'
-import ArticleForm from '../components/ArticleForm'
+import Contact from '../components/Contact'
 import Atelier from '../components/Atelier'
 import EquipeMember from '../components/EquipeMember'
 
@@ -39,5 +38,7 @@ storiesOf('Modale', module)
 storiesOf('Page Atelier', module)
   .add('Page Atelier', () => <Atelier />)
 
+storiesOf('Contact', module)
+  .add('contact page', () => <Contact />)
 storiesOf('Section Équipe', module)
   .add('Team member', () => <EquipeMember member={mockedMembers[0]}/>)

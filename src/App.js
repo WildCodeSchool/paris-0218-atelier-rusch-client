@@ -47,7 +47,7 @@ class App extends Component {
           <Projets path='/Projets/:articleId' />
           <LabRusch path='/LabRusch' />
           <LabRusch path='/LabRusch/:articleId' />
-          <Contact path='/contact' />
+          <Contact path='/Contact' />
           <ArticleForm path='/ArticleForm' />
         </Router>
         <Footer />

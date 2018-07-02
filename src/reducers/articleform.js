@@ -4,8 +4,7 @@ const initialState = {
       title: '',
       shortDescription: '',
       headerImage: '',
-      section: '',
-      content: []
+      section: ''
     }
   }
 }

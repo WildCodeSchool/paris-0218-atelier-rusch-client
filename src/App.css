@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+[tabindex] {
+  outline: 0;
+  width: 100vw;
+}
+
 /* TYPEFACES
   font-face & font-weight
 

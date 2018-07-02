@@ -37,9 +37,10 @@ const Homepage = (props) => {
             <img className="LogoImg" src={Logo} alt="logo Rusch" />
           </div>
 
-          <div className="CarrouselBlock">
+       	  <div className="CarrouselBlock">
             <SlideShow articles={slideshowArticles} />
           </div>
+
         </div>
 
         <div className="IntroBlockRight">

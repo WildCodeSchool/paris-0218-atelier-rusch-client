@@ -18,6 +18,11 @@
 	color: white;
 }
 
+.FooterText:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .SocialNetworks {
 	filter: invert(100%);
 	display: flex;

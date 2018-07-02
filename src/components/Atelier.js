@@ -40,17 +40,20 @@ const Atelier = () => {
 
       <AtelierSection title={'Notre vision'} bgColor="white">
         <p>
-        Nous pensons que le design est une expertise qui permet de concevoir des projets responsables. Mais contrairement à des approches plus techniques, la nature transversal du design lui donne la capacité de faire dialoguer expertises variés, et de s’aventurer dans des domaines qui peuvent lui paraître éloigné, ou encore de compléter d’autres corps de métier. Évidemment, le design n’a pas réponse à tout, et se doit donc de d’avancer en coopération avec les savoir-faire et expertises propres au développement de chaque projets : qu’elles soient industrielles, sociales, culturelles, et bien sûr quotidienne.
+        Inspiré des techniques d’innovations sociales des pays nordiques et des méthodes du design, l’Atelier Rusch se donne pour mission de véhiculer et d’expérimenter les méthodes créatives d’organisation de l’intelligence collective de manière transversale et participative. Avec ces méthodes, nous veillons à ce que chacun se réapproprie des lieux, des thématiques, des projets par le FAIRE avec comme variable principale : l’expérience utilisateur.
         </p>
         <p className="quote">Nous sommes convaincus que la participation citoyenne est une des clefs de l’innovation. </p>
-        <p>Non pas par sa simple concertation, mais par son intégration dans la conception. Ainsi, les usagers deviennent moteur des transformations de leur environnements.
+        <p>Non pas par sa simple concertation, mais par son intégration dans la conception de projet. Ainsi, les usagers deviennent moteurs et acteurs des transformations de leur environnement.
         </p>
       </AtelierSection>
 
       <AtelierSection title={'Notre approche'} bgColor="white">
+        <p>
+        Notre cœur de métier : la co-conception de services, d’espaces et de projets collaboratifs avec les méthodes du design. Nous accompagnons les collectivités et les entreprises à réaliser leurs objectifs et plans d’actions par une concrétisation tangible et matérielle.
+        </p>
         <p className="quote">Le design est une approche avant tout centrée sur les usagers.</p>
         <p>
-        Nous les intégrons aux développement de nos projets en progressant à l’aide d’ateliers participatifs. Ils sont toujours uniques dans leur forme et leur fond, pour s’adapter à leur public, leurs enjeux, et leurs contextes. Ces ateliers nous accompagnent durant tout le développement du projet et condensent une approche de designer : depuis l’exploration d’idées, jusqu’à des chantiers participatifs, en passant par des phases de co-conception. En les utilisant comme des vecteurs de dialogue entre les acteurs et les usagers, nous produisons une matière qui mêle des qualités sensibles et techniques. Ainsi, nous nourrissons le développement de projets innovants, tout en restant au plus proches des besoins des usagers.
+        Nous les intégrons au développement de nos projets dans une méthodologie progressive de l’exploration d’idées, jusqu’à des chantiers participatifs, en passant par des phases de co-conception ouverte à la participation de toutes les parties prenantes. Nos méthodes participatives sont toujours uniques dans leurs formes et leurs fonds, pour s’adapter aux publics, aux enjeux, et aux contextes. Les techniques créatives que nous concevons sont vectrices de dialogues entre les acteurs et les usagers, elles produisent une matière qui mêle des qualités sensibles et techniques. Ainsi, nous nourrissons le développement de projets innovants, tout en restant au plus proches des besoins des usagers.
         </p>
       </AtelierSection>
 
@@ -61,8 +64,14 @@ const Atelier = () => {
       </AtelierSection>
 
       <AtelierSection title={'Notre histoire'} bgColor="white">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin vitae lectus ut commodo. In congue fringilla eros, nec accumsan massa imperdiet quis. In blandit maximus lacus pretium tristique. Nam sit amet pretium purus. Nunc et pulvinar sapien, vitae aliquet leo. Quisque nec mi risus. Sed lobortis lorem nec lacus porta pharetra. Nulla cursus quis eros pellentesque tincidunt. Proin commodo convallis sapien, vitae congue sem.
-        Vestibulum dignissim, elit vitae hendrerit malesuada, justo ipsum faucibus risus, vel mollis justo dui ut eros. Quisque sit amet libero augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent eleifend, augue nec euismod venenatis, metus sapien dignissim quam, sed tincidunt ipsum nisl non magna. Sed ex sapien, aliquam vel nibh eget, elementum laoreet lorem. Etiam quis luctus tortor. Vivamus condimentum convallis odio, et vehicula nisi. Maecenas eget purus sapien. Nullam neque nunc, mattis a ante non, efficitur imperdiet nisl. Nullam lobortis semper luctus. Nullam iaculis, tellus ac pretium accumsan, augue risus vulputate risus, nec gravida sem turpis non lacus. Sed sit amet velit semper, volutpat felis sed, euismod tortor. Ut id justo odio.
+        <p>
+        Né de la rencontre du design et des problématiques urbaines, l’Atelier Rusch est d’abord un collectif hybride né en 2014 composé de designers, d’urbanistes, de cartographes et d’économistes. Le collectif RUSCH doit son nom aux racines germaniques de ses fondateurs, de sa proximité avec le mot « ruche » qui symbolise le travail d’équipe et de l’anglais « rush » qui se traduit par la précipitation dans laquelle on peut réaliser des projets qui manque de sens si on n'y ajoute pas le C de Co-construire avec l’usager et de Cœur (en lien avec les tatouages de nos mentors respectifs rencontrés tout au long de nos parcours ;-).
+        </p>
+        <p className='quote'>
+        Durant plus de deux ans, le collectif s’est consacré à la rédaction d’articles et l’expérimentation d’outils d’aide à la participation à la fois avec le secteur public et le secteur privé. 
+        </p>
+        <p>
+        Fort de son succès, en novembre 2016, le collectif Rusch devient l’Atelier Rusch et agrandit son équipe de designers et d’innovateurs pour répondre à de nouveaux projets toujours plus ambitieux, créatifs et co-construit.
         </p>
       </AtelierSection>
 

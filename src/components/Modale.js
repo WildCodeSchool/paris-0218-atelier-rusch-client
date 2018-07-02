@@ -22,9 +22,17 @@ const Modale = ({ article, displayModale }) => {
   // if (typeof article.content === "string")
   //   JSON.parse(article.content)
 
-  const parseContent = JSON.parse(article.content)
+  console.log('KOOKOO', article)
+  let treatedContent = ''
 
-  const content = parseContent
+  if (typeof article.content === "string") {
+    treatedContent = JSON.parse(article.content)
+  }
+  else {
+    treatedContent = article.content
+  }
+
+  const content = treatedContent
     .map((element, i) => <Element key={i} element={element} />)
 
 

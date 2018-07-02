@@ -3,6 +3,7 @@ import store from '../store'
 // import ArticlePreview, { demoArticle } from './ArticlePreview.js'
 import Modale from './Modale.js'
 import './css/ArticleForm.css'
+import { loadArticles } from '../actions.js'
 
 const freshArticle = {
   title: '',
@@ -108,6 +109,14 @@ class ArticleForm extends Component {
         'Content-Type': 'application/json'
       }
     })
+
+    
+  }
+
+  handleFinalSubmit = event => {
+    fetch('http://localhost:3456/articles')
+      .then(res => res.json())
+      .then(articles => store.dispatch(loadArticles(articles)))
   }
 
   addInput = type => {
@@ -171,7 +180,7 @@ class ArticleForm extends Component {
               <div className="addModule yellow">Ajouter un module :</div>
               {dynamicInputs}
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" onClick={this.handleFinalSubmit} />
             </form>
           </div>
         </div>

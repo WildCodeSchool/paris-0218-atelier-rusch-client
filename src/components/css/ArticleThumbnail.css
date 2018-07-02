@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.ArticleThumbnailClassic > * {
+  width: 25vw;
+}
+
 .ArticleThumbnailHasStar h6 {
   transition: 0.2s ease-in;
   color: white;

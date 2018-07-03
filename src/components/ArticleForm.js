@@ -80,7 +80,7 @@ const Element = (props) => toInput[props.element.type](props)
 
 class ArticleForm extends Component {
   state = {
-    article: freshArticle // demoArticle
+    article: this.props.article || freshArticle
   }
 
   handleChange = event => {

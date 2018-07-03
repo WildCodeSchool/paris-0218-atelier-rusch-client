@@ -140,6 +140,11 @@ h6 {
   font-size: 0.85rem;
 }
 
+.currentText {
+  font-family: 'IBMPlex', sans-serif;
+  font-weight: 200;
+}
+
 .bigLink {
   padding-bottom: 1px;
   border-bottom: solid 3px #5aff6e;
@@ -165,6 +170,13 @@ h6 {
   line-height: 3rem;
   padding: 3rem 7rem;
   color: #fbd052;
+}
+
+.AdminTitles {
+  font-family: 'IBMPlex', sans-serif;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  width: 100vw;
 }
 
 .bold {

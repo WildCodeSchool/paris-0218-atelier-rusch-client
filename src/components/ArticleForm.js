@@ -18,7 +18,7 @@ const freshArticle = {
 const H2 = ({ element, ...rest }) => {
   return (
     <label>Ajouter un titre de paragraphe :
-    <input type="text" value={element.value} {...rest} />
+    <input type="text" value={element.value} {...rest} autoFocus />
   </label>
   )
 }
@@ -26,7 +26,7 @@ const H2 = ({ element, ...rest }) => {
 const P = ({ element, ...rest }) => {
   return (
     <label>Ajouter un paragraphe :
-    <textarea type="text" value={element.value} {...rest} />
+    <textarea type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -34,7 +34,7 @@ const P = ({ element, ...rest }) => {
 const Blockquote = ({ element, ...rest }) => {
   return (
     <label>Ajouter une citation :
-    <input type="text" value={element.value} {...rest} />
+    <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -42,7 +42,7 @@ const Blockquote = ({ element, ...rest }) => {
 const Imgs = ({ element, ...rest }) => {
   return (
     <label>Ajouter des images :
-    <input type="text" value={element.value} {...rest} />
+    <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -100,7 +100,7 @@ class ArticleForm extends Component {
       content: JSON.stringify(this.state.article.content)
     }
     console.log(this.state.article)
-    console.log(article)
+    console.log('submit', article)
 
     fetch('http://localhost:3456/articles', {
       method: 'post',
@@ -109,14 +109,6 @@ class ArticleForm extends Component {
         'Content-Type': 'application/json'
       }
     })
-
-    
-  }
-
-  handleFinalSubmit = event => {
-    fetch('http://localhost:3456/articles')
-      .then(res => res.json())
-      .then(articles => store.dispatch(loadArticles(articles)))
   }
 
   addInput = type => {
@@ -144,7 +136,7 @@ class ArticleForm extends Component {
     const article = this.state.article
 
     const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
-      .map((type, i) => <button key={i} onClick={() => this.addInput(type)}>{type}</button>)
+      .map((type, i) => <input type='button' key={i} onClick={() => this.addInput(type)} value={type} />)
 
     const dynamicInputs = article.content
       .map((element, i) => <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />)
@@ -180,7 +172,7 @@ class ArticleForm extends Component {
               <div className="addModule yellow">Ajouter un module :</div>
               {dynamicInputs}
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
-              <input type="submit" value="Submit" onClick={this.handleFinalSubmit} />
+              <input type="submit" value="Submit" />
             </form>
           </div>
         </div>

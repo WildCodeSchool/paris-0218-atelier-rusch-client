@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav.js'
 import './css/Atelier.css'
 import './css/Equipe.css'
 import './css/ArticleThumbnail.css'
@@ -18,11 +19,12 @@ const Atelier = () => {
 
   const state = store.getState()
 
-  const members = state.members.allMembers.map(member => <EquipeMember member={member} />)
+  const members = state.members.allMembers.map(member => <EquipeMember key={member.id} member={member} />)
 
   return (
     <div>
-
+      <Nav />
+      <div className="spacer"></div>
       <div className="headerAtelier FilterBlack" style={{height: viewportHeight}}>
         <h2>
           <span className="green bold">L'Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
@@ -67,7 +69,7 @@ const Atelier = () => {
         Né de la rencontre du design et des problématiques urbaines, l’Atelier Rusch est d’abord un collectif hybride né en 2014 composé de designers, d’urbanistes, de cartographes et d’économistes. Le collectif RUSCH doit son nom aux racines germaniques de ses fondateurs, de sa proximité avec le mot « ruche » qui symbolise le travail d’équipe et de l’anglais « rush » qui se traduit par la précipitation dans laquelle on peut réaliser des projets qui manque de sens si on n'y ajoute pas le C de Co-construire avec l’usager et de Cœur (en lien avec les tatouages de nos mentors respectifs rencontrés tout au long de nos parcours ;-).
         </p>
         <p className='quote'>
-        Durant plus de deux ans, le collectif s’est consacré à la rédaction d’articles et l’expérimentation d’outils d’aide à la participation à la fois avec le secteur public et le secteur privé. 
+        Durant plus de deux ans, le collectif s’est consacré à la rédaction d’articles et l’expérimentation d’outils d’aide à la participation à la fois avec le secteur public et le secteur privé.
         </p>
         <p>
         Fort de son succès, en novembre 2016, le collectif Rusch devient l’Atelier Rusch et agrandit son équipe de designers et d’innovateurs pour répondre à de nouveaux projets toujours plus ambitieux, créatifs et co-construit.

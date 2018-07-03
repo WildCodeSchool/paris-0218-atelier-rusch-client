@@ -6,8 +6,15 @@ img
     margin: 2rem;    
 }
 
-
 iframe
 {
     filter: sepia(40%);
+}
+
+.p {
+  font-family: 'IBMPlex', sans-serif;
+  font-weight: 400;
+  margin: 2rem 15rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
 }

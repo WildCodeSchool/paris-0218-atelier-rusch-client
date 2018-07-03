@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
 import ArticleForm from './components/ArticleForm'
-import Nav from './components/Nav.js'
+
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import Footer from './components/Footer.js'
+import Admin from './components/Admin.js'
+
 import './App.css'
 
 import store from './store'
@@ -37,18 +39,17 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Nav />
-        <div className="spacer"></div>
         <Router>
-          <Homepage path='/Homepage' />
-          <Homepage path='/Homepage/:articleId' />
-          <Atelier path='/Atelier' />
-          <Projets path='/Projets' />
-          <Projets path='/Projets/:articleId' />
-          <LabRusch path='/LabRusch' />
-          <LabRusch path='/LabRusch/:articleId' />
-          <Contact path='/Contact' />
-          <ArticleForm path='/ArticleForm' />
+          <Homepage path='/' />
+          <Homepage path='homepage' />
+          <Homepage path='homepage/:articleId' />
+          <Atelier path='atelier' />
+          <Projets path='projets' />
+          <Projets path='projets/:articleId' />
+          <LabRusch path='lab' />
+          <LabRusch path='lab/:articleId' />
+          <Contact path='contact' />
+          <Admin path='admin/*' />
         </Router>
         <Footer />
       </div>

@@ -8,6 +8,7 @@
     "react-dom": "^16.4.0",
     "react-responsive-carousel": "^3.1.40",
     "react-scripts": "1.1.4",
+    "react-smooth-dnd": "^0.4.9",
     "redux-logger": "^3.0.6",
     "stylelint-config-standard": "^18.2.0"
   },

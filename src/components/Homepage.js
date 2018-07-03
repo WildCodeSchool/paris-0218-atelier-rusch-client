@@ -6,6 +6,7 @@ import './css/Homepage.css'
 import Logo from './img/logo-rusch-noir.png'
 import store from '../store.js'
 import { SlideShow } from './Carousel.js'
+import Nav from './Nav.js'
 
 const Homepage = (props) => {
   const state = store.getState()
@@ -30,6 +31,8 @@ const Homepage = (props) => {
 
   return (
     <div>
+      <Nav />
+      <div className="spacer"></div>
       <div className="IntroBlocks">
 
         <div className="IntroBlockLeft">

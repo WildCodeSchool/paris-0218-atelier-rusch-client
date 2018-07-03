@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import FiltersSection from './FiltersSection.js'
 import Modale from './Modale.js'
@@ -32,6 +33,8 @@ const LabRusch = (props) => {
 
   return (
     <div>
+      <Nav />
+      <div className="spacer"></div>
       <FiltersSection />
 
       <div className="ArticlesBlock">

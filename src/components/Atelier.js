@@ -19,7 +19,7 @@ const Atelier = () => {
 
   const state = store.getState()
 
-  const members = state.members.allMembers.map(member => <EquipeMember member={member} />)
+  const members = state.members.allMembers.map(member => <EquipeMember key={member.id} member={member} />)
 
   return (
     <div>

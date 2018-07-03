@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import store from '../store'
 import Modale from './Modale.js'
 import './css/ArticleForm.css'
-import { loadArticles } from '../actions.js'
 import { Container, Draggable } from 'react-smooth-dnd'
 
 const freshArticle = {
@@ -116,7 +114,7 @@ class ArticleForm extends Component {
       const index = key.split('-')[1]
 
       const content = [ ...this.state.article.content ]
-      content[index].value = event.target.value // issue: either text or url or urls
+      content[index].value = event.target.value
 
       article = {
         ...this.state.article,
@@ -136,7 +134,6 @@ class ArticleForm extends Component {
     event.preventDefault()
 
     const article = {
-
       title: this.state.article.title,
       shortDescription: this.state.article.shortDescription,
       headerImage: this.state.article.headerImage,
@@ -145,8 +142,6 @@ class ArticleForm extends Component {
       tags: this.state.article.tags,
       content: JSON.stringify(this.state.article.content)
     }
-    console.log(this.state.article)
-    console.log('submit', article)
 
     fetch('http://localhost:3456/articles', {
       method: 'post',
@@ -177,8 +172,6 @@ class ArticleForm extends Component {
   }
 
   render () {
-    console.log(this.state.hasStar)
-
     const article = this.state.article
 
     const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]

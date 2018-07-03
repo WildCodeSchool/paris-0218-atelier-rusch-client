@@ -1,13 +1,11 @@
 import React from 'react'
 import './css/Modale.css'
-import store from '../store.js'
-import { Link, redirectTo } from "@reach/router"
+import { Link } from "@reach/router"
 
 const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
   p: ({ value }) => <p>{value}</p>,
   blockquote: ({ value }) => <blockquote className='quote'>{value}</blockquote>,
-  // img: ({ url }) => <img src={url} />,
   imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} />),
 }
 
@@ -16,13 +14,6 @@ const Element = ({ element }) => toHTML[element.type](element)
 
 const Modale = ({ article, displayModale }) => {
 
-  // const reversedPathname = window.location.pathname.split('').reverse()
-  // const index = reversedPathname.indexOf('/')
-  // const parentContextPath = reversedPathname.slice(index + 1).reverse().join('')
-  // if (typeof article.content === "string")
-  //   JSON.parse(article.content)
-
-  console.log('KOOKOO', article)
   let treatedContent = ''
 
   if (typeof article.content === "string") {

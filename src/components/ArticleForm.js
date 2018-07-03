@@ -91,7 +91,7 @@ const moveElement = (array, fromIndex, toIndex) => {
 
 class ArticleForm extends Component {
   state = {
-    article: this.props.article || freshArticle
+    article: freshArticle
   }
 
   handleDnd = ({ removedIndex: fromIndex, addedIndex: toIndex }) => {
@@ -170,6 +170,10 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
+  }
+
+  componentDidMount (props) {
+    console.log('MOUNT', props)
   }
 
   render () {

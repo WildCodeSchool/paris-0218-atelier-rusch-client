@@ -5,7 +5,7 @@ import store from '../store.js'
 import { setActivePage } from '../actions.js'
 
 const NavLink = ({ to, label }) =>
-  <Link to={`/${to}`}>
+  <Link to={to}>
     <button className='NavBarLink' value={label}
       onClick={event => store.dispatch(setActivePage(event.target.value))}>
       {label}

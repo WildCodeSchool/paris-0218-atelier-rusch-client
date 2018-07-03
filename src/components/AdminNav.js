@@ -17,10 +17,10 @@ const AdminNav = ({onPageChange}) =>
     </div>
 
     <div className="NavBarLinksContainer">
-      <NavLink to='AdminArticles' label='Articles' />
-      <NavLink to='AdminEquipe' label='Equipe' />
-      <NavLink to='AdminPartenaires' label='Partenaires' />
-      <NavLink to='AdminFiltres' label='Filtres' />
+      <NavLink to='articles' label='Articles' />
+      <NavLink to='equipe' label='Equipe' />
+      <NavLink to='partenaires' label='Partenaires' />
+      <NavLink to='filtres' label='Filtres' />
     </div>
 
   </div>

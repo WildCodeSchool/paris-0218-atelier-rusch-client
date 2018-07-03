@@ -3,6 +3,7 @@ import store from '../store'
 import Modale from './Modale.js'
 import './css/ArticleForm.css'
 import { loadArticles } from '../actions.js'
+import { Container, Draggable } from 'react-smooth-dnd'
 
 const freshArticle = {
   title: '',
@@ -78,9 +79,32 @@ const toInput = {
 
 const Element = (props) => toInput[props.element.type](props)
 
+const moveElement = (array, fromIndex, toIndex) => {
+  const elem = array[fromIndex]
+  const popedArray = array.filter((_, index) => index !== fromIndex)
+
+  return [
+    ...popedArray.slice(0, toIndex),
+    elem,
+    ...popedArray.slice(toIndex)
+  ]
+}
+
 class ArticleForm extends Component {
   state = {
     article: this.props.article || freshArticle
+  }
+
+  handleDnd = ({ removedIndex: fromIndex, addedIndex: toIndex }) => {
+    const content = this.state.article.content
+    const reorderedContent = moveElement(content, fromIndex, toIndex)
+
+    const updatedArticle = {
+      ...this.state.article,
+      content: reorderedContent
+    }
+
+    this.setState({ article: updatedArticle })
   }
 
   handleChange = event => {
@@ -161,7 +185,10 @@ class ArticleForm extends Component {
       .map((type, i) => <input type='button' key={i} onClick={() => this.addInput(type)} value={type} />)
 
     const dynamicInputs = article.content
-      .map((element, i) => <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />)
+      .map((element, i) =>
+        <Draggable key={i}>
+          <Element name={`content-${i}`} element={element} onChange={this.handleChange} />
+        </Draggable>)
 
     return (
       <div className="box">
@@ -192,7 +219,9 @@ class ArticleForm extends Component {
               </div>
 
               <div className="addModule yellow">Ajouter un module :</div>
-              {dynamicInputs}
+              <Container onDrop={this.handleDnd}>
+                {dynamicInputs}
+              </Container>
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />
             </form>

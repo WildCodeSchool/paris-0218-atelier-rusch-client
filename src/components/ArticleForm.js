@@ -195,15 +195,16 @@ class ArticleForm extends Component {
               <div>
                 <select name="section" value={article.section} onChange={this.handleChange}>
                   <option value="Choose">Choisissez la section</option>
-                  <option value="Lab">Lab</option>
-                  <option value="Projet">Projet</option>
+                  <option value="Lab">LabRusch</option>
+                  <option value="Projet">Projets</option>
                 </select>
               </div>
 
-              <div className="addModule yellow">Ajouter un module :</div>
+              <div className="AdminTitles yellow">Ajouter un module :</div>
               <Container onDrop={this.handleDnd}>
                 {dynamicInputs}
               </Container>
+
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />
             </form>
@@ -216,7 +217,6 @@ class ArticleForm extends Component {
     </div>
     )
   }
-
 }
 
 export default ArticleForm

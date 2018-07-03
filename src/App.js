@@ -9,6 +9,7 @@ import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import Footer from './components/Footer.js'
 import Admin from './components/Admin.js'
+import AdminFiltreForm from './components/AdminFiltreForm.js'
 import './App.css'
 
 import store from './store'
@@ -48,6 +49,7 @@ class App extends Component {
           <LabRusch path='/LabRusch/:articleId' />
           <Contact path='/Contact' />
           <ArticleForm path='/ArticleForm' />
+          <AdminFiltreForm path='/AdminFiltreForm' />
           <Admin path='/Admin' />
         </Router>
         <Footer />

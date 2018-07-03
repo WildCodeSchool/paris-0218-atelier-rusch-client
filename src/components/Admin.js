@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Router } from '@reach/router'
 import ArticleForm from './ArticleForm.js'
 import AdminArticles from './AdminArticles.js'
+import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 // import Footer from './Footer.js'
 import store from '../store'
@@ -42,6 +43,7 @@ class Admin extends Component {
         <AdminNav />
         <div className="spacer"></div>
         <AdminArticles data={this.state.articles}/>
+        <AdminFiltres data={this.state.filtres}/>
       </div>
     )
   }

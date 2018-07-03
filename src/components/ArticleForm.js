@@ -4,7 +4,6 @@ import store from '../store'
 // import ArticlePreview, { demoArticle } from './ArticlePreview.js'
 import Modale from './Modale.js'
 import './css/ArticleForm.css'
-import { loadArticles } from '../actions.js'
 
 const freshArticle = {
   title: '',
@@ -174,7 +173,7 @@ class ArticleForm extends Component {
                 </select>
               </div>
 
-              <div className="addModule yellow">Ajouter un module :</div>
+              <div className="AdminTitles yellow">Ajouter un module :</div>
               {dynamicInputs}
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />

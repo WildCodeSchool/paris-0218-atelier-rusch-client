@@ -6,6 +6,7 @@ import store from '../store.js'
 
 import Modale from '../components/Modale'
 import ArticleThumbnail from '../components/ArticleThumbnail'
+import ArticleForm, { demoArticle } from '../components/ArticleForm'
 import mockedArticles from '../mocks/articles.json'
 import mockedMembers from '../mocks/members.json'
 import Contact from '../components/Contact'
@@ -32,8 +33,8 @@ storiesOf('Modale', module)
   .add('Modale Article', () => <Modale article={mockedArticles[3]} />)
   .add('Modale Projet', () => <Modale article={mockedArticles[8]} />)
 
-// storiesOf('ArticleForm', module)
-//   .add('exemple 1', () => <ArticleForm />)
+storiesOf('ArticleForm', module)
+  .add('exemple 1', () => <ArticleForm article={demoArticle} />)
 
 storiesOf('Page Atelier', module)
   .add('Page Atelier', () => <Atelier />)

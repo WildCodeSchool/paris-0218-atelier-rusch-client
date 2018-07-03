@@ -3,7 +3,7 @@ import { Router } from '@reach/router'
 import ArticleForm from './ArticleForm.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
-import AdminArticle from './AdminArticle.js'
+import { AdminNewArticle, AdminEditArticle } from './AdminArticle.js'
 import AdminPartenaires from './AdminPartenaires.js'
 import AdminEquipe from './AdminEquipe.js'
 import AdminFiltres from './AdminFiltres.js'
@@ -43,7 +43,8 @@ class Admin extends Component {
         <Router>
           <AdminHome path='/' />
           <AdminArticles path='articles' articles={this.state.articles} />
-          <AdminArticle path='articles/:articleId' articles={this.state.articles} />
+          <AdminNewArticle path='articles/new' />
+          <AdminEditArticle path='articles/:articleId' articles={this.state.articles} />
         </Router>
       </div>
     )

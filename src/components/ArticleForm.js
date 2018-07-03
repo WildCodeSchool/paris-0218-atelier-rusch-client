@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
-import './css/ArticleForm.css'
 import { Container, Draggable } from 'react-smooth-dnd'
+import './css/ArticleForm.css'
 
 const freshArticle = {
   title: '',
@@ -91,7 +91,7 @@ const moveElement = (array, fromIndex, toIndex) => {
 
 class ArticleForm extends Component {
   state = {
-    article: freshArticle
+    article: this.props.article || freshArticle
   }
 
   handleDnd = ({ removedIndex: fromIndex, addedIndex: toIndex }) => {
@@ -134,23 +134,7 @@ class ArticleForm extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    const article = {
-      title: this.state.article.title,
-      shortDescription: this.state.article.shortDescription,
-      headerImage: this.state.article.headerImage,
-      section: this.state.article.section,
-      hasStar: this.state.article.hasStar,
-      tags: this.state.article.tags,
-      content: JSON.stringify(this.state.article.content)
-    }
-
-    fetch('http://localhost:3456/articles', {
-      method: 'post',
-      body: JSON.stringify(article),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    this.props.submitArticle(this.state.article)
   }
 
   addInput = type => {
@@ -170,10 +154,6 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
-  }
-
-  componentDidMount (props) {
-    console.log('MOUNT', props)
   }
 
   render () {

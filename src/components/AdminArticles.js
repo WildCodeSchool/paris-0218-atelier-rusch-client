@@ -1,30 +1,27 @@
 import React, { Component } from 'react'
-import Modale from './Modale.js'
-import ArticleForm from './ArticleForm'
-import ButtonCreateArticle from './ButtonCreateArticle.js'
 import { Link } from '@reach/router'
 
-const AdminArticles = ({ articles }) => {
-  console.log('articles')
+const ArticleCard = ({ article }) =>
+  <div>
+    <div>{article.title}</div>
+    <div>{article.createdAt}</div>
+    <Link to={String(article.id)}>
+      <button>éditer</button>
+    </Link>
+    <button>supprimer</button>
+  </div>
 
-  const articlesList = articles.map(article =>
-    <div key={article.id}>
-      <div>{article.title}</div>
-      <div>{article.createdAt}</div>
-      <Link to={String(article.id)} data-article={article}>
-        <button> éditer </button>
-      </Link>
-      <button> supprimer </button>
-    </div>
-  )
+const AdminArticles = ({ articles }) => {
+  const articlesList = articles.map(article => <ArticleCard key={article.id} article={article} />)
 
   return (
     <div>
-      <ButtonCreateArticle />
+      <Link to='new'>
+        <div className='ButtonCreateArticle'>Nouvel article</div>
+      </Link>
       {articlesList}
     </div>
   )
 }
-
 
 export default AdminArticles

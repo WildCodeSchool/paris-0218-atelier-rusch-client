@@ -1,23 +1,37 @@
 import React, { Component } from 'react'
 import ArticleForm from './ArticleForm'
 
-const AdminArticle = ({ articleId, articles }) => {
-  let article = articles.find(a => String(a.id) === articleId)
-
-  // todo: rm all this
-  if (article) {
-    article = { ...article }
-    article.content = JSON.parse(article.content)
+const submitNewArticle = article => fetch('http://localhost:3456/articles', {
+  method: 'post',
+  body: JSON.stringify(article),
+  headers: {
+    'Content-Type': 'application/json'
   }
+})
 
-  console.log('ARTICLE RENDER', {article})
+const submitUpdatedArticle = article => fetch('http://localhost:3456/articles', {
+  method: 'put',
+  body: JSON.stringify(article),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
 
+export const AdminNewArticle = () => {
   return (
     <div>
-      <ArticleForm article={article} />
+      <ArticleForm submitArticle={submitNewArticle} />
     </div>
   )
 }
 
 
-export default AdminArticle
+export const AdminEditArticle = ({ articleId, articles }) => {
+  const article = articles.find(a => String(a.id) === articleId)
+
+  return (
+    <div>
+      { article ? <ArticleForm article={article} submitArticle={submitUpdatedArticle} /> : <div>Loading..</div> }
+    </div>
+  )
+}

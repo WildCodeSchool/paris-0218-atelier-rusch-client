@@ -40,16 +40,16 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Homepage path='/Homepage' />
-          <Homepage path='/Homepage/:articleId' />
-          <Atelier path='/Atelier' />
-          <Projets path='/Projets' />
-          <Projets path='/Projets/:articleId' />
-          <LabRusch path='/LabRusch' />
-          <LabRusch path='/LabRusch/:articleId' />
-          <Contact path='/Contact' />
-          <ArticleForm path='/ArticleForm' />
-          <Admin path='Admin/*' />
+          <Homepage path='/' />
+          <Homepage path='homepage' />
+          <Homepage path='homepage/:articleId' />
+          <Atelier path='atelier' />
+          <Projets path='projets' />
+          <Projets path='projets/:articleId' />
+          <LabRusch path='lab' />
+          <LabRusch path='lab/:articleId' />
+          <Contact path='contact' />
+          <Admin path='admin/*' />
         </Router>
         <Footer />
       </div>

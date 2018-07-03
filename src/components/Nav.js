@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import './css/Nav.css'
-import NavLink from './NavLink.js'
 import Logo from './img/logo-rusch-noir.png'
 
 const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <Link to='/Homepage'>
+      <Link to='/homepage'>
         <button className='HomeLink' value='Home'>
           <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
         </button>
@@ -16,10 +15,10 @@ const Nav = ({onPageChange}) =>
     </div>
 
     <div className="NavBarLinksContainer">
-      <NavLink to='Atelier' label='Atelier' />
-      <NavLink to='Projets' label='Projets' />
-      <NavLink to='LabRusch' label='LabRusch' />
-      <NavLink to='Contact' label='Contact' />
+      <Link className='NavBarLink' to='/atelier'>Atelier</Link>
+      <Link className='NavBarLink' to='/projets'>Projets</Link>
+      <Link className='NavBarLink' to='/lab'>LabRusch</Link>
+      <Link className='NavBarLink' to='/contact'>Contact</Link>
     </div>
 
   </div>

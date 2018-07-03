@@ -38,7 +38,7 @@ export const demoArticle = {
 
 const H2 = ({ element, ...rest }) => {
   return (
-    <label>Ajouter un titre de paragraphe :
+    <label className='draggableElement'>Ajouter un titre de paragraphe :
     <input type="text" value={element.value} {...rest} autoFocus />
   </label>
   )
@@ -46,7 +46,7 @@ const H2 = ({ element, ...rest }) => {
 
 const P = ({ element, ...rest }) => {
   return (
-    <label>Ajouter un paragraphe :
+    <label className='draggableElement'>Ajouter un paragraphe :
     <textarea type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
@@ -54,7 +54,7 @@ const P = ({ element, ...rest }) => {
 
 const Blockquote = ({ element, ...rest }) => {
   return (
-    <label>Ajouter une citation :
+    <label className='draggableElement'>Ajouter une citation :
     <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
@@ -62,7 +62,7 @@ const Blockquote = ({ element, ...rest }) => {
 
 const Imgs = ({ element, ...rest }) => {
   return (
-    <label>Ajouter des images :
+    <label className='draggableElement'>Ajouter des images :
     <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )

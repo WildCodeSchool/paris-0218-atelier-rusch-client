@@ -11,8 +11,8 @@ const AdminFiltres = ({ data }) => {
       <div className='currentText'> {el.filterTag} </div>
       <div className='EditButtons'>
         <h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-      	<button>Editer</button>
-      	<button>Supprimer</button>
+      	<button>E</button>
+      	<button>S</button>
       </div>
     </div>
   )
@@ -24,15 +24,15 @@ const AdminFiltres = ({ data }) => {
       <div className='currentText'> {el.filterTag} </div>
       <div className='EditButtons'>
       	<h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-      	<button>Editer</button>
-      	<button>Supprimer</button>
+      	<button>E</button>
+      	<button>S</button>
       </div>
     </div>
   )
 
 
   return (
-    <div>
+    <div className='FiltresGlobalContainer'>
       <ButtonCreateFiltre />
       <div className='AdminTitles yellow'>Filtres de la section LabRusch :</div>
       <div className='FiltresContainer'>

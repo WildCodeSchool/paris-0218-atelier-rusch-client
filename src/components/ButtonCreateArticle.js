@@ -1,11 +1,11 @@
 import React from 'react'
-import './css/ButtonCreateArticle.css'
+import './css/ButtonsCreateElement.css'
 import { Link } from '@reach/router'
 
 const ButtonCreateArticle = () =>
   <Link to='/ArticleForm'>
     <div className='ButtonCreateArticle'>
-    Créer un nouvel article
+    <div className='currentText'>Créer un nouvel article</div>
     </div>
   </Link>
 

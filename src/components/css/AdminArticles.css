@@ -1,34 +1,28 @@
-.AdminFiltre {
+.AdminArticle {
 	padding: 20px;
-	width: 20vw;
+	width: 75vw;
 	margin: 10px 0;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: nowrap;
 }
 
-.AdminFiltre button {
+.AdminArticle button {
 	padding: 5px;
 	margin-left: 20px;
-	width: 25px;
+	width: 7rem;
 	cursor: pointer;
 }
 
-.FiltresContainer {
+.ArticlesContainer {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .EditButtons {
 	display: flex;
 	align-items: center;
-}
-
-.FiltresGlobalContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 0 12.5vw; 	
 }

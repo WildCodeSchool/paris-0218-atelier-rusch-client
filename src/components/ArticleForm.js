@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import AdminNav from './AdminNav.js'
 import store from '../store'
 // import ArticlePreview, { demoArticle } from './ArticlePreview.js'
 import Modale from './Modale.js'
@@ -142,7 +143,11 @@ class ArticleForm extends Component {
       .map((element, i) => <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />)
 
     return (
+    <div>
+      <AdminNav />
+      <div className="spacer"></div>
       <div className="box">
+
         <div className="item-left">
           <div style={{marginTop: '15px'}}>
             <form onSubmit={this.handleSubmit}>
@@ -180,6 +185,7 @@ class ArticleForm extends Component {
           <Modale article={article} />
         </div>
       </div>
+    </div>
     )
   }
 

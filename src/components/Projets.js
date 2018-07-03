@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
@@ -30,6 +31,8 @@ const Projets = (props) => {
 
   return (
     <div>
+      <Nav />
+      <div className="spacer"></div>
       <FiltersSection />
 
       <div className="ArticlesBlock">

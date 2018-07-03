@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
-import ArticleForm from './components/ArticleForm'
-import AdminNav from './components/AdminNav.js'
-import store from './store'
+import ArticleForm from './ArticleForm.js'
+import AdminArticles from './AdminArticles.js'
+import AdminNav from './AdminNav.js'
+// import Footer from './Footer.js'
+import store from '../store'
 
 class Admin extends Component {
   state = {
@@ -26,11 +28,23 @@ class Admin extends Component {
       fetch('http://localhost:3456/equipe')
         .then(res => res.json())
         .then(equipe => this.setState({ equipe: equipe }))
+    console.log(this.state)
     }
 
     componentWillUnmount () {
       this.unsubscribe()
     }
+
+  render () {
+
+    return (
+      <div className="App">
+        <AdminNav />
+        <div className="spacer"></div>
+        <AdminArticles data={this.state.articles}/>
+      </div>
+    )
+  }
 }
 
 export default Admin

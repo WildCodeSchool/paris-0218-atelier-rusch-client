@@ -3,9 +3,9 @@ import { Link } from '@reach/router'
 import './css/Nav.css'
 import NavLink from './NavLink.js'
 import Logo from './img/logo-rusch-noir.png'
-import
 
-const Nav = ({onPageChange}) =>
+
+const AdminNav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
@@ -25,4 +25,4 @@ const Nav = ({onPageChange}) =>
 
   </div>
 
-export default Nav
+export default AdminNav

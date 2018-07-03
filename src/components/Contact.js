@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './Nav.js'
 import './css/Contact.css'
 import Facebook from './img/fb.png'
 import Instagram from './img/instagram.png'
@@ -6,6 +7,8 @@ import Linkedin from './img/linkedin.png'
 
 const Contact = () =>
   <div>
+    <Nav />
+    <div className="spacer"></div>
     <h2 className="App-intro">
       Contactez l'Atelier !
     </h2>

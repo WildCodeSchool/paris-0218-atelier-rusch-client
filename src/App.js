@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
 import ArticleForm from './components/ArticleForm'
-import Nav from './components/Nav.js'
+
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
 import Contact from './components/Contact.js'
 import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import Footer from './components/Footer.js'
+import Admin from './components/Admin.js'
 import './App.css'
 
 import store from './store'
@@ -37,8 +38,6 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Nav />
-        <div className="spacer"></div>
         <Router>
           <Homepage path='/Homepage' />
           <Homepage path='/Homepage/:articleId' />
@@ -49,6 +48,7 @@ class App extends Component {
           <LabRusch path='/LabRusch/:articleId' />
           <Contact path='/Contact' />
           <ArticleForm path='/ArticleForm' />
+          <Admin path='/Admin' />
         </Router>
         <Footer />
       </div>

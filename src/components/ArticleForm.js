@@ -195,8 +195,8 @@ class ArticleForm extends Component {
               <div>
                 <select name="section" value={article.section} onChange={this.handleChange}>
                   <option value="Choose">Choisissez la section</option>
-                  <option value="Lab">LabRusch</option>
-                  <option value="Projet">Projets</option>
+                  <option value="lab">LabRusch</option>
+                  <option value="projets">Projets</option>
                 </select>
               </div>
 

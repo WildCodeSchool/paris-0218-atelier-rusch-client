@@ -20,7 +20,7 @@ const LabRusch = (props) => {
     ? <Modale article={selectedArticle} displayModale={'block'} />
     : ''
 
-  const getFilteredArticles = applyFiltersToSection('Lab', state)
+  const getFilteredArticles = applyFiltersToSection('lab', state)
 
   const filteredLabArticleThumbnails = getFilteredArticles
     .map((article, index) =>

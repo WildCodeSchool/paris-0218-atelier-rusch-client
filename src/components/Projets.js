@@ -19,7 +19,7 @@ const Projets = (props) => {
 
   const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
-  const getFilteredArticles = applyFiltersToSection('Projet', state)
+  const getFilteredArticles = applyFiltersToSection('projets', state)
 
   const filteredProjetsArticleThumbnails = getFilteredArticles
     .map((article, index) =>

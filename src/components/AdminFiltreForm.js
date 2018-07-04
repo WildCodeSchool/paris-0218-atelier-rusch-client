@@ -34,8 +34,8 @@ class AdminFiltreForm extends Component {
 
 				<select name="section" value={this.state.section} onChange={this.handleChange}>
 				  <option value="Choose">Choisissez la section</option>
-				  <option value="LabRusch">LabRusch</option>
-				  <option value="Projets">Projets</option>
+				  <option value="lab">LabRusch</option>
+				  <option value="projets">Projets</option>
 				</select>
 
 				<input type="submit" value="Submit" />

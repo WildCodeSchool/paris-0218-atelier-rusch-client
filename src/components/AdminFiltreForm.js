@@ -4,46 +4,46 @@ import './css/ArticleForm.css'
 
 class AdminFiltreForm extends Component {
 
-	state = {
-		filterTag: '',
-		section: ''
-	}
+  state = {
+    filterTag: this.props.filtre.filterTag || '',
+    section: this.props.filtre.section || ''
+  }
 
-	handleChange(event) {
+	handleChange = event => {
 		const key = event.target.name
+    this.setState({ ...this.state.filtre, [key]: event.target.value })
+  }
 
-    	this.setState({ ...this.state, [key]: event.target.value })
-  	}
+	handleSubmit = event => {
+    event.preventDefault()
 
-	handleSubmit(event) {
-	    event.preventDefault()
+    const filtre = {
+	    filterTag: this.state.filtre.filterTag,
+      section: this.state.filtre.section
+    }
 
-	    const filtre = {
-	    	filterTag: this.state.filterTag,
-			section: this.state.section
-		}
 
-		console.log('submit new filtre', filtre)
+	// console.log('submit new filtre', filtre)
 
-		fetch('http://localhost:3456/filters', {
-			method: 'post',
-			body: JSON.stringify(filtre),
-			headers: {
-			'Content-Type': 'application/json'
-			}
-		})
-	}
+  	fetch('http://localhost:3456/filters', {
+  		method: 'post',
+  		body: JSON.stringify(filtre),
+  		headers: {
+  		'Content-Type': 'application/json'
+  		}
+  	})
+  }
 
 	render() {
-		console.log(this.state)
+		console.log('state', this.state)
 
 		return (
-			<form onSubmit={this.handleSubmit.bind(this)}>
+			<form onSubmit={this.handleSubmit}>
 				<label>Nom du filtre :<br/>
-				<input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange.bind(this)} />
+				<input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange} />
 				</label>
-				
-				<select name="section" value="section" onChange={this.handleChange.bind(this)}>
+
+				<select name="section" value="section" onChange={this.handleChange}>
 				  <option value="Choose">Choisissez la section</option>
 				  <option value="LabRusch">LabRusch</option>
 				  <option value="Projets">Projets</option>

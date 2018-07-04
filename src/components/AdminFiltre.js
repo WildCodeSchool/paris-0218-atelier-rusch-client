@@ -20,7 +20,7 @@ const submitUpdatedFiltre = filtre => fetch('http://localhost:3456/filtres', {
 export const AdminNewFiltre = () => {
   return (
     <div>
-      <AdminFiltreForm submitFiltre={submitNewFiltre} />
+      <AdminFiltreForm filtre={{}} submitFiltre={submitNewFiltre} />
     </div>
   )
 }
@@ -28,6 +28,7 @@ export const AdminNewFiltre = () => {
 
 export const AdminEditFiltre = ({ filtreId, filtres }) => {
   const filtre = filtres.find(a => String(a.id) === filtreId)
+  console.log({filtre})
 
   return (
     <div>

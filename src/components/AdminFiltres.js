@@ -12,7 +12,9 @@ const AdminFiltres = ({ filtres }) => {
       <div className='currentText'> {el.filterTag} </div>
       <div className='EditButtons'>
         <h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-      	<button>E</button>
+        <Link to={String(el.id)}>
+      	 <button>E</button>
+        </Link>
       	<button>S</button>
       </div>
     </div>
@@ -25,8 +27,10 @@ const AdminFiltres = ({ filtres }) => {
       <div className='currentText'> {el.filterTag} </div>
       <div className='EditButtons'>
       	<h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-      	<button>E</button>
-      	<button>S</button>
+        <Link to={String(el.id)}>
+      	 <button>E</button>
+        </Link>
+      	 <button>S</button>
       </div>
     </div>
   )

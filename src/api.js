@@ -53,6 +53,22 @@ const updateArticle = (id, article) => fetch(`/articles/${id}`, {
     'Content-Type': 'application/json'
   }
 })
+
+const newMember = member => fetch('/equipe', {
+  method: 'post',
+  body: JSON.stringify(member),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+const updateMember = (id, member) => fetch(`/equipe/${id}`, {
+  method: 'put',
+  body: JSON.stringify(member),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
 export default {
   getArticles,
   getFilters,
@@ -63,5 +79,7 @@ export default {
   newPartenaire,
   updatePartenaire,
   newArticle,
-  updateArticle
+  updateArticle,
+  newMember,
+  updateMember
 }

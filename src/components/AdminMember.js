@@ -1,37 +1,22 @@
-// import React, { Component } from 'react'
-// import AdminMemberForm from './AdminMemberForm'
+import React, { Component } from 'react'
+import AdminMemberForm from './AdminMemberForm'
+import api from '../api.js'
 
-// const submitNewMember = filtre => fetch('http://localhost:3456/filtres', {
-//   method: 'post',
-//   body: JSON.stringify(filtre),
-//   headers: {
-//     'Content-Type': 'application/json'
-//   }
-// })
-
-// const submitUpdatedMember = filtre => fetch('http://localhost:3456/filtres', {
-//   method: 'put',
-//   body: JSON.stringify(filtre),
-//   headers: {
-//     'Content-Type': 'application/json'
-//   }
-// })
-
-// export const AdminNewMember = () => {
-//   return (
-//     <div>
-//       <AdminFiltreForm submitMember={submitNewFiltre} />
-//     </div>
-//   )
-// }
+export const AdminNewMember = () => {
+  return (
+    <div>
+      <AdminMemberForm member={{}} submitMember={api.newMember} />
+    </div>
+  )
+}
 
 
-// export const AdminEditMember = ({ filtreId, filtres }) => {
-//   const filtre = filtres.find(a => String(a.id) === filtreId)
+export const AdminEditMember = ({ memberId, members }) => {
+  const member = members.find(a => String(a.id) === memberId)
 
-//   return (
-//     <div>
-//       { filtre ? <AdminFiltreForm member={member} submitFiltre={submitUpdatedMember} /> : <div>Loading..</div> }
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      { member ? <AdminMemberForm member={member} submitMember={member => api.updateMember(memberId, member)} /> : <div>Loading..</div> }
+    </div>
+  )
+}

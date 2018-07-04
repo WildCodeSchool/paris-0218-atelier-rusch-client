@@ -3,12 +3,20 @@
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	padding: 15rem;
+	padding: 5rem;
+	text-align: center;
+	font-size: 5rem;
+}
+
+.AdminHomeWelcome p {
+	font-size: 1.5rem;
+	line-height: 2.5rem;
 }
 
 .AdminHomeContainer {
 	display: flex;
 	flex-wrap: wrap;
+	width: 100vw;
 }
 
 .AdminHomeLinkTo {

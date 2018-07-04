@@ -16,7 +16,10 @@ const AdminHome = () => {
   return(
   <div className='AdminHomeContainer'>
     <div className='AdminHomeWelcome'>
-    Bienvenue dans l'espace Administrateur
+    <p>
+      Hello,<br/><br/>Te voici bien arrivé(e) sur l'espace Administrateur du site Rusch !<br/>
+      Cette interface permet de créer, modifier et supprimer des éléments.
+    </p>
     </div>
     <Link to='articles'>
       <div className='AdminHomeLinkTo'>

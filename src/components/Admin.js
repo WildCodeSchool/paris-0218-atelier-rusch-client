@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router } from '@reach/router'
+import { Router, Link } from '@reach/router'
 import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
@@ -11,7 +11,34 @@ import AdminMembers from './AdminMembers.js'
 import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
 
-const AdminHome = () => <div>ADMIN</div>
+const AdminHome = () => {
+  return(
+  <div>
+    <Link to='articles'>
+      <div className='AdminHomeLinkTo'>
+        Articles
+      </div>
+    </Link>
+
+    <Link to='filtres'>
+      <div className='AdminHomeLinkTo'>
+        Filtres
+      </div>
+    </Link>
+
+    <Link to='equipe'>
+      <div className='AdminHomeLinkTo'>
+        Equipe
+      </div>
+    </Link>
+
+    <Link to='partenaires'>
+      <div className='AdminHomeLinkTo'>
+        Partenaires
+      </div>
+    </Link>
+  </div>
+)}
 
 class Admin extends Component {
   state = {

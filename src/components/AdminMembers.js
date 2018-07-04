@@ -1,57 +1,36 @@
-// import ButtonCreateFiltre from './ButtonCreateFiltre.js'
-// import React, { Component } from 'react'
-// import { Link } from '@reach/router'
-// import './css/AdminFiltres.css'
+import ButtonCreateFiltre from './ButtonCreateFiltre.js'
+import React, { Component } from 'react'
+import { Link } from '@reach/router'
+import './css/AdminFiltres.css'
 
-// const AdminMembers = ({ members }) => {
+const AdminMembers = ({ members }) => {
 
-//   const labFiltres = filtres
-//   .filter(filtre => filtre.section === 'LabRusch')
-//   .map(el =>
-//     <div className='AdminFiltre'>
-//       <div className='currentText'> {el.filterTag} </div>
-//       <div className='EditButtons'>
-//         <h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-//         <Link to={String(el.id)}>
-//          <button>E</button>
-//         </Link>
-//         <button>S</button>
-//       </div>
-//     </div>
-//   )
-
-//   const projetsFiltres = filtres
-//   .filter(filtre => filtre.section === 'Projets')
-//    .map(el =>
-//     <div className='AdminFiltre'>
-//       <div className='currentText'> {el.filterTag} </div>
-//       <div className='EditButtons'>
-//         <h6 className='green' style={{ marginRight: '45px' }}> {el.section} </h6>
-//         <Link to={String(el.id)}>
-//          <button>E</button>
-//         </Link>
-//          <button>S</button>
-//       </div>
-//     </div>
-//   )
+  const displayMembers = members
+   .map(el =>
+    <div className='AdminFiltre'>
+      <div className='currentText'> {el.name} </div>
+      <div className='EditButtons'>
+        <h6 className='green' style={{ marginRight: '45px' }}> {el.position} </h6>
+        <Link to={String(el.id)}>
+         <button>E</button>
+        </Link>
+         <button>S</button>
+      </div>
+    </div>
+  )
 
 
-//   return (
-//     <div className='FiltresGlobalContainer'>
-//       <Link to='new'>
-//         <div className='ButtonCreateArticle'>Creer un nouveau filtre</div>
-//       </Link>
-//       <div className='AdminTitles yellow'>Filtres de la section LabRusch :</div>
-//       <div className='FiltresContainer'>
-//       {labFiltres}
-//       </div>
-//       <br/>
-//       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>
-//       <div className='FiltresContainer'>
-//       {projetsFiltres}
-//       </div>
-//     </div>
-//   )
-// }
+  return (
+    <div className='FiltresGlobalContainer'>
+      <Link to='new'>
+        <div className='ButtonCreateArticle'>Creer un nouveau membre</div>
+      </Link>
+      <div className='AdminTitles yellow'>Membres de l'équipe :</div>
+      <div className='FiltresContainer'>
+      {displayMembers}
+      </div>
+    </div>
+  )
+}
 
-// export default AdminFiltres
+export default AdminMembers

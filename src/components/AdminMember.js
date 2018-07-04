@@ -1,22 +1,22 @@
-// import React, { Component } from 'react'
-// import AdminFiltreForm from './AdminFiltreForm'
-// import api from '../api.js'
+import React, { Component } from 'react'
+import AdminMemberForm from './AdminMemberForm'
+import api from '../api.js'
 
-// export const AdminNewMember = () => {
-//   return (
-//     <div>
-//       <AdminFiltreForm member={{}} submitMember={api.newFilter} />
-//     </div>
-//   )
-// }
+export const AdminNewMember = () => {
+  return (
+    <div>
+      <AdminMemberForm member={{}} submitMember={api.newMember} />
+    </div>
+  )
+}
 
 
-// export const AdminEditMember = ({ filtreId, filtres }) => {
-//   const filtre = filtres.find(a => String(a.id) === filtreId)
+export const AdminEditMember = ({ memberId, members }) => {
+  const member = members.find(a => String(a.id) === memberId)
 
-//   return (
-//     <div>
-//       { filtre ? <AdminFiltreForm filtre={filtre} submitFiltre={api.updateFilter} /> : <div>Loading..</div> }
-//     </div>
-//   )
-// }
+  return (
+    <div>
+      { member ? <AdminMemberForm member={member} submitMember={member => api.updateMember(memberId, member)} /> : <div>Loading..</div> }
+    </div>
+  )
+}

@@ -12,7 +12,7 @@ const newFilter = filter => fetch('/filtres', {
   }
 })
 
-const updateFilter = filter => fetch('/filtres', {
+const updateFilter = (id, filter) => fetch(`/filtres/${id}`, {
   method: 'put',
   body: JSON.stringify(filter),
   headers: {
@@ -28,9 +28,25 @@ const newArticle = article => fetch('/articles', {
   }
 })
 
-const updateArticle = article => fetch('/articles', {
+const updateArticle = (id, article) => fetch(`/articles/${id}`, {
   method: 'put',
   body: JSON.stringify(article),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+const newMember = member => fetch('/equipe', {
+  method: 'post',
+  body: JSON.stringify(member),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+const updateMember = (id, member) => fetch(`/equipe/${id}`, {
+  method: 'put',
+  body: JSON.stringify(member),
   headers: {
     'Content-Type': 'application/json'
   }
@@ -42,5 +58,7 @@ export default {
   newFilter,
   updateFilter,
   newArticle,
-  updateArticle
+  updateArticle,
+  newMember,
+  updateMember
 }

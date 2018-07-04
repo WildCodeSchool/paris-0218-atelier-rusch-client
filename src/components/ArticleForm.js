@@ -200,7 +200,7 @@ class ArticleForm extends Component {
                 </select>
               </div>
 
-              <div className="AdminTitles yellow">Ajouter un module :</div>
+              <div className="addModule yellow">Ajouter un module :</div>
               <Container onDrop={this.handleDnd}>
                 {dynamicInputs}
               </Container>

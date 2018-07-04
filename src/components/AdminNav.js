@@ -13,10 +13,10 @@ const AdminNav = () =>
       </Link>
     </div>
     <div className="NavBarLinksContainer">
-      <Link to='articles' label='Articles' />
-      <Link to='equipe' label='Equipe' />
-      <Link to='partenaires' label='Partenaires' />
-      <Link to='filtres' label='Filtres' />
+      <Link to='articles' label='Articles'> Articles </Link>
+      <Link to='equipe' label='Equipe'> Equipe</Link>
+      <Link to='partenaires' label='Partenaires'> Partenaires </Link>
+      <Link to='filtres' label='Filtres'> Filtres</Link>
     </div>
   </div>
 

@@ -1,17 +1,17 @@
 .IntroBlocks {
   display: flex;
   flex-wrap: wrap;
-  z-index: 3000;
 }
 
 .IntroBlockLeft {
   width: 50vw;
-  height: 80vh;
+  height: 90vh;
+  z-index: 2000;
 }
 
 .CarrouselBlock {
-  height: 40vh;
-  background-color: darkgrey;
+  height: 45vh;
+  background-color: #2b2b2b;
 }
 
 .IntroBlockRight {
@@ -28,7 +28,7 @@
 
 .LogoBlock {
   width: 50vw;
-  height: 40vh;
+  height: 45vh;
   background-color: #fbd052;
   display: flex;
   justify-content: center;

@@ -32,7 +32,6 @@ const Homepage = (props) => {
   return (
     <div>
       <Nav />
-      <div className="spacer"></div>
       <div className="IntroBlocks">
 
         <div className="IntroBlockLeft">

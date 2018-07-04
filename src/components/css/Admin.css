@@ -85,8 +85,9 @@ button {
 
 .AdminCardHalfWidth {
 	padding: 20px;
-	width: 20vw;
-	margin: 10px 0;
+	min-width: 20vw;
+	max-width: 20vw;
+	margin: 10px 1vw;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 	display: flex;
 	align-items: center;
@@ -96,7 +97,8 @@ button {
 .AdminCardHalfWidthContainer {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
+	width: 75vw;
 }
 
 .EditButtonsContainer {

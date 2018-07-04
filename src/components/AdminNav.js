@@ -8,7 +8,7 @@ const AdminNav = () =>
     <div className='Logo'>
       <Link to='/'>
         <button className='HomeLink' value='home'>
-          <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
+          <img style={{width: '75px', marginTop: '5px'}} src={Logo} alt='logo-rusch-noir' />
         </button>
       </Link>
     </div>

@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from '@reach/router'
-import './css/AdminFiltres.css'
 
 const FiltreCard = ({ filtre }) => 
-  <div className='AdminFiltre'>
+  <div className='AdminCardHalfWidth'>
     <div className='currentText'> {filtre.filterTag} </div>
-    <div className='EditButtons'>
-      <h6 className='green' style={{ marginRight: '45px' }}> {filtre.section} </h6>
+    <div className='EditButtonsContainer'>
       <Link to={String(filtre.id)}>
        <button>E</button>
       </Link>
@@ -30,17 +28,17 @@ const AdminFiltres = ({ filtres }) => {
 
 
   return (
-    <div className='FiltresGlobalContainer'>
+    <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateArticle'>Créer un nouveau filtre</div>
+        <div className='ButtonCreateElement'>Créer un nouveau filtre</div>
       </Link>
       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>
-      <div className='FiltresContainer'>
+      <div className='AdminCardHalfWidthContainer'>
       {projetsFiltresList}
       </div>
       <br/>
       <div className='AdminTitles yellow'>Filtres de la section LabRusch :</div>
-      <div className='FiltresContainer'>
+      <div className='AdminCardHalfWidthContainer'>
       {labFiltresList}
       </div>
     </div>

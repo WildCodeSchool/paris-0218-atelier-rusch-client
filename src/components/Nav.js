@@ -9,7 +9,7 @@ const Nav = ({onPageChange}) =>
     <div className='Logo'>
       <Link to='/homepage'>
         <button className='HomeLink' value='Home'>
-          <img style={{width: '75px', marginTop: '5px'}} src={Logo}/>
+          <img style={{width: '75px', marginTop: '5px'}} src={Logo} alt='logo-rusch-noir' />
         </button>
       </Link>
     </div>

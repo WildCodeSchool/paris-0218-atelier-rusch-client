@@ -1,0 +1,105 @@
+/* ADMIN WELCOME PAGE */
+
+.AdminHomeWelcome {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	padding: 5rem;
+	text-align: center;
+	font-size: 5rem;
+}
+
+.AdminHomeWelcome p {
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+}
+
+.AdminHomeContainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100vw;
+}
+
+.AdminHomeLinkTo {
+	width: 25vw;
+	height: 25vw;
+	background-color: #fbd052;
+	display: flex;
+	justify-content: center;
+  	box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+	align-items: center;
+	font-family: 'HeimatMono';
+	font-size: 2rem;
+}
+
+.AdminHomeLinkTo:hover {
+	text-decoration: underline;
+}
+
+/* BUTTONS */
+
+button {
+	padding: 5px;
+	margin-left: 20px;
+	width: 25px;
+	cursor: pointer;
+}
+
+.ButtonCreateElement {
+	display: flex;
+	justify-content: center;
+	width: 70vw;
+	padding: 7vh 2vw;
+	border: solid 1px #5aff6e;
+	background-color: transparent;
+	font-family: 'HeimatMono', monospace;
+	font-size: 1.5rem;
+	color: #5aff6e;
+}
+
+.ButtonCreateElement:hover {
+	background-color: #5aff6e;
+	color: white;
+}
+
+/* CONTAINERS */ 
+
+.GlobalContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 10vh 12.5vw; 	
+}
+
+.AdminCardFullWidth {
+	padding: 20px;
+	width: 75vw;
+	margin: 10px 0;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+}
+
+.AdminCardHalfWidth {
+	padding: 20px;
+	width: 20vw;
+	margin: 10px 0;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.AdminCardHalfWidthContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.EditButtonsContainer {
+	display: flex;
+	align-items: center;
+}

@@ -1,24 +1,13 @@
-img
-{
-    display: inline;
-    flex-wrap: wrap;
-    width: 2rem;
-    margin: 2rem;    
-}
-.p
-{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-iframe
-{
-
-    width: 50%;
+.Contact img {
+  display: inline;
+  flex-wrap: wrap;
+  width: 2rem;
+  margin: 0 1rem;
 }
 
 .p {
+  display: flex;
+  justify-content: space-between;
   font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
   margin: 2rem 15rem;
@@ -26,10 +15,14 @@ iframe
   font-size: 1.2rem;
 }
 
-.reseaux
-{
-    display: flex;
-    font-family: 'IBMPlex', sans-serif;
+.Contact iframe {
+
+    width: 50%;
+}
+
+.reseaux {
+  display: flex;
+  font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
   margin: 2rem 15rem;
   line-height: 2rem;

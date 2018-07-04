@@ -1,16 +1,13 @@
-import ButtonCreateFiltre from './ButtonCreateFiltre.js'
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from '@reach/router'
-import './css/AdminFiltres.css'
 
 const AdminMembers = ({ members }) => {
 
   const displayMembers = members
    .map(el =>
-    <div className='AdminFiltre'>
+    <div className='AdminCardHalfWidth'>
       <div className='currentText'> {el.name} </div>
-      <div className='EditButtons'>
-        <h6 className='green' style={{ marginRight: '45px' }}> {el.position} </h6>
+      <div className='EditButtonsContainer'>
         <Link to={String(el.id)}>
          <button>E</button>
         </Link>
@@ -19,14 +16,13 @@ const AdminMembers = ({ members }) => {
     </div>
   )
 
-
   return (
-    <div className='FiltresGlobalContainer'>
+    <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateArticle'>Creer un nouveau membre</div>
+        <div className='ButtonCreateElement'>Créer un nouveau membre</div>
       </Link>
       <div className='AdminTitles yellow'>Membres de l'équipe :</div>
-      <div className='FiltresContainer'>
+      <div className='AdminCardHalfWidthContainer'>
       {displayMembers}
       </div>
     </div>

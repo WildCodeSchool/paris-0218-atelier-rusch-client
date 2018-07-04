@@ -34,3 +34,20 @@
 .AdminHomeLinkTo:hover {
 	text-decoration: underline;
 }
+
+.ButtonCreateArticle {
+	display: flex;
+	justify-content: center;
+	width: 70vw;
+	padding: 7vh 2vw;
+	border: solid 1px #5aff6e;
+	background-color: transparent;
+	font-family: 'HeimatMono', monospace;
+	font-size: 1.5rem;
+	color: #5aff6e;
+}
+
+.ButtonCreateArticle:hover {
+	background-color: #5aff6e;
+	color: white;
+}

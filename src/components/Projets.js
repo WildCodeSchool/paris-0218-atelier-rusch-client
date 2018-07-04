@@ -4,7 +4,6 @@ import ArticleThumbnail from './ArticleThumbnail.js'
 import SectionTitleBlock from './SectionTitleBlock.js'
 import FiltersSection from './FiltersSection.js'
 import Modale from './Modale.js'
-import ButtonCreateArticle from './ButtonCreateArticle'
 import store from '../store.js'
 import { applyFiltersToSection } from './FilteringFunctions.js'
 

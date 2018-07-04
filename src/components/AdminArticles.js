@@ -4,10 +4,9 @@ import { Link } from '@reach/router'
 
 const ArticleCard = ({ article }) =>
   <div className='AdminArticle'>
-    <div className='currentText'>{article.title}</div>
+    <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtons'>
       <h6 style={{ marginRight: '50px' }}>{article.createdAt}</h6>
-      <h6 className='green' style={{ marginRight: '50px', width: '200px', textAlign: 'center' }}> {article.section} </h6>
       <Link to={String(article.id)}>
         <button>Editer</button>
       </Link>
@@ -27,7 +26,7 @@ const AdminArticles = ({ articles }) => {
   return (
     <div className='FiltresGlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateArticle'>Nouvel article</div>
+        <div className='ButtonCreateArticle'>Créer un nouvel article</div>
       </Link>
       <div className='AdminTitles yellow'>Articles de la section Projets :</div>
       {projetsArticlesList}

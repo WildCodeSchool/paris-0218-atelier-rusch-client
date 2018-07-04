@@ -1,4 +1,3 @@
-import ButtonCreateFiltre from './ButtonCreateFiltre.js'
 import React, { Component } from 'react'
 import { Link } from '@reach/router'
 import './css/AdminFiltres.css'
@@ -33,7 +32,7 @@ const AdminFiltres = ({ filtres }) => {
   return (
     <div className='FiltresGlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateArticle'>Creer un nouveau filtre</div>
+        <div className='ButtonCreateArticle'>Créer un nouveau filtre</div>
       </Link>
       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>
       <div className='FiltresContainer'>

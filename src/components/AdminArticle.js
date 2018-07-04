@@ -1,26 +1,11 @@
 import React, { Component } from 'react'
 import ArticleForm from './ArticleForm'
-
-const submitNewArticle = article => fetch('http://localhost:3456/articles', {
-  method: 'post',
-  body: JSON.stringify(article),
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
-
-const submitUpdatedArticle = article => fetch('http://localhost:3456/articles', {
-  method: 'put',
-  body: JSON.stringify(article),
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
+import api from '../api'
 
 export const AdminNewArticle = () => {
   return (
     <div>
-      <ArticleForm submitArticle={submitNewArticle} />
+      <ArticleForm submitArticle={api.newArticle} />
     </div>
   )
 }
@@ -31,7 +16,7 @@ export const AdminEditArticle = ({ articleId, articles }) => {
 
   return (
     <div>
-      { article ? <ArticleForm article={article} submitArticle={submitUpdatedArticle} /> : <div>Loading..</div> }
+      { article ? <ArticleForm article={article} submitArticle={api.updateArticle} /> : <div>Loading..</div> }
     </div>
   )
 }

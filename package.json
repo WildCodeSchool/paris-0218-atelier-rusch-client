@@ -2,6 +2,7 @@
   "name": "paris-0218-atelier-rusch-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3456",
   "dependencies": {
     "@reach/router": "^1.1.1",
     "react": "^16.4.0",

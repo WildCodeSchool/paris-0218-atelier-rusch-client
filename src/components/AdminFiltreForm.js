@@ -22,28 +22,17 @@ class AdminFiltreForm extends Component {
       section: this.state.filtre.section
     }
 
-
-	// console.log('submit new filtre', filtre)
-
-  	fetch('http://localhost:3456/filters', {
-  		method: 'post',
-  		body: JSON.stringify(filtre),
-  		headers: {
-  		'Content-Type': 'application/json'
-  		}
-  	})
+    this.props.submitFiltre(filtre)
   }
 
 	render() {
-		console.log('state', this.state)
-
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<label>Nom du filtre :<br/>
 				<input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange} />
 				</label>
 
-				<select name="section" value="section" onChange={this.handleChange}>
+				<select name="section" value={this.state.section} onChange={this.handleChange}>
 				  <option value="Choose">Choisissez la section</option>
 				  <option value="LabRusch">LabRusch</option>
 				  <option value="Projets">Projets</option>

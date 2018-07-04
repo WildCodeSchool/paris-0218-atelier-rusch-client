@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
-import ArticleForm from './components/ArticleForm'
 
 import Homepage from './components/Homepage.js'
 import Atelier from './components/Atelier.js'
@@ -9,27 +8,30 @@ import LabRusch from './components/LabRusch.js'
 import Projets from './components/Projets.js'
 import Footer from './components/Footer.js'
 import Admin from './components/Admin.js'
-import AdminFiltreForm from './components/AdminFiltreForm.js'
 import './App.css'
 
 import store from './store'
+import api from './api'
+
 import { loadArticles, loadFilters, loadMembers } from './actions'
 
 class App extends Component {
+
+  syncDatas = () => {
+    api.getArticles()
+      .then(articles => store.dispatch(loadArticles(articles)))
+
+    api.getFilters()
+      .then(filters => store.dispatch(loadFilters(filters)))
+
+    api.getEquipe()
+      .then(members => store.dispatch(loadMembers(members)))
+  }
+
   componentDidMount () {
     this.unsubscribe = store.subscribe(() => this.forceUpdate())
 
-    fetch('http://localhost:3456/articles')
-      .then(res => res.json())
-      .then(articles => store.dispatch(loadArticles(articles)))
-
-    fetch('http://localhost:3456/filters')
-      .then(res => res.json())
-      .then(filters => store.dispatch(loadFilters(filters)))
-
-    fetch('http://localhost:3456/equipe')
-      .then(res => res.json())
-      .then(members => store.dispatch(loadMembers(members)))
+    this.syncDatas()
   }
 
   componentWillUnmount () {

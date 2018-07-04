@@ -1,26 +1,11 @@
 // import React, { Component } from 'react'
-// import AdminMemberForm from './AdminMemberForm'
-
-// const submitNewMember = filtre => fetch('http://localhost:3456/filtres', {
-//   method: 'post',
-//   body: JSON.stringify(filtre),
-//   headers: {
-//     'Content-Type': 'application/json'
-//   }
-// })
-
-// const submitUpdatedMember = filtre => fetch('http://localhost:3456/filtres', {
-//   method: 'put',
-//   body: JSON.stringify(filtre),
-//   headers: {
-//     'Content-Type': 'application/json'
-//   }
-// })
+// import AdminFiltreForm from './AdminFiltreForm'
+// import api from '../api.js'
 
 // export const AdminNewMember = () => {
 //   return (
 //     <div>
-//       <AdminFiltreForm submitMember={submitNewFiltre} />
+//       <AdminFiltreForm member={{}} submitMember={api.newFilter} />
 //     </div>
 //   )
 // }
@@ -31,7 +16,7 @@
 
 //   return (
 //     <div>
-//       { filtre ? <AdminFiltreForm member={member} submitFiltre={submitUpdatedMember} /> : <div>Loading..</div> }
+//       { filtre ? <AdminFiltreForm filtre={filtre} submitFiltre={api.updateFilter} /> : <div>Loading..</div> }
 //     </div>
 //   )
 // }

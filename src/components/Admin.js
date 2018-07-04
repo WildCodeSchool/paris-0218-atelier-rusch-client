@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import { Router } from '@reach/router'
-import ArticleForm from './ArticleForm.js'
 import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
 import { AdminNewArticle, AdminEditArticle } from './AdminArticle.js'
 import { AdminNewFiltre, AdminEditFiltre } from './AdminFiltre.js'
-import AdminPartenaires from './AdminPartenaires.js'
-import AdminEquipe from './AdminEquipe.js'
-
+import api from '../api'
 
 const AdminHome = () => <div>ADMIN</div>
 
@@ -20,24 +17,23 @@ class Admin extends Component {
     partenaires: []
   }
 
-  componentDidMount () {
-    console.log('admin mounted')
-    fetch('http://localhost:3456/articles')
-      .then(res => res.json())
-      .then(articles => console.log('articles fetched') || this.setState({ articles: articles }))
+  syncDatas = () => {
+    api.getArticles()
+      .then(articles => this.setState({ articles: articles }))
 
-    fetch('http://localhost:3456/filters')
-      .then(res => res.json())
-      .then(filtres => this.setState({ filtres: filtres}))
+    api.getFilters()
+      .then(filtres => this.setState({ filtres: filtres }))
 
-    fetch('http://localhost:3456/equipe')
-      .then(res => res.json())
+    api.getEquipe()
       .then(equipe => this.setState({ equipe: equipe }))
   }
 
-  render () {
-    console.log('admin render')
 
+  componentDidMount () {
+    this.syncDatas()
+  }
+
+  render () {
     return (
       <div className="App">
         <AdminNav />

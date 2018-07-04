@@ -12,7 +12,7 @@ const Homepage = (props) => {
   const state = store.getState()
 
   const labArticles = state.articles.allArticles
-    .filter(article => article.section === 'Lab')
+    .filter(article => article.section === 'lab')
 
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)

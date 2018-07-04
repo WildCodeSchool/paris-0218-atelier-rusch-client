@@ -3,10 +3,12 @@ import { Router } from '@reach/router'
 import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
+import AdminPartenaires from './AdminPartenaires.js'
 import { AdminNewArticle, AdminEditArticle } from './AdminArticle.js'
 import { AdminNewFiltre, AdminEditFiltre } from './AdminFiltre.js'
 import { AdminNewMember, AdminEditMember } from './AdminMember.js'
 import AdminMembers from './AdminMembers.js'
+import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
 
 const AdminHome = () => <div>ADMIN</div>
@@ -28,6 +30,9 @@ class Admin extends Component {
 
     api.getEquipe()
       .then(equipe => this.setState({ equipe: equipe }))
+
+    api.getPartenaires()
+      .then(partenaires => this.setState({ partenaires: partenaires }))
   }
 
 
@@ -51,6 +56,9 @@ class Admin extends Component {
           <AdminMembers path='equipe' members={this.state.equipe}/>
           <AdminEditMember path='equipe/:memberId' members={this.state.equipe} />
           <AdminNewMember path='equipe/new' />
+          <AdminPartenaires path='partenaires' partenaires={this.state.partenaires} />
+          <AdminNewPartenaire path='partenaires/new' />
+          <AdminEditPartenaire path='partenaires/:partenaireId' partenaires={this.state.partenaires} />
         </Router>
       </div>
     )

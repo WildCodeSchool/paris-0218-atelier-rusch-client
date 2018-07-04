@@ -1,18 +1,35 @@
 img
 {
     display: inline;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     width: 2rem;
     margin: 2rem;    
 }
+.p
+{
+    display: flex;
+    justify-content: space-between;
+}
+
 
 iframe
 {
-    filter: sepia(40%);
+
+    width: 50%;
 }
 
 .p {
   font-family: 'IBMPlex', sans-serif;
+  font-weight: 400;
+  margin: 2rem 15rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+
+.reseaux
+{
+    display: flex;
+    font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
   margin: 2rem 15rem;
   line-height: 2rem;

@@ -6,7 +6,7 @@ import './css/AdminFiltres.css'
 const AdminFiltres = ({ filtres }) => {
 
   const labFiltres = filtres
-  .filter(filtre => filtre.section === 'LabRusch')
+  .filter(filtre => filtre.section === 'lab')
   .map(el =>
     <div className='AdminFiltre'>
       <div className='currentText'> {el.filterTag} </div>
@@ -21,7 +21,7 @@ const AdminFiltres = ({ filtres }) => {
   )
 
   const projetsFiltres = filtres
-  .filter(filtre => filtre.section === 'Projets')
+  .filter(filtre => filtre.section === 'projets')
    .map(el =>
     <div className='AdminFiltre'>
       <div className='currentText'> {el.filterTag} </div>

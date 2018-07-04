@@ -6,8 +6,10 @@ import store from '../store.js'
 const FiltersSection = () => {
   const state = store.getState()
 
+  console.log(window.location.pathname.slice(1))
+
   const filtersNames = state.filters.allFilters
-    .filter(filter => filter.section === state.router.pageActive)
+    .filter(filter => filter.section === window.location.pathname.slice(1))
     .map((filter, i) => <Filter key={i} filter={filter} articles={state.articles.allArticles} />)
 
   return (

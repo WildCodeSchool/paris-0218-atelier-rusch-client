@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AdminNav from './AdminNav.js'
 import './css/ArticleForm.css'
 
 class AdminMemberForm extends Component {

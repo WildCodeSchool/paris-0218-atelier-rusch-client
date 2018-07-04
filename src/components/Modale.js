@@ -6,7 +6,7 @@ const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
   p: ({ value }) => <p>{value}</p>,
   blockquote: ({ value }) => <blockquote className='quote'>{value}</blockquote>,
-  imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} />),
+  imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} alt='' />),
 }
 
 const Element = ({ element }) => toHTML[element.type](element)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Router } from '@reach/router'
+import { Router, Link } from '@reach/router'
 import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
@@ -10,8 +10,42 @@ import { AdminNewMember, AdminEditMember } from './AdminMember.js'
 import AdminMembers from './AdminMembers.js'
 import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
+import './css/Admin.css'
 
-const AdminHome = () => <div>ADMIN</div>
+const AdminHome = () => {
+  return(
+  <div className='AdminHomeContainer'>
+    <div className='AdminHomeWelcome'>
+    <p>
+      Hello,<br/><br/>Te voici bien arrivé(e) sur l'espace Administrateur du site Rusch !<br/>
+      Cette interface permet de créer, modifier et supprimer des éléments.
+    </p>
+    </div>
+    <Link to='articles'>
+      <div className='AdminHomeLinkTo'>
+        Articles
+      </div>
+    </Link>
+
+    <Link to='filtres'>
+      <div className='AdminHomeLinkTo'>
+        Filtres
+      </div>
+    </Link>
+
+    <Link to='equipe'>
+      <div className='AdminHomeLinkTo'>
+        Equipe
+      </div>
+    </Link>
+
+    <Link to='partenaires'>
+      <div className='AdminHomeLinkTo'>
+        Partenaires
+      </div>
+    </Link>
+  </div>
+)}
 
 class Admin extends Component {
   state = {

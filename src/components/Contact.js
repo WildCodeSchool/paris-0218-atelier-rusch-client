@@ -6,7 +6,7 @@ import Linkedin from './img/linkedin.png'
 import './css/Contact.css'
 
 const Contact = () =>
-  <div>
+  <div className='Contact'>
     <Nav />
     <div className="spacer"></div>
     <h2 className="App-intro">

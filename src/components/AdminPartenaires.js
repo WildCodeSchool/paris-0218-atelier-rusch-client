@@ -1,8 +1,6 @@
-import ButtonCreateFiltre from './ButtonCreateFiltre.js'
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
-import './css/AdminFiltres.css'
 
 const AdminPartenaires = ({ partenaires }) => {
 
@@ -10,9 +8,9 @@ const AdminPartenaires = ({ partenaires }) => {
 
   const allPartenaires = partenaires
    .map(el =>
-    <div className='AdminFiltre'>
+    <div className='AdminCardHalfWidth'>
       <div className='currentText'> {el.shortDescription} </div>
-      <div className='EditButtons'>
+      <div className='EditButtonsContainer'>
         <Link to={String(el.id)}>
       	 <button>E</button>
         </Link>
@@ -24,11 +22,12 @@ const AdminPartenaires = ({ partenaires }) => {
 
 
   return (
-    <div className='FiltresGlobalContainer'>
+    <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateArticle'>Creer un nouveau partenaire</div>
+        <div className='ButtonCreateElement'>Créer un nouveau partenaire</div>
       </Link>
-      <div className='FiltresContainer'>
+      <div className='AdminTitles yellow'>Partenaires :</div>
+      <div className='AdminCardHalfWidthContainer'>
       {allPartenaires}
       </div>
     </div>

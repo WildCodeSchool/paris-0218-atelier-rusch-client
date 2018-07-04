@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import api from '../api.js'
 
 const ArticleCard = ({ article }) =>
   <div className='AdminCardFullWidth'>
@@ -9,7 +10,8 @@ const ArticleCard = ({ article }) =>
       <Link to={String(article.id)}>
         <button>E</button>
       </Link>
-      <button>S</button>
+      <button onClick={()=>{api.deleteArticle(article.id)
+        window.location.reload()}}>S</button>
     </div>
   </div>
 

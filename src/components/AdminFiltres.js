@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import api from '../api.js'
 
 const FiltreCard = ({ filtre }) => 
   <div className='AdminCardHalfWidth'>
@@ -8,7 +9,8 @@ const FiltreCard = ({ filtre }) =>
       <Link to={String(filtre.id)}>
        <button>E</button>
       </Link>
-      <button>S</button>
+      	<button onClick={()=>{api.deleteFilter(el.id)
+        window.location.reload()}}>S</button>
     </div>
   </div>
 
@@ -25,7 +27,6 @@ const AdminFiltres = ({ filtres }) => {
   .map(filtre =>
     <FiltreCard key={filtre.id} filtre={filtre} />
   )
-
 
   return (
     <div className='GlobalContainer'>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
+import api from '../api.js'
 
 const AdminPartenaires = ({ partenaires }) => {
 
@@ -13,7 +14,8 @@ const AdminPartenaires = ({ partenaires }) => {
         <Link to={String(el.id)}>
       	 <button>E</button>
         </Link>
-      	 <button>S</button>
+      	 <button onClick={()=>{api.deletePartenaire(el.id)
+        window.location.reload()}} >S</button>
       </div>
     </div>
   )

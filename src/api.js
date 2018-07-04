@@ -22,6 +22,14 @@ const updatePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
   }
 })
 
+const deletePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
+  method: 'delete',
+  body: JSON.stringify(partenaire),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
 const newFilter = filter => fetch('/filters', {
   method: 'post',
   body: JSON.stringify(filter),
@@ -32,6 +40,14 @@ const newFilter = filter => fetch('/filters', {
 
 const updateFilter = (id, filter) => fetch(`/filters/${id}`, {
   method: 'put',
+  body: JSON.stringify(filter),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+const deleteFilter = (id, filter) => fetch(`/filters/${id}`, {
+  method: 'delete',
   body: JSON.stringify(filter),
   headers: {
     'Content-Type': 'application/json'
@@ -54,6 +70,14 @@ const updateArticle = (id, article) => fetch(`/articles/${id}`, {
   }
 })
 
+const deleteArticle = (id, article) => fetch(`/articles/${id}`, {
+  method: 'delete',
+  body: JSON.stringify(article),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
 const newMember = member => fetch('/equipe', {
   method: 'post',
   body: JSON.stringify(member),
@@ -69,6 +93,15 @@ const updateMember = (id, member) => fetch(`/equipe/${id}`, {
     'Content-Type': 'application/json'
   }
 })
+
+const deleteMember = (id, member) => fetch(`/equipe/${id}`, {
+  method: 'delete',
+  body: JSON.stringify(member),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
 export default {
   getArticles,
   getFilters,
@@ -76,10 +109,14 @@ export default {
   getPartenaires,
   newFilter,
   updateFilter,
+  deleteFilter,
   newPartenaire,
   updatePartenaire,
+  deletePartenaire,
   newArticle,
   updateArticle,
+  deleteArticle,
   newMember,
-  updateMember
+  updateMember,
+  deleteMember
 }

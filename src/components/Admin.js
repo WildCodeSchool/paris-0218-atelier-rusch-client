@@ -10,10 +10,14 @@ import { AdminNewMember, AdminEditMember } from './AdminMember.js'
 import AdminMembers from './AdminMembers.js'
 import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
+import './css/Admin.css'
 
 const AdminHome = () => {
   return(
-  <div>
+  <div className='AdminHomeContainer'>
+    <div className='AdminHomeWelcome'>
+    Bienvenue dans l'espace Administrateur
+    </div>
     <Link to='articles'>
       <div className='AdminHomeLinkTo'>
         Articles

@@ -1,0 +1,28 @@
+.AdminHomeWelcome {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	padding: 15rem;
+}
+
+.AdminHomeContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.AdminHomeLinkTo {
+	width: 25vw;
+	height: 25vw;
+	background-color: #fbd052;
+	display: flex;
+	justify-content: center;
+  	box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+	align-items: center;
+	font-family: 'HeimatMono';
+	font-size: 2rem;
+}
+
+.AdminHomeLinkTo:hover {
+	text-decoration: underline;
+}

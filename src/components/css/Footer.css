@@ -1,5 +1,4 @@
 .Footer {
-	width: 94vw;
 	height: 55px;
 	display: flex;
 	background-color: #2b2b2b;
@@ -7,8 +6,6 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 3rem; 
-/*	position: fixed;
-	bottom: 0;*/
 }
 
 .LogoRuschBlanc {

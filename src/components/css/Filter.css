@@ -2,17 +2,17 @@
   z-index: 500;
   background-color: #fbd052;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
-  width: 92vw;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-content: center;
-  padding: 1.6vw 4vw 1.6vw 4vw;
+  padding: 1.6vw 0 1.6vw 0;
 }
 
 .Filter {
-  width: 20vw;
+  width: 25vw;
   height: 1rem;
   background-color: transparent;
   margin: 2vh 0 2vh 0;

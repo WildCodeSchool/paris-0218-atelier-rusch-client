@@ -15,8 +15,9 @@ export const AdminEditFiltre = ({ filtreId, filtres }) => {
   const filtre = filtres.find(a => String(a.id) === filtreId)
 
   return (
-    <div>
-      { filtre ? <AdminFiltreForm filtre={filtre} submitFiltre={api.updateFilter} /> : <div>Loading..</div> }
+    <div>{ filtre
+        ? <AdminFiltreForm filtre={filtre} submitFiltre={filtre => api.updateFilter(filtreId, filtre)} />
+        : <div>Loading..</div> }
     </div>
   )
 }

@@ -4,7 +4,7 @@ const getFilters = () => fetch('/filters').then(res => res.json())
 
 const getEquipe = () => fetch('/equipe').then(res => res.json())
 
-const newFilter = filter => fetch('/filtres', {
+const newFilter = filter => fetch('/filters', {
   method: 'post',
   body: JSON.stringify(filter),
   headers: {
@@ -12,7 +12,7 @@ const newFilter = filter => fetch('/filtres', {
   }
 })
 
-const updateFilter = filter => fetch('/filtres', {
+const updateFilter = (id, filter) => fetch(`/filters/${id}`, {
   method: 'put',
   body: JSON.stringify(filter),
   headers: {
@@ -28,7 +28,7 @@ const newArticle = article => fetch('/articles', {
   }
 })
 
-const updateArticle = article => fetch('/articles', {
+const updateArticle = (id, article) => fetch(`/articles/${id}`, {
   method: 'put',
   body: JSON.stringify(article),
   headers: {

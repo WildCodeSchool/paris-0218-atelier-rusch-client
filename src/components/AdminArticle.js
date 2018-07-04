@@ -15,8 +15,9 @@ export const AdminEditArticle = ({ articleId, articles }) => {
   const article = articles.find(a => String(a.id) === articleId)
 
   return (
-    <div>
-      { article ? <ArticleForm article={article} submitArticle={api.updateArticle} /> : <div>Loading..</div> }
+    <div>{article
+      ? <ArticleForm article={article} submitArticle={article => api.updateArticle(articleId, article)} />
+      : <div>Loading..</div> }
     </div>
   )
 }

@@ -12,17 +12,14 @@ class AdminFiltreForm extends Component {
 	handleChange = event => {
 		const key = event.target.name
     this.setState({ ...this.state.filtre, [key]: event.target.value })
+    console.log(this.state)
   }
 
 	handleSubmit = event => {
     event.preventDefault()
+    console.log(this.state)
 
-    const filtre = {
-	    filterTag: this.state.filtre.filterTag,
-      section: this.state.filtre.section
-    }
-
-    this.props.submitFiltre(filtre)
+    this.props.submitFiltre(this.state)
   }
 
 	render() {

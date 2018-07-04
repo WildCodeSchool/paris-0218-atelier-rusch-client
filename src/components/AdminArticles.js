@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './css/AdminArticles.css'
 import { Link } from '@reach/router'
+import api from '../api.js'
 
 const ArticleCard = ({ article }) =>
   <div className='AdminArticle'>
@@ -13,7 +14,8 @@ const ArticleCard = ({ article }) =>
       <Link to={String(article.id)}>
         <button>Editer</button>
       </Link>
-      <button>Supprimer</button>
+      <button onClick={()=>{api.deleteArticle(article.id)
+        window.location.reload()}}>Supprimer</button>
     </div>
   </div>
 

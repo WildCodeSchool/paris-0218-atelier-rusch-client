@@ -54,6 +54,14 @@ const updateArticle = (id, article) => fetch(`/articles/${id}`, {
   }
 })
 
+const deleteArticle = (id, article) => fetch(`/articles/${id}`, {
+  method: 'delete',
+  body: JSON.stringify(article),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
 const newMember = member => fetch('/equipe', {
   method: 'post',
   body: JSON.stringify(member),
@@ -80,6 +88,7 @@ export default {
   updatePartenaire,
   newArticle,
   updateArticle,
+  deleteArticle,
   newMember,
   updateMember
 }

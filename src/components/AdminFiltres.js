@@ -9,7 +9,7 @@ const FiltreCard = ({ filtre }) =>
       <Link to={String(filtre.id)}>
        <button>E</button>
       </Link>
-      	<button onClick={()=>{api.deleteFilter(el.id)
+      	<button onClick={()=>{api.deleteFilter(filtre.id)
         window.location.reload()}}>S</button>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import ButtonCreateFiltre from './ButtonCreateFiltre.js'
 import React, { Component } from 'react'
 import { Link } from '@reach/router'
+import api from '../api.js'
 import './css/AdminFiltres.css'
 
 const AdminMembers = ({ members }) => {
@@ -14,7 +15,8 @@ const AdminMembers = ({ members }) => {
         <Link to={String(el.id)}>
          <button>E</button>
         </Link>
-         <button>S</button>
+         <button onClick={()=>{api.deleteMember(el.id)
+        window.location.reload()}}>S</button>
       </div>
     </div>
   )

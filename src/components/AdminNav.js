@@ -19,7 +19,7 @@ class AdminNav extends Component {
   )
   } else {
     return(
-  <div className="NavBar">
+  <div className="NavBar" style={{ zIndex: '10000' }}>
     <div className='Logo'>
       <Link to='/'>
         <button className='HomeLink' value='home'>

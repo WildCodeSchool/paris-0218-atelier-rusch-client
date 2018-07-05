@@ -177,7 +177,6 @@ class ArticleForm extends Component {
     return (
     <div>
       <AdminNav />
-      <div className="spacer"></div>
       <div className="box">
 
         <div className="item-left">
@@ -207,15 +206,19 @@ class ArticleForm extends Component {
               </div>
 
               <div className="addModule yellow">Ajouter un module :</div>
-              <Container onDrop={this.handleDnd}>
+              <Container onDrop={this.handleDnd} className='DynamicInputs'>
+              <div className='DynamicInputs'>
                 {dynamicInputs}
+              </div>
               </Container>
-              <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
+              <div id="buttons" style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
+                {buttons}
+              </div>
               <input type="submit" value="Submit" />
             </form>
           </div>
         </div>
-        <div className="item-right">
+        <div className="item-right ModaleBlockPreview">
           <Modale article={article} />
         </div>
       </div>

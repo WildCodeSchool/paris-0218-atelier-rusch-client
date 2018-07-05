@@ -40,6 +40,15 @@
 		width: 18vw;
 		height: 18vw;
 	}
+
+	/* MODALE */
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink, {
+		padding: 0 10rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 35rem;
+	}
 }
 
 @media all and (max-width: 980px) {
@@ -174,6 +183,24 @@
 		width: 100vw;
 		height: 40vw;
 	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 8rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 15rem;
+	}
 }
 
 @media all and (max-width: 750px) {
@@ -267,11 +294,11 @@
 	}
 
 	h4 {
-		margin: 0 4rem;
+		margin: 0 3rem;
 	}
 
 	p {
-		margin: 3rem 4rem;
+		margin: 3rem 3rem;
 		font-size: 1.15rem;
 	}
 
@@ -309,5 +336,25 @@
 	.SectionTitleBlock {
 		width: 100vw;
 		height: 60vw;
+	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 3rem 7rem 0 7rem;
+	}
+
+
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 7rem 0 7rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 1.5rem 15rem;
 	}
 }

@@ -33,7 +33,7 @@ const Modale = ({ article, displayModale }) => {
     <div className="ModaleBlock">
       <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
       <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
-        <div className="ModaleHeader FilterBlack" style={{ padding: '0.1rem 0.75rem' }}>
+        <div className="ModaleHeader FilterBlack">
           <h2 className="green">
             {article.title}
           </h2>

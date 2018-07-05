@@ -1,8 +1,3 @@
-.ModaleHeader {
-  backdrop-filter: saturate(0);
-  -webkit-backdrop-filter: saturate(0);
-}
-
 .ModaleBlock {
   width: 100vw;
   height: 100vh;
@@ -11,6 +6,15 @@
   top: 0;
   overflow: scroll;
   background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ModaleHeader {
+  backdrop-filter: saturate(0);
+  -webkit-backdrop-filter: saturate(0);
+  padding: 0.1rem 0.75rem;
 }
 
 .closeModaleBtn {
@@ -23,3 +27,12 @@
   z-index: 5000;
 }
 
+.ModaleBlock img {
+  min-width: 50vw;
+  max-width: 70vw;
+  padding: 3rem 0;
+}
+
+.ModaleBlock .quote {
+  padding: 3rem 15rem 3rem 20rem;
+}

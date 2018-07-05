@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import Logo from './img/logo-rusch-noir.png'
-
-import './css/Nav.css'
 import { AuthProvider } from '../helpers/AuthContext'
 import Header from './Header'
 

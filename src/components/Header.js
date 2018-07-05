@@ -3,6 +3,7 @@ import { AuthConsumer } from '../helpers/AuthContext'
 import { Link } from '@reach/router'
 import api from '../api.js'
 
+
 class Header extends Component {
 
   state = {
@@ -21,6 +22,20 @@ class Header extends Component {
     console.log(this.state)
 
     api.loginUser(this.state)
+      .then(result => {
+        if (result.ok){
+          console.log(result)
+          window.location = '/admin/dashboard'
+        }
+        else
+        {
+          const error = Error(`Fetch: of Sign in, ${result.status} - ${result.statusText}`)
+          error.response = result
+          alert('Wrong creds!')
+          return true
+        }
+      })
+
 
   }
 
@@ -33,7 +48,7 @@ class Header extends Component {
            <div>
              <h3>
                <Link to="/admin/login">
-                 HOME
+                 LOGIN
                </Link>
              </h3>
              {isAuth ? (

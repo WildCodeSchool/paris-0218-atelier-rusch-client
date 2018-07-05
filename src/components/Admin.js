@@ -80,7 +80,9 @@ class Admin extends Component {
   render () {
     return (
       <div className="App">
+      <AuthProvider>
         <AdminNav />
+      </AuthProvider>
         <div className="spacer"></div>
         <Router>
           <AdminLogin path='login' />

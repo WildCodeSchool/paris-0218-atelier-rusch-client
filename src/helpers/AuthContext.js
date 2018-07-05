@@ -3,7 +3,7 @@ import React from "react"
 const AuthContext = React.createContext()
 
 class AuthProvider extends React.Component {
-  state = { isAuth: true}
+  state = { isAuth: false}
 
   login = () => {
     console.log(this.state)

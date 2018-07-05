@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from '@reach/router'
 import Logo from './img/logo-rusch-noir.png'
+import { AuthConsumer } from '../helpers/AuthContext'
 
 import './css/Nav.css'
 
-const AdminNav = () =>
+class AdminNav extends Component {
+
+  render(){
+
+    if(window.location.pathname === '/admin/login'){
+    return(
+      <div>
+        <p>
+          Login
+        </p>
+      </div>
+  )
+  } else {
+    return(
   <div className="NavBar">
     <div className='Logo'>
       <Link to='/'>
@@ -19,6 +33,8 @@ const AdminNav = () =>
       <Link className='NavBarLink' to='equipe' label='Equipe'> Equipe</Link>
       <Link className='NavBarLink' to='partenaires' label='Partenaires'> Partenaires </Link>
     </div>
-  </div>
-
+  </div>)
+  }
+  }
+}
 export default AdminNav

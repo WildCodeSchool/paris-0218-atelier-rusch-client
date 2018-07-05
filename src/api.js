@@ -82,7 +82,8 @@ const newMember = member => fetch('/equipe', {
   method: 'post',
   body: JSON.stringify(member),
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'credentials': 'include'
   }
 })
 
@@ -106,7 +107,8 @@ const loginUser = (user) => fetch(/sign-in/, {
   method: 'post',
   body: JSON.stringify(user),
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'credentials' : 'include'
   }
 })
 

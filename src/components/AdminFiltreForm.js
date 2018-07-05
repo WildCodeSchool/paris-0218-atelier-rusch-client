@@ -19,6 +19,7 @@ class AdminFiltreForm extends Component {
     console.log(this.state)
 
     this.props.submitFiltre(this.state)
+    { window.location.pathname = '/admin/filtres' }
   }
 
 	render() {

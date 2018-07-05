@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import './css/Footer.css'
 import LogoRuschBlanc from './img/logo-rusch-blanc.png'
 import fb from './img/fb.png'
@@ -14,7 +15,7 @@ const Footer = () =>
       <a href='https://www.linkedin.com/company/atelierrusch/' target='_blank'><img src={linkedIn} /></a>
   		<a href='https://www.instagram.com/atelier_rusch/' target='_blank'><img src={instagram} /></a>
   	</div>
-  	<div className='FooterText'>Contact</div>
+  	<Link to='/contact'><div className='FooterText'>Contact</div></Link>
   	<div className='FooterText'>Mentions légales</div>
   </div>
 

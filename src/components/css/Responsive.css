@@ -40,14 +40,28 @@
 		width: 18vw;
 		height: 18vw;
 	}
+
+	/* MODALE */
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink, {
+		padding: 0 10rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 35rem;
+	}
 }
 
 @media all and (max-width: 980px) {
 
 	/* GENERAL */
 
-	.NavBar, .spacer {
+	.NavBar .Logo {
 		display: none;
+	}
+
+	.NavBarLinksContainer {
+		width: 100vw;
+		padding: 0 3rem;
 	}
 
 	.quote {
@@ -148,6 +162,61 @@
 	.memberPic {
 		width: 15vw;
 	}
+
+	.PartenairesContainer {
+		margin: 3rem 5rem 3rem 10rem;
+	}
+
+	.PartenaireContainer {
+		width: 30vw;
+		height: 30vw;
+		box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.075);
+	}
+
+	.LogoPartenaire {
+		width: 18vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 40vw;
+	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 8rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 15rem;
+	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 5rem 7rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0 0 2rem 0;
+		width: 40vw;
+	}
+
+	.address {
+		margin: 3rem 7rem;
+	}
 }
 
 @media all and (max-width: 750px) {
@@ -170,6 +239,16 @@
 		font-size: 2rem;
 		margin: 0 8rem;
 		line-height: 3rem;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.Filter {
+		width: 50vw;
+	}
+
+	.NavBarLink {
+		margin: 0 1rem;
 	}
 }
 
@@ -231,11 +310,11 @@
 	}
 
 	h4 {
-		margin: 0 4rem;
+		margin: 0 3rem;
 	}
 
 	p {
-		margin: 3rem 4rem;
+		margin: 3rem 3rem;
 		font-size: 1.15rem;
 	}
 
@@ -261,9 +340,59 @@
 	.PartenaireContainer {
 		width: 60vw;
 		height: 60vw;
+		box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.075);
 	}
 
 	.LogoPartenaire {
 		width: 25vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 60vw;
+	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 3rem 7rem 0 7rem;
+	}
+
+
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 7rem 0 7rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 1.5rem 15rem;
+	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 3.5rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0;
+		width: 100vw;
+	}
+
+	.address {
+		margin: 3rem 3.5rem;
+		flex-direction: column;
+	}
+
+
+	.address div:first-child {
+		margin: 0 0 2.2rem 0;
 	}
 }

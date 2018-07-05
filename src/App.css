@@ -121,6 +121,7 @@ h4 {
   margin: 0 15rem;
   padding-top: 5rem;
   font-size: 2rem;
+  align-self: flex-start;
 }
 
 h5 {

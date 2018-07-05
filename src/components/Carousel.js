@@ -8,7 +8,7 @@ export const SlideShow = ({ articles }) => {
   const imagesElements = articles.map(article =>
     <Link key={article.id} to={String(article.id)}>
       <div className='carouselContainer'
-      style={{ background: `0 / auto 100% no-repeat url(${article.headerImage})`}} 
+      style={{ background: `0 / 100% no-repeat url(${article.headerImage})`}} 
       alt={article.title}> 
         <div className='FilterBlack' style={{ display: 'flex', flexDirection: 'column' }}>
           <h6 style={{ paddingBottom: '50px', fontSize: '1.25rem', color: 'white' }} >Projets</h6>

@@ -7,7 +7,7 @@
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
   z-index: 1000;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-around;
   color: #2b2b2b;
   height: 65px;
@@ -28,7 +28,7 @@
   font-weight: 400;
   font-size: 0.9rem;
   border: none;
-  margin: 0 4rem;
+  margin: 0 2.5rem;
   background-color: transparent;
 }
 
@@ -37,7 +37,7 @@
   font-weight: 400;
   font-size: 0.9rem;
   border: none;
-  margin: 0 2rem;
+  margin: 0 1rem;
   background-color: transparent;
 }
 

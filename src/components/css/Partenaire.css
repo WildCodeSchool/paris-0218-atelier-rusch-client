@@ -2,13 +2,13 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 3rem 15rem;
+  margin: 3rem 10rem 3rem 15rem;
 }
 
 .PartenaireContainer {
 	width: 20vw;
 	height: 20vw;
-	box-shadow: -10px 0 50px rgba(0, 0, 0, 0.075);  
+	box-shadow: -10px 0 50px rgba(0, 0, 0, 0.075);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

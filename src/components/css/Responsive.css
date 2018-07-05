@@ -46,8 +46,13 @@
 
 	/* GENERAL */
 
-	.NavBar, .spacer {
+	.NavBar .Logo {
 		display: none;
+	}
+
+	.NavBarLinksContainer {
+		width: 100vw;
+		padding: 0 3rem;
 	}
 
 	.quote {
@@ -148,6 +153,27 @@
 	.memberPic {
 		width: 15vw;
 	}
+
+	.PartenairesContainer {
+		margin: 3rem 5rem 3rem 10rem;
+	}
+
+	.PartenaireContainer {
+		width: 30vw;
+		height: 30vw;
+		box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.075);
+	}
+
+	.LogoPartenaire {
+		width: 18vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 40vw;
+	}
 }
 
 @media all and (max-width: 750px) {
@@ -170,6 +196,16 @@
 		font-size: 2rem;
 		margin: 0 8rem;
 		line-height: 3rem;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.Filter {
+		width: 50vw;
+	}
+
+	.NavBarLink {
+		margin: 0 1rem;
 	}
 }
 
@@ -261,9 +297,17 @@
 	.PartenaireContainer {
 		width: 60vw;
 		height: 60vw;
+		box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.075);
 	}
 
 	.LogoPartenaire {
 		width: 25vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 60vw;
 	}
 }

@@ -201,6 +201,22 @@
 	.ModaleBlock .quote {
 		padding: 3rem 15rem;
 	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 5rem 7rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0 0 2rem 0;
+		width: 40vw;
+	}
+
+	.address {
+		margin: 3rem 7rem;
+	}
 }
 
 @media all and (max-width: 750px) {
@@ -356,5 +372,27 @@
 
 	.ModaleBlock .quote {
 		padding: 1.5rem 15rem;
+	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 3.5rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0;
+		width: 100vw;
+	}
+
+	.address {
+		margin: 3rem 3.5rem;
+		flex-direction: column;
+	}
+
+
+	.address div:first-child {
+		margin: 0 0 2.2rem 0;
 	}
 }

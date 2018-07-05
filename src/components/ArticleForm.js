@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from '@reach/router'
 import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
@@ -135,6 +136,7 @@ class ArticleForm extends Component {
     event.preventDefault()
 
     this.props.submitArticle(this.state.article)
+
   }
 
   addInput = type => {
@@ -204,14 +206,13 @@ class ArticleForm extends Component {
               <Container onDrop={this.handleDnd}>
                 {dynamicInputs}
               </Container>
-
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />
             </form>
           </div>
         </div>
         <div className="item-right">
-          <Modale article={article} />
+          <Modale style={{whiteSpace: 'pre-wrap'}} article={article} />
         </div>
       </div>
     </div>

@@ -134,8 +134,8 @@ class ArticleForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-
     this.props.submitArticle(this.state.article)
+    { window.location.pathname = '/admin/articles' }
 
   }
 
@@ -212,7 +212,7 @@ class ArticleForm extends Component {
           </div>
         </div>
         <div className="item-right">
-          <Modale style={{whiteSpace: 'pre-wrap'}} article={article} />
+          <Modale article={article} />
         </div>
       </div>
     </div>

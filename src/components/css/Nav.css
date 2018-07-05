@@ -28,7 +28,16 @@
   font-weight: 400;
   font-size: 0.9rem;
   border: none;
-  margin: 0 4vw 0 4vw;
+  margin: 0 4rem;
+  background-color: transparent;
+}
+
+.NavBarLinkAdmin {
+  font-family: "IBMPlex", monospace;
+  font-weight: 400;
+  font-size: 0.9rem;
+  border: none;
+  margin: 0 2rem;
   background-color: transparent;
 }
 

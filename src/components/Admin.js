@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Link } from '@reach/router'
+import AdminLogin from './AdminLogin.js'
 import AdminFiltres from './AdminFiltres.js'
 import AdminNav from './AdminNav.js'
 import AdminArticles from './AdminArticles.js'
@@ -11,6 +12,8 @@ import AdminMembers from './AdminMembers.js'
 import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
 import './css/Admin.css'
+
+import { AuthProvider } from '../helpers/AuthContext'
 
 const AdminHome = () => {
   return(
@@ -77,10 +80,13 @@ class Admin extends Component {
   render () {
     return (
       <div className="App">
+      <AuthProvider>
         <AdminNav />
+      </AuthProvider>
         <div className="spacer"></div>
         <Router>
-          <AdminHome path='/' />
+          <AdminLogin path='login' />
+          <AdminHome path='dashboard' />
           <AdminArticles path='articles' articles={this.state.articles} />
           <AdminNewArticle path='articles/new' />
           <AdminEditArticle path='articles/:articleId' articles={this.state.articles} />

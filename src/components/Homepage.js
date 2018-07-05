@@ -27,8 +27,6 @@ const Homepage = (props) => {
     .filter(article => article.hasStar === 'true')
     .slice(0, 3)
 
-    console.log(slideshowArticles)
-
   const articleId = props.articleId
   const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)
   console.log({articleId, selectedArticle})

@@ -9,9 +9,6 @@
 	/* GENERAL */
 
 	h1 {
-		font-size: 1rem;
-		padding: 0;
-		line-height: 1rem;
 	}
 
 	.NavBar {
@@ -20,15 +17,43 @@
 
 	/* HOMEPAGE */
 
-	.IntroBlockLeft, .IntroBlockRight, .LogoBlock {
+	.IntroBlockRight, .LogoBlock {
 		height: 50vh;
 		width: 100vw;
 		padding: 0;
 	}
 
+	.LogoImg {
+  		width: 30vw;
+	}
+
+	.IntroBlockRight {
+		height: auto;
+		width: 100vw;
+		padding: 5rem 0;
+	}
+
+	.IntroBlockLeft {
+		width: 100vw;
+		height: 100vh;
+	}
+
 	.IntroBlocks {
 		display: block;
+	}
+
+	.carouselContainer, .carouselContainer div {
 		width: 100vw;
+		height: 50vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		backdrop-filter: saturate(0);
+		-webkit-backdrop-filter: saturate(0);
+	}
+
+	.carousel .slider-wrapper {
+		height: 50vh;
 	}
 
 	/* ARTICLES THUMBNAILS */
@@ -67,6 +92,18 @@
 }
 
 @media all and (max-width: 500px) {
+
+	/* HOMEPAGE */
+
+	.LogoImg {
+  		width: 50vw;
+	}
+
+	h1 {
+		font-size: 1.45rem;
+		padding: 0 3.5rem;
+		line-height: 2.5rem;
+	}
 
 	/* ARTICLES THUMBNAILS */
 

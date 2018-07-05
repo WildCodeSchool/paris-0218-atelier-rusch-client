@@ -21,25 +21,13 @@
   display: none;
 }
 
-.carousel .control-dots {
-  color: blue;
-}
-
 .carousel .control-dots .dot {
   box-shadow: 0 0 0 transparent;
   background-color: white;
 }
 
-.thumbs-wrapper .axis-vertical {
-  border: solid red 5px;
-}
-
 .carousel .carousel-status {
   display: none;
-}
-
-.carousel .slide img {
-  height: 100%;
 }
 
 .carousel button {
@@ -48,11 +36,6 @@
 
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
   opacity: 0.5;
-}
-
-.carousel .control-arrow:hover {
-  opacity: 1;
-  background-color: red;
 }
 
 .carousel.carousel-slider .control-arrow:hover {

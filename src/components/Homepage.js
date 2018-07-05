@@ -18,9 +18,16 @@ const Homepage = (props) => {
     .slice(labArticles.length - 3, labArticles.length)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const slideshowArticles = state.articles.allArticles
+/*  const slideshowArticles = state.articles.allArticles
     .sort((a, b) => Date(b.createdAt) - Date(a.createdAt))
+    .slice(0, 3)  */
+
+    const slideshowArticles = state.articles.allArticles
+    .filter(article => article.section === 'projets')
+    .filter(article => article.hasStar === 'true')
     .slice(0, 3)
+
+    console.log(slideshowArticles)
 
   const articleId = props.articleId
   const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)

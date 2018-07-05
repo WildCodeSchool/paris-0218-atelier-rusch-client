@@ -1,28 +1,33 @@
-.carousel .slide .legend {
-  height: 10px;
-  position: relative;
-  bottom: 350px;
-  background-color: transparent;
-  color: red;
-  font-size: 20px;
-  opacity: 1;
-  text-align: center;
+.carouselContainer, .carouselContainer div {
+  width: 50vw;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: saturate(0);
+  -webkit-backdrop-filter: saturate(0);
+}
+
+.carouselContainer h5 {
+  margin: 0 5rem;
 }
 
 .carousel .slider-wrapper {
-  height: 40vh;
+  height: 45vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .carousel .thumbs-wrapper {
-  width: 500px;
-  border: solid yellow 5px;
   display: none;
 }
 
 .carousel .control-dots {
-  border: solid red 5px;
-  display: none;
+  color: blue;
+}
+
+.carousel .control-dots .dot {
+  box-shadow: 0 0 0 transparent;
+  background-color: white;
 }
 
 .thumbs-wrapper .axis-vertical {
@@ -33,10 +38,24 @@
   display: none;
 }
 
-.editCarousel {
-  position: relative;
-  bottom: 240px;
-  right: 400px;
-  color: red;
-  text-align: center;
+.carousel .slide img {
+  height: 100%;
+}
+
+.carousel button {
+  margin: 0 20px;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  opacity: 0.5;
+}
+
+.carousel .control-arrow:hover {
+  opacity: 1;
+  background-color: red;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background-color: transparent;
+  opacity: 1;
 }

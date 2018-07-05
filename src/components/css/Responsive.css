@@ -1,0 +1,86 @@
+@media all and (max-width: 1480px) {
+/*	div {
+		background-color: red;
+	}*/
+}
+
+@media all and (max-width: 980px) {
+
+	/* GENERAL */
+
+	h1 {
+		font-size: 1rem;
+		padding: 0;
+		line-height: 1rem;
+	}
+
+	.NavBar {
+		display: none;
+	}
+
+	/* HOMEPAGE */
+
+	.IntroBlockLeft, .IntroBlockRight, .LogoBlock {
+		height: 50vh;
+		width: 100vw;
+		padding: 0;
+	}
+
+	.IntroBlocks {
+		display: block;
+		width: 100vw;
+	}
+
+	/* ARTICLES THUMBNAILS */
+
+
+	.ArticleThumbnailClassic, .RedirectingBlockToAllArticles {
+		width: 50vw;
+		height: 50vw;
+	}
+
+	.ArticleThumbnailClassic > *, .RedirectingBlockToAllArticles > * {
+		width: 50vw;
+	}
+
+	.arrow {
+		font-size: 5rem;
+		padding-top: 7rem;
+	}
+}
+
+@media all and (max-width: 750px) {
+
+	/* FOOTER */
+
+	.Footer {
+		flex-direction: column;
+		height: auto;
+		padding: 1.5rem 0;
+	}
+
+	.Footer > div {
+		width: 100vw;
+		text-align: center;
+		padding: 0.5rem;
+	}
+}
+
+@media all and (max-width: 500px) {
+
+	/* ARTICLES THUMBNAILS */
+
+	.ArticleThumbnailClassic, .RedirectingBlockToAllArticles {
+		width: 100vw;
+		height: 50vh;
+	}
+
+	.ArticleThumbnailClassic > *, .RedirectingBlockToAllArticles > * {
+		width: 100vw;
+	}
+
+	.arrow {
+		font-size: 4.5rem;
+		padding-top: 6rem;
+	}
+}

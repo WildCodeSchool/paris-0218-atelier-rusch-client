@@ -177,7 +177,6 @@ class ArticleForm extends Component {
     return (
     <div>
       <AdminNav />
-      <div className="spacer"></div>
       <div className="box">
 
         <div className="item-left">
@@ -215,7 +214,7 @@ class ArticleForm extends Component {
             </form>
           </div>
         </div>
-        <div className="item-right">
+        <div className="item-right ModaleBlockPreview">
           <Modale article={article} />
         </div>
       </div>

@@ -14,7 +14,7 @@ const LabRusch = (props) => {
   const articleId = props.articleId
   const selectedArticle = articles.find(article => String(article.id) === articleId)
   const modale = selectedArticle !== undefined
-    ? <Modale article={selectedArticle} displayModale={'block'} />
+    ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
 
   const getFilteredArticles = applyFiltersToSection('lab', state)

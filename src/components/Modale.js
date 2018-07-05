@@ -30,7 +30,7 @@ const Modale = ({ article, displayModale }) => {
   const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
 
   return (
-    <div className="ModaleBlock">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
       <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
         <div className="ModaleHeader FilterBlack">

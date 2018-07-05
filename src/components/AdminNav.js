@@ -4,7 +4,7 @@ import Logo from './img/logo-rusch-noir.png'
 import './css/Nav.css'
 
 const AdminNav = () =>
-  <div className="NavBar">
+  <div className="NavBar" style={{ zIndex: '10000' }}>
     <div className='Logo'>
       <Link to='/'>
         <button className='HomeLink' value='home'>

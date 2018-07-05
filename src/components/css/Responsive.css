@@ -10,6 +10,26 @@
 		margin: 0 25rem;
 	}
 
+	.ModaleBlockPreview h4, .ModaleBlockPreview p {
+		margin: 0 10rem;
+	}
+
+	.ModaleBlockPreview h2 {
+		margin: 5rem 10rem 0 10rem;
+	}
+
+	.ModaleBlockPreview h3 {
+		margin: 1rem 10rem 0 10rem;
+	}
+
+	.ModaleBlockPreview .smallLink {
+		margin: 1rem 10rem 5rem 10rem;
+	}
+
+	.ModaleBlockPreview .quote {
+		padding: 3rem 15rem;
+	}
+
 	p {
 		margin: 3rem 25rem;
 	}
@@ -42,7 +62,7 @@
 	}
 
 	/* MODALE */
-	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink, {
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
 		padding: 0 10rem;
 	}
 

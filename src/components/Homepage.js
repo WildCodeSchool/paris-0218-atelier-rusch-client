@@ -28,7 +28,7 @@ const Homepage = (props) => {
   const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)
   console.log({articleId, selectedArticle})
   const modale = selectedArticle !== undefined
-    ? <Modale article={selectedArticle} displayModale={'block'} />
+    ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
 
   return (

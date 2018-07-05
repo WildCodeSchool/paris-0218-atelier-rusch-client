@@ -13,6 +13,7 @@ const AdminNav = () =>
       </Link>
     </div>
     <div className="NavBarLinksContainer">
+      <Link className='NavBarLink' to='' label='Articles'> Administration </Link>
       <Link className={window.location.pathname === '/admin/articles' ? 'NavBarLink active' : 'NavBarLink'} to='articles' label='Articles'> Articles </Link>
       <Link className={window.location.pathname === '/admin/filtres' ? 'NavBarLink active' : 'NavBarLink'} to='filtres' label='Filtres'> Filtres</Link>
       <Link className={window.location.pathname === '/admin/equipe' ? 'NavBarLink active' : 'NavBarLink'} to='equipe' label='Equipe'> Equipe</Link>

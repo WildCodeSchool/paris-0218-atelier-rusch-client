@@ -83,6 +83,7 @@ p {
   margin: 2rem 15rem;
   line-height: 2rem;
   font-size: 1.2rem;
+  white-space: pre-wrap;
 }
 
 h1 {

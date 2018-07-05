@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from '@reach/router'
 import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
@@ -133,8 +134,9 @@ class ArticleForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-
     this.props.submitArticle(this.state.article)
+    { window.location.pathname = '/admin/articles' }
+
   }
 
   addInput = type => {
@@ -159,8 +161,12 @@ class ArticleForm extends Component {
   render () {
     const article = this.state.article
 
-    const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
-      .map((type, i) => <input type='button' key={i} onClick={() => this.addInput(type)} value={type} />)
+    const buttons = [
+      { type: 'h2', value: 'Titre' },
+      { type: 'p', value: 'Paragraphe' },
+      { type: 'blockquote', value: 'Citation' },
+      { type: 'imgs', value: 'Images' },
+    ].map((button, i) => <input type='button' key={i} onClick={() => this.addInput(button.type)} value={button.value} />)
 
     const dynamicInputs = article.content
       .map((element, i) =>
@@ -204,7 +210,6 @@ class ArticleForm extends Component {
               <Container onDrop={this.handleDnd}>
                 {dynamicInputs}
               </Container>
-
               <div id="buttons" style={{ backgroundColor: '#fbd052', marginBottom: '20px' }}>{buttons}</div>
               <input type="submit" value="Submit" />
             </form>

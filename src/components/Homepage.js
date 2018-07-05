@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import Modale from './Modale.js'
@@ -54,7 +55,7 @@ const Homepage = (props) => {
           <h1>
             <span className="green bold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
             <br/>
-            <span className="green bold">→  <span className="green bigLink">La suite !</span></span>
+            <Link to='/atelier'><span className="green bold">→  <span className="green bigLink">La suite !</span></span></Link>
           </h1>
         </div>
 

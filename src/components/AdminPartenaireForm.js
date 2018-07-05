@@ -19,6 +19,7 @@ class AdminPartenaireForm extends Component {
     console.log(this.state)
 
     this.props.submitPartenaire(this.state)
+    { window.location.pathname = '/admin/articles' }
   }
 
 	render() {

@@ -32,11 +32,17 @@
   background-color: transparent;
 }
 
-.NavBarLink:hover {
+.NavBarLink:hover, .active {
   border-bottom: solid 1px #5aff6e;
   cursor: pointer;
   color: #5aff6e;
 }
+
+/*.NavBarLinkActive {
+  border-bottom: solid 1px #5aff6e;
+  cursor: pointer;
+  color: #5aff6e;
+}*/
 
 .Logo {
   width: 46vw;

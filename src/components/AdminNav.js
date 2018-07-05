@@ -13,6 +13,7 @@ const AdminNav = () =>
       </Link>
     </div>
     <div className="NavBarLinksContainer">
+      <Link className='NavBarLink' to='' label='Articles'> Administration </Link>
       <Link className='NavBarLink' to='articles' label='Articles'> Articles </Link>
       <Link className='NavBarLink' to='filtres' label='Filtres'> Filtres</Link>
       <Link className='NavBarLink' to='equipe' label='Equipe'> Equipe</Link>

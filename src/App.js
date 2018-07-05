@@ -9,6 +9,7 @@ import Projets from './components/Projets.js'
 import Footer from './components/Footer.js'
 import Admin from './components/Admin.js'
 import './App.css'
+import './components/css/Responsive.css'
 
 import store from './store'
 import api from './api'

@@ -16,8 +16,6 @@ const Projets = (props) => {
     ? <Modale article={selectedArticle} displayModale={'block'} />
     : ''
 
-  const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
-
   const getFilteredArticles = applyFiltersToSection('projets', state)
 
   const filteredProjetsArticleThumbnails = getFilteredArticles
@@ -25,8 +23,7 @@ const Projets = (props) => {
       <ArticleThumbnail
         key={article.id}
         article={article}
-        index={index}
-        className={determineClassName(article)}/>)
+        index={index}/>)
 
   return (
     <div>

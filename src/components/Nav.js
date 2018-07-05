@@ -15,10 +15,10 @@ const Nav = ({onPageChange}) =>
     </div>
 
     <div className="NavBarLinksContainer">
-      <Link className='NavBarLink' to='/atelier'>Atelier</Link>
-      <Link className='NavBarLink' to='/projets'>Projets</Link>
-      <Link className='NavBarLink' to='/lab'>LabRusch</Link>
-      <Link className='NavBarLink' to='/contact'>Contact</Link>
+      <Link className={window.location.pathname === '/atelier' ? 'NavBarLink active' : 'NavBarLink'} to='/atelier'>Atelier</Link>
+      <Link className={window.location.pathname === '/projets' ? 'NavBarLink active' : 'NavBarLink'} to='/projets'>Projets</Link>
+      <Link className={window.location.pathname === '/lab' ? 'NavBarLink active' : 'NavBarLink'} to='/lab'>LabRusch</Link>
+      <Link className={window.location.pathname === '/contact' ? 'NavBarLink active' : 'NavBarLink'} to='/contact'>Contact</Link>
     </div>
 
   </div>

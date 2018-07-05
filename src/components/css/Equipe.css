@@ -39,7 +39,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 3rem 15rem;
+  margin: 3rem 10rem 3rem 15rem;
 }
 
 .smallLinksContainer {
@@ -49,4 +49,5 @@
 
 .EquipeMembersContainer .smallLink {
   margin: 0 4.5rem 0 0;
+  width: 100rem;
 }

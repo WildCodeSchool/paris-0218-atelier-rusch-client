@@ -1,6 +1,9 @@
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 
 form button {
@@ -23,9 +26,17 @@ form button {
   width: 50vw;
 }
 
-input, textarea {
+input {
   height: 35px;
-  width: 400px;
+  width: 35vw;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  white-space: pre-line;
+}
+
+textarea {
+  height: 12vh;
+  width: 35vw;
   margin-bottom: 30px;
   margin-top: 10px;
   white-space: pre-line;
@@ -33,7 +44,7 @@ input, textarea {
 
 select {
   height: 35px;
-  width: 400px;
+  width: 35vw;
   margin-bottom: 20px;
 }
 
@@ -44,9 +55,37 @@ label {
 .addModule {
   font-family: 'IBMPlex', sans-serif;
   font-size: 1.5rem;
-  margin: 20px 0;
+  margin: 3rem 0;
+  width: 35vw;
 }
 
 .draggableElement {
   cursor: move;
+  display: flex;
+  flex-direction: column;
+}
+
+.DynamicInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons input {
+  background-color: #fbd052;
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+#buttons input:hover {
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.1s ease-in;
 }

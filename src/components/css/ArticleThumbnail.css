@@ -38,12 +38,6 @@
   color: #2b2b2b;
 }
 
-.ArticleThumbnailHasStar {
-  background: no-repeat url("../img/rusch-pic-articles.png");
-  background-size: 150%;
-  background-position: center;
-}
-
 .ArticleThumbnailHasStar h5 {
   transition: 0.2s ease-in;
   color: #5aff6e;
@@ -53,6 +47,18 @@
   color: white;
 }
 
-.ArticleThumbnailHasStar:hover {
-  background-color: rgba(0, 0, 0, 0.35);
+.ArticleThumbnailClassic:hover .ArticleThumbnailFilterBlack {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ArticleThumbnailFilterBlack {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  backdrop-filter: saturate(0);
+  -webkit-backdrop-filter: saturate(0);
 }

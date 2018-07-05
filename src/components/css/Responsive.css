@@ -1,6 +1,5 @@
 @media all and (min-width: 1480px) {
 
-
 	h1 {
 		font-size: 2.25rem;
 		padding: 0 9rem;
@@ -47,8 +46,12 @@
 
 	/* GENERAL */
 
-	.NavBar {
+	.NavBar, .spacer {
 		display: none;
+	}
+
+	.quote {
+		padding: 3rem 0 3rem 3rem;
 	}
 
 	/* HOMEPAGE */
@@ -108,6 +111,43 @@
 		font-size: 5rem;
 		padding-top: 7rem;
 	}
+
+	/* PAGE ATELIER */
+
+	h4 {
+		margin: 0 10rem;
+	}
+
+	p {
+		margin: 3rem 10rem;
+	}
+
+	.headerAtelier h2 {
+		padding-top: 13vh;
+		margin: 0 10rem;
+	}
+
+	.anchorLinksContainer {
+		flex-wrap: wrap;
+	}
+
+	.headerAtelier .smallLink {
+		width: 33.3vw;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.EquipeMembersContainer {
+		margin: 3rem 10rem 3rem 10rem;
+	}
+
+	.memberContainer {
+		width: 100vw;
+	}
+
+	.memberPic {
+		width: 15vw;
+	}
 }
 
 @media all and (max-width: 750px) {
@@ -124,6 +164,12 @@
 		width: 100vw;
 		text-align: center;
 		padding: 0.5rem;
+	}
+
+	.headerAtelier h2 {
+		font-size: 2rem;
+		margin: 0 8rem;
+		line-height: 3rem;
 	}
 }
 
@@ -155,5 +201,69 @@
 	.arrow {
 		font-size: 4.5rem;
 		padding-top: 6rem;
+	}
+
+	/* PAGE ATELIER */
+
+	.AtelierSection:nth-child(6) {
+		padding-bottom: 0;
+	}
+
+	.headerAtelier {
+		height: auto !important;
+	}
+
+	.headerAtelier h2 {
+		padding: 9vh 0;
+		margin: 0 4.5rem;
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+	}
+
+	.anchorLinksContainer {
+		flex-wrap: wrap;
+	}
+
+	.headerAtelier .smallLink {
+		width: 100vw;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	h4 {
+		margin: 0 4rem;
+	}
+
+	p {
+		margin: 3rem 4rem;
+		font-size: 1.15rem;
+	}
+
+	.quote {
+		font-size: 1.75rem;
+		line-height: 2.4rem;
+		padding: 2rem 0rem;
+	}
+
+	.EquipeMembersContainer {
+		margin: 3rem 0 0 0;
+	}
+
+	.memberPic {
+		width: 30vw;
+		margin-top: 10vh;
+	}
+
+	.PartenairesContainer {
+		margin: 2rem 4rem;
+	}
+
+	.PartenaireContainer {
+		width: 60vw;
+		height: 60vw;
+	}
+
+	.LogoPartenaire {
+		width: 25vw;
 	}
 }

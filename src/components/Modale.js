@@ -1,6 +1,11 @@
 import React from 'react'
 import './css/Modale.css'
 import { Link } from "@reach/router"
+import store from '../store.js'
+import ArticleThumbnail from './ArticleThumbnail.js'
+import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
+
+
 
 const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
@@ -29,6 +34,25 @@ const Modale = ({ article, displayModale }) => {
 
   const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
 
+  const state = store.getState()
+
+const articles = state.articles.allArticles
+
+const articleThumbnails = articles
+.filter(article => article.hasStar === 'false')
+    .slice(0, 3)
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
+
+const articlesSuggestions = 
+	<div className="ArticlesBlock">
+		<div className='articleSuggestion'>
+		<h4 style={{ margin: '2rem 0 4rem 5rem' }}>Ceci pourrait aussi vous intéresser :</h4></div>
+		{articleThumbnails}
+		<RedirectingBlockToAllArticles />
+	</div>
+
+  console.log(articles)
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
@@ -46,6 +70,7 @@ const Modale = ({ article, displayModale }) => {
         </div>
       </div>
       {content}
+      {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
     </div>
   )
 }

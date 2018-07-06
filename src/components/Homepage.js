@@ -14,6 +14,7 @@ const Homepage = (props) => {
 
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'lab')
+    .filter(article => article.hasStar === 'false')
 
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)

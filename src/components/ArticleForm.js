@@ -162,11 +162,11 @@ class ArticleForm extends Component {
     const article = this.state.article
 
     const buttons = [
-      { type: 'h2', value: 'Titre' },
+      { type: 'h2', value: 'Titre de paragraphe' },
       { type: 'p', value: 'Paragraphe' },
       { type: 'blockquote', value: 'Citation' },
       { type: 'imgs', value: 'Images' },
-    ].map((button, i) => <input type='button' key={i} onClick={() => this.addInput(button.type)} value={button.value} />)
+    ].map((button, i) => <input type='button' key={button.i} onClick={() => this.addInput(button.type)} value={button.value} />)
 
     const dynamicInputs = article.content
       .map((element, i) =>
@@ -207,9 +207,7 @@ class ArticleForm extends Component {
 
               <div className="addModule yellow">Ajouter un module :</div>
               <Container onDrop={this.handleDnd} className='DynamicInputs'>
-              <div className='DynamicInputs'>
                 {dynamicInputs}
-              </div>
               </Container>
               <div id="buttons" style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}

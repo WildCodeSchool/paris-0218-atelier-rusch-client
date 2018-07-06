@@ -35,3 +35,7 @@
 .headerAtelier .smallLink {
   margin: 0;
 }
+
+.AtelierSection .quote {
+  padding: 3rem 7.5rem;
+}

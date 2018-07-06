@@ -207,9 +207,9 @@ class ArticleForm extends Component {
 
               <div className="addModule yellow">Ajouter un module :</div>
               <Container onDrop={this.handleDnd} className='DynamicInputs'>
-              <div className='DynamicInputs'>
+  
                 {dynamicInputs}
-              </div>
+        
               </Container>
               <div id="buttons" style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}

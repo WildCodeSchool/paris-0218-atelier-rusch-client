@@ -17,7 +17,7 @@
   top: 0;
   background-color: white;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   flex-direction: column;
   box-shadow: -20px 10px 100px rgba(0, 0, 0, 0.05);
 }
@@ -49,3 +49,31 @@
   padding: 3rem 0;
 }
 
+.ModaleBlockPreview h2 {
+  padding: 0;
+  margin: 5rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview h3 {
+  padding: 0;
+  margin: 1rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview h4 {
+  padding: 0;
+  margin: 5rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview p {
+  padding: 0;
+  margin: 2rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview .smallLink {
+  padding: 0;
+  margin: 1rem 4rem 5rem 7rem;
+}
+
+.ModaleBlockPreview .quote {
+  padding: 3rem 11rem
+}

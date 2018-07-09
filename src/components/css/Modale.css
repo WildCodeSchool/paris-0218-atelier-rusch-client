@@ -1,8 +1,3 @@
-.ModaleHeader {
-  backdrop-filter: saturate(0);
-  -webkit-backdrop-filter: saturate(0);
-}
-
 .ModaleBlock {
   width: 100vw;
   height: 100vh;
@@ -11,6 +6,26 @@
   top: 0;
   overflow: scroll;
   background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ModaleBlockPreview {
+  width: 50vw;
+  z-index: 5000;
+  top: 0;
+  background-color: white;
+  display: flex;
+  /*align-items: center;*/
+  flex-direction: column;
+  box-shadow: -20px 10px 100px rgba(0, 0, 0, 0.05);
+}
+
+.ModaleHeader {
+  backdrop-filter: saturate(0);
+  -webkit-backdrop-filter: saturate(0);
+  padding: 0.1rem 0.75rem;
 }
 
 .closeModaleBtn {
@@ -23,3 +38,46 @@
   z-index: 5000;
 }
 
+.ModaleBlock img, .ModaleBlockPreview img {
+  min-width: 50vw;
+  max-width: 70vw;
+  padding: 3rem 0;
+}
+
+.ModaleBlockPreview img {
+  width: 50vw;
+  padding: 3rem 0;
+}
+
+.ModaleBlockPreview h2 {
+  padding: 0;
+  margin: 5rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview h3 {
+  padding: 0;
+  margin: 1rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview h4 {
+  padding: 0;
+  margin: 5rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview p {
+  padding: 0;
+  margin: 2rem 2rem 0 7rem;
+}
+
+.ModaleBlockPreview .smallLink {
+  padding: 0;
+  margin: 1rem 4rem 5rem 7rem;
+}
+
+.ModaleBlockPreview .quote {
+  padding: 3rem 11rem;
+}
+
+.articleSuggestion {
+  width: 100vw;
+}

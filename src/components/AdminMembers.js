@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
+import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
 const AdminMembers = ({ members }) => {
 
@@ -21,7 +22,7 @@ const AdminMembers = ({ members }) => {
   return (
     <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateElement'>Créer un nouveau membre</div>
+        <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau membre</div>
       </Link>
       <div className='AdminTitles yellow'>Membres de l'équipe :</div>
       <div className='AdminCardHalfWidthContainer'>

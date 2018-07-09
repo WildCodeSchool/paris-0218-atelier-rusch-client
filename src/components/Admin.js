@@ -22,25 +22,25 @@ const AdminHome = () => {
       Cette interface permet de créer, modifier et supprimer des éléments.
     </p>
     </div>
-    <Link to='articles'>
+    <Link to='/admin/articles'>
       <div className='AdminHomeLinkTo'>
         Articles
       </div>
     </Link>
 
-    <Link to='filtres'>
+    <Link to='/admin/filtres'>
       <div className='AdminHomeLinkTo'>
         Filtres
       </div>
     </Link>
 
-    <Link to='equipe'>
+    <Link to='/admin/equipe'>
       <div className='AdminHomeLinkTo'>
         Equipe
       </div>
     </Link>
 
-    <Link to='partenaires'>
+    <Link to='/admin/partenaires'>
       <div className='AdminHomeLinkTo'>
         Partenaires
       </div>

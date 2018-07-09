@@ -1,6 +1,9 @@
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
 }
 
 form button {
@@ -11,47 +14,96 @@ form button {
 .box {
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 
 .item-left {
-  margin: 1rem;
+  width: 50vw;
   /*background-color: cyan;*/
-  flex: 1;
 }
 
 .item-right {
-  margin: 1rem;
-  /*background-color: cyan;*/
-  flex: 2;
+  width: 50vw;
 }
 
-.fixed {
-  position: fixed;
-}
-
-input, textarea {
+input {
   height: 35px;
-  width: 400px;
+  width: 35vw;
   margin-bottom: 30px;
   margin-top: 10px;
+  white-space: pre-line;
+}
+
+textarea {
+  height: 12vh;
+  width: 35vw;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  white-space: pre-line;
 }
 
 select {
   height: 35px;
-  width: 400px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 35vw;
+  white-space: pre-line;
+  margin-bottom: 30px;
+  border-radius: 0;
 }
 
 label {
+  width: 35vw;
   font-family: 'IBMPlex';
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  height: 35px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-family: 'IBMPlex';
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #2b2b2b;
+  color: white;
 }
 
 .addModule {
   font-family: 'IBMPlex', sans-serif;
   font-size: 1.5rem;
-  margin: 20px 0;
+  margin: 3.5rem 0 2rem 0;
+  width: 35vw;
 }
 
 .draggableElement {
   cursor: move;
+  display: flex;
+  flex-direction: column;
+}
+
+.DynamicInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#buttons input {
+  background-color: #fbd052;
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+
+#buttons input:hover {
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.1s ease-in;
 }

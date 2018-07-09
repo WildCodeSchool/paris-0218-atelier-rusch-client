@@ -7,9 +7,6 @@ import SectionTitleBlock from './SectionTitleBlock.js'
 import store from '../store.js'
 import { applyFiltersToSection } from './FilteringFunctions.js'
 
-const determineClassName = article => article.hasStar === 'true'
-  ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack'
-  : 'ArticleThumbnailClassic'
 
 const LabRusch = (props) => {
   const state = store.getState()
@@ -17,7 +14,7 @@ const LabRusch = (props) => {
   const articleId = props.articleId
   const selectedArticle = articles.find(article => String(article.id) === articleId)
   const modale = selectedArticle !== undefined
-    ? <Modale article={selectedArticle} displayModale={'block'} />
+    ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
 
   const getFilteredArticles = applyFiltersToSection('lab', state)
@@ -27,8 +24,7 @@ const LabRusch = (props) => {
       <ArticleThumbnail
         key={article.id}
         article={article}
-        index={index}
-        className={determineClassName(article)}/>)
+        index={index}/>)
 
   return (
     <div>

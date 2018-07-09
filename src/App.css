@@ -18,7 +18,7 @@ button {
 
 .spacer {
   width: 100vw;
-  height: 55px;
+  height: 65px;
 }
 
 .FilterBlack {
@@ -83,6 +83,7 @@ p {
   margin: 2rem 15rem;
   line-height: 2rem;
   font-size: 1.2rem;
+  white-space: pre-wrap;
 }
 
 h1 {
@@ -95,12 +96,11 @@ h1 {
 
 h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
-
   /* PAGE MODALE = TITLE */
   font-family: 'HeimatMono', monospace;
   font-weight: 400;
   font-size: 2.5rem;
-  margin: 5rem 14rem 0 15rem;
+  margin: 8rem 14rem 0 15rem;
   line-height: 3.5rem;
 }
 
@@ -121,6 +121,7 @@ h4 {
   margin: 0 15rem;
   padding-top: 5rem;
   font-size: 2rem;
+  align-self: flex-start;
 }
 
 h5 {
@@ -168,7 +169,7 @@ h6 {
   letter-spacing: 2px;
   font-size: 2.25rem;
   line-height: 3rem;
-  padding: 3rem 7rem;
+  padding: 3rem 20rem;
   color: #fbd052;
 }
 

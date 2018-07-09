@@ -13,10 +13,8 @@ const Projets = (props) => {
   const articleId = props.articleId
   const selectedArticle = articles.find(article => String(article.id) === articleId)
   const modale = selectedArticle !== undefined
-    ? <Modale article={selectedArticle} displayModale={'block'} />
+    ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
-
-  const determineClassName = article => article.hasStar === 'true' ? 'ArticleThumbnailClassic ArticleThumbnailHasStar FilterBlack' : 'ArticleThumbnailClassic'
 
   const getFilteredArticles = applyFiltersToSection('projets', state)
 
@@ -25,8 +23,7 @@ const Projets = (props) => {
       <ArticleThumbnail
         key={article.id}
         article={article}
-        index={index}
-        className={determineClassName(article)}/>)
+        index={index}/>)
 
   return (
     <div>

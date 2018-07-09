@@ -1,6 +1,11 @@
 import React from 'react'
 import './css/Modale.css'
 import { Link } from "@reach/router"
+import store from '../store.js'
+import ArticleThumbnail from './ArticleThumbnail.js'
+import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
+
+
 
 const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
@@ -29,23 +34,45 @@ const Modale = ({ article, displayModale }) => {
 
   const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
 
+  const state = store.getState()
+
+const articles = state.articles.allArticles
+
+const articleThumbnails = articles
+.filter(article => article.hasStar === '0')
+    .slice(0, 3)
+    .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
+
+const articlesSuggestions =
+	<div className="ArticlesBlock">
+		<div className='articleSuggestion'>
+		<h4 style={{ margin: '2rem 0 4rem 5rem' }}>Ceci pourrait aussi vous intéresser :</h4></div>
+		{articleThumbnails}
+		<RedirectingBlockToAllArticles />
+	</div>
+
+  console.log(articles)
+
   return (
-    <div className="ModaleBlock">
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
       <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
-        <div className="ModaleHeader FilterBlack" style={{ padding: '0.1rem 0.75rem' }}>
+        <div className="ModaleHeader FilterBlack">
           <h2 className="green">
             {article.title}
           </h2>
           <h3>
             {article.shortDescription}
           </h3>
-          <p className="smallLink">
-            Site du projet
-          </p>
+          <a href={article.projectLink} target='_blank'>
+            <p className="smallLink">
+              {article.projectLink === '' ? '' : 'Lien du projet'}
+            </p>
+          </a>
         </div>
       </div>
       {content}
+      {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
     </div>
   )
 }

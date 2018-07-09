@@ -1,0 +1,418 @@
+@media all and (min-width: 1480px) {
+
+	h1 {
+		font-size: 2.25rem;
+		padding: 0 9rem;
+		line-height: 3.75rem;
+	}
+
+	h4 {
+		margin: 0 25rem;
+	}
+
+	.ModaleBlockPreview h4, .ModaleBlockPreview p {
+		margin: 2.5rem 10rem 0 10rem;
+	}
+
+	.ModaleBlockPreview h2 {
+		margin: 5rem 10rem 0 10rem;
+	}
+
+	.ModaleBlockPreview h3 {
+		margin: 1rem 10rem 0 10rem;
+	}
+
+	.ModaleBlockPreview .smallLink {
+		margin: 1rem 10rem 5rem 10rem;
+	}
+
+	.ModaleBlockPreview .quote {
+		padding: 3rem 15rem;
+	}
+
+	p {
+		margin: 3rem 25rem;
+	}
+
+	.headerAtelier h2 {
+		font-size: 3rem;
+		line-height: 4.25rem;
+		padding: 17.5vh 7.5rem 0 7.5rem;
+	}
+
+	.anchorLinksContainer {
+		padding-bottom: 10vh;
+	}
+
+	.EquipeMembersContainer {
+		margin: 3rem 20rem 3rem 25rem;
+	}
+
+	.memberContainer {
+		width: 25vw;
+	}
+
+	.PartenairesContainer {
+		margin: 3rem 15rem 3rem 25rem;
+	}
+
+	.PartenaireContainer {
+		width: 18vw;
+		height: 18vw;
+	}
+
+	/* MODALE */
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+		padding: 0 10rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 35rem;
+	}
+}
+
+@media all and (max-width: 980px) {
+
+	/* GENERAL */
+
+	.NavBar .Logo {
+		display: none;
+	}
+
+	.NavBarLinksContainer {
+		width: 100vw;
+		padding: 0 3rem;
+	}
+
+	.quote {
+		padding: 3rem 0 3rem 3rem;
+	}
+
+	/* HOMEPAGE */
+
+	.IntroBlockRight, .LogoBlock {
+		height: 50vh;
+		width: 100vw;
+		padding: 0;
+	}
+
+	.LogoImg {
+  		width: 30vw;
+	}
+
+	.IntroBlockRight {
+		height: auto;
+		width: 100vw;
+		padding: 5rem 0;
+	}
+
+	.IntroBlockLeft {
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.IntroBlocks {
+		display: block;
+	}
+
+	.carouselContainer, .carouselContainer div {
+		width: 100vw;
+		height: 50vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		backdrop-filter: saturate(0);
+		-webkit-backdrop-filter: saturate(0);
+	}
+
+	.carousel .slider-wrapper {
+		height: 50vh;
+	}
+
+	/* ARTICLES THUMBNAILS */
+
+
+	.ArticleThumbnailClassic, .RedirectingBlockToAllArticles {
+		width: 50vw;
+		height: 50vw;
+	}
+
+	.ArticleThumbnailClassic > *, .RedirectingBlockToAllArticles > * {
+		width: 50vw;
+	}
+
+	.arrow {
+		font-size: 5rem;
+		padding-top: 7rem;
+	}
+
+	/* PAGE ATELIER */
+
+	h4 {
+		margin: 0 10rem;
+	}
+
+	p {
+		margin: 3rem 10rem;
+	}
+
+	.headerAtelier h2 {
+		padding-top: 13vh;
+		margin: 0 10rem;
+	}
+
+	.anchorLinksContainer {
+		flex-wrap: wrap;
+	}
+
+	.headerAtelier .smallLink {
+		width: 33.3vw;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.EquipeMembersContainer {
+		margin: 3rem 10rem 3rem 10rem;
+	}
+
+	.memberContainer {
+		width: 100vw;
+	}
+
+	.memberPic {
+		width: 15vw;
+	}
+
+	.PartenairesContainer {
+		margin: 3rem 5rem 3rem 10rem;
+	}
+
+	.PartenaireContainer {
+		width: 30vw;
+		height: 30vw;
+		box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.075);
+	}
+
+	.LogoPartenaire {
+		width: 18vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 40vw;
+	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 8rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 8rem 0 10rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 3rem 15rem;
+	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 5rem 7rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0 0 2rem 0;
+		width: 40vw;
+	}
+
+	.address {
+		margin: 3rem 7rem;
+	}
+}
+
+@media all and (max-width: 750px) {
+
+	/* FOOTER */
+
+	.Footer {
+		flex-direction: column;
+		height: auto;
+		padding: 1.5rem 0;
+	}
+
+	.Footer > div {
+		width: 100vw;
+		text-align: center;
+		padding: 0.5rem;
+	}
+
+	.headerAtelier h2 {
+		font-size: 2rem;
+		margin: 0 8rem;
+		line-height: 3rem;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.Filter {
+		width: 50vw;
+	}
+
+	.NavBarLink {
+		margin: 0 1rem;
+	}
+}
+
+@media all and (max-width: 500px) {
+
+	/* HOMEPAGE */
+
+	.LogoImg {
+  		width: 50vw;
+	}
+
+	h1 {
+		font-size: 1.45rem;
+		padding: 0 3.5rem;
+		line-height: 2.5rem;
+	}
+
+	/* ARTICLES THUMBNAILS */
+
+	.ArticleThumbnailClassic, .RedirectingBlockToAllArticles {
+		width: 100vw;
+		height: 50vh;
+	}
+
+	.ArticleThumbnailClassic > *, .RedirectingBlockToAllArticles > * {
+		width: 100vw;
+	}
+
+	.arrow {
+		font-size: 4.5rem;
+		padding-top: 6rem;
+	}
+
+	/* PAGE ATELIER */
+
+	.AtelierSection:nth-child(6) {
+		padding-bottom: 0;
+	}
+
+	.headerAtelier {
+		height: auto !important;
+	}
+
+	.headerAtelier h2 {
+		padding: 9vh 0;
+		margin: 0 4.5rem;
+		font-size: 1.5rem;
+		line-height: 2.5rem;
+	}
+
+	.anchorLinksContainer {
+		flex-wrap: wrap;
+	}
+
+	.headerAtelier .smallLink {
+		width: 100vw;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	h4 {
+		margin: 0 3rem;
+	}
+
+	p {
+		margin: 3rem 3rem;
+		font-size: 1.15rem;
+	}
+
+	.quote {
+		font-size: 1.75rem;
+		line-height: 2.4rem;
+		padding: 2rem 0rem;
+	}
+
+	.EquipeMembersContainer {
+		margin: 3rem 0 0 0;
+	}
+
+	.memberPic {
+		width: 30vw;
+		margin-top: 10vh;
+	}
+
+	.PartenairesContainer {
+		margin: 2rem 4rem;
+	}
+
+	.PartenaireContainer {
+		width: 60vw;
+		height: 60vw;
+		box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.075);
+	}
+
+	.LogoPartenaire {
+		width: 25vw;
+	}
+
+	/* PAGES PROJETS & LAB */
+
+	.SectionTitleBlock {
+		width: 100vw;
+		height: 60vw;
+	}
+
+	/* MODALE */
+
+	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 3rem 7rem 0 7rem;
+	}
+
+
+
+	.ModaleBlock h3, .ModaleBlock .smallLink {
+  		margin: 1.5rem 7rem 0 7rem;
+	}
+
+	.ModaleBlock .smallLink {
+  		margin-bottom: 8rem;
+	}
+
+	.ModaleBlock .quote {
+		padding: 1.5rem 15rem;
+	}
+
+	/* CONTACT */
+
+	.Contact h2 {
+		margin: 3.5rem;
+	}
+
+	.address h4 {
+		margin: 0;
+		padding: 0;
+		width: 100vw;
+	}
+
+	.address {
+		margin: 3rem 3.5rem;
+		flex-direction: column;
+	}
+
+
+	.address div:first-child {
+		margin: 0 0 2.2rem 0;
+	}
+}

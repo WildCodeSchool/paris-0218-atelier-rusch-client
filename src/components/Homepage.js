@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import Modale from './Modale.js'
@@ -13,20 +14,22 @@ const Homepage = (props) => {
 
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'lab')
+    .filter(article => article.hasStar === '0')
 
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const slideshowArticles = state.articles.allArticles
-    .sort((a, b) => Date(b.createdAt) - Date(a.createdAt))
+    const slideshowArticles = state.articles.allArticles
+    .filter(article => article.section === 'projets')
+    .filter(article => article.hasStar === '1')
     .slice(0, 3)
 
   const articleId = props.articleId
   const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)
   console.log({articleId, selectedArticle})
   const modale = selectedArticle !== undefined
-    ? <Modale article={selectedArticle} displayModale={'block'} />
+    ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
 
   return (
@@ -49,7 +52,7 @@ const Homepage = (props) => {
           <h1>
             <span className="green bold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
             <br/>
-            <span className="green bold">→  <span className="green bigLink">La suite !</span></span>
+            <Link to='/atelier'><span className="green bold">→  <span className="green bigLink">La suite !</span></span></Link>
           </h1>
         </div>
 

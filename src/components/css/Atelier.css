@@ -13,7 +13,7 @@
   font-weight: 200;
   margin-top: 0;
   align-self: center;
-  padding-top: 15vh;
+  padding-top: 17.5vh;
 }
 
 .AtelierSection {
@@ -28,10 +28,14 @@
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
-  padding-bottom: 6vh;
+  padding-bottom: 7vh;
   align-self: flex-end;
 }
 
 .headerAtelier .smallLink {
   margin: 0;
+}
+
+.AtelierSection .quote {
+  padding: 3rem 7.5rem;
 }

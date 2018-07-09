@@ -10,8 +10,8 @@ const freshArticle = {
   shortDescription: '',
   section: '',
   headerImage: '',
-  tags:'',
-  hasStar:false,
+  tags: '',
+  hasStar: false,
   content: []
 }
 
@@ -122,6 +122,11 @@ class ArticleForm extends Component {
         ...this.state.article,
         content: content
       }
+    } else if (key.startsWith('hasStar')) {
+      article = {
+        ...this.state.article,
+        hasStar: !this.state.article.hasStar
+      }
     } else {
       article = {
         ...this.state.article,
@@ -160,6 +165,7 @@ class ArticleForm extends Component {
 
   render () {
     const article = this.state.article
+    console.log(article.hasStar)
 
     const buttons = [
       { type: 'h2', value: 'Titre de paragraphe' },
@@ -195,7 +201,7 @@ class ArticleForm extends Component {
                 <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
               </label>
               <label>
-              <input style={{width: '20px', marginRight: '5px'}} type="checkbox" name="hasStar" onClick={() => this.setState({hasStar: !this.state.hasStar}) } />
+              <input style={{width: '20px', marginRight: '5px'}} type="checkbox" name="hasStar" onClick={this.handleChange} />
               Mettre à la une</label>
               <div>
                 <select name="section" value={article.section} onChange={this.handleChange}>

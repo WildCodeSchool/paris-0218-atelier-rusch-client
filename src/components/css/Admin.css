@@ -63,6 +63,10 @@ button {
 	color: white;
 }
 
+.ButtonCreateElement:hover .ReactIconAdd {
+	fill: white;
+}
+
 .hasStar {
 	font-size: 1rem;
 	color: #fbd052;
@@ -83,6 +87,11 @@ button {
 
 .ReactIcon:hover {
 	opacity: 1;
+}
+
+.ReactIconAdd {
+	fill: #5aff6e;
+	margin-right: 20px;
 }
 
 /*button.hasNoStar:hover, button.hasStar:hover {

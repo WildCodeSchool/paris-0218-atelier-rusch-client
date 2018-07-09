@@ -64,9 +64,11 @@ const articlesSuggestions =
           <h3>
             {article.shortDescription}
           </h3>
-          <p className="smallLink">
-            Site du projet
-          </p>
+          <a href={article.projectLink} target='_blank'>
+            <p className="smallLink">
+              {article.projectLink === '' ? '' : 'Lien du projet'}
+            </p>
+          </a>
         </div>
       </div>
       {content}

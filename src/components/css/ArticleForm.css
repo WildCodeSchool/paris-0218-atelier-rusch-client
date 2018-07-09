@@ -44,18 +44,36 @@ textarea {
 
 select {
   height: 35px;
+  margin-top: 10px;
   width: 35vw;
-  margin-bottom: 20px;
+  white-space: pre-line;
+  margin-bottom: 30px;
+  border-radius: 0;
 }
 
 label {
+  width: 35vw;
   font-family: 'IBMPlex';
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  height: 35px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  font-family: 'IBMPlex';
+  font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #2b2b2b;
+  color: white;
 }
 
 .addModule {
   font-family: 'IBMPlex', sans-serif;
   font-size: 1.5rem;
-  margin: 3rem 0;
+  margin: 3.5rem 0 2rem 0;
   width: 35vw;
 }
 

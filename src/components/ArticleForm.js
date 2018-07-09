@@ -168,6 +168,7 @@ class ArticleForm extends Component {
     console.log(article.hasStar)
 
     const buttons = [
+
       { type: 'h2', value: 'Titre de paragraphe' },
       { type: 'p', value: 'Paragraphe' },
       { type: 'blockquote', value: 'Citation' },

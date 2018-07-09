@@ -12,6 +12,7 @@ const ArticleCard = ({ article }) =>
       </Link>
       <button onClick={()=>{api.deleteArticle(article.id)
         window.location.reload()}}>S</button>
+      <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }>★</button>
     </div>
   </div>
 

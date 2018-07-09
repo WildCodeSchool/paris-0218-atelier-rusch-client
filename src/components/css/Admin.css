@@ -63,6 +63,18 @@ button {
 	color: white;
 }
 
+.hasStar {
+	font-size: 1rem;
+	color: #fbd052;
+	cursor: default;
+}
+
+.hasNoStar {
+	color: lightgrey;
+	cursor: default;
+	font-size: 1rem;
+}
+
 /* CONTAINERS */ 
 
 .GlobalContainer {

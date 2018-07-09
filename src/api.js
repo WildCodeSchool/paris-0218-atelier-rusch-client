@@ -82,9 +82,9 @@ const newMember = member => fetch('/equipe', {
   method: 'post',
   body: JSON.stringify(member),
   headers: {
-    'Content-Type': 'application/json',
-    'credentials': 'include'
-  }
+    'Content-Type': 'application/json'
+  },
+  'credentials': 'include'
 })
 
 const updateMember = (id, member) => fetch(`/equipe/${id}`, {
@@ -103,14 +103,20 @@ const deleteMember = (id, member) => fetch(`/equipe/${id}`, {
   }
 })
 
+//credentials routes
+
 const loginUser = (user) => fetch(/sign-in/, {
   method: 'post',
   body: JSON.stringify(user),
   headers: {
-    'Content-Type': 'application/json',
-    'credentials' : 'include'
-  }
+    'Content-Type': 'application/json'
+  },
+  'credentials' : 'include'
 })
+
+const logoutUser = () => fetch(/sign-out/)
+
+//credentials routes
 
 export default {
   getArticles,
@@ -129,5 +135,6 @@ export default {
   newMember,
   updateMember,
   deleteMember,
-  loginUser
+  loginUser,
+  logoutUser
 }

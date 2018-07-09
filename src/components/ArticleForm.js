@@ -159,8 +159,15 @@ class ArticleForm extends Component {
   render () {
     const article = this.state.article
 
-    const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
-      .map((type, i) => <input type='button' key={i} onClick={() => this.addInput(type)} value={type} />)
+    const buttons = [
+    { type: 'h2', value: 'Titre de paragraphe' },
+    { type: 'p', value: 'Paragraphe' },
+    { type: 'blockquote', value: 'Citation' },
+    { type: 'imgs', value: 'Images' },
+    ].map((button, i) => <input type='button' key={button.i} onClick={() => this.addInput(button.type)} value={button.value} />)
+
+  /*  const buttons = [ 'h2' , 'p', 'blockquote', 'imgs' ]
+      .map((type, i) => <input type='button' key={i} onClick={() => this.addInput(type)} value={type} />)*/
 
     const dynamicInputs = article.content
       .map((element, i) =>

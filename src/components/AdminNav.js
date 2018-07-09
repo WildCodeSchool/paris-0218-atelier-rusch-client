@@ -8,16 +8,6 @@ import './css/Nav.css'
 class AdminNav extends Component {
 
   render(){
-
-    if(window.location.pathname === '/admin/login'){
-    return(
-      <div>
-        <p>
-          Login
-        </p>
-      </div>
-  )
-  } else {
     return(
   <div className="NavBar">
     <div className='Logo'>
@@ -28,13 +18,13 @@ class AdminNav extends Component {
       </Link>
     </div>
     <div className="NavBarLinksContainer">
+      <button onClick={()=>this.props.logout()}> Logout </button>
       <Link className='NavBarLink' to='articles' label='Articles'> Articles </Link>
       <Link className='NavBarLink' to='filtres' label='Filtres'> Filtres</Link>
       <Link className='NavBarLink' to='equipe' label='Equipe'> Equipe</Link>
       <Link className='NavBarLink' to='partenaires' label='Partenaires'> Partenaires </Link>
     </div>
   </div>)
-  }
   }
 }
 export default AdminNav

@@ -13,8 +13,6 @@ import { AdminNewPartenaire, AdminEditPartenaire } from './AdminPartenaire.js'
 import api from '../api'
 import './css/Admin.css'
 
-import { AuthProvider } from '../helpers/AuthContext'
-
 const AdminHome = () => {
   return(
   <div className='AdminHomeContainer'>
@@ -55,8 +53,21 @@ class Admin extends Component {
     articles: [],
     filtres: [],
     equipe: [],
-    partenaires: []
+    partenaires: [],
+    isAuth: Boolean(window.localStorage.isAuth)
   }
+
+  login = () => {
+    window.localStorage.isAuth = 'yes'
+    this.setState({ isAuth: true })
+  }
+
+  logout = () => {
+    api.logoutUser()
+    window.localStorage.isAuth = ''
+    this.setState({ isAuth: false })
+  }
+
 
   syncDatas = () => {
     api.getArticles()
@@ -78,14 +89,14 @@ class Admin extends Component {
   }
 
   render () {
+    if (!this.state.isAuth) {
+      return <AdminLogin path='login' login={this.login} />
+    }
     return (
       <div className="App">
-      <AuthProvider>
-        <AdminNav />
-      </AuthProvider>
+        <AdminNav logout={this.logout} />
         <div className="spacer"></div>
         <Router>
-          <AdminLogin path='login' />
           <AdminHome path='dashboard' />
           <AdminArticles path='articles' articles={this.state.articles} />
           <AdminNewArticle path='articles/new' />

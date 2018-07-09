@@ -22,7 +22,7 @@ class AdminMemberForm extends Component {
     event.preventDefault()
 
     this.props.submitMember(this.state)
-    { window.location.pathname = '/admin/articles' }
+    { window.location.pathname = '/admin/equipe' }
   }
 
   render() {

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
+import IoAndroidDelete from 'react-icons/lib/io/android-delete'
+import IoEdit from 'react-icons/lib/io/edit'
 
 const ArticleCard = ({ article }) =>
   <div className='AdminCardFullWidth'>
@@ -8,10 +10,14 @@ const ArticleCard = ({ article }) =>
     <div className='EditButtonsContainer'>
       <h6 style={{ marginRight: '50px' }}>{article.createdAt}</h6>
       <Link to={String(article.id)}>
-        <button>E</button>
+        <button className="ReactIcon">
+          <IoEdit/>
+        </button>
       </Link>
-      <button onClick={()=>{api.deleteArticle(article.id)
-        window.location.reload()}}>S</button>
+      <button className="ReactIcon" onClick={()=>{api.deleteArticle(article.id)
+        window.location.reload()}}>
+        <IoAndroidDelete/>
+      </button>
       <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }>★</button>
     </div>
   </div>

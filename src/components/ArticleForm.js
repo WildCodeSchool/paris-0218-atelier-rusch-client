@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from '@reach/router'
 import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
@@ -176,7 +175,6 @@ class ArticleForm extends Component {
 
     return (
     <div>
-      <AdminNav />
       <div className="box">
 
         <div className="item-left">

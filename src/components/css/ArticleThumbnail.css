@@ -7,8 +7,7 @@
 .ArticleThumbnailClassic {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  align-content: space-between;
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.075);
   width: 25vw;
   height: 25vw;
@@ -16,7 +15,7 @@
   text-align: center;
 }
 
-.ArticleThumbnailClassic > * {
+.ArticleThumbnailClassic > *, .ArticleThumbnailFilterBlack > * {
   width: 25vw;
 }
 
@@ -28,6 +27,7 @@
 .ArticleThumbnailClassic h6 {
   transition: 0.2s ease-in;
   color: #fbd052;
+  margin: 2rem 0;
 }
 
 .ArticleThumbnailClassic:hover {
@@ -56,7 +56,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-content: space-between;
   align-items: center;
   text-align: center;
   height: 100%;

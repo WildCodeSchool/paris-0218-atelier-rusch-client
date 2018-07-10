@@ -126,11 +126,6 @@ input[type="submit"]:hover {
   width: auto;
 }
 
-/*.TagCardActive {
-  opacity: 1;
-  /*cursor: pointer;
-}*/
-
 .TagCard:hover {
   color: white;
   background-color: #2b2b2b;
@@ -143,8 +138,9 @@ input[type="submit"]:hover {
   border-color: transparent;
 }
 
-/*.TagCard:hover {
-  color: #fbd052;
-  border-color: #fbd052;
-  opacity: 1;
-}*/
+.errorPost {
+  font-size: 0.7rem;
+  font-family: 'HeimatMono';
+  color: red;
+}
+

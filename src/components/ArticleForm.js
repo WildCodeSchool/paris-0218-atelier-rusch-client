@@ -93,7 +93,8 @@ const moveElement = (array, fromIndex, toIndex) => {
 
 class ArticleForm extends Component {
   state = {
-    article: this.props.article || freshArticle
+    article: this.props.article || freshArticle,
+    errorPost: ''
   }
 
   handleDnd = ({ removedIndex: fromIndex, addedIndex: toIndex }) => {
@@ -112,6 +113,8 @@ class ArticleForm extends Component {
     const key = event.target.name
 
     let article = {}
+
+    let errorPost = ''
 
     if (key.startsWith('content')) {
       const index = key.split('-')[1]
@@ -154,12 +157,18 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
+    console.log('state', this.state)
+
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.submitArticle(this.state.article)
-    { window.location.pathname = '/admin/articles' }
+    if (this.state.article.tags.length === 0) {
+      this.setState({ errorPost: '* Veuillez sélectionner un tag minimum.' })
+    } else {
+      this.props.submitArticle(this.state.article)
+      window.location.pathname = '/admin/articles'
+    }
   }
 
   addInput = type => {
@@ -179,7 +188,6 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
-    console.log('tags', article.tags)
   }
 
   render () {
@@ -207,7 +215,6 @@ class ArticleForm extends Component {
     const TagCards = state.filters.allFilters
     .filter(tag => this.state.article.section === tag.section)
     .map(tag => <TagCard tag={tag} />)
-    console.log('tags', this.state.article.tags)
 
     return (
     <div>
@@ -257,6 +264,7 @@ class ArticleForm extends Component {
                 {buttons}
               </div>
               <input type="submit" value="Publier l'article" />
+              <div className='errorPost'>{this.state.errorPost}</div>
             </form>
           </div>
         </div>
@@ -271,5 +279,10 @@ class ArticleForm extends Component {
 
 export default ArticleForm
 
-// <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
-
+      // if (this.state.article.tags.length === 0) {
+      //   alert('pas bon')
+      //   this.setState({ ...this.state, errorPost: 'mtn c bon'})
+      // } else if {
+      //   alert('oke c bon')
+      //   this.setState({ ...this.state, errorPost: 'OKE C BON'})
+      // }

@@ -9,7 +9,7 @@ const freshArticle = {
   title: '',
   shortDescription: '',
   projectLink: '',
-  section: '',
+  section: 'lab',
   headerImage: '',
   tags: [],
   hasStar: '0',
@@ -128,6 +128,12 @@ class ArticleForm extends Component {
         ...this.state.article,
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
+    } else if (key.startsWith('section')) {
+        article = {
+          ...this.state.article,
+          section: event.target.value,
+          tags: []
+        }
     } else if (key.startsWith('tags')) {
       if (this.state.article.tags.includes(event.target.value)) {
         article = {
@@ -198,7 +204,9 @@ class ArticleForm extends Component {
       className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
       value={tag.filterTag}
       onClick={this.handleChange}>{tag.filterTag}</button>
-    const TagCards = state.filters.allFilters.map(tag => <TagCard tag={tag} />)
+    const TagCards = state.filters.allFilters
+    .filter(tag => this.state.article.section === tag.section)
+    .map(tag => <TagCard tag={tag} />)
     console.log('tags', this.state.article.tags)
 
     return (
@@ -223,7 +231,6 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option value="Choose">Choisissez la section</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>

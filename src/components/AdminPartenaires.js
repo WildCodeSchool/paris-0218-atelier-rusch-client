@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
+import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
 const AdminPartenaires = ({ partenaires }) => {
 
@@ -24,7 +25,7 @@ const AdminPartenaires = ({ partenaires }) => {
   return (
     <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateElement'>Créer un nouveau partenaire</div>
+        <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau partenaire</div>
       </Link>
       <div className='AdminTitles yellow'>Partenaires :</div>
       <div className='AdminCardHalfWidthContainer'>

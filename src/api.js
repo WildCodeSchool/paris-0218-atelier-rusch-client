@@ -11,7 +11,8 @@ const newPartenaire = partenaire => fetch('/partenaires', {
   body: JSON.stringify(partenaire),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const updatePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
@@ -19,7 +20,8 @@ const updatePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
   body: JSON.stringify(partenaire),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const deletePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
@@ -27,7 +29,8 @@ const deletePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
   body: JSON.stringify(partenaire),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const newFilter = filter => fetch('/filters', {
@@ -35,7 +38,8 @@ const newFilter = filter => fetch('/filters', {
   body: JSON.stringify(filter),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const updateFilter = (id, filter) => fetch(`/filters/${id}`, {
@@ -43,7 +47,8 @@ const updateFilter = (id, filter) => fetch(`/filters/${id}`, {
   body: JSON.stringify(filter),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const deleteFilter = (id, filter) => fetch(`/filters/${id}`, {
@@ -51,7 +56,8 @@ const deleteFilter = (id, filter) => fetch(`/filters/${id}`, {
   body: JSON.stringify(filter),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const newArticle = article => fetch('/articles', {
@@ -59,7 +65,8 @@ const newArticle = article => fetch('/articles', {
   body: JSON.stringify(article),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const updateArticle = (id, article) => fetch(`/articles/${id}`, {
@@ -67,7 +74,8 @@ const updateArticle = (id, article) => fetch(`/articles/${id}`, {
   body: JSON.stringify(article),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const deleteArticle = (id, article) => fetch(`/articles/${id}`, {
@@ -75,16 +83,17 @@ const deleteArticle = (id, article) => fetch(`/articles/${id}`, {
   body: JSON.stringify(article),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const newMember = member => fetch('/equipe', {
   method: 'post',
   body: JSON.stringify(member),
   headers: {
-    'Content-Type': 'application/json',
-    'credentials': 'include'
-  }
+    'Content-Type': 'application/json'
+  },
+  'credentials': 'include'
 })
 
 const updateMember = (id, member) => fetch(`/equipe/${id}`, {
@@ -92,7 +101,8 @@ const updateMember = (id, member) => fetch(`/equipe/${id}`, {
   body: JSON.stringify(member),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
 
 const deleteMember = (id, member) => fetch(`/equipe/${id}`, {
@@ -100,17 +110,24 @@ const deleteMember = (id, member) => fetch(`/equipe/${id}`, {
   body: JSON.stringify(member),
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  'credentials': 'include'
 })
+
+//credentials routes
 
 const loginUser = (user) => fetch(/sign-in/, {
   method: 'post',
   body: JSON.stringify(user),
   headers: {
-    'Content-Type': 'application/json',
-    'credentials' : 'include'
-  }
+    'Content-Type': 'application/json'
+  },
+  'credentials' : 'include'
 })
+
+const logoutUser = () => fetch(/sign-out/)
+
+//credentials routesgit
 
 export default {
   getArticles,
@@ -129,5 +146,6 @@ export default {
   newMember,
   updateMember,
   deleteMember,
-  loginUser
+  loginUser,
+  logoutUser
 }

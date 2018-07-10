@@ -1,41 +1,65 @@
-import React from 'react'
-import { Link } from '@reach/router'
-import Logo from './img/logo-rusch-noir.png'
-import { AuthProvider } from '../helpers/AuthContext'
-import Header from './Header'
-
-const AdminLogin = () => (
-
-  <div>
-    <AuthProvider>
-      <Header />
-    </AuthProvider>
-  </div>
-)
+import React, { Component } from 'react'
+import { AuthConsumer } from '../helpers/AuthContext'
+import { Link, navigate } from '@reach/router'
+import api from '../api.js'
 
 
+class AdminLogin extends Component {
 
-export default AdminLogin
+  state = {
+    username: '',
+    password: ''
+  }
+
+  handleChange = event => {
+    const key = event.target.name
+    this.setState({ ...this.state.filtre, [key]: event.target.value })
+    console.log(this.state)
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    console.log(this.state)
+    api.loginUser(this.state)
+      .then(result => {
+        if (result.ok) {
+          this.props.login()
+          navigate('/admin/dashboard')
+        } else {
+          const error = Error(`Fetch: of Sign in, ${result.status} - ${result.statusText}`)
+          error.response = result
+          console.log('Wrong creds!')
+          return true
+        }
+      })
 
 
-/*    <AuthConsumer>
-      {({ isAuth, login, logout }) => (
+  }
+
+  render() {
+    return (
+      <header>
         <div>
           <h3>
-            Salut, ceci est la page de loggin
+            <Link to="/admin/login">
+              LOGIN
+            </Link>
           </h3>
-
-          {isAuth? (
-            <ul>
-              <Link to="dashboard">
-                Open Dashboard
-              </Link>
-
-              <button onClick={logout}>logout</button>
-            </ul>
-          ) : (
-            <button onClick={login}>login</button>
-          )}
+          <div>
+            <form onSubmit={this.handleSubmit}>
+              <label>Username :<br/>
+                <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+              </label>
+              <label>Password:<br/>
+                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
-      )}
-    </AuthConsumer>*/
+      </header>
+    )
+  }
+}
+
+export default AdminLogin

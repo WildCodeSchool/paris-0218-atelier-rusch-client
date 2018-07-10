@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
+import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
-const FiltreCard = ({ filtre }) => 
+const FiltreCard = ({ filtre }) =>
   <div className='AdminCardHalfWidth'>
     <div className='currentText'> {filtre.filterTag} </div>
     <div className='EditButtonsContainer'>
@@ -31,7 +32,7 @@ const AdminFiltres = ({ filtres }) => {
   return (
     <div className='GlobalContainer'>
       <Link to='new'>
-        <div className='ButtonCreateElement'>Créer un nouveau filtre</div>
+        <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau filtre</div>
       </Link>
       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>
       <div className='AdminCardHalfWidthContainer'>

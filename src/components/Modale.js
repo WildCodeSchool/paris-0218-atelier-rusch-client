@@ -39,11 +39,11 @@ const Modale = ({ article, displayModale }) => {
 const articles = state.articles.allArticles
 
 const articleThumbnails = articles
-.filter(article => article.hasStar === 'false')
+.filter(article => article.hasStar === '0')
     .slice(0, 3)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-const articlesSuggestions = 
+const articlesSuggestions =
 	<div className="ArticlesBlock">
 		<div className='articleSuggestion'>
 		<h4 style={{ margin: '2rem 0 4rem 5rem' }}>Ceci pourrait aussi vous intéresser :</h4></div>
@@ -64,9 +64,11 @@ const articlesSuggestions =
           <h3>
             {article.shortDescription}
           </h3>
-          <p className="smallLink">
-            Site du projet
-          </p>
+          <a href={article.projectLink} target='_blank'>
+            <p className="smallLink">
+              {article.projectLink === '' ? '' : 'Lien du projet'}
+            </p>
+          </a>
         </div>
       </div>
       {content}

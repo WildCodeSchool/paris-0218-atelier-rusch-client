@@ -7,10 +7,11 @@ import './css/ArticleForm.css'
 const freshArticle = {
   title: '',
   shortDescription: '',
+  projectLink: '',
   section: '',
   headerImage: '',
-  tags:'',
-  hasStar:false,
+  tags: '',
+  hasStar: '0',
   content: []
 }
 
@@ -121,6 +122,11 @@ class ArticleForm extends Component {
         ...this.state.article,
         content: content
       }
+    } else if (key.startsWith('hasStar')) {
+      article = {
+        ...this.state.article,
+        hasStar: this.state.article.hasStar === '1' ? '0' : '1'
+      }
     } else {
       article = {
         ...this.state.article,
@@ -159,8 +165,10 @@ class ArticleForm extends Component {
 
   render () {
     const article = this.state.article
+    console.log(article.hasStar)
 
     const buttons = [
+
       { type: 'h2', value: 'Titre de paragraphe' },
       { type: 'p', value: 'Paragraphe' },
       { type: 'blockquote', value: 'Citation' },
@@ -184,24 +192,30 @@ class ArticleForm extends Component {
                 <input type="text" name="title" value={article.title} onChange={this.handleChange} />
               </label>
               <label>Description de l'article :<br/>
-              <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+                <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+              </label>
+              <label>Lien externe vers un site du projet :<br/>
+                <input type="text" name="projectLink" value={article.projectLink} onChange={this.handleChange} />
               </label>
               <label>URL de l'image de couverture:<br/>
                 <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
               </label>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label>Choisissez la section :
+                  <select name="section" value={article.section} onChange={this.handleChange}>
+                    <option value="Choose">Choisissez la section</option>
+                    <option value="lab">LabRusch</option>
+                    <option value="projets">Projets</option>
+                  </select>
+                </label>
+              </div>
               <label>Tags de l'article :<br/>
                 <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
               </label>
-              <label>
-              <input style={{width: '20px', marginRight: '5px'}} type="checkbox" name="hasStar" onClick={() => this.setState({hasStar: !this.state.hasStar}) } />
-              Mettre à la une</label>
-              <div>
-                <select name="section" value={article.section} onChange={this.handleChange}>
-                  <option value="Choose">Choisissez la section</option>
-                  <option value="lab">LabRusch</option>
-                  <option value="projets">Projets</option>
-                </select>
-              </div>
+              <label> Mettre l'article à la une :
+                <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' } style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}  type="button" name="hasStar" onClick={this.handleChange}>
+                ★</button>
+              </label>
 
               <div className="addModule yellow">Ajouter un module :</div>
               <Container onDrop={this.handleDnd} className='DynamicInputs'>
@@ -210,7 +224,7 @@ class ArticleForm extends Component {
               <div id="buttons" style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}
               </div>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Publier l'article" />
             </form>
           </div>
         </div>

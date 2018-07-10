@@ -10,7 +10,7 @@ const ArticleThumbnail = ({ article, index }) => {
     const yyyy = d.getFullYear()
     const hh = d.getHours()
     const min = d.getMinutes()
-    return`${jj} - ${mm} - ${yyyy}`
+    return`${jj}-${mm}-${yyyy}`
   }
   return (
     <Link to={String(article.id)}>
@@ -18,7 +18,7 @@ const ArticleThumbnail = ({ article, index }) => {
       style={article.hasStar === '1' ? { zIndex: index, background: `center / cover no-repeat url("${article.headerImage}"), rgba(0, 0, 0, 0.5)` } : { zIndex: index }}>
         <div className={article.hasStar === '1' ? 'ArticleThumbnailFilterBlack ArticleThumbnailHasStar' : 'ArticleThumbnailClassic'}>
         <h6>
-          {article.tags}
+          {article.tags.join(' - ')}
         </h6>
         <h5>
           {article.title}

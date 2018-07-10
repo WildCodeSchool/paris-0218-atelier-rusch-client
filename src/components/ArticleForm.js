@@ -129,9 +129,16 @@ class ArticleForm extends Component {
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
     } else if (key.startsWith('tags')) {
-      article = {
-        ...this.state.article,
-        tags: [ ...this.state.article.tags, event.target.value ]
+      if (this.state.article.tags.includes(event.target.value)) {
+        article = {
+          ...this.state.article,
+          tags: this.state.article.tags.filter(tag => tag !== event.target.value)
+        }
+      } else {
+        article = {
+          ...this.state.article,
+          tags: [ ...this.state.article.tags, event.target.value ]
+        }
       }
     } else {
       article = {
@@ -166,10 +173,8 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
-  console.log('tags', article.tags)
+    console.log('tags', article.tags)
   }
-
-
 
   render () {
     const article = this.state.article
@@ -188,7 +193,11 @@ class ArticleForm extends Component {
         </Draggable>)
 
     const state = store.getState()
-    const TagCard = ({ tag }) => <button type="button" name="tags" className='TagCard' value={tag.filterTag} onClick={this.handleChange}>{tag.filterTag} </button>
+    const TagCard = ({ tag }) =>
+      <button id={tag.id} type="button" name="tags"
+      className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
+      value={tag.filterTag}
+      onClick={this.handleChange}>{tag.filterTag}</button>
     const TagCards = state.filters.allFilters.map(tag => <TagCard tag={tag} />)
     console.log('tags', this.state.article.tags)
 
@@ -224,7 +233,11 @@ class ArticleForm extends Component {
                 <div className='TagCardsContainer'>{TagCards}</div>
 
               <label> Mettre l'article à la une :
-                <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' } style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}  type="button" name="hasStar" onClick={this.handleChange}>
+                <button
+                className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }
+                style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}
+                type="button" name="hasStar"
+                onClick={this.handleChange}>
                 ★</button>
               </label>
 
@@ -232,7 +245,8 @@ class ArticleForm extends Component {
               <Container onDrop={this.handleDnd} className='DynamicInputs'>
                 {dynamicInputs}
               </Container>
-              <div id="buttons" style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
+              <div id="buttons"
+              style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}
               </div>
               <input type="submit" value="Publier l'article" />

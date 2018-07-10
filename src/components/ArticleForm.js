@@ -3,6 +3,7 @@ import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
 import './css/ArticleForm.css'
+import store from '../store.js'
 
 const freshArticle = {
   title: '',
@@ -10,7 +11,7 @@ const freshArticle = {
   projectLink: '',
   section: '',
   headerImage: '',
-  tags: '',
+  tags: [],
   hasStar: '0',
   content: []
 }
@@ -49,7 +50,7 @@ const H2 = ({ element, ...rest }) => {
 const P = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter un paragraphe :
-    <textarea type="text" value={element.value} {...rest} autoFocus />
+      <textarea type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -57,7 +58,7 @@ const P = ({ element, ...rest }) => {
 const Blockquote = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter une citation :
-    <input type="text" value={element.value} {...rest} autoFocus />
+      <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -65,7 +66,7 @@ const Blockquote = ({ element, ...rest }) => {
 const Imgs = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter des images :
-    <input type="text" value={element.value} {...rest} autoFocus />
+      <input type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -127,6 +128,11 @@ class ArticleForm extends Component {
         ...this.state.article,
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
+    } else if (key.startsWith('tags')) {
+      article = {
+        ...this.state.article,
+        tags: [ ...this.state.article.tags, event.target.value ]
+      }
     } else {
       article = {
         ...this.state.article,
@@ -141,7 +147,6 @@ class ArticleForm extends Component {
     event.preventDefault()
     this.props.submitArticle(this.state.article)
     { window.location.pathname = '/admin/articles' }
-
   }
 
   addInput = type => {
@@ -161,14 +166,15 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
+  console.log('tags', article.tags)
   }
+
+
 
   render () {
     const article = this.state.article
-    console.log(article.hasStar)
 
     const buttons = [
-
       { type: 'h2', value: 'Titre de paragraphe' },
       { type: 'p', value: 'Paragraphe' },
       { type: 'blockquote', value: 'Citation' },
@@ -180,6 +186,11 @@ class ArticleForm extends Component {
         <Draggable key={i}>
           <Element name={`content-${i}`} element={element} onChange={this.handleChange} />
         </Draggable>)
+
+    const state = store.getState()
+    const TagCard = ({ tag }) => <button type="button" name="tags" className='TagCard' value={tag.filterTag} onClick={this.handleChange}>{tag.filterTag} </button>
+    const TagCards = state.filters.allFilters.map(tag => <TagCard tag={tag} />)
+    console.log('tags', this.state.article.tags)
 
     return (
     <div>
@@ -209,9 +220,9 @@ class ArticleForm extends Component {
                   </select>
                 </label>
               </div>
-              <label>Tags de l'article :<br/>
-                <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
-              </label>
+              <label>Tags de l'article :<br/></label>
+                <div className='TagCardsContainer'>{TagCards}</div>
+
               <label> Mettre l'article à la une :
                 <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' } style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}  type="button" name="hasStar" onClick={this.handleChange}>
                 ★</button>
@@ -238,3 +249,6 @@ class ArticleForm extends Component {
 }
 
 export default ArticleForm
+
+// <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
+

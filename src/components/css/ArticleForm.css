@@ -107,3 +107,40 @@ input[type="submit"]:hover {
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
   transition: 0.1s ease-in;
 }
+
+.TagCardsContainer {
+  display: flex;
+  width: 35vw;
+  flex-wrap: wrap;
+  margin: 5px 0 35px 0;
+}
+
+.TagCard {
+  border: solid 1px darkgrey;
+  border-radius: 4px;
+  padding: 7px 15px;
+  margin: 10px 10px 0 0;
+  font-family: 'HeimatMono';
+  font-size: 0.7rem;
+  text-align: center;
+  opacity: 0.4;
+  width: auto;
+}
+
+.TagCardActive {
+  opacity: 1;
+  /*cursor: pointer;*/
+}
+
+.TagCard:hover {
+  color: white;
+  background-color: #2b2b2b;
+  border-color: transparent;
+  opacity: 1;
+}
+
+/*.TagCard:hover {
+  color: #fbd052;
+  border-color: #fbd052;
+  opacity: 1;
+}*/

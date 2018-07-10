@@ -12,7 +12,9 @@ const formatedDate = date => {
   const yyyy = d.getFullYear()
   const hh = d.getHours()
   const min = d.getMinutes()
-  return `${jj}-${mm}-${yyyy} ${hh}:${min}`
+  const mmStr = mm.toString()
+  const jjStr = jj.toString()
+  return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy} ${hh}:${min}`
 }
 const ArticleCard = ({ article }) =>
 

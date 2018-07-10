@@ -6,11 +6,11 @@ const ArticleThumbnail = ({ article, index }) => {
   const formatedDate = date => {
     const d = new Date(date)
     const jj = d.getDate()
-    const mm = d.getMonth()
+    const mm = d.getMonth() + 1
     const yyyy = d.getFullYear()
-    const hh = d.getHours()
-    const min = d.getMinutes()
-    return`${jj}-${mm}-${yyyy}`
+    const mmStr = mm.toString()
+    const jjStr = jj.toString()
+    return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy}`
   }
   return (
     <Link to={String(article.id)}>

@@ -123,31 +123,24 @@ input[type="submit"]:hover {
   font-family: 'HeimatMono';
   font-size: 0.7rem;
   text-align: center;
-  opacity: 0.4;
   width: auto;
-}
-
-.TagCardActive {
-  opacity: 1;
-  /*cursor: pointer;*/
 }
 
 .TagCard:hover {
   color: white;
   background-color: #2b2b2b;
   border-color: transparent;
-  opacity: 1;
 }
 
 .TagCardSelected {
   color: white;
   background-color: #2b2b2b;
   border-color: transparent;
-  opacity: 1;
 }
 
-/*.TagCard:hover {
-  color: #fbd052;
-  border-color: #fbd052;
-  opacity: 1;
-}*/
+.errorPost {
+  font-size: 0.7rem;
+  font-family: 'HeimatMono';
+  color: red;
+}
+

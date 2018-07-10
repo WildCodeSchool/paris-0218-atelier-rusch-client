@@ -9,7 +9,7 @@ const freshArticle = {
   title: '',
   shortDescription: '',
   projectLink: '',
-  section: '',
+  section: 'lab',
   headerImage: '',
   tags: [],
   hasStar: '0',
@@ -93,7 +93,8 @@ const moveElement = (array, fromIndex, toIndex) => {
 
 class ArticleForm extends Component {
   state = {
-    article: this.props.article || freshArticle
+    article: this.props.article || freshArticle,
+    errorPost: ''
   }
 
   handleDnd = ({ removedIndex: fromIndex, addedIndex: toIndex }) => {
@@ -113,6 +114,8 @@ class ArticleForm extends Component {
 
     let article = {}
 
+    let errorPost = ''
+
     if (key.startsWith('content')) {
       const index = key.split('-')[1]
 
@@ -128,6 +131,12 @@ class ArticleForm extends Component {
         ...this.state.article,
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
+    } else if (key.startsWith('section')) {
+        article = {
+          ...this.state.article,
+          section: event.target.value,
+          tags: []
+        }
     } else if (key.startsWith('tags')) {
       if (this.state.article.tags.includes(event.target.value)) {
         article = {
@@ -148,12 +157,18 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
+    console.log('state', this.state)
+
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.submitArticle(this.state.article)
-    { window.location.pathname = '/admin/articles' }
+    if (this.state.article.tags.length === 0) {
+      this.setState({ errorPost: '* Veuillez sélectionner un tag minimum.' })
+    } else {
+      this.props.submitArticle(this.state.article)
+      window.location.pathname = '/admin/articles'
+    }
   }
 
   addInput = type => {
@@ -173,7 +188,6 @@ class ArticleForm extends Component {
     }
 
     this.setState({ article })
-    console.log('tags', article.tags)
   }
 
   render () {
@@ -198,8 +212,9 @@ class ArticleForm extends Component {
       className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
       value={tag.filterTag}
       onClick={this.handleChange}>{tag.filterTag}</button>
-    const TagCards = state.filters.allFilters.map(tag => <TagCard tag={tag} />)
-    console.log('tags', this.state.article.tags)
+    const TagCards = state.filters.allFilters
+    .filter(tag => this.state.article.section === tag.section)
+    .map(tag => <TagCard tag={tag} />)
 
     return (
     <div>
@@ -223,7 +238,6 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option value="Choose">Choisissez la section</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>
@@ -250,6 +264,7 @@ class ArticleForm extends Component {
                 {buttons}
               </div>
               <input type="submit" value="Publier l'article" />
+              <div className='errorPost'>{this.state.errorPost}</div>
             </form>
           </div>
         </div>
@@ -264,5 +279,10 @@ class ArticleForm extends Component {
 
 export default ArticleForm
 
-// <input type="text" name="tags" value={article.tags} onChange={this.handleChange} />
-
+      // if (this.state.article.tags.length === 0) {
+      //   alert('pas bon')
+      //   this.setState({ ...this.state, errorPost: 'mtn c bon'})
+      // } else if {
+      //   alert('oke c bon')
+      //   this.setState({ ...this.state, errorPost: 'OKE C BON'})
+      // }

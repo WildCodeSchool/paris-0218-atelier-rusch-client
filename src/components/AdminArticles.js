@@ -2,11 +2,22 @@ import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
 
+const formatedDate = date => {
+  const d = new Date(date)
+  const jj = d.getDate()
+  const mm = d.getMonth() + 1
+  const yyyy = d.getFullYear()
+  const hh = d.getHours()
+  const min = d.getMinutes()
+  return `${jj}-${mm}-${yyyy} ${hh}:${min}`
+}
 const ArticleCard = ({ article }) =>
+
+
   <div className='AdminCardFullWidth'>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
-      <h6 style={{ marginRight: '50px' }}>{article.createdAt}</h6>
+      <h6 style={{ marginRight: '50px' }}>{formatedDate(article.createdAt)}</h6>
       <Link to={String(article.id)}>
         <button>E</button>
       </Link>

@@ -5,8 +5,6 @@ import store from '../store.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
 
-
-
 const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
   p: ({ value }) => <p>{value}</p>,
@@ -72,6 +70,7 @@ const articlesSuggestions =
         </div>
       </div>
       {content}
+      <div id="parnters">{article.partners}</div>
       {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
     </div>
   )

@@ -14,7 +14,7 @@ import './components/css/Responsive.css'
 import store from './store'
 import api from './api'
 
-import { loadArticles, loadFilters, loadMembers } from './actions'
+import { loadArticles, loadFilters, loadMembers, loadPartners } from './actions'
 
 class App extends Component {
 
@@ -27,6 +27,9 @@ class App extends Component {
 
     api.getEquipe()
       .then(members => store.dispatch(loadMembers(members)))
+
+    api.getPartenaires()
+      .then(partners => store.dispatch(loadPartners(partners)))
   }
 
   componentDidMount () {

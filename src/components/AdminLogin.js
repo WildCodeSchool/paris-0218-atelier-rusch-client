@@ -34,24 +34,16 @@ class AdminLogin extends Component {
   render() {
     return (
       <header>
-        <div>
-          <h3>
-            <Link to="/admin/login">
-              LOGIN
-            </Link>
-          </h3>
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <label>Username :<br/>
-                <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
-              </label>
-              <label>Password:<br/>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-        </div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="AdminTitles yellow" style={{ textAlign: 'center', marginBottom: '4rem' }}>Entrez vos identifiants</div>
+          <label>Username :<br/>
+            <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
+          </label>
+          <label>Password:<br/>
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+          </label>
+          <input style={{ marginBottom: '7rem' }} type="submit" value="Submit" />
+        </form>
       </header>
     )
   }

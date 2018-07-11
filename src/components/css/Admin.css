@@ -120,8 +120,8 @@ button {
 
 .AdminCardHalfWidth {
 	padding: 20px;
-	min-width: 20vw;
-	max-width: 20vw;
+	min-width: 30vw;
+	max-width: 30vw;
 	margin: 10px 1vw;
 	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 	display: flex;
@@ -139,4 +139,13 @@ button {
 .EditButtonsContainer {
 	display: flex;
 	align-items: center;
+}
+
+.LogOut {
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+.LogOut:hover {
+	fill: #5aff6e;
 }

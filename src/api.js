@@ -1,131 +1,58 @@
-const getArticles = () => fetch('/articles').then(res => res.json())
+const api = async (path, opts) =>
+  (await fetch(`https://api.atelier-rusch.com${path}`, opts)).json()
 
-const getFilters = () => fetch('/filters').then(res => res.json())
-
-const getEquipe = () => fetch('/equipe').then(res => res.json())
-
-const getPartenaires = () => fetch('/partenaires').then(res => res.json())
-
-const newPartenaire = partenaire => fetch('/partenaires', {
-  method: 'post',
-  body: JSON.stringify(partenaire),
+const methodMan = method => (path, body) => api(path, {
+  method,
+  body: JSON.stringify(body),
   headers: {
     'Content-Type': 'application/json'
   },
   'credentials': 'include'
 })
 
-const updatePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
-  method: 'put',
-  body: JSON.stringify(partenaire),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+api.post = methodMan('post')
+api.put = methodMan('put')
+api.delete = methodMan('delete')
 
-const deletePartenaire = (id, partenaire) => fetch(`/partenaires/${id}`, {
-  method: 'delete',
-  body: JSON.stringify(partenaire),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const getArticles = () => api('/articles')
 
-const newFilter = filter => fetch('/filters', {
-  method: 'post',
-  body: JSON.stringify(filter),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const getFilters = () => api('/filters')
 
-const updateFilter = (id, filter) => fetch(`/filters/${id}`, {
-  method: 'put',
-  body: JSON.stringify(filter),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const getEquipe = () => api('/equipe')
 
-const deleteFilter = (id, filter) => fetch(`/filters/${id}`, {
-  method: 'delete',
-  body: JSON.stringify(filter),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const getPartenaires = () => api('/partenaires')
 
-const newArticle = article => fetch('/articles', {
-  method: 'post',
-  body: JSON.stringify(article),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const newPartenaire = partenaire => api.post('/partenaires', partenaire)
 
-const updateArticle = (id, article) => fetch(`/articles/${id}`, {
-  method: 'put',
-  body: JSON.stringify(article),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const updatePartenaire = (id, partenaire) =>
+  api.put(`/partenaires/${id}`, partenaire)
 
-const deleteArticle = (id, article) => fetch(`/articles/${id}`, {
-  method: 'delete',
-  body: JSON.stringify(article),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const deletePartenaire = (id, partenaire) =>
+  api.delete(`/partenaires/${id}`, partenaire)
 
-const newMember = member => fetch('/equipe', {
-  method: 'post',
-  body: JSON.stringify(member),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const newFilter = filter => api.post('/filters', filter)
 
-const updateMember = (id, member) => fetch(`/equipe/${id}`, {
-  method: 'put',
-  body: JSON.stringify(member),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const updateFilter = (id, filter) => api.put(`/filters/${id}`, filter)
 
-const deleteMember = (id, member) => fetch(`/equipe/${id}`, {
-  method: 'delete',
-  body: JSON.stringify(member),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials': 'include'
-})
+const deleteFilter = (id, filter) => api.delete(`/filters/${id}`, filter)
+
+const newArticle = article => api.post('/articles', article)
+
+const updateArticle = (id, article) => api.put(`/articles/${id}`, article)
+
+const deleteArticle = (id, article) => api.delete(`/articles/${id}`, article)
+
+const newMember = member => api.post('/equipe', member)
+
+const updateMember = (id, member) => api.put(`/equipe/${id}`, member)
+
+const deleteMember = (id, member) => api.delete(`/equipe/${id}`, member)
 
 //credentials routes
 
-const loginUser = (user) => fetch(/sign-in/, {
-  method: 'post',
-  body: JSON.stringify(user),
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  'credentials' : 'include'
-})
+const loginUser = (user) => api.post('/sign-in', user)
 
-const logoutUser = () => fetch(/sign-out/)
+const logoutUser = () => api('/sign-out')
 
 //credentials routesgit
 

@@ -2,6 +2,7 @@ import React from 'react'
 import './css/Modale.css'
 import { Link } from "@reach/router"
 import store from '../store.js'
+import Partenaire from './Partenaire.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
 
@@ -15,7 +16,7 @@ const toHTML = {
 const Element = ({ element }) => toHTML[element.type](element)
 
 
-const Modale = ({ article, displayModale }) => {
+const Modale = ({ article }) => {
 
   let treatedContent = ''
 
@@ -29,52 +30,69 @@ const Modale = ({ article, displayModale }) => {
   const content = treatedContent
     .map((element, i) => <Element key={i} element={element} />)
 
-
   const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
 
   const state = store.getState()
 
-const articles = state.articles.allArticles
+  const articles = state.articles.allArticles
 
-const articleThumbnails = articles
-.filter(article => article.hasStar === '0')
+  const articleThumbnails = articles
+    .filter(article => article.hasStar === '0')
     .slice(0, 3)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-const articlesSuggestions =
-	<div className="ArticlesBlock">
-		<div className='articleSuggestion'>
-		<h4 style={{ margin: '2rem 0 4rem 5rem' }}>Ceci pourrait aussi vous intéresser :</h4></div>
-		{articleThumbnails}
-		<RedirectingBlockToAllArticles />
-	</div>
+  const arrayOfPartners = []
 
-  console.log(articles)
+  // const articlePartners = partner => arrayOfPartners.push(state.partners.allPartners
+  //   .find(partner => state.partners.allPartners
+  //   .includes(partner)))
+
+  // const getPartners = article.partners.forEach(articlePartners)
+  const getPartners = ["Paris-Saclay", "Erigere"].forEach(partner => arrayOfPartners.push(state.partners.allPartners
+    .find(partner => state.partners.allPartners
+    .includes(partner))))
+
+  console.log('partners', arrayOfPartners, getPartners)
+
+  const partners = arrayOfPartners.map(partner => <Partenaire partner={partner} />)
+
+
+  const articlesSuggestions =
+  	<div className="ArticlesBlock">
+  		<div className='articleSuggestion'>
+  		<h4 style={{ margin: '0 0 4rem 5rem'}}>Ceci pourrait aussi vous intéresser :</h4></div>
+  		{articleThumbnails}
+  		<RedirectingBlockToAllArticles />
+  	</div>
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
-      <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
-        <div className="ModaleHeader FilterBlack">
-          <h2 className="green">
-            {article.title}
-          </h2>
-          <h3>
-            {article.shortDescription}
-          </h3>
-          <a href={article.projectLink} target='_blank'>
-            <p className="smallLink">
-              {article.projectLink === '' ? '' : 'Lien du projet'}
-            </p>
-          </a>
+    <div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
+        <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
+          <div className="ModaleHeader FilterBlack">
+            <h2 className="green">
+              {article.title}
+            </h2>
+            <h3>
+              {article.shortDescription}
+            </h3>
+            <a href={article.projectLink} target='_blank'>
+              <p className="smallLink">
+                {article.projectLink === '' ? '' : 'Lien du projet'}
+              </p>
+            </a>
+          </div>
         </div>
+        {content}
       </div>
-      {content}
-      <div id="parnters">{article.partners}</div>
+      <h4>Nos partenaires sur ce projet :</h4>
+      {!partners
+        ? 'Loading'
+        : <div className="PartenairesContainer">{partners}</div>}
       {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
     </div>
   )
 }
 
 export default Modale
-

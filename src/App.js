@@ -19,6 +19,10 @@ import { loadArticles, loadFilters, loadMembers, loadPartners } from './actions'
 class App extends Component {
 
   syncDatas = () => {
+
+    api.getPartenaires()
+      .then(partners => store.dispatch(loadPartners(partners)))
+
     api.getArticles()
       .then(articles => store.dispatch(loadArticles(articles)))
 
@@ -27,9 +31,6 @@ class App extends Component {
 
     api.getEquipe()
       .then(members => store.dispatch(loadMembers(members)))
-
-    api.getPartenaires()
-      .then(partners => store.dispatch(loadPartners(partners)))
   }
 
   componentDidMount () {

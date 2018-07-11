@@ -22,9 +22,6 @@ const Atelier = () => {
 
   const partners = state.partners.allPartners.map(partner => <Partenaire key={partner.id} partner={partner} />)
 
-  console.log(state.partners.allPartners)
-  console.log(state.members.allMembers)
-
   return (
     <div>
       <Nav />

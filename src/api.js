@@ -1,5 +1,14 @@
-const api = async (path, opts) =>
-  (await fetch(`https://api.atelier-rusch.com${path}`, opts)).json()
+const api = async (path, opts) => {
+  const response = await fetch(`https://api.atelier-rusch.com${path}`, opts)
+  if (response.ok) {
+    return response.json()
+  } else {
+    const error = Error(await response.text())
+    error.statusText = response.statusText
+    error.status = response.status
+    throw error
+  }
+}
 
 const methodMan = method => (path, body) => api(path, {
   method,

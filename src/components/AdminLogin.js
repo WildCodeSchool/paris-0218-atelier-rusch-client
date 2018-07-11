@@ -21,19 +21,14 @@ class AdminLogin extends Component {
     event.preventDefault()
     console.log(this.state)
     api.loginUser(this.state)
-      .then(result => {
-        if (result.ok) {
-          this.props.login()
-          navigate('/admin/dashboard')
-        } else {
-          const error = Error(`Fetch: of Sign in, ${result.status} - ${result.statusText}`)
-          error.response = result
-          console.log('Wrong creds!')
-          return true
-        }
+      .then(() => {
+        this.props.login()
+        navigate('/admin/dashboard')
       })
-
-
+      .catch(err => {
+        console.log('Wrong creds!', err)
+        // show error message on client
+      })
   }
 
   render() {

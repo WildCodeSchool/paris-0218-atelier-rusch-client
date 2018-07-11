@@ -20,6 +20,11 @@ const Atelier = () => {
 
   const members = state.members.allMembers.map(member => <EquipeMember key={member.id} member={member} />)
 
+  const partners = state.partners.allPartners.map(partner => <Partenaire key={partner.id} partner={partner} />)
+
+  console.log(state.partners.allPartners)
+  console.log(state.members.allMembers)
+
   return (
     <div>
       <Nav />
@@ -84,9 +89,7 @@ const Atelier = () => {
 
       <AtelierSection title={'Nos partenaires'} bgColor="white">
         <div className="PartenairesContainer">
-          <Partenaire image={saclay} description={'Partenaire privilégié de Atelier Rusch'} />
-          <Partenaire image={erigere} description={'Acteur responsable dans le domaine du logement social'} />
-          <Partenaire image={massy} description={'Capitale du nord de l’Essonne'} />
+          {partners}
         </div>
       </AtelierSection>
 

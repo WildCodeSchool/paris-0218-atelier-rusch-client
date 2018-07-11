@@ -15,7 +15,7 @@
   text-align: center;
 }
 
-.ArticleThumbnailClassic > *, .ArticleThumbnailFilterBlack > * {
+.ArticleThumbnailClassic > * {
   width: 25vw;
 }
 
@@ -62,4 +62,8 @@
   height: 100%;
   backdrop-filter: saturate(0);
   -webkit-backdrop-filter: saturate(0);
+}
+
+.ArticleThumbnailFilterBlack > * {
+  width: 25vw;
 }

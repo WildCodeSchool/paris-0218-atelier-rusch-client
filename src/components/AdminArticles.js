@@ -14,7 +14,9 @@ const formatedDate = date => {
   const min = d.getMinutes()
   const mmStr = mm.toString()
   const jjStr = jj.toString()
-  return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy} ${hh}:${min}`
+  const hhStr = hh.toString()
+  const minStr = min.toString()
+  return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy} ${hhStr.length === 1 ? 0 + hhStr : hhStr}:${minStr.length === 1 ? 0 + minStr : minStr}`
 }
 const ArticleCard = ({ article }) =>
 

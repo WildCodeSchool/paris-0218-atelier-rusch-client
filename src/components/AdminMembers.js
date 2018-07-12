@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import api from '../api.js'
+import IoAndroidDelete from 'react-icons/lib/io/android-delete'
+import IoEdit from 'react-icons/lib/io/edit'
 import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
 const AdminMembers = ({ members }) => {
@@ -11,10 +13,14 @@ const AdminMembers = ({ members }) => {
       <div className='currentText'> {el.name} </div>
       <div className='EditButtonsContainer'>
         <Link to={String(el.id)}>
-         <button>E</button>
+          <button className="ReactIcon">
+            <IoEdit/>
+          </button>
         </Link>
-         <button onClick={()=>{api.deleteMember(el.id)
-        window.location.reload()}}>S</button>
+        <button className="ReactIcon" onClick={()=>{api.deleteMember(el.id)
+        window.location.reload()}}>
+          <IoAndroidDelete/>
+        </button>
       </div>
     </div>
   )

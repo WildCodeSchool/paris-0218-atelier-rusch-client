@@ -41,7 +41,7 @@ const Modale = ({ article }) => {
     .slice(0, 3)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const getArticlePartners = JSON.parse(article.partners)
+  const getArticlePartners = article.partners
 
   const getPartners = array => state.partners.allPartners
     .filter(el => el.name === array.find(elem => elem === el.name))

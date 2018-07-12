@@ -9,10 +9,6 @@ import EquipeMember from './EquipeMember.js'
 import Partenaire from './Partenaire.js'
 import store from '../store.js'
 
-import saclay from './img/paris-saclay.jpg'
-import massy from './img/massy.jpg'
-import erigere from './img/erigere.jpg'
-
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
 

@@ -4,6 +4,7 @@ import './css/ArticleForm.css'
 class AdminPartenaireForm extends Component {
 
   state = {
+    name: this.props.partenaire.name || '',
     image: this.props.partenaire.image || '',
     shortDescription: this.props.partenaire.shortDescription || ''
   }
@@ -25,6 +26,9 @@ class AdminPartenaireForm extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
+        <label>Nom du partenaire :<br/>
+          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+        </label>
 				<label>Logo du partenaire :<br/>
 					<input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
 				</label>

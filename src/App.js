@@ -18,18 +18,19 @@ import { loadArticles, loadFilters, loadMembers, loadPartners } from './actions'
 
 class App extends Component {
 
-  syncDatas = () => {
-    api.getArticles()
-      .then(articles => store.dispatch(loadArticles(articles)))
+  syncDatas = async () => {
 
-    api.getFilters()
-      .then(filters => store.dispatch(loadFilters(filters)))
+    const partners = await api.getPartenaires()
+    store.dispatch(loadPartners(partners))
 
-    api.getEquipe()
-      .then(members => store.dispatch(loadMembers(members)))
+    const articles = await api.getArticles()
+    store.dispatch(loadArticles(articles))
 
-    api.getPartenaires()
-      .then(partners => store.dispatch(loadPartners(partners)))
+    const filters = await api.getFilters()
+    store.dispatch(loadFilters(filters))
+
+    const members = await api.getEquipe()
+    store.dispatch(loadMembers(members))
   }
 
   componentDidMount () {

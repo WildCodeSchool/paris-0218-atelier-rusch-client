@@ -13,7 +13,8 @@ const freshArticle = {
   headerImage: '',
   tags: [],
   hasStar: '0',
-  content: []
+  content: [],
+  partners: []
 }
 
 export const demoArticle = {
@@ -149,6 +150,18 @@ class ArticleForm extends Component {
           tags: [ ...this.state.article.tags, event.target.value ]
         }
       }
+    } else if (key.startsWith('partners')) {
+      if (this.state.article.partners.includes(event.target.value)) {
+        article = {
+          ...this.state.article,
+          partners: this.state.article.partners.filter(partner => partner !== event.target.value)
+        }
+      } else {
+        article = {
+          ...this.state.article,
+          partners: [ ...this.state.article.partners, event.target.value ]
+        }
+      }
     } else {
       article = {
         ...this.state.article,
@@ -158,6 +171,7 @@ class ArticleForm extends Component {
 
     this.setState({ article })
     console.log('state', this.state)
+    console.log('tags', this.state.article.tags, 'partners', this.state.article.partners)
 
   }
 
@@ -203,18 +217,32 @@ class ArticleForm extends Component {
     const dynamicInputs = article.content
       .map((element, i) =>
         <Draggable key={i}>
-          <Element name={`content-${i}`} element={element} onChange={this.handleChange} />
+          <Element keu={i} name={`content-${i}`} element={element} onChange={this.handleChange} />
         </Draggable>)
 
     const state = store.getState()
+
     const TagCard = ({ tag }) =>
-      <button id={tag.id} type="button" name="tags"
-      className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
-      value={tag.filterTag}
-      onClick={this.handleChange}>{tag.filterTag}</button>
+      <button key={tag.id} type="button" name="tags"
+        className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
+        value={tag.filterTag}
+        onClick={this.handleChange}>
+          {tag.filterTag}
+      </button>
+
     const TagCards = state.filters.allFilters
     .filter(tag => this.state.article.section === tag.section)
     .map(tag => <TagCard tag={tag} />)
+
+    const PartnerCard = ({ partner }) =>
+    <button key={partner.id} type="button" name="partners"
+      className={this.state.article.partners.includes(`${partner.name}`) ? 'TagCard TagCardSelected' : 'TagCard'}
+      value={partner.name}
+      onClick={this.handleChange}>
+        {partner.name}
+    </button>
+
+    const PartnersCards = state.partners.allPartners.map(partner => <PartnerCard partner={partner} />)
 
     return (
     <div>
@@ -244,7 +272,10 @@ class ArticleForm extends Component {
                 </label>
               </div>
               <label>Tags de l'article :<br/></label>
-                <div className='TagCardsContainer'>{TagCards}</div>
+              <div className='TagCardsContainer'>{TagCards}</div>
+
+              <label>Partenaires du projet :<br/></label>
+              <div className='TagCardsContainer'>{PartnersCards}</div>
 
               <label> Mettre l'article à la une :
                 <button

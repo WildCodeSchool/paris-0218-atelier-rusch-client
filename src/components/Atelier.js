@@ -9,10 +9,6 @@ import EquipeMember from './EquipeMember.js'
 import Partenaire from './Partenaire.js'
 import store from '../store.js'
 
-import saclay from './img/paris-saclay.jpg'
-import massy from './img/massy.jpg'
-import erigere from './img/erigere.jpg'
-
 const Atelier = () => {
   const viewportHeight = window.innerHeight - 55
 
@@ -21,9 +17,6 @@ const Atelier = () => {
   const members = state.members.allMembers.map(member => <EquipeMember key={member.id} member={member} />)
 
   const partners = state.partners.allPartners.map(partner => <Partenaire key={partner.id} partner={partner} />)
-
-  console.log(state.partners.allPartners)
-  console.log(state.members.allMembers)
 
   return (
     <div>

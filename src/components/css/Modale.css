@@ -6,9 +6,9 @@
   top: 0;
   overflow: scroll;
   background-color: white;
-  display: flex;
+  /*display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;*/
 }
 
 .ModaleBlockPreview {
@@ -17,7 +17,6 @@
   top: 0;
   background-color: white;
   display: flex;
-  /*align-items: center;*/
   flex-direction: column;
   box-shadow: -20px 10px 100px rgba(0, 0, 0, 0.05);
 }

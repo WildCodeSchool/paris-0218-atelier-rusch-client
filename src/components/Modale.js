@@ -41,21 +41,13 @@ const Modale = ({ article }) => {
     .slice(0, 3)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
-  const arrayOfPartners = []
+  const getArticlePartners = JSON.parse(article.partners)
 
-  // const articlePartners = partner => arrayOfPartners.push(state.partners.allPartners
-  //   .find(partner => state.partners.allPartners
-  //   .includes(partner)))
+  const getPartners = array => state.partners.allPartners
+    .filter(el => el.name === array.find(elem => elem === el.name))
 
-  // const getPartners = article.partners.forEach(articlePartners)
-  const getPartners = ["Paris-Saclay", "Erigere"].forEach(partner => arrayOfPartners.push(state.partners.allPartners
-    .find(partner => state.partners.allPartners
-    .includes(partner))))
-
-  console.log('partners', arrayOfPartners, getPartners)
-
-  const partners = arrayOfPartners.map(partner => <Partenaire partner={partner} />)
-
+  const partners = getPartners(getArticlePartners)
+    .map(partner => <Partenaire partner={partner} />)
 
   const articlesSuggestions =
   	<div className="ArticlesBlock">

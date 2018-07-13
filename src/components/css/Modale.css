@@ -38,14 +38,12 @@
 }
 
 .ModaleBlock img, .ModaleBlockPreview img {
-  min-width: 50vw;
-  max-width: 70vw;
-  padding: 3rem 0;
+  width: 50vw;
+  padding-top: 3rem;
 }
 
 .ModaleBlockPreview img {
   width: 50vw;
-  padding: 3rem 0;
 }
 
 .ModaleBlockPreview h2 {

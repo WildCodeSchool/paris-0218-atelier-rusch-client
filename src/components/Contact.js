@@ -27,9 +27,9 @@ const Contact = () =>
           Marie : +33 6 69 17 12 83<br/>
           Michael : +33 6 83 09 86 16<br/>
           <div className='reseaux'>
-            <a href= 'https://www.facebook.com/collectifrusch/'> <img src = {Facebook} alt = 'facebook'></img> </a>
-            <a href= 'https://www.instagram.com/atelier_rusch/'> <img src = {Instagram} alt = 'instagram'></img> </a>
-            <a href= 'https://www.linkedin.com/company/atelierrusch/'> <img src = {Linkedin} alt = 'linkedin'></img> </a>
+            <a href='https://www.facebook.com/collectifrusch/' target='_blank'><img src={Facebook} alt='facebook'></img></a>
+            <a href='https://www.instagram.com/atelier_rusch/' target='_blank'><img src={Instagram} alt='instagram'></img></a>
+            <a href='https://www.linkedin.com/company/atelierrusch/' target='_blank'><img src={Linkedin} alt='linkedin'></img></a>
           </div>
         </div>
       </div>

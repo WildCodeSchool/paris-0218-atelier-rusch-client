@@ -9,7 +9,7 @@ const freshArticle = {
   title: '',
   shortDescription: '',
   projectLink: '',
-  section: 'lab',
+  section: '',
   headerImage: '',
   tags: [],
   hasStar: '0',
@@ -59,7 +59,23 @@ const P = ({ element, ...rest }) => {
 const Blockquote = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter une citation :
-      <input type="text" value={element.value} {...rest} autoFocus />
+      <textarea type="text" value={element.value} {...rest} autoFocus />
+    </label>
+  )
+}
+
+const Caption = ({ element, ...rest }) => {
+  return (
+    <label className='draggableElement'>Ajouter une légende :
+      <textarea type="text" value={element.value} {...rest} autoFocus />
+    </label>
+  )
+}
+
+const Abstract = ({ element, ...rest }) => {
+  return (
+    <label className='draggableElement'>Ajouter un abstract :
+      <textarea type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -76,6 +92,8 @@ const toInput = {
   h2: (props) => <H2 {...props} />,
   p: (props) => <P {...props} />,
   blockquote: (props) => <Blockquote {...props} />,
+  caption: (props) => <Caption {...props} />,
+  abstract: (props) => <Abstract {...props} />,
   imgs: (props) => <Imgs {...props} />,
 }
 
@@ -190,6 +208,8 @@ class ArticleForm extends Component {
       h2: { "type": "h2", "value": "" },
       p: { "type": "p", "value": "" },
       blockquote: { "type": "blockquote", "value": "" },
+      caption: { "type": "caption", "value": "" },
+      abstract: { "type": "abstract", "value": "" },
       imgs: { "type": "imgs", "value": "" },
     }
 
@@ -211,13 +231,15 @@ class ArticleForm extends Component {
       { type: 'h2', value: 'Titre de paragraphe' },
       { type: 'p', value: 'Paragraphe' },
       { type: 'blockquote', value: 'Citation' },
+      { type: 'caption', value: 'Légende' },
+      { type: 'abstract', value: 'Abstract' },
       { type: 'imgs', value: 'Images' },
     ].map((button, i) => <input type='button' key={button.i} onClick={() => this.addInput(button.type)} value={button.value} />)
 
     const dynamicInputs = article.content
       .map((element, i) =>
         <Draggable key={i}>
-          <Element keu={i} name={`content-${i}`} element={element} onChange={this.handleChange} />
+          <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />
         </Draggable>)
 
     const state = store.getState()
@@ -266,6 +288,7 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
+                    <option>Choisissez la section :</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>
@@ -309,11 +332,3 @@ class ArticleForm extends Component {
 }
 
 export default ArticleForm
-
-      // if (this.state.article.tags.length === 0) {
-      //   alert('pas bon')
-      //   this.setState({ ...this.state, errorPost: 'mtn c bon'})
-      // } else if {
-      //   alert('oke c bon')
-      //   this.setState({ ...this.state, errorPost: 'OKE C BON'})
-      // }

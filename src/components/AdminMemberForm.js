@@ -10,7 +10,6 @@ class AdminMemberForm extends Component {
     description: this.props.member.description|| '',
     carreer: this.props.member.carreer || '',
     linkedIn: this.props.member.linkedIn || '',
-    portfolio: this.props.member.portfolio || ''
   }
 
   handleChange = event => {
@@ -45,9 +44,6 @@ class AdminMemberForm extends Component {
         </label>
         <label>LinkedIn :<br/>
           <input type="text" name="linkedIn" value={this.state.linkedIn} onChange={this.handleChange} />
-        </label>
-        <label>Portfolio :<br/>
-          <input type="text" name="portfolio" value={this.state.portfolio} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>

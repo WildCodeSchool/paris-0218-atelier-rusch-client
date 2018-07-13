@@ -35,6 +35,7 @@ const Homepage = (props) => {
   return (
     <div>
       <Nav />
+      {document.body.clientWidth > 980 ? '' : <div className="spacer"></div>}
       <div className="IntroBlocks">
 
         <div className="IntroBlockLeft">
@@ -49,10 +50,10 @@ const Homepage = (props) => {
         </div>
 
         <div className="IntroBlockRight">
-          <h1>
-            <span className="green bold">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
+          <h1 style={{ marginTop: '2rem' }}>
+            <span className="green">L’Atelier Rusch</span> propose des méthodes créatives pour organiser la pensée collective et co-concevoir de nouveaux services pour les collectivités et les entreprises.
             <br/>
-            <Link to='/atelier'><span className="green bold">→  <span className="green bigLink">La suite !</span></span></Link>
+            <Link to='/atelier'><span className="green">→  <span className="green bigLink">La suite !</span></span></Link>
           </h1>
         </div>
 

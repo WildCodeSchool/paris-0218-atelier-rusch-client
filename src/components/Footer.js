@@ -8,7 +8,9 @@ import instagram from './img/instagram.png'
 
 const Footer = () =>
   <div className="Footer">
-  	<img src={LogoRuschBlanc} className='LogoRuschBlanc' />
+  	<Link to='/homepage'>
+      <img src={LogoRuschBlanc} className='LogoRuschBlanc' />
+    </Link>
   	<div className='FooterText'>Atelier Rusch © 2018</div>
   	<div className='SocialNetworks'>
       <a href='https://www.facebook.com/collectifrusch/' target='_blank'><img src={fb} /></a>

@@ -33,7 +33,7 @@ class AdminPartenaireForm extends Component {
 					<input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
 				</label>
 				<label>Description du partenaire :<br/>
-					<input type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
+					<textarea type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
 				</label>
 
 				<input type="submit" value="Submit" />

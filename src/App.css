@@ -14,6 +14,7 @@
 button {
   border: none;
   outline: 0;
+  background-color: transparent;
 }
 
 .spacer {
@@ -44,15 +45,8 @@ a {
 
 @font-face {
   font-family: "HeimatMono";
-  src: url("./fonts/HeimatMonoExtraLight.ttf") format("truetype");
+  src: url("./fonts/HeimatMono.ttf") format("truetype");
   font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HeimatMono";
-  src: url("./fonts/HeimatMonoSemiBold.ttf") format("truetype");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -89,7 +83,7 @@ p {
 h1 {
   font-family: 'HeimatMono', monospace;
   font-weight: 200;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   padding: 0 5rem 0 5rem;
   line-height: 3.1rem;
 }
@@ -98,7 +92,7 @@ h2 {
   /* PAGE ATELIER HEADER = CHAPEAU SUR L'IMAGE EN BACKGROUND */
   /* PAGE MODALE = TITLE */
   font-family: 'HeimatMono', monospace;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 2.5rem;
   margin: 8rem 14rem 0 15rem;
   line-height: 3.5rem;
@@ -107,7 +101,7 @@ h2 {
 h3 {
   /* PAGE MODALE = SHORT DESCRIPTION */
   font-family: 'HeimatMono', monospace;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 1.5rem;
   margin: 1.15rem 14rem 0 15rem;
   line-height: 2.25rem;
@@ -148,7 +142,7 @@ h6 {
 
 .bigLink {
   padding-bottom: 1px;
-  border-bottom: solid 3px #5aff6e;
+  border-bottom: solid 2px #5aff6e;
   cursor: pointer;
 }
 
@@ -165,7 +159,7 @@ h6 {
 .quote {
   /* Quotes in yellow and big size : on modale page and atelier page */
   font-family: "HeimatMono", monospace;
-  font-weight: 400;
+  font-weight: 200;
   letter-spacing: 2px;
   font-size: 2.25rem;
   line-height: 3rem;
@@ -173,15 +167,26 @@ h6 {
   color: #fbd052;
 }
 
+.caption {
+  font-family: 'HeimatMono', monospace;
+  font-weight: 200;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  font-style: oblique;
+  line-height: 1.25rem;
+}
+
+p.abstract {
+  font-style: oblique; 
+  opacity: 0.75; 
+  margin-top: 5rem;
+}
+
 .AdminTitles {
   font-family: 'IBMPlex', sans-serif;
   font-size: 1.5rem;
   margin: 7vh 0 2.5vh 0;
   width: 100vw;
-}
-
-.bold {
-  font-weight: 400;
 }
 
 /* Colors */

@@ -10,11 +10,12 @@ const toHTML = {
   h2: ({ value }) => <h4>{value}</h4>,
   p: ({ value }) => <p>{value}</p>,
   blockquote: ({ value }) => <blockquote className='quote'>{value}</blockquote>,
+  caption: ({ value }) => <p className='caption'>{value}</p>,
+  abstract: ({ value }) => <p className='abstract'>{value}</p>,
   imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} alt='' />),
 }
 
 const Element = ({ element }) => toHTML[element.type](element)
-
 
 const Modale = ({ article }) => {
 

@@ -94,11 +94,29 @@ button {
 	margin-right: 20px;
 }
 
-/*button.hasNoStar:hover, button.hasStar:hover {
-	color: #fbd052;
-}*/
-
 /* CONTAINERS */ 
+
+.AdminLoginLogoBlock {
+	width: 48vw;
+	height: 100vh;
+	background-color: #5aff6e;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.LogInForm {
+	width: 52vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	justify-content: flex-start;
+}
+
+div.LogInTitle {
+	text-align: center;
+	margin: 9rem 0 4rem 0;
+}
 
 .GlobalContainer {
 	display: flex;

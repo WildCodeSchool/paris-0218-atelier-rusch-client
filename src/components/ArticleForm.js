@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AdminNav from './AdminNav.js'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
 import './css/ArticleForm.css'
@@ -133,8 +132,6 @@ class ArticleForm extends Component {
     const key = event.target.name
 
     let article = {}
-
-    let errorPost = ''
 
     if (key.startsWith('content')) {
       const index = key.split('-')[1]

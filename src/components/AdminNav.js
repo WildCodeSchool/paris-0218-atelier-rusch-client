@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from '@reach/router'
 import Logo from './img/logo-rusch-noir.png'
-import { AuthConsumer } from '../helpers/AuthContext'
 import LogOut from 'react-icons/lib/io/log-out'
 import './css/Nav.css'
 

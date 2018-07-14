@@ -20,7 +20,6 @@ const formatedDate = date => {
 }
 const ArticleCard = ({ article }) =>
 
-
   <div className='AdminCardFullWidth'>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
@@ -41,17 +40,30 @@ const ArticleCard = ({ article }) =>
 const AdminArticles = ({ articles }) => {
   const projetsArticlesList = articles
   .filter(article => article.section === 'projets')
+  .filter(article => article.isDraft === '0')
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   const labArticlesList = articles
   .filter(article => article.section === 'lab')
+  .filter(article => article.isDraft === '0')
+  .sort() // TO DO : SORT IN THE REVERSE WAY, TO GET THE NEWEST ARTICLES FIRST
   .map(article => <ArticleCard key={article.id} article={article} />)
+
+  const draftArticlesList = articles
+  .filter(article => article.isDraft === '1')
+  .map(article => <ArticleCard key={article.id} article={article} />)
+
+  const draftTitle =
+    <div className='AdminTitles yellow'>Brouillons enregistrés :</div>
 
   return (
     <div className='GlobalContainer'>
       <Link to='new'>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouvel article</div>
       </Link>
+      {draftArticlesList.length === 0 ? '' : draftTitle}
+      {draftArticlesList}
+      <br/>
       <div className='AdminTitles yellow'>Articles de la section Projets :</div>
       {projetsArticlesList}
       <br/>

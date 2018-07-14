@@ -14,7 +14,8 @@ const freshArticle = {
   tags: [],
   hasStar: '0',
   content: [],
-  partners: []
+  partners: [],
+  isDraft: false
 }
 
 export const demoArticle = {
@@ -151,11 +152,11 @@ class ArticleForm extends Component {
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
     } else if (key.startsWith('section')) {
-        article = {
-          ...this.state.article,
-          section: event.target.value,
-          tags: []
-        }
+      article = {
+      ...this.state.article,
+      section: event.target.value,
+      tags: []
+      }
     } else if (key.startsWith('tags')) {
       if (this.state.article.tags.includes(event.target.value)) {
         article = {
@@ -186,19 +187,28 @@ class ArticleForm extends Component {
         [key]: event.target.value
       }
     }
-
-    this.setState({ article })
-    console.log('state', this.state)
-    console.log('tags', this.state.article.tags, 'partners', this.state.article.partners)
-
+    this.setState({ article, errorPost: '' })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    if (this.state.article.tags.length === 0) {
-      this.setState({ errorPost: '* Veuillez sélectionner un tag minimum.' })
+    if (this.state.article.title === '') {
+      this.setState({ errorPost: '* Il faut renseigner un titre !' })
+    } else if (this.state.article.shortDescription === '') {
+      this.setState({ errorPost: '* Il faut renseigner une description !' })
+    } else if (this.state.article.headerImage === '') {
+      this.setState({ errorPost: '* Il faut ajouter une image de couverture !' })
+    } else if (this.state.article.section === '') {
+      this.setState({ errorPost: '* Il faut sélectionner une section !' })
+    } else if (this.state.article.tags.length === 0) {
+      this.setState({ errorPost: '* Il faut sélectionner au moins un tag !' })
+    } else if (this.state.article.content.length === 0) {
+      this.setState({ errorPost: '* Il faut mettre du contenu !' })
+    } else if (event.target.name.startsWith('isDraft')) {
+      this.props.submitArticle({ ...this.state.article, isDraft: true })
+      window.location.pathname = '/admin/articles'
     } else {
-      this.props.submitArticle(this.state.article)
+      this.props.submitArticle({ ...this.state.article, isDraft: false })
       window.location.pathname = '/admin/articles'
     }
   }
@@ -220,11 +230,11 @@ class ArticleForm extends Component {
         basicContentElement[type]
       ]
     }
-
     this.setState({ article })
   }
 
   render () {
+    console.log(this.state.article)
     const article = this.state.article
 
     const buttons = [
@@ -288,7 +298,7 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option>Choisissez la section :</option>
+                    <option value="">Choisissez la section :</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>
@@ -317,7 +327,8 @@ class ArticleForm extends Component {
               style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}
               </div>
-              <input type="submit" value="Publier l'article" />
+              <input className="draft" type="submit" name='isDraft' value="Enregistrer comme brouillon" onClick={this.handleSubmit} />
+              <input className="submit" type="submit" value="Publier l'article" />
               <div className='errorPost'>{this.state.errorPost}</div>
             </form>
           </div>

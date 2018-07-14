@@ -9,6 +9,7 @@ export const applyFiltersToSection = (section, state) => {
   const activeTags = getActiveFilters(state.filters.allFilters)
 
   return state.articles.allArticles
+    .filter(article => article.isDraft === '0')
     .filter(article => {
       if (article.section !== section) return false
       for (const { filterTag } of activeTags) {

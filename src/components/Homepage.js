@@ -14,6 +14,7 @@ const Homepage = (props) => {
 
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'lab')
+    .filter(article => article.isDraft === '0')
     .filter(article => article.hasStar === '0')
 
   const articleThumbnails = labArticles
@@ -22,6 +23,7 @@ const Homepage = (props) => {
 
     const slideshowArticles = state.articles.allArticles
     .filter(article => article.section === 'projets')
+    .filter(article => article.isDraft === '0')
     .filter(article => article.hasStar === '1')
     .slice(0, 3)
 

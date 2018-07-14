@@ -40,14 +40,16 @@ const ArticleCard = ({ article }) =>
 const AdminArticles = ({ articles }) => {
   const projetsArticlesList = articles
   .filter(article => article.section === 'projets')
+  .filter(article => article.isDraft === '0')
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   const labArticlesList = articles
   .filter(article => article.section === 'lab')
+  .filter(article => article.isDraft === '0')
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   const draftArticlesList = articles
-  .filter(article => article.section === 'draft')
+  .filter(article => article.isDraft === '1')
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   return (

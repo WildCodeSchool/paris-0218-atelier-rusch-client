@@ -9,12 +9,13 @@ const freshArticle = {
   title: '',
   shortDescription: '',
   projectLink: '',
-  section: 'draft',
+  section: '',
   headerImage: '',
-  tags: [ 'Brouillon' ],
+  tags: [],
   hasStar: '0',
   content: [],
-  partners: []
+  partners: [],
+  isDraft: false
 }
 
 export const demoArticle = {
@@ -152,18 +153,10 @@ class ArticleForm extends Component {
       }
     } else if (key.startsWith('section')) {
       this.setState({ errorPost: '' })
-      if (event.target.value === 'draft') {
-        article = {
-        ...this.state.article,
-        section: event.target.value,
-        tags: [ 'Brouillon ']
-        }
-      } else {
-        article = {
-        ...this.state.article,
-        section: event.target.value,
-        tags: []
-        }
+      article = {
+      ...this.state.article,
+      section: event.target.value,
+      tags: []
       }
     } else if (key.startsWith('tags')) {
       this.setState({ errorPost: '' })
@@ -203,7 +196,20 @@ class ArticleForm extends Component {
     event.preventDefault()
     if (this.state.article.tags.length === 0) {
       this.setState({ errorPost: '* Veuillez sélectionner un tag minimum.' })
+    } else if (event.target.name.startsWith('isDraft')) {
+      const article = {
+      ...this.state.article,
+      isDraft: true
+      }
+      this.setState({ article })
+      setTimeout(this.props.submitArticle(this.state.article), 1000)
+      // window.location.pathname = '/admin/articles'
     } else {
+      const article = {
+      ...this.state.article,
+      isDraft: false
+      }
+      this.setState({ article })
       this.props.submitArticle(this.state.article)
       window.location.pathname = '/admin/articles'
     }
@@ -259,11 +265,6 @@ class ArticleForm extends Component {
           {tag.filterTag}
       </button>
 
-    const Draft =
-      <button type='button' name="tags" className='TagCardDraft' value='draft'>
-      Brouillon
-      </button>
-
     const TagCards = state.filters.allFilters
     .filter(tag => this.state.article.section === tag.section)
     .map(tag => <TagCard tag={tag} />)
@@ -300,14 +301,14 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option value="draft">Choisissez la section :</option>
+                    <option value="">Choisissez la section :</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>
                 </label>
               </div>
               <label>Tags de l'article :<br/></label>
-              <div className='TagCardsContainer'>{this.state.article.section === 'draft' ? Draft : TagCards}</div>
+              <div className='TagCardsContainer'>{TagCards}</div>
 
               <label>Partenaires du projet :<br/></label>
               <div className='TagCardsContainer'>{PartnersCards}</div>
@@ -329,7 +330,8 @@ class ArticleForm extends Component {
               style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
                 {buttons}
               </div>
-              <input type="submit" value="Publier l'article" />
+              <input className="draft" type="submit" name='isDraft' value="Enregistrer comme brouillon" onClick={this.handleSubmit} />
+              <input className="submit" type="submit" value="Publier l'article" />
               <div className='errorPost'>{this.state.errorPost}</div>
             </form>
           </div>

@@ -46,7 +46,6 @@ const AdminArticles = ({ articles }) => {
   const labArticlesList = articles
   .filter(article => article.section === 'lab')
   .filter(article => article.isDraft === '0')
-  .sort() // TO DO : SORT IN THE REVERSE WAY, TO GET THE NEWEST ARTICLES FIRST
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   const draftArticlesList = articles

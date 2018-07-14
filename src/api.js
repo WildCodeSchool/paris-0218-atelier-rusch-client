@@ -1,6 +1,6 @@
 const api = async (path, opts) => {
-  // const response = await fetch(`https://api.atelier-rusch.com${path}`, opts)
-  const response = await fetch(`${path}`, opts)
+  const response = await fetch(`https://api.atelier-rusch.com${path}`, opts)
+  // const response = await fetch(`${path}`, opts)
   if (response.ok) {
     return response.json()
   } else {

@@ -9,9 +9,9 @@ const freshArticle = {
   title: '',
   shortDescription: '',
   projectLink: '',
-  section: '',
+  section: 'draft',
   headerImage: '',
-  tags: [],
+  tags: [ 'Brouillon' ],
   hasStar: '0',
   content: [],
   partners: []
@@ -151,12 +151,22 @@ class ArticleForm extends Component {
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
     } else if (key.startsWith('section')) {
+      this.setState({ errorPost: '' })
+      if (event.target.value === 'draft') {
         article = {
-          ...this.state.article,
-          section: event.target.value,
-          tags: []
+        ...this.state.article,
+        section: event.target.value,
+        tags: [ 'Brouillon ']
         }
+      } else {
+        article = {
+        ...this.state.article,
+        section: event.target.value,
+        tags: []
+        }
+      }
     } else if (key.startsWith('tags')) {
+      this.setState({ errorPost: '' })
       if (this.state.article.tags.includes(event.target.value)) {
         article = {
           ...this.state.article,
@@ -186,11 +196,7 @@ class ArticleForm extends Component {
         [key]: event.target.value
       }
     }
-
     this.setState({ article })
-    console.log('state', this.state)
-    console.log('tags', this.state.article.tags, 'partners', this.state.article.partners)
-
   }
 
   handleSubmit = event => {
@@ -225,6 +231,7 @@ class ArticleForm extends Component {
   }
 
   render () {
+    console.log(this.state.article)
     const article = this.state.article
 
     const buttons = [
@@ -250,6 +257,11 @@ class ArticleForm extends Component {
         value={tag.filterTag}
         onClick={this.handleChange}>
           {tag.filterTag}
+      </button>
+
+    const Draft =
+      <button type='button' name="tags" className='TagCardDraft' value='draft'>
+      Brouillon
       </button>
 
     const TagCards = state.filters.allFilters
@@ -288,14 +300,14 @@ class ArticleForm extends Component {
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <label>Choisissez la section :
                   <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option>Choisissez la section :</option>
+                    <option value="draft">Choisissez la section :</option>
                     <option value="lab">LabRusch</option>
                     <option value="projets">Projets</option>
                   </select>
                 </label>
               </div>
               <label>Tags de l'article :<br/></label>
-              <div className='TagCardsContainer'>{TagCards}</div>
+              <div className='TagCardsContainer'>{this.state.article.section === 'draft' ? Draft : TagCards}</div>
 
               <label>Partenaires du projet :<br/></label>
               <div className='TagCardsContainer'>{PartnersCards}</div>

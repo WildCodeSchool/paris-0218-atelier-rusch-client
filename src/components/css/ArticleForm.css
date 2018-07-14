@@ -146,9 +146,23 @@ input[type="submit"]:hover {
   border-color: transparent;
 }
 
+.TagCardDraft {
+  border: solid 1px #fbd052;
+  background-color: #fbd052;
+  border-radius: 4px;
+  padding: 7px 15px;
+  margin: 10px 10px 0 0;
+  font-family: 'HeimatMono';
+  font-size: 0.7rem;
+  text-align: center;
+  width: auto;
+  cursor: default;
+}
+
 .errorPost {
   font-size: 0.7rem;
   font-family: 'HeimatMono';
   color: red;
+  margin: -3rem 0 3rem 0;
 }
 

@@ -20,7 +20,6 @@ const formatedDate = date => {
 }
 const ArticleCard = ({ article }) =>
 
-
   <div className='AdminCardFullWidth'>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
@@ -47,6 +46,10 @@ const AdminArticles = ({ articles }) => {
   .filter(article => article.section === 'lab')
   .map(article => <ArticleCard key={article.id} article={article} />)
 
+  const draftArticlesList = articles
+  .filter(article => article.section === 'draft')
+  .map(article => <ArticleCard key={article.id} article={article} />)
+
   return (
     <div className='GlobalContainer'>
       <Link to='new'>
@@ -57,6 +60,9 @@ const AdminArticles = ({ articles }) => {
       <br/>
       <div className='AdminTitles yellow'>Articles de la section LabRusch :</div>
       {labArticlesList}
+      <br/>
+      <div className='AdminTitles yellow'>Articles de la section Brouillons :</div>
+      {draftArticlesList}
     </div>
   )
 }

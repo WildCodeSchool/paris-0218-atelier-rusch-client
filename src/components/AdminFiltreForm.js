@@ -5,21 +5,24 @@ class AdminFiltreForm extends Component {
 
   state = {
     filterTag: this.props.filtre.filterTag || '',
-    section: this.props.filtre.section || ''
+    section: this.props.filtre.section || '',
+    errorPost: ''
   }
 
 	handleChange = event => {
 		const key = event.target.name
     this.setState({ ...this.state.filtre, [key]: event.target.value })
-    console.log(this.state)
+    this.setState({ errorPost: '' })
   }
 
 	handleSubmit = event => {
     event.preventDefault()
-    console.log(this.state)
-
-    this.props.submitFiltre(this.state)
-    { window.location.pathname = '/admin/filtres' }
+    if (this.state.section === '') {
+      this.setState({ errorPost: '* Veuillez sélectionner une section.' })
+    } else {
+      this.props.submitFiltre(this.state)
+      window.location.pathname = '/admin/filtres'
+    }
   }
 
 	render() {
@@ -30,12 +33,13 @@ class AdminFiltreForm extends Component {
 				</label>
 
 				<select name="section" value={this.state.section} onChange={this.handleChange}>
-				  <option value="Choose">Choisissez la section</option>
+				  <option value="">Choisissez la section</option>
 				  <option value="lab">LabRusch</option>
 				  <option value="projets">Projets</option>
 				</select>
 
 				<input type="submit" value="Submit" />
+        <div className='errorPost'>{this.state.errorPost}</div>
 			</form>
 	)}
 }

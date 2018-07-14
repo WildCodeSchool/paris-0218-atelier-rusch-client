@@ -79,7 +79,7 @@ const Modale = ({ article }) => {
         </div>
         {content}
       </div>
-      <h4>Nos partenaires sur ce projet :</h4>
+      {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}
       {!partners
         ? 'Loading'
         : <div className="PartenairesContainer">{partners}</div>}

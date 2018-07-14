@@ -152,14 +152,12 @@ class ArticleForm extends Component {
         hasStar: this.state.article.hasStar === '1' ? '0' : '1'
       }
     } else if (key.startsWith('section')) {
-      this.setState({ errorPost: '' })
       article = {
       ...this.state.article,
       section: event.target.value,
       tags: []
       }
     } else if (key.startsWith('tags')) {
-      this.setState({ errorPost: '' })
       if (this.state.article.tags.includes(event.target.value)) {
         article = {
           ...this.state.article,
@@ -189,28 +187,28 @@ class ArticleForm extends Component {
         [key]: event.target.value
       }
     }
-    this.setState({ article })
+    this.setState({ article, errorPost: '' })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    if (this.state.article.tags.length === 0) {
-      this.setState({ errorPost: '* Veuillez sélectionner un tag minimum.' })
+    if (this.state.article.title === '') {
+      this.setState({ errorPost: '* Il faut renseigner un titre !' })
+    } else if (this.state.article.shortDescription === '') {
+      this.setState({ errorPost: '* Il faut renseigner une description !' })
+    } else if (this.state.article.headerImage === '') {
+      this.setState({ errorPost: '* Il faut ajouter une image de couverture !' })
+    } else if (this.state.article.section === '') {
+      this.setState({ errorPost: '* Il faut sélectionner une section !' })
+    } else if (this.state.article.tags.length === 0) {
+      this.setState({ errorPost: '* Il faut sélectionner au moins un tag !' })
+    } else if (this.state.article.content.length === 0) {
+      this.setState({ errorPost: '* Il faut mettre du contenu !' })
     } else if (event.target.name.startsWith('isDraft')) {
-      const article = {
-      ...this.state.article,
-      isDraft: true
-      }
-      this.setState({ article })
-      setTimeout(this.props.submitArticle(this.state.article), 1000)
-      // window.location.pathname = '/admin/articles'
+      this.props.submitArticle({ ...this.state.article, isDraft: true })
+      window.location.pathname = '/admin/articles'
     } else {
-      const article = {
-      ...this.state.article,
-      isDraft: false
-      }
-      this.setState({ article })
-      this.props.submitArticle(this.state.article)
+      this.props.submitArticle({ ...this.state.article, isDraft: false })
       window.location.pathname = '/admin/articles'
     }
   }
@@ -232,7 +230,6 @@ class ArticleForm extends Component {
         basicContentElement[type]
       ]
     }
-
     this.setState({ article })
   }
 

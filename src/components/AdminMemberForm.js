@@ -10,18 +10,28 @@ class AdminMemberForm extends Component {
     description: this.props.member.description|| '',
     carreer: this.props.member.carreer || '',
     linkedIn: this.props.member.linkedIn || '',
+    errorPost: ''
   }
 
   handleChange = event => {
     const key = event.target.name
-    this.setState({ ...this.state.filtre, [key]: event.target.value })
+    this.setState({ ...this.state.filtre, [key]: event.target.value, errorPost: '' })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-
-    this.props.submitMember(this.state)
-    { window.location.pathname = '/admin/equipe' }
+    if (this.state.name === '') {
+      this.setState({ errorPost: '* Il faut renseigner un nom !' })
+    } else if (this.state.image === '') {
+      this.setState({ errorPost: '* Il faut mettre une photo !' })
+    } else if (this.state.position === '') {
+      this.setState({ errorPost: '* Il faut renseigner un poste !' })
+    } else if (this.state.description === '') {
+      this.setState({ errorPost: '* Il faut renseigner une description !' })
+    } else {
+      this.props.submitMember(this.state)
+      window.location.pathname = '/admin/equipe'
+    }
   }
 
   render() {
@@ -45,7 +55,8 @@ class AdminMemberForm extends Component {
         <label>LinkedIn :<br/>
           <input type="text" name="linkedIn" value={this.state.linkedIn} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input className='submit' type="submit" value="Submit" />
+        <div className='errorPost'>{this.state.errorPost}</div>
       </form>
   )}
 }

@@ -11,14 +11,15 @@ class AdminFiltreForm extends Component {
 
 	handleChange = event => {
 		const key = event.target.name
-    this.setState({ ...this.state.filtre, [key]: event.target.value })
-    this.setState({ errorPost: '' })
+    this.setState({ ...this.state.filtre, [key]: event.target.value, errorPost: '' })
   }
 
 	handleSubmit = event => {
     event.preventDefault()
-    if (this.state.section === '') {
-      this.setState({ errorPost: '* Veuillez sélectionner une section.' })
+    if (this.state.filterTag === '') {
+      this.setState({ errorPost: '* Il faut renseigner un nom !' })
+    } else if (this.state.section === '') {
+      this.setState({ errorPost: '* Il faut sélectionner une section !' })
     } else {
       this.props.submitFiltre(this.state)
       window.location.pathname = '/admin/filtres'
@@ -38,7 +39,7 @@ class AdminFiltreForm extends Component {
 				  <option value="projets">Projets</option>
 				</select>
 
-				<input type="submit" value="Submit" />
+				<input className='submit' type="submit" value="Submit" />
         <div className='errorPost'>{this.state.errorPost}</div>
 			</form>
 	)}

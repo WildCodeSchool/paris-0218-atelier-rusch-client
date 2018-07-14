@@ -6,21 +6,28 @@ class AdminPartenaireForm extends Component {
   state = {
     name: this.props.partenaire.name || '',
     image: this.props.partenaire.image || '',
-    shortDescription: this.props.partenaire.shortDescription || ''
+    shortDescription: this.props.partenaire.shortDescription || '',
+    errorPost: ''
   }
 
 	handleChange = event => {
 		const key = event.target.name
-    	this.setState({ ...this.state.partenaire, [key]: event.target.value })
-    	console.log(this.state)
+    this.setState({ ...this.state.partenaire, [key]: event.target.value, errorPost: '' })
   }
 
 	handleSubmit = event => {
     event.preventDefault()
     console.log(this.state)
-
-    this.props.submitPartenaire(this.state)
-    { window.location.pathname = '/admin/partenaires' }
+    if (this.state.name === '') {
+      this.setState({ errorPost: '* Il faut sélectionner un nom !' })
+    } else if (this.state.image === '') {
+      this.setState({ errorPost: '* Il faut mettre une photo !' })
+    } else if (this.state.shortDescription === '') {
+      this.setState({ errorPost: '* Il faut renseigner une description !' })
+    } else {
+      this.props.submitPartenaire(this.state)
+      window.location.pathname = '/admin/partenaires'
+    }
   }
 
 	render() {
@@ -36,7 +43,8 @@ class AdminPartenaireForm extends Component {
 					<textarea type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
 				</label>
 
-				<input type="submit" value="Submit" />
+				<input className='submit' type="submit" value="Submit" />
+        <div className='errorPost'>{this.state.errorPost}</div>
 			</form>
 	)}
 }

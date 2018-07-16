@@ -43,7 +43,7 @@ export const demoArticle = {
 const H2 = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter un titre de paragraphe :
-    <input type="text" value={element.value} {...rest} autoFocus />
+      <input className='field' type="text" value={element.value} {...rest} autoFocus />
   </label>
   )
 }
@@ -51,7 +51,7 @@ const H2 = ({ element, ...rest }) => {
 const P = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter un paragraphe :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -59,7 +59,7 @@ const P = ({ element, ...rest }) => {
 const Blockquote = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter une citation :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -67,7 +67,7 @@ const Blockquote = ({ element, ...rest }) => {
 const Caption = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter une légende :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -75,7 +75,7 @@ const Caption = ({ element, ...rest }) => {
 const Abstract = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter un abstract :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -83,7 +83,7 @@ const Abstract = ({ element, ...rest }) => {
 const Imgs = ({ element, ...rest }) => {
   return (
     <label className='draggableElement'>Ajouter des images :
-      <input type="text" value={element.value} {...rest} autoFocus />
+      <input className="field" type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -124,7 +124,6 @@ class ArticleForm extends Component {
       ...this.state.article,
       content: reorderedContent
     }
-
     this.setState({ article: updatedArticle })
   }
 
@@ -230,8 +229,17 @@ class ArticleForm extends Component {
     this.setState({ article })
   }
 
-  render () {
+  removeInput = i => {
+    const article = {
+      ...this.state.article,
+      content: this.state.article.content.filter(index => index !== this.state.article.content[i])
+    }
+    this.setState({ article })
+    console.log(i)
     console.log(this.state.article)
+  }
+
+  render () {
     const article = this.state.article
 
     const buttons = [
@@ -245,8 +253,9 @@ class ArticleForm extends Component {
 
     const dynamicInputs = article.content
       .map((element, i) =>
-        <Draggable key={i}>
-          <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />
+        <Draggable style={{display: 'flex', flexDirection: 'column'}} key={i}>
+          <button type='button' className='removeModule field' onClick={() => this.removeInput(i)}>✕</button>
+          <Element key={i} name={`content-${i}`} element={element} i={i} onChange={this.handleChange} />
         </Draggable>)
 
     const state = store.getState()
@@ -317,7 +326,7 @@ class ArticleForm extends Component {
               </label>
 
               <div className="addModule yellow">Ajouter un module :</div>
-              <Container onDrop={this.handleDnd} className='DynamicInputs'>
+              <Container onDrop={this.handleDnd}  nonDragAreaSelector=".field" className='DynamicInputs'>
                 {dynamicInputs}
               </Container>
               <div id="buttons"

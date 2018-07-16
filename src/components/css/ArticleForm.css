@@ -36,8 +36,8 @@ input {
 
 textarea {
   height: 12vh;
-  width: 35vw;
   max-width: 35vw;
+  min-width: 35vw;
   margin-bottom: 30px;
   margin-top: 10px;
   white-space: pre-line;

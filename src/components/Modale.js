@@ -39,7 +39,7 @@ const Modale = ({ article }) => {
 
   const articleThumbnails = articles
     .filter(article => article.hasStar === '0')
-    .slice(0, 3)
+    .slice(0, 2)
     .map((article, index) => <ArticleThumbnail key={article.id} article={article} index={index} className="ArticleThumbnailClassic" />)
 
   const getArticlePartners = article.partners
@@ -58,10 +58,13 @@ const Modale = ({ article }) => {
   		<RedirectingBlockToAllArticles />
   	</div>
 
+  window.addEventListener('scroll', () => console.log('scroll'))
+
   return (
-    <div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Link className="closeModaleBtn" to={parentContextPath}><div className="closeModaleBtn">✕</div></Link>
+      <div>
+        <Link className="closeModaleBtn" to={parentContextPath}>
+          <div className="closeModaleBtn">✕</div>
+        </Link>
         <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
           <div className="ModaleHeader FilterBlack">
             <h2 className="green">
@@ -77,15 +80,23 @@ const Modale = ({ article }) => {
             </a>
           </div>
         </div>
-        {content}
+        <div style={{ display: 'flex' }}>
+          <div id='scroll' className={document.getElementById('scroll') === 0 ? 'recapBlockFixed fixed' : 'recapBlockFixed' } style={{ height: document.body.height }}></div>
+          <div style={{ width: '75vw' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              {content}
+            </div>
+            {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}
+            {!partners
+              ? 'Loading'
+              : <div className="PartenairesContainer">{partners}</div>}
+            {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
+          </div>
+        </div>
       </div>
-      {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}
-      {!partners
-        ? 'Loading'
-        : <div className="PartenairesContainer">{partners}</div>}
-      {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
-    </div>
   )
 }
+
+
 
 export default Modale

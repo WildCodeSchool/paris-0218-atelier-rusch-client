@@ -74,7 +74,7 @@ a {
 p {
   font-family: 'IBMPlex', sans-serif;
   font-weight: 400;
-  margin: 2rem 15rem;
+  margin: 2rem 10rem;
   line-height: 2rem;
   font-size: 1.2rem;
   white-space: pre-wrap;
@@ -112,7 +112,7 @@ h4 {
   /* PAGE MODALE = PARAGRAPH TITLE */
   font-family: 'IBMPlex', sans-serif;
   font-weight: 600;
-  margin: 0 15rem;
+  margin: 0 10rem;
   padding-top: 5rem;
   font-size: 2rem;
   align-self: flex-start;
@@ -163,7 +163,7 @@ h6 {
   letter-spacing: 2px;
   font-size: 2.25rem;
   line-height: 3rem;
-  padding: 3rem 20rem;
+  padding: 3rem 15rem;
   color: #fbd052;
 }
 

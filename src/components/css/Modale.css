@@ -6,9 +6,6 @@
   top: 0;
   overflow: scroll;
   background-color: white;
-  /*display: flex;
-  align-items: center;
-  flex-direction: column;*/
 }
 
 .ModaleBlockPreview {
@@ -77,4 +74,13 @@
 
 .articleSuggestion {
   width: 100vw;
+}
+
+.recapBlockFixed {
+  width: 25vw;
+  background-color: #fbd052;
+}
+
+.fixed {
+  position: fixed;
 }

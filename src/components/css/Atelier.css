@@ -39,3 +39,11 @@
 .AtelierSection .quote {
   padding: 3rem 7.5rem;
 }
+
+.AtelierSection p {
+  margin: 3rem 15rem;
+}
+
+.AtelierSection h4 {
+  margin: 0 15rem;
+}

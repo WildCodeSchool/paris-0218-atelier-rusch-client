@@ -247,8 +247,6 @@ class ArticleForm extends Component {
       content: this.state.article.content.filter(index => index !== this.state.article.content[i])
     }
     this.setState({ article })
-    console.log(i)
-    console.log(this.state.article)
   }
 
   render () {

@@ -40,50 +40,62 @@ export const demoArticle = {
   ]
 }
 
-const H2 = ({ element, ...rest }) => {
+const H2 = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>Ajouter un titre de paragraphe :
-    <input type="text" value={element.value} {...rest} autoFocus />
-  </label>
-  )
-}
-
-const P = ({ element, ...rest }) => {
-  return (
-    <label className='draggableElement'>Ajouter un paragraphe :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+    <label className='draggableElement'>
+      <div>Ajouter un titre de paragraphe :</div>
+      {children}
+      <input className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
 
-const Blockquote = ({ element, ...rest }) => {
+const P = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>Ajouter une citation :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+    <label className='draggableElement'>
+      <div>Ajouter un paragraphe :</div>
+      {children}
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
 
-const Caption = ({ element, ...rest }) => {
+const Blockquote = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>Ajouter une légende :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+    <label className='draggableElement'>
+      <div>Ajouter une citation :</div>
+      {children}
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
 
-const Abstract = ({ element, ...rest }) => {
+const Caption = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>Ajouter un abstract :
-      <textarea type="text" value={element.value} {...rest} autoFocus />
+    <label className='draggableElement'>
+      <div>Ajouter une légende :</div>
+      {children}
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
 
-const Imgs = ({ element, ...rest }) => {
+const Abstract = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>Ajouter des images :
-      <input type="text" value={element.value} {...rest} autoFocus />
+    <label className='draggableElement'>
+      <div>Ajouter un abstract :</div>
+      {children}
+      <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
+    </label>
+  )
+}
+
+const Imgs = ({ element, children, ...rest }) => {
+  return (
+    <label className='draggableElement'>
+      <div>Ajouter des images :</div>
+      {children}
+      <input className="field" type="text" value={element.value} {...rest} autoFocus />
     </label>
   )
 }
@@ -124,7 +136,6 @@ class ArticleForm extends Component {
       ...this.state.article,
       content: reorderedContent
     }
-
     this.setState({ article: updatedArticle })
   }
 
@@ -230,8 +241,15 @@ class ArticleForm extends Component {
     this.setState({ article })
   }
 
+  removeInput = i => {
+    const article = {
+      ...this.state.article,
+      content: this.state.article.content.filter(index => index !== this.state.article.content[i])
+    }
+    this.setState({ article })
+  }
+
   render () {
-    console.log(this.state.article)
     const article = this.state.article
 
     const buttons = [
@@ -244,9 +262,11 @@ class ArticleForm extends Component {
     ].map((button, i) => <input type='button' key={button.i} onClick={() => this.addInput(button.type)} value={button.value} />)
 
     const dynamicInputs = article.content
-      .map((element, i) =>
-        <Draggable key={i}>
-          <Element key={i} name={`content-${i}`} element={element} onChange={this.handleChange} />
+      .map((element, i, children) =>
+        <Draggable style={{display: 'flex', flexDirection: 'column'}} key={i} className='onDrop'>
+          <Element key={i} name={`content-${i}`} element={element} i={i} onChange={this.handleChange}>
+            <button type='button' className='removeModule field' onClick={() => this.removeInput(i)}>✕</button>
+          </Element>
         </Draggable>)
 
     const state = store.getState()
@@ -307,7 +327,7 @@ class ArticleForm extends Component {
               <label>Partenaires du projet :<br/></label>
               <div className='TagCardsContainer'>{PartnersCards}</div>
 
-              <label> Mettre l'article à la une :
+              <label>Mettre l'article à la une :
                 <button
                 className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }
                 style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}
@@ -317,7 +337,7 @@ class ArticleForm extends Component {
               </label>
 
               <div className="addModule yellow">Ajouter un module :</div>
-              <Container onDrop={this.handleDnd} className='DynamicInputs'>
+              <Container lockAxis="y" dragClass="opacity-ghost" onDrop={this.handleDnd}  nonDragAreaSelector=".field" className='DynamicInputs'>
                 {dynamicInputs}
               </Container>
               <div id="buttons"

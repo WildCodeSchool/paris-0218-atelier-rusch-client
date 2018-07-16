@@ -100,19 +100,29 @@ input[type="submit"].draft:hover {
 .removeModule {
   font-size: 0.8rem;
   cursor: pointer;
-  margin: 0 0 -31px 0;
+  margin: 0 0 0 0;
   align-self: flex-end;
   opacity: 0.35;
-}
-
-.removeModule:hover {
-  opacity: 1;
+  padding: 0;
+  right: 0;
+  z-index: 300;
 }
 
 .draggableElement {
   cursor: move;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.opacity-ghost {
+  opacity: 0.95;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  border-radius: 4px;
+  width: 115%;
+  padding: 3% 7.5% 7% 7.5%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .DynamicInputs {
@@ -189,4 +199,3 @@ input[type="submit"].draft:hover {
   color: red;
   margin: -3rem 0 3rem 0;
 }
-

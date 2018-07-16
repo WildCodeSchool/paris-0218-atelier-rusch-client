@@ -42,61 +42,73 @@ export const demoArticle = {
 
 const H2 = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter un titre de paragraphe :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter un titre de paragraphe :</label>
+        {children}
+      </div>
       <input className='field' type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 
 const P = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter un paragraphe :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter un paragraphe :</label>
+        {children}
+      </div>
       <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 
 const Blockquote = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter une citation :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter une citation :</label>
+        {children}
+      </div>
       <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 
 const Caption = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter une légende :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter une légende :</label>
+        {children}
+      </div>
       <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 
 const Abstract = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter un abstract :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter un abstract :</label>
+        {children}
+      </div>
       <textarea className='field' type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 
 const Imgs = ({ element, children, ...rest }) => {
   return (
-    <label className='draggableElement'>
-      <div>Ajouter des images :</div>
-      {children}
+    <div>
+      <div className='draggableElement'>
+        <label className='moveCursor'>Ajouter des images :</label>
+        {children}
+      </div>
       <input className="field" type="text" value={element.value} {...rest} autoFocus />
-    </label>
+    </div>
   )
 }
 

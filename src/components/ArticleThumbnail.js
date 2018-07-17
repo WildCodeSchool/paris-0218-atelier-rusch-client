@@ -18,15 +18,17 @@ const ArticleThumbnail = ({ article, index }) => {
 
   const articleId = String(article.id)
 
+  const articleSection = String(article.section)
+
+  console.log(articleSection)
+
   return (
     <Link
-      to={window.location.pathname.includes('homepage')
-      ? String(article.id)
-      : `${parentContextPath}/${articleId}`}
+      to={`/${articleSection}/${articleId}`}
       onClick={() => document.getElementById("scrollToTop").scrollIntoView()}>
       <div className='ArticleThumbnailClassic'
       style={article.hasStar === '1' ? { zIndex: index, background: `center / cover no-repeat url("${article.headerImage}"), rgba(0, 0, 0, 0.5)` } : { zIndex: index }}>
-        <div className={article.hasStar === '1' ? 'ArticleThumbnailFilterBlack ArticleThumbnailHasStar' : 'ArticleThumbnailClassic'}>
+        <div className={(article.hasStar === '1' && window.location.pathname !== '/') ? 'ArticleThumbnailFilterBlack ArticleThumbnailHasStar' : 'ArticleThumbnailClassic'}>
         <h6>
           {article.tags.join(' - ')}
         </h6>

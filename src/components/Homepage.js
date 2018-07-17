@@ -4,7 +4,7 @@ import RedirectingBlockToAllArticles from './RedirectingBlockToAllArticles.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
 import Modale from './Modale.js'
 import './css/Homepage.css'
-import Logo from './img/logo-rusch-noir.png'
+import LogoAnim from './img/rusch-anim.gif'
 import store from '../store.js'
 import { SlideShow } from './Carousel.js'
 import Nav from './Nav.js'
@@ -15,7 +15,7 @@ const Homepage = (props) => {
   const labArticles = state.articles.allArticles
     .filter(article => article.section === 'lab')
     .filter(article => article.isDraft === '0')
-    .filter(article => article.hasStar === '0')
+    .filter(article => article.hasStar === '1')
 
   const articleThumbnails = labArticles
     .slice(labArticles.length - 3, labArticles.length)
@@ -28,8 +28,8 @@ const Homepage = (props) => {
     .slice(0, 3)
 
   const articleId = props.articleId
+
   const selectedArticle = state.articles.allArticles.find(article => String(article.id) === articleId)
-  console.log({articleId, selectedArticle})
   const modale = selectedArticle !== undefined
     ? <div className='ModaleBlock'><Modale article={selectedArticle} displayModale={'block'} /></div>
     : ''
@@ -42,7 +42,7 @@ const Homepage = (props) => {
 
         <div className="IntroBlockLeft">
           <div className="LogoBlock">
-            <img className="LogoImg" src={Logo} alt="logo Rusch" />
+            <img className="LogoImg" src={LogoAnim} alt="logo Rusch" />
           </div>
 
        	  <div className="CarrouselBlock">

@@ -7,7 +7,7 @@ const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <Link onClick={() => window.scrollTo(0, 0)} to='/homepage'>
+      <Link onClick={() => window.scrollTo(0, 0)} to='/'>
         <button className='HomeLink' value='Home'>
           <img style={{ width: '75px' }} src={Logo} alt='logo-rusch-noir' />
         </button>

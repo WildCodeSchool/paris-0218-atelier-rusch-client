@@ -90,14 +90,14 @@ class Admin extends Component {
 
   render () {
     if (!this.state.isAuth) {
-      return <AdminLogin path='login' login={this.login} />
+      return <AdminLogin path='' login={this.login} />
     }
     return (
       <div className="App">
         <AdminNav logout={this.logout} />
         <div className="spacer"></div>
         <Router>
-          <AdminHome path='dashboard' />
+          <AdminHome path='/' />
           <AdminArticles path='articles' articles={this.state.articles} />
           <AdminNewArticle path='articles/new' />
           <AdminEditArticle path='articles/:articleId' articles={this.state.articles} />

@@ -22,7 +22,7 @@ class AdminLogin extends Component {
     api.loginUser(this.state)
       .then(() => {
         this.props.login()
-        navigate('/admin/dashboard')
+        navigate('/admin')
       })
       .catch(err => {
         console.log('Wrong creds!', err)

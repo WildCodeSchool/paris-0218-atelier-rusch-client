@@ -17,7 +17,7 @@ class AdminNav extends Component {
       </Link>
     </div>
     <div className="NavBarLinksContainer" style={{ width: '60vw', padding: '0 2rem' }}>
-      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/admin/dashboard' ? 'NavBarLinkAdmin active' : 'NavBarLinkAdmin'} to='dashboard' label='Articles'> Administration </Link>
+      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/admin/dashboard' ? 'NavBarLinkAdmin active' : 'NavBarLinkAdmin'} to='/admin' label='Articles'> Administration </Link>
       <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname.includes('/admin/articles') ? 'NavBarLinkAdmin active' : 'NavBarLinkAdmin'} to='articles' label='Articles'> Articles </Link>
       <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname.includes('/admin/filtres') ? 'NavBarLinkAdmin active' : 'NavBarLinkAdmin'} to='filtres' label='Filtres'> Filtres</Link>
       <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname.includes('/admin/equipe') ? 'NavBarLinkAdmin active' : 'NavBarLinkAdmin'} to='equipe' label='Equipe'> Équipe</Link>

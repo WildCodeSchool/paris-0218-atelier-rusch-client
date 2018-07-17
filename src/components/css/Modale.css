@@ -79,8 +79,14 @@
 .recapBlockFixed {
   width: 25vw;
   background-color: #fbd052;
+  height: 100vh;
+  position: sticky;
+  top: -1px;
+  padding: 0 3rem;
+  line-height: 1.4rem;
+  box-shadow: 20px 10px 100px rgba(0, 0, 0, 0.05);
 }
 
-.fixed {
-  position: fixed;
+.ModaleBlockPreview .recapBlockFixed {
+  display: none;
 }

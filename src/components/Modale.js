@@ -77,6 +77,13 @@ const Modale = ({ article }) => {
             </a>
           </div>
         </div>
+        <div style={{ position: 'sticky', top: '-1px', backgroundColor: '#fbd052', padding: '1.5rem 10rem 2rem 15rem', width: 'calc(100vw - 25rem)', display: 'flex', flexWrap: 'wrap' }}>
+          <h6 style={{ width: 'calc(100vw - 25rem)', margin: '1rem 0 1.5rem 0', fontWeight: '800' }}>Conception participative d'espace Massy Opéra</h6>
+          <h6 style={{ width: 'calc(50vw - 12.5rem)', margin: '0.3rem 0' }}><u>Client</u> : Ville de Massy</h6>
+          <h6 style={{ width: 'calc(50vw - 12.5rem)', margin: '0.3rem 0' }}><u>Date</u> : De janvier à juillet 2017</h6>
+          <h6 style={{ width: 'calc(50vw - 12.5rem)', margin: '0.3rem 0' }}><u>Lieu</u> : Square de Massy Opéra</h6>
+          <h6 style={{ width: 'calc(50vw - 12.5rem)', margin: '0.3rem 0' }}><u>Type</u> : Chantier participatif</h6>
+        </div>
         {content}
       </div>
       {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}

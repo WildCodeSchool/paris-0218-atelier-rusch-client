@@ -5,25 +5,12 @@ import IoAndroidDelete from 'react-icons/lib/io/android-delete'
 import IoEdit from 'react-icons/lib/io/edit'
 import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
-const formatedDate = date => {
-  const d = new Date(date)
-  const jj = d.getDate()
-  const mm = d.getMonth() + 1
-  const yyyy = d.getFullYear()
-  const hh = d.getHours()
-  const min = d.getMinutes()
-  const mmStr = mm.toString()
-  const jjStr = jj.toString()
-  const hhStr = hh.toString()
-  const minStr = min.toString()
-  return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy} ${hhStr.length === 1 ? 0 + hhStr : hhStr}:${minStr.length === 1 ? 0 + minStr : minStr}`
-}
 const ArticleCard = ({ article }) =>
 
   <div className='AdminCardFullWidth'>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
-      <h6 style={{ marginRight: '50px' }}>{formatedDate(article.createdAt)}</h6>
+      <h6 style={{ marginRight: '50px' }}>{article.date}</h6>
       <Link to={String(article.id)} onClick={() => document.getElementById("box").scrollIntoView()} >
         <button className="ReactIcon">
           <IoEdit/>
@@ -46,7 +33,6 @@ const AdminArticles = ({ articles }) => {
   const labArticlesList = articles
   .filter(article => article.section === 'lab')
   .filter(article => article.isDraft === '0')
-  .sort() // TO DO : SORT IN THE REVERSE WAY, TO GET THE NEWEST ARTICLES FIRST
   .map(article => <ArticleCard key={article.id} article={article} />)
 
   const draftArticlesList = articles

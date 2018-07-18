@@ -6,8 +6,6 @@ import store from '../store.js'
 const FiltersSection = () => {
   const state = store.getState()
 
-  console.log(window.location.pathname.slice(1))
-
   const getFiltersNames = state.filters.allFilters
     .filter(filter => filter.section === window.location.pathname.slice(1))
 

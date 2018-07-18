@@ -20,8 +20,6 @@ const ArticleThumbnail = ({ article, index }) => {
 
   const articleSection = String(article.section)
 
-  console.log(articleSection)
-
   return (
     <Link
       to={`/${articleSection}/${articleId}`}

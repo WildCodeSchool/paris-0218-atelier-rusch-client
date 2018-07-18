@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminFiltreForm extends Component {
@@ -22,7 +23,7 @@ class AdminFiltreForm extends Component {
       this.setState({ errorPost: '* Il faut sélectionner une section !' })
     } else {
       this.props.submitFiltre(this.state)
-      window.location.pathname = '/admin/filtres'
+      navigate('/admin/filtres')
     }
   }
 
@@ -39,7 +40,7 @@ class AdminFiltreForm extends Component {
 				  <option value="projets">Projets</option>
 				</select>
 
-				<input className='submit' type="submit" value="Submit" />
+				<input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
 			</form>
 	)}

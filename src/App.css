@@ -4,11 +4,11 @@
   margin: 0;
   padding: 0;
   color: #2b2b2b;
-  transition: background-color 0.2s ease-out, opacity 0.2s ease-out, color 0.2s ease-out, filter 0.1s ease-out;
+  transition: background-color 0.2s ease-out, opacity 0.2s ease-out, color 0.2s ease-out, filter 0.1s ease-out, box-shadow 0.2s ease-out;
 }
 
 *:hover {
-  transition: background-color 0.2s ease-in, opacity 0.2s ease-in, color 0.2s ease-in, filter 0.1s ease-in;
+  transition: background-color 0.2s ease-in, opacity 0.2s ease-in, color 0.2s ease-in, filter 0.1s ease-in, box-shadow 0.2s ease-in;
 }
 
 button {
@@ -94,7 +94,7 @@ h2 {
   font-family: 'HeimatMono', monospace;
   font-weight: 200;
   font-size: 2.5rem;
-  margin: 8rem 14rem 0 15rem;
+  margin: 0 14rem 0 15rem;
   line-height: 3.5rem;
 }
 
@@ -152,7 +152,7 @@ h6 {
   font-size: 1rem;
   color: #fbd052;
   text-decoration: underline;
-  margin: 1.15rem 15rem 5rem 15rem;
+  margin: 1.15rem 15rem 0 15rem;
   cursor: pointer;
 }
 

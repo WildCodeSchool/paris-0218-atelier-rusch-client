@@ -240,6 +240,34 @@
 		padding: 3rem 15rem;
 	}
 
+	.recapBlockFixed {
+		width: calc(100vw - 15rem);
+		height: auto;
+		padding: 3rem 5rem 3rem 10rem;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.contentBlock {
+		display: block;
+	}
+
+	.contentBlock .recapBlockFixed h6 {
+		line-height: 1.3rem;
+		width: 35vw;
+	}
+
+	h6.recapBlockTitle {
+		margin: 0 0 1rem 0;
+		width: 100vw;
+		line-height: 1.4rem;
+	}
+
+	.content {
+		width: 100vw;
+	}
+
 	/* CONTACT */
 
 	.Contact h2 {
@@ -287,6 +315,12 @@
 
 	.NavBarLink {
 		margin: 0 1rem;
+	}
+
+	/* MODALE */
+
+	.recapBlockFixed {
+		position: relative;
 	}
 }
 
@@ -395,21 +429,25 @@
 	/* MODALE */
 
 	.ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
-  		margin: 3rem 7rem 0 7rem;
-	}
-
-
-
-	.ModaleBlock h3, .ModaleBlock .smallLink {
-  		margin: 1.5rem 7rem 0 7rem;
-	}
-
-	.ModaleBlock .smallLink {
-  		margin-bottom: 8rem;
+  		margin: 1rem 3rem 0 3rem;
 	}
 
 	.ModaleBlock .quote {
 		padding: 1.5rem 15rem;
+	}
+
+	.recapBlockFixed {
+		width: 100vw;
+		padding: 2.5rem 0;
+	}
+
+	.contentBlock .recapBlockFixed h6 {
+		margin: 0.4rem 3rem;
+		width: 100vw;
+	}
+
+	.articleSuggestion h4 {
+		margin: 0 0 4rem 3rem;
 	}
 
 	/* CONTACT */

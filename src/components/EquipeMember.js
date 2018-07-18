@@ -4,7 +4,7 @@ import michael from './img/michael.jpg'
 
 const EquipeMember = ({member}) =>
   <div className="memberContainer" style={{ zIndex: `${member.id}` }}>
-    <img className="memberPic" src={michael} alt={member.name} />
+    <img className="memberPic" src={member.image} alt={member.name} />
     <div className="memberName green">{member.name}</div>
     <h6>{member.position}</h6>
     <div className="memberContent">

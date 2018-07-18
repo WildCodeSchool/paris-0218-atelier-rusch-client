@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminPartenaireForm extends Component {
@@ -26,7 +27,7 @@ class AdminPartenaireForm extends Component {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitPartenaire(this.state)
-      window.location.pathname = '/admin/partenaires'
+      navigate('/admin/partenaires')
     }
   }
 
@@ -43,7 +44,7 @@ class AdminPartenaireForm extends Component {
 					<textarea type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
 				</label>
 
-				<input className='submit' type="submit" value="Submit" />
+				<input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
 			</form>
 	)}

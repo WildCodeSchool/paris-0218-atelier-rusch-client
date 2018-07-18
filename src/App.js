@@ -43,13 +43,12 @@ class App extends Component {
     this.unsubscribe()
   }
 
+
   render () {
     return (
       <div className="App">
         <Router>
           <Homepage path='/' />
-          <Homepage path='homepage' />
-          <Homepage path='homepage/:articleId' />
           <Atelier path='atelier' />
           <Projets path='projets' />
           <Projets path='projets/:articleId' />

@@ -2,10 +2,15 @@ import React, { Component } from 'react'
 import Modale from './Modale.js'
 import { Container, Draggable } from 'react-smooth-dnd'
 import './css/ArticleForm.css'
+import { navigate } from '@reach/router'
 import store from '../store.js'
 
 const freshArticle = {
   title: '',
+  date: undefined,
+  client: '',
+  place: '',
+  type: '',
   shortDescription: '',
   projectLink: '',
   section: '',
@@ -208,6 +213,7 @@ class ArticleForm extends Component {
       }
     }
     this.setState({ article, errorPost: '' })
+    console.log(this.state.article)
   }
 
   handleSubmit = event => {
@@ -226,10 +232,10 @@ class ArticleForm extends Component {
       this.setState({ errorPost: '* Il faut mettre du contenu !' })
     } else if (event.target.name.startsWith('isDraft')) {
       this.props.submitArticle({ ...this.state.article, isDraft: true })
-      window.location.pathname = '/admin/articles'
+      navigate('/admin/articles')
     } else {
       this.props.submitArticle({ ...this.state.article, isDraft: false })
-      window.location.pathname = '/admin/articles'
+      navigate('/admin/articles')
     }
   }
 
@@ -310,10 +316,22 @@ class ArticleForm extends Component {
       <div className="box">
 
         <div className="item-left">
-          <div style={{marginTop: '15px'}}>
+          <div style={{ marginTop: '15px' }}>
             <form onSubmit={this.handleSubmit}>
               <label>Titre de l'article :<br/>
                 <input type="text" name="title" value={article.title} onChange={this.handleChange} />
+              </label>
+              <label>Date de l'article :<br/>
+                <input type="date" name="date" value={article.date} onChange={this.handleChange} />
+              </label>
+              <label>Client :<br/>
+                <input type="text" name="client" value={article.client} onChange={this.handleChange} />
+              </label>
+              <label>Lieu :<br/>
+                <input type="text" name="place" value={article.place} onChange={this.handleChange} />
+              </label>
+              <label>Type :<br/>
+                <input type="text" name="type" value={article.type} onChange={this.handleChange} />
               </label>
               <label>Description de l'article :<br/>
                 <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
@@ -362,7 +380,7 @@ class ArticleForm extends Component {
             </form>
           </div>
         </div>
-        <div className="item-right ModaleBlockPreview">
+        <div style={{ position: 'fixed', top: '0', right: '0', overflow: 'auto' }} className="item-right ModaleBlockPreview">
           <Modale article={article} />
         </div>
       </div>

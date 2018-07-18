@@ -5,11 +5,13 @@ import './css/Carousel.css'
 import { Link } from '@reach/router'
 
 export const SlideShow = ({ articles }) => {
+
+
   const imagesElements = articles.map(article =>
-    <Link key={article.id} to={String(article.id)}>
+    <Link key={article.id} to={`/projets/${String(article.id)}`} onClick={() => window.scrollTo(0, 0)}>
       <div className='carouselContainer'
-      style={{ background: `0 / 100% no-repeat url(${article.headerImage})`}} 
-      alt={article.title}> 
+      style={{ background: `0 / 100% no-repeat url(${article.headerImage})`}}
+      alt={article.title}>
         <div className='FilterBlack' style={{ display: 'flex', flexDirection: 'column' }}>
           <h6 style={{ paddingBottom: '50px', fontSize: '1.25rem', color: 'white' }} >Projets</h6>
           <h5 style={{ paddingBottom: '60px' }} className='green'>{article.title}</h5>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminMemberForm extends Component {
@@ -30,7 +31,7 @@ class AdminMemberForm extends Component {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitMember(this.state)
-      window.location.pathname = '/admin/equipe'
+      navigate('/admin/equipe')
     }
   }
 
@@ -55,7 +56,7 @@ class AdminMemberForm extends Component {
         <label>LinkedIn :<br/>
           <input type="text" name="linkedIn" value={this.state.linkedIn} onChange={this.handleChange} />
         </label>
-        <input className='submit' type="submit" value="Submit" />
+        <input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
       </form>
   )}

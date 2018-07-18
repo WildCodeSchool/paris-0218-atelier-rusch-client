@@ -2,6 +2,7 @@
   border-radius: 50%;
   width: 10vw;
   margin-top: 5vw;
+  filter: grayscale(100%);
 }
 
 .memberContainer {

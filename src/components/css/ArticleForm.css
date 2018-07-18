@@ -17,12 +17,14 @@ form button {
   width: 100vw;
 }
 
-.item-left {
+.item-left, .item-right {
   width: 50vw;
-}
-
-.item-right {
-  width: 50vw;
+  position: fixed;
+  top: 0;
+  overflow: scroll;
+  background-color: white;
+  margin-top: 65px;
+  height: calc(100vh - 65px);
 }
 
 input {
@@ -36,8 +38,8 @@ input {
 
 textarea {
   height: 12vh;
-  width: 35vw;
   max-width: 35vw;
+  min-width: 35vw;
   margin-bottom: 30px;
   margin-top: 10px;
   white-space: pre-line;
@@ -82,7 +84,6 @@ input[type="submit"].submit:hover {
 
 input[type="submit"].draft {
   margin: 2rem 0 0.25rem 0;
-  opacity: 0.35;
 }
 
 input[type="submit"].draft:hover {
@@ -205,4 +206,8 @@ input[type="submit"].draft:hover {
   font-family: 'HeimatMono';
   color: red;
   margin: -3rem 0 3rem 0;
+}
+
+.Footer {
+  display: none;
 }

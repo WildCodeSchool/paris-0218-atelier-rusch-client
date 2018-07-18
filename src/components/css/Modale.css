@@ -6,9 +6,6 @@
   top: 0;
   overflow: scroll;
   background-color: white;
-  /*display: flex;
-  align-items: center;
-  flex-direction: column;*/
 }
 
 .ModaleBlockPreview {
@@ -24,7 +21,7 @@
 .ModaleHeader {
   backdrop-filter: saturate(0);
   -webkit-backdrop-filter: saturate(0);
-  padding: 0.1rem 0.75rem;
+  padding: 7rem 0.75rem;
 }
 
 .closeModaleBtn {
@@ -77,4 +74,37 @@
 
 .articleSuggestion {
   width: 100vw;
+}
+
+.articleSuggestion h4 {
+  margin: 0 0 4rem 5rem;
+}
+
+.contentBlock {
+  display: flex;
+}
+
+.recapBlockFixed {
+  width: 25vw;
+  background-color: #fbd052;
+  height: 100vh;
+  position: sticky;
+  top: -1px;
+  padding: 0 3rem;
+  line-height: 1.4rem;
+  box-shadow: 20px 10px 100px rgba(0, 0, 0, 0.05);
+}
+
+.recapBlockTitle {
+  margin: 4rem 0 2.5rem 0;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.ModaleBlockPreview .recapBlockFixed {
+  display: none;
+}
+
+.content {
+  width: 75vw;
 }

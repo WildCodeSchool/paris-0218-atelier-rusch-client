@@ -7,7 +7,7 @@ const Nav = ({onPageChange}) =>
   <div className="NavBar">
 
     <div className='Logo'>
-      <Link to='/homepage'>
+      <Link onClick={() => window.scrollTo(0, 0)} to='/'>
         <button className='HomeLink' value='Home'>
           <img style={{ width: '75px' }} src={Logo} alt='logo-rusch-noir' />
         </button>
@@ -15,10 +15,10 @@ const Nav = ({onPageChange}) =>
     </div>
 
     <div className="NavBarLinksContainer">
-      <Link className={window.location.pathname === '/atelier' ? 'NavBarLink active' : 'NavBarLink'} to='/atelier'>Atelier</Link>
-      <Link className={window.location.pathname === '/projets' ? 'NavBarLink active' : 'NavBarLink'} to='/projets'>Projets</Link>
-      <Link className={window.location.pathname === '/lab' ? 'NavBarLink active' : 'NavBarLink'} to='/lab'>LabRusch</Link>
-      <Link className={window.location.pathname === '/contact' ? 'NavBarLink active' : 'NavBarLink'} to='/contact'>Contact</Link>
+      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/atelier' ? 'NavBarLink active' : 'NavBarLink'} to='/atelier'>Atelier</Link>
+      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/projets' ? 'NavBarLink active' : 'NavBarLink'} to='/projets'>Projets</Link>
+      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/lab' ? 'NavBarLink active' : 'NavBarLink'} to='/lab'>LabRusch</Link>
+      <Link onClick={() => window.scrollTo(0, 0)} className={window.location.pathname === '/contact' ? 'NavBarLink active' : 'NavBarLink'} to='/contact'>Contact</Link>
     </div>
 
   </div>

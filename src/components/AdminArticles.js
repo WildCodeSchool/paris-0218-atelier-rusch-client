@@ -24,7 +24,7 @@ const ArticleCard = ({ article }) =>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
       <h6 style={{ marginRight: '50px' }}>{formatedDate(article.createdAt)}</h6>
-      <Link to={String(article.id)}>
+      <Link to={String(article.id)} onClick={() => document.getElementById("box").scrollIntoView()} >
         <button className="ReactIcon">
           <IoEdit/>
         </button>

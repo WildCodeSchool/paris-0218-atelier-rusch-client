@@ -1,5 +1,11 @@
+const defaultUrl = 'http://localhost:5000'
+const hostUrl = process.env.REACT_APP_API_URL || defaultUrl
+if (!process.env.REACT_APP_API_URL) {
+  console.warn(`'REACT_APP_API_URL' environment variable is not set! -> fallback to default url: '${defaultUrl}'`)
+}
+
 const api = async (path, opts) => {
-  const response = await fetch(`https://api.atelier-rusch.com${path}`, opts)
+  const response = await fetch(`${hostUrl}${path}`, opts)
   // const response = await fetch(`${path}`, opts)
   if (response.ok) {
     return response.json()

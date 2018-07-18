@@ -318,6 +318,7 @@ class ArticleForm extends Component {
         <div className="item-left">
           <div style={{ marginTop: '15px' }}>
             <form onSubmit={this.handleSubmit}>
+              <div className='formTitle yellow'>Nouvel article :</div>
               <label>Titre de l'article :<br/>
                 <input type="text" name="title" value={article.title} onChange={this.handleChange} />
               </label>

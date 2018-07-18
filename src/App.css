@@ -35,6 +35,15 @@ a {
   width: 100vw;
 }
 
+.loading {
+  font-family: 'HeimatMono', monospace;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 5rem;
+}
+
 /* TYPEFACES
   font-face & font-weight
 
@@ -202,4 +211,3 @@ p.abstract {
 .green {
   color: #5aff6e;
 }
-

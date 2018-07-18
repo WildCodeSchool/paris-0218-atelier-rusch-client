@@ -17,7 +17,7 @@ export const AdminEditArticle = ({ articleId, articles }) => {
   return (
     <div>{article
       ? <ArticleForm article={article} submitArticle={article => api.updateArticle(articleId, article)} />
-      : <div>Loading..</div> }
+      : <div className='loading'>Loading...</div> }
     </div>
   )
 }

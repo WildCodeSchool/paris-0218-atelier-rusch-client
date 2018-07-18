@@ -44,7 +44,7 @@ const AdminArticles = ({ articles }) => {
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouvel article</div>
       </Link>
       {draftArticlesList.length === 0 ? '' : draftTitle}

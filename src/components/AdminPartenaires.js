@@ -30,7 +30,7 @@ const AdminPartenaires = ({ partenaires }) => {
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau partenaire</div>
       </Link>
       <div className='AdminTitles yellow'>Partenaires :</div>

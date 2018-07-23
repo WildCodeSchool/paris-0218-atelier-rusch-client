@@ -17,8 +17,13 @@ const AdminMembers = ({ members }) => {
             <IoEdit/>
           </button>
         </Link>
-        <button className="ReactIcon" onClick={()=>{api.deleteMember(el.id)
-        window.location.reload()}}>
+        <button className="ReactIcon" onClick={() => {if(window.confirm('la suppression est irréversible. Pas de regrets?'))
+      {
+        api.deleteMember(el.id)
+        window.location.reload()
+      } else {
+
+      }}}>
           <IoAndroidDelete/>
         </button>
       </div>

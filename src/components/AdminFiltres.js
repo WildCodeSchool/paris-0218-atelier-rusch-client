@@ -14,8 +14,13 @@ const FiltreCard = ({ filtre }) =>
           <IoEdit/>
         </button>
       </Link>
-      	<button className="ReactIcon" onClick={()=>{api.deleteFilter(filtre.id)
-        window.location.reload()}}>
+      	<button className="ReactIcon" onClick={() => {if(window.confirm('la suppression est irréversible. Pas de regrets?'))
+      {
+        api.deleteFilter(filtre.id)
+        window.location.reload()
+      } else {
+
+      }}}>
           <IoAndroidDelete/>
         </button>
     </div>

@@ -16,8 +16,13 @@ const ArticleCard = ({ article }) =>
           <IoEdit/>
         </button>
       </Link>
-      <button className="ReactIcon" onClick={()=>{api.deleteArticle(article.id)
-        window.location.reload()}}>
+      <button className="ReactIcon" onClick={() => {if(window.confirm('la suppression est irréversible. Pas de regrets?'))
+      {
+        api.deleteArticle(article.id)
+        window.location.reload()
+      } else {
+
+      }}}>
         <IoAndroidDelete/>
       </button>
       <button className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }>★</button>

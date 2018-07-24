@@ -17,7 +17,7 @@ export const AdminEditPartenaire = ({ partenaireId, partenaires }) => {
   return (
     <div>{ partenaire
         ? <AdminPartenaireForm partenaire={partenaire} submitPartenaire={partenaire => api.updatePartenaire(partenaireId, partenaire)} />
-        : <div>Loading..</div> }
+        : <div className='loading'>Loading...</div> }
     </div>
   )
 }

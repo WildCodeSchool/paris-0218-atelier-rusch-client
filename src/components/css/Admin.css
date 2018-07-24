@@ -67,6 +67,14 @@ button {
 	fill: white;
 }
 
+.formTitle {
+  font-family: 'IBMPlex', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  width: 35vw;
+}
+
 .hasStar {
 	font-size: 1rem;
 	color: #fbd052;

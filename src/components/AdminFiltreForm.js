@@ -30,6 +30,7 @@ class AdminFiltreForm extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
+        <div className='formTitle yellow'>Nouveau filtre :</div>
 				<label>Nom du filtre :<br/>
 				<input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange} />
 				</label>

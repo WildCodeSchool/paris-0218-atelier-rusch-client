@@ -10,7 +10,7 @@ const ArticleCard = ({ article }) =>
   <div className='AdminCardFullWidth'>
     <div className='currentText' style={{ width: '40vw' }}>{article.title}</div>
     <div className='EditButtonsContainer'>
-      <h6 style={{ marginRight: '50px' }}>{article.date}</h6>
+      <h6 style={{ marginRight: '50px' }}>{`${article.date.slice(-2)}.${article.date.slice(5, 7)}.${article.date.slice(0, 4)}`}</h6>
       <Link to={String(article.id)} onClick={() => document.getElementById("box").scrollIntoView()} >
         <button className="ReactIcon">
           <IoEdit/>
@@ -49,7 +49,7 @@ const AdminArticles = ({ articles }) => {
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouvel article</div>
       </Link>
       {draftArticlesList.length === 0 ? '' : draftTitle}

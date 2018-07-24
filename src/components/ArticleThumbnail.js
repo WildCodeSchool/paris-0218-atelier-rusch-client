@@ -4,16 +4,6 @@ import { Link } from '@reach/router'
 
 const ArticleThumbnail = ({ article, index }) => {
 
-  const formatedDate = date => {
-    const d = new Date(date)
-    const jj = d.getDate()
-    const mm = d.getMonth() + 1
-    const yyyy = d.getFullYear()
-    const mmStr = mm.toString()
-    const jjStr = jj.toString()
-    return `${jj.length === 1 ? 0 + jjStr : jjStr}-${mmStr.length === 1 ? 0 + mmStr : mmStr}-${yyyy}`
-  }
-
   const parentContextPath = window.location.pathname.replace(/\/\d+$/, '')
 
   const articleId = String(article.id)
@@ -34,7 +24,7 @@ const ArticleThumbnail = ({ article, index }) => {
           {article.title}
         </h5>
         <h6>
-          {formatedDate(article.createdAt)}
+          {`${article.date.slice(-2)}.${article.date.slice(5, 7)}.${article.date.slice(0, 4)}`}
         </h6>
         </div>
       </div>

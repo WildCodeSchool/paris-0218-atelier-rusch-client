@@ -16,7 +16,9 @@ export const AdminEditMember = ({ memberId, members }) => {
 
   return (
     <div>
-      { member ? <AdminMemberForm member={member} submitMember={member => api.updateMember(memberId, member)} /> : <div>Loading..</div> }
+      { member
+        ? <AdminMemberForm member={member} submitMember={member => api.updateMember(memberId, member)} />
+        : <div className='loading'>Loading...</div> }
     </div>
   )
 }

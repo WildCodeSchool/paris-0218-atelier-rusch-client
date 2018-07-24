@@ -98,7 +98,7 @@ const Modale = ({ article }) => {
           </div>
           {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}
           {!partners
-            ? 'Loading'
+            ? ''
             : <div className="PartenairesContainer">{partners}</div>}
           {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
         </div>

@@ -32,7 +32,7 @@ const AdminMembers = ({ members }) => {
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau membre</div>
       </Link>
       <div className='AdminTitles yellow'>Membres de l'équipe :</div>

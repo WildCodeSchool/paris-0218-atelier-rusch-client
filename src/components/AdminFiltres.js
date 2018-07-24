@@ -42,7 +42,7 @@ const AdminFiltres = ({ filtres }) => {
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau filtre</div>
       </Link>
       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>

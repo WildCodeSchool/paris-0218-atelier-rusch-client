@@ -38,6 +38,7 @@ class AdminMemberForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <div className='formTitle yellow'>Nouveau membre :</div>
         <label>Nom :<br/>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
         </label>

@@ -19,7 +19,7 @@ const ArticleCard = ({ article }) =>
       <button className="ReactIcon" onClick={() => {
         if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
           api.deleteArticle(article.id)
-          window.location.reload()
+            .then(window.location.reload())
         } else {
 
         }

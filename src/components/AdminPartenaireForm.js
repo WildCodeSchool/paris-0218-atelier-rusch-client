@@ -26,7 +26,8 @@ handleChange = event => {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitPartenaire(this.state)
-      navigate('/admin/partenaires')
+        .then(navigate('/admin/articles'))
+        .then(window.location.reload())
     }
   }
 

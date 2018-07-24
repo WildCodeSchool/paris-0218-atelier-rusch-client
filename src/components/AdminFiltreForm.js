@@ -9,7 +9,7 @@ class AdminFiltreForm extends Component {
     errorPost: ''
   }
 
-  clearhandleChange = event => {
+  handleChange = event => {
     const key = event.target.name
     this.setState({ ...this.state.filtre, [key]: event.target.value, errorPost: '' })
   }
@@ -22,7 +22,8 @@ class AdminFiltreForm extends Component {
       this.setState({ errorPost: '* Il faut sélectionner une section !' })
     } else {
       this.props.submitFiltre(this.state)
-      navigate('/admin/filtres')
+        .then(navigate('/admin/filtres'))
+        .then(window.location.reload())
     }
   }
 

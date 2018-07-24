@@ -232,10 +232,12 @@ class ArticleForm extends Component {
       this.setState({ errorPost: '* Il faut mettre du contenu !' })
     } else if (event.target.name.startsWith('isDraft')) {
       this.props.submitArticle({ ...this.state.article, isDraft: true })
-      navigate('/admin/articles')
+        .then(navigate('/admin/articles'))
+        .then(window.location.reload())
     } else {
       this.props.submitArticle({ ...this.state.article, isDraft: false })
-      navigate('/admin/articles')
+        .then(navigate('/admin/articles'))
+        .then(window.location.reload())
     }
   }
 

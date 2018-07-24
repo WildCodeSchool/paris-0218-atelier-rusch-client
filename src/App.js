@@ -17,9 +17,7 @@ import api from './api'
 import { loadArticles, loadFilters, loadMembers, loadPartners } from './actions'
 
 class App extends Component {
-
   syncDatas = async () => {
-
     const partners = await api.getPartenaires()
     store.dispatch(loadPartners(partners))
 
@@ -42,7 +40,6 @@ class App extends Component {
   componentWillUnmount () {
     this.unsubscribe()
   }
-
 
   render () {
     return (

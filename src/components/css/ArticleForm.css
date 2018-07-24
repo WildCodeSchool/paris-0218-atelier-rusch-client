@@ -47,7 +47,7 @@ textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 select {
@@ -88,7 +88,7 @@ input[type="submit"].draft {
 
 input[type="submit"].draft:hover {
   opacity: 1;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .addModule {
@@ -124,7 +124,7 @@ input[type="submit"].draft:hover {
 
 .opacity-ghost {
   opacity: 0.95;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   background-color: white;
   border-radius: 4px;
   width: 115%;

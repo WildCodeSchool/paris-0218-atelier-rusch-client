@@ -14,39 +14,40 @@ import api from '../api'
 import './css/Admin.css'
 
 const AdminHome = () => {
-  return(
-  <div className='AdminHomeContainer'>
-    <div className='AdminHomeWelcome'>
-    <p style={{ margin: '0 5rem' }}>
+  return (
+    <div className='AdminHomeContainer'>
+      <div className='AdminHomeWelcome'>
+        <p style={{ margin: '0 5rem' }}>
       Hello,<br/><br/>Te voici bien arrivé(e) sur l'espace Administrateur du site Rusch !<br/>
       Cette interface permet de créer, modifier et supprimer des éléments.
-    </p>
-    </div>
-    <Link to='/admin/articles'>
-      <div className='AdminHomeLinkTo'>
+        </p>
+      </div>
+      <Link to='/admin/articles'>
+        <div className='AdminHomeLinkTo'>
         Articles
-      </div>
-    </Link>
+        </div>
+      </Link>
 
-    <Link to='/admin/filtres'>
-      <div className='AdminHomeLinkTo'>
+      <Link to='/admin/filtres'>
+        <div className='AdminHomeLinkTo'>
         Filtres
-      </div>
-    </Link>
+        </div>
+      </Link>
 
-    <Link to='/admin/equipe'>
-      <div className='AdminHomeLinkTo'>
+      <Link to='/admin/equipe'>
+        <div className='AdminHomeLinkTo'>
         Equipe
-      </div>
-    </Link>
+        </div>
+      </Link>
 
-    <Link to='/admin/partenaires'>
-      <div className='AdminHomeLinkTo'>
+      <Link to='/admin/partenaires'>
+        <div className='AdminHomeLinkTo'>
         Partenaires
-      </div>
-    </Link>
-  </div>
-)}
+        </div>
+      </Link>
+    </div>
+  )
+}
 
 class Admin extends Component {
   state = {
@@ -68,7 +69,6 @@ class Admin extends Component {
     this.setState({ isAuth: false })
   }
 
-
   syncDatas = () => {
     api.getArticles()
       .then(articles => this.setState({ articles: articles }))
@@ -82,7 +82,6 @@ class Admin extends Component {
     api.getPartenaires()
       .then(partenaires => this.setState({ partenaires: partenaires }))
   }
-
 
   componentDidMount () {
     this.syncDatas()

@@ -10,7 +10,6 @@ export const AdminNewMember = () => {
   )
 }
 
-
 export const AdminEditMember = ({ memberId, members }) => {
   const member = members.find(a => String(a.id) === memberId)
 

@@ -9,8 +9,7 @@ const FiltersSection = () => {
   const getFiltersNames = state.filters.allFilters
     .filter(filter => filter.section === window.location.pathname.slice(1))
 
-
-   const filtersNames = getFiltersNames
+  const filtersNames = getFiltersNames
     .map((filter, i) => <Filter key={i} filter={filter} filtersLength={getFiltersNames.length} />)
 
   return (

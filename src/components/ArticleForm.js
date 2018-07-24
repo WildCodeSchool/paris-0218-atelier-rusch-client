@@ -23,25 +23,25 @@ const freshArticle = {
 }
 
 export const demoArticle = {
-  "id": "1",
-  "section": "Lab",
-  "title": "Conception participative d’espace Massy Opéra",
-  "shortDescription": "Projet de réaménagement participatif du square de Grenoble à Massy porté par Erigère",
-  "coverImage": "https://i.imgur.com/E0ZNDjU.png",
-  "createdAt": "2018-06-07",
-  "textContent": "En février 2017, Chartres Métropole inaugurait la première tranche de la future Cité de l’innovation, qui porte le nom du CM 101. Le premier lot offre déjà plus de 1150 m² de surface aménagées et accueille un incubateur (géré par le Centre Européen d’Entreprise et d’Innovation de la région Centre), 13 jeunes pousses, un espace de co-working, un espace de restauration, des salles de réunion et un mini Fablab. Ce projet nous tient particulièrement à cœur car nous revenons sur une de nos premières réalisations ! En 2016 Chartres Métropole nous avait missionné pour réunir les résidents, futurs résidents et partenaires de la Cité et réfléchir à la vision du site, sa forme, ses usages et fonctionnalités. L’ensemble du travail de co-construction avait été remis aux architectes pour intégrer les problématiques, besoins et idées dans la planification des futurs espaces. En découvrant les hangars transformés et donc le résultat des post-its remplis par des idées et des croquis, nous avons hâte d’y apporter une nouvelle touche de design de service ! A l’horizon 2019, la Cité de l’innovation représentera plus de 5100 m² avec l’ouverture de deux nouveaux bâtiments, capables d’accueillir un écosystème complet mettant en valeur l’innovation à 360°. C’est à dire, un environnement propice au développement de projets innovants des jeunes pousses, des étudiants, des chercheurs, des TPE/PME, des grandes entreprises; où chacun pourra interagir avec un réseau de professionnels, d’institutionnels et d’experts. Pour ses futurs locaux, Chartres Métropole a recensé auprès des résidents actuels et futurs, le besoin d’un accompagnement continu sur la communication et une aide en marketing. De ce constat, est née l’idée de proposer un « marketing lab ». Notre mission de cette année sera d’accompagner la définition, la co-conception et la mise en place d’un lieu de service marketing et communication au sein du CM101. En partenariat avec l’agence UZFUL, agence spécialisée en marketing engagé et avec la participation des résidents, futurs résidents, partenaires et acteurs ressources du territoire, nous rendrons tangible ce concept inédit.",
-  "content": [
-    { "type": "h2", "value": "Contexte et démarche" },
-    { "type": "p", "value": "Le quartier Massy Opéra est inscrit dans la géographie prioritaire de la politique de la ville, et à ce titre est concerné par le Contrat de Ville 2015-2020 de la Communauté d’agglomération PARIS-SACLAY.\n\nSa vocation est de mobiliser l’ensemble des partenaires institutionnels et les habitants dans la poursuite d’un triple objectif : réduire les écarts de développement entre quartiers en difficulté et leur aire urbaine environnante, améliorer les conditions de vie des habitants, et développer l’attractivité de ces quartiers." },
-    { "type": "imgs", "value": "https://i.imgur.com/lfmOYAQ.png" },
-    { "type": "h2", "value": "Enjeux" },
-    { "type": "p", "value": "L’enjeu de la démarche est la réappropriation des squares par ses habitants. L’objectif est de composer avec l’existant et d’apporter des améliorations paysagères et physiques dans les squares." },
-    { "type": "blockquote", "value": "Ensemble, réinventions le square de Grenoble !" },
-    { "type": "p", "value": "La démarche vise à interroger les habitants et de recueillir leurs attentes et les améliorations souhaitées sur le square de Grenoble et de Belfort. Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble." },
-    { "type": "imgs", "value": "https://i.imgur.com/WRyn5ee.png, https://i.imgur.com/U3ArH2H.png" },
-    { "type": "p", "value": "Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble." },
-    { "type": "imgs", "value": "https://i.imgur.com/2AfzUUR.png, https://i.imgur.com/qYqkxKH.png" },
-    { "type": "p", "value": "La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort. La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort." }
+  'id': '1',
+  'section': 'Lab',
+  'title': 'Conception participative d’espace Massy Opéra',
+  'shortDescription': 'Projet de réaménagement participatif du square de Grenoble à Massy porté par Erigère',
+  'coverImage': 'https://i.imgur.com/E0ZNDjU.png',
+  'createdAt': '2018-06-07',
+  'textContent': 'En février 2017, Chartres Métropole inaugurait la première tranche de la future Cité de l’innovation, qui porte le nom du CM 101. Le premier lot offre déjà plus de 1150 m² de surface aménagées et accueille un incubateur (géré par le Centre Européen d’Entreprise et d’Innovation de la région Centre), 13 jeunes pousses, un espace de co-working, un espace de restauration, des salles de réunion et un mini Fablab. Ce projet nous tient particulièrement à cœur car nous revenons sur une de nos premières réalisations ! En 2016 Chartres Métropole nous avait missionné pour réunir les résidents, futurs résidents et partenaires de la Cité et réfléchir à la vision du site, sa forme, ses usages et fonctionnalités. L’ensemble du travail de co-construction avait été remis aux architectes pour intégrer les problématiques, besoins et idées dans la planification des futurs espaces. En découvrant les hangars transformés et donc le résultat des post-its remplis par des idées et des croquis, nous avons hâte d’y apporter une nouvelle touche de design de service ! A l’horizon 2019, la Cité de l’innovation représentera plus de 5100 m² avec l’ouverture de deux nouveaux bâtiments, capables d’accueillir un écosystème complet mettant en valeur l’innovation à 360°. C’est à dire, un environnement propice au développement de projets innovants des jeunes pousses, des étudiants, des chercheurs, des TPE/PME, des grandes entreprises; où chacun pourra interagir avec un réseau de professionnels, d’institutionnels et d’experts. Pour ses futurs locaux, Chartres Métropole a recensé auprès des résidents actuels et futurs, le besoin d’un accompagnement continu sur la communication et une aide en marketing. De ce constat, est née l’idée de proposer un « marketing lab ». Notre mission de cette année sera d’accompagner la définition, la co-conception et la mise en place d’un lieu de service marketing et communication au sein du CM101. En partenariat avec l’agence UZFUL, agence spécialisée en marketing engagé et avec la participation des résidents, futurs résidents, partenaires et acteurs ressources du territoire, nous rendrons tangible ce concept inédit.',
+  'content': [
+    { 'type': 'h2', 'value': 'Contexte et démarche' },
+    { 'type': 'p', 'value': 'Le quartier Massy Opéra est inscrit dans la géographie prioritaire de la politique de la ville, et à ce titre est concerné par le Contrat de Ville 2015-2020 de la Communauté d’agglomération PARIS-SACLAY.\n\nSa vocation est de mobiliser l’ensemble des partenaires institutionnels et les habitants dans la poursuite d’un triple objectif : réduire les écarts de développement entre quartiers en difficulté et leur aire urbaine environnante, améliorer les conditions de vie des habitants, et développer l’attractivité de ces quartiers.' },
+    { 'type': 'imgs', 'value': 'https://i.imgur.com/lfmOYAQ.png' },
+    { 'type': 'h2', 'value': 'Enjeux' },
+    { 'type': 'p', 'value': 'L’enjeu de la démarche est la réappropriation des squares par ses habitants. L’objectif est de composer avec l’existant et d’apporter des améliorations paysagères et physiques dans les squares.' },
+    { 'type': 'blockquote', 'value': 'Ensemble, réinventions le square de Grenoble !' },
+    { 'type': 'p', 'value': 'La démarche vise à interroger les habitants et de recueillir leurs attentes et les améliorations souhaitées sur le square de Grenoble et de Belfort. Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble.' },
+    { 'type': 'imgs', 'value': 'https://i.imgur.com/WRyn5ee.png, https://i.imgur.com/U3ArH2H.png' },
+    { 'type': 'p', 'value': 'Nous leur proposerons ensuite de manière pédagogique et ludique d’imaginer du mobilier et un embellissement paysager de leurs squares. L’objectif final des ateliers est de les faire participer au chantier d’embellissement et d’installation d’un nouveau mobilier au printemps 2017 pour le square de Grenoble.' },
+    { 'type': 'imgs', 'value': 'https://i.imgur.com/2AfzUUR.png, https://i.imgur.com/qYqkxKH.png' },
+    { 'type': 'p', 'value': 'La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort. La deuxième année du projet s’intéressera au réaménagement participatif du square de Belfort.' }
   ]
 }
 
@@ -123,7 +123,7 @@ const toInput = {
   blockquote: (props) => <Blockquote {...props} />,
   caption: (props) => <Caption {...props} />,
   abstract: (props) => <Abstract {...props} />,
-  imgs: (props) => <Imgs {...props} />,
+  imgs: (props) => <Imgs {...props} />
 }
 
 const Element = (props) => toInput[props.element.type](props)
@@ -178,9 +178,9 @@ class ArticleForm extends Component {
       }
     } else if (key.startsWith('section')) {
       article = {
-      ...this.state.article,
-      section: event.target.value,
-      tags: []
+        ...this.state.article,
+        section: event.target.value,
+        tags: []
       }
     } else if (key.startsWith('tags')) {
       if (this.state.article.tags.includes(event.target.value)) {
@@ -241,12 +241,12 @@ class ArticleForm extends Component {
 
   addInput = type => {
     const basicContentElement = {
-      h2: { "type": "h2", "value": "" },
-      p: { "type": "p", "value": "" },
-      blockquote: { "type": "blockquote", "value": "" },
-      caption: { "type": "caption", "value": "" },
-      abstract: { "type": "abstract", "value": "" },
-      imgs: { "type": "imgs", "value": "" },
+      h2: { 'type': 'h2', 'value': '' },
+      p: { 'type': 'p', 'value': '' },
+      blockquote: { 'type': 'blockquote', 'value': '' },
+      caption: { 'type': 'caption', 'value': '' },
+      abstract: { 'type': 'abstract', 'value': '' },
+      imgs: { 'type': 'imgs', 'value': '' }
     }
 
     const article = {
@@ -276,7 +276,7 @@ class ArticleForm extends Component {
       { type: 'blockquote', value: 'Citation' },
       { type: 'caption', value: 'Légende' },
       { type: 'abstract', value: 'Abstract' },
-      { type: 'imgs', value: 'Images' },
+      { type: 'imgs', value: 'Images' }
     ].map((button, i) => <input type='button' key={button.i} onClick={() => this.addInput(button.type)} value={button.value} />)
 
     const dynamicInputs = article.content
@@ -294,98 +294,98 @@ class ArticleForm extends Component {
         className={this.state.article.tags.includes(`${tag.filterTag}`) ? 'TagCard TagCardSelected' : 'TagCard'}
         value={tag.filterTag}
         onClick={this.handleChange}>
-          {tag.filterTag}
+        {tag.filterTag}
       </button>
 
     const TagCards = state.filters.allFilters
-    .filter(tag => this.state.article.section === tag.section)
-    .map(tag => <TagCard tag={tag} />)
+      .filter(tag => this.state.article.section === tag.section)
+      .map(tag => <TagCard tag={tag} />)
 
     const PartnerCard = ({ partner }) =>
-    <button key={partner.id} type="button" name="partners"
-      className={this.state.article.partners.includes(`${partner.name}`) ? 'TagCard TagCardSelected' : 'TagCard'}
-      value={partner.name}
-      onClick={this.handleChange}>
+      <button key={partner.id} type="button" name="partners"
+        className={this.state.article.partners.includes(`${partner.name}`) ? 'TagCard TagCardSelected' : 'TagCard'}
+        value={partner.name}
+        onClick={this.handleChange}>
         {partner.name}
-    </button>
+      </button>
 
     const PartnersCards = state.partners.allPartners.map(partner => <PartnerCard partner={partner} />)
 
     return (
-    <div>
-      <div className="box">
+      <div>
+        <div className="box">
 
-        <div className="item-left">
-          <div style={{ marginTop: '15px' }}>
-            <form onSubmit={this.handleSubmit}>
-              <div className='formTitle yellow'>Nouvel article :</div>
-              <label>Titre de l'article :<br/>
-                <input type="text" name="title" value={article.title} onChange={this.handleChange} />
-              </label>
-              <label>Date de l'article :<br/>
-                <input type="date" name="date" value={article.date} onChange={this.handleChange} />
-              </label>
-              <label>Client :<br/>
-                <input type="text" name="client" value={article.client} onChange={this.handleChange} />
-              </label>
-              <label>Lieu :<br/>
-                <input type="text" name="place" value={article.place} onChange={this.handleChange} />
-              </label>
-              <label>Type :<br/>
-                <input type="text" name="type" value={article.type} onChange={this.handleChange} />
-              </label>
-              <label>Description de l'article :<br/>
-                <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
-              </label>
-              <label>Lien externe vers un site du projet :<br/>
-                <input type="text" name="projectLink" value={article.projectLink} onChange={this.handleChange} />
-              </label>
-              <label>URL de l'image de couverture:<br/>
-                <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
-              </label>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <label>Choisissez la section :
-                  <select name="section" value={article.section} onChange={this.handleChange}>
-                    <option value="">Choisissez la section :</option>
-                    <option value="lab">LabRusch</option>
-                    <option value="projets">Projets</option>
-                  </select>
+          <div className="item-left">
+            <div style={{ marginTop: '15px' }}>
+              <form onSubmit={this.handleSubmit}>
+                <div className='formTitle yellow'>Nouvel article :</div>
+                <label>Titre de l'article :<br/>
+                  <input type="text" name="title" value={article.title} onChange={this.handleChange} />
                 </label>
-              </div>
-              <label>Tags de l'article :<br/></label>
-              <div className='TagCardsContainer'>{TagCards}</div>
+                <label>Date de l'article :<br/>
+                  <input type="date" name="date" value={article.date} onChange={this.handleChange} />
+                </label>
+                <label>Client :<br/>
+                  <input type="text" name="client" value={article.client} onChange={this.handleChange} />
+                </label>
+                <label>Lieu :<br/>
+                  <input type="text" name="place" value={article.place} onChange={this.handleChange} />
+                </label>
+                <label>Type :<br/>
+                  <input type="text" name="type" value={article.type} onChange={this.handleChange} />
+                </label>
+                <label>Description de l'article :<br/>
+                  <textarea type="text" name="shortDescription" value={article.shortDescription} onChange={this.handleChange} />
+                </label>
+                <label>Lien externe vers un site du projet :<br/>
+                  <input type="text" name="projectLink" value={article.projectLink} onChange={this.handleChange} />
+                </label>
+                <label>URL de l'image de couverture:<br/>
+                  <input type="text" name="headerImage" value={article.headerImage} onChange={this.handleChange} />
+                </label>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <label>Choisissez la section :
+                    <select name="section" value={article.section} onChange={this.handleChange}>
+                      <option value="">Choisissez la section :</option>
+                      <option value="lab">LabRusch</option>
+                      <option value="projets">Projets</option>
+                    </select>
+                  </label>
+                </div>
+                <label>Tags de l'article :<br/></label>
+                <div className='TagCardsContainer'>{TagCards}</div>
 
-              <label>Partenaires du projet :<br/></label>
-              <div className='TagCardsContainer'>{PartnersCards}</div>
+                <label>Partenaires du projet :<br/></label>
+                <div className='TagCardsContainer'>{PartnersCards}</div>
 
-              <label>Mettre l'article à la une :
-                <button
-                className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }
-                style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}
-                type="button" name="hasStar"
-                onClick={this.handleChange}>
+                <label>Mettre l'article à la une :
+                  <button
+                    className={ article.hasStar === '1' ? 'hasStar' : 'hasNoStar' }
+                    style={{ cursor: 'pointer', fontSize: '1.1rem', padding: '0', margin: '0 0 0 10px' }}
+                    type="button" name="hasStar"
+                    onClick={this.handleChange}>
                 ★</button>
-              </label>
+                </label>
 
-              <div className="addModule yellow">Ajouter un module :</div>
-              <Container lockAxis="y" dragClass="opacity-ghost" onDrop={this.handleDnd}  nonDragAreaSelector=".field" className='DynamicInputs'>
-                {dynamicInputs}
-              </Container>
-              <div id="buttons"
-              style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
-                {buttons}
-              </div>
-              <input className="draft" type="submit" name='isDraft' value="Enregistrer comme brouillon" onClick={this.handleSubmit} />
-              <input className="submit" type="submit" value="Publier l'article" />
-              <div className='errorPost'>{this.state.errorPost}</div>
-            </form>
+                <div className="addModule yellow">Ajouter un module :</div>
+                <Container lockAxis="y" dragClass="opacity-ghost" onDrop={this.handleDnd} nonDragAreaSelector=".field" className='DynamicInputs'>
+                  {dynamicInputs}
+                </Container>
+                <div id="buttons"
+                  style={{ backgroundColor: 'transparent', marginBottom: '20px' }}>
+                  {buttons}
+                </div>
+                <input className="draft" type="submit" name='isDraft' value="Enregistrer comme brouillon" onClick={this.handleSubmit} />
+                <input className="submit" type="submit" value="Publier l'article" />
+                <div className='errorPost'>{this.state.errorPost}</div>
+              </form>
+            </div>
+          </div>
+          <div style={{ position: 'fixed', top: '0', right: '0', overflow: 'auto' }} className="item-right ModaleBlockPreview">
+            <Modale article={article} />
           </div>
         </div>
-        <div style={{ position: 'fixed', top: '0', right: '0', overflow: 'auto' }} className="item-right ModaleBlockPreview">
-          <Modale article={article} />
-        </div>
       </div>
-    </div>
     )
   }
 }

@@ -10,7 +10,6 @@ export const AdminNewArticle = () => {
   )
 }
 
-
 export const AdminEditArticle = ({ articleId, articles }) => {
   const article = articles.find(a => String(a.id) === articleId)
 

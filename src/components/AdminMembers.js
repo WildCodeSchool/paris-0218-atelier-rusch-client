@@ -6,29 +6,29 @@ import IoEdit from 'react-icons/lib/io/edit'
 import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
 const AdminMembers = ({ members }) => {
-
   const displayMembers = members
-   .map(el =>
-    <div className='AdminCardHalfWidth'>
-      <div className='currentText'> {el.name} </div>
-      <div className='EditButtonsContainer'>
-        <Link to={String(el.id)}>
-          <button className="ReactIcon">
-            <IoEdit/>
-          </button>
-        </Link>
-        <button className="ReactIcon" onClick={() => {if(window.confirm('la suppression est irréversible. Pas de regrets?'))
-      {
-        api.deleteMember(el.id)
-        window.location.reload()
-      } else {
+    .map(el =>
+      <div className='AdminCardHalfWidth'>
+        <div className='currentText'> {el.name} </div>
+        <div className='EditButtonsContainer'>
+          <Link to={String(el.id)}>
+            <button className="ReactIcon">
+              <IoEdit/>
+            </button>
+          </Link>
+          <button className="ReactIcon" onClick={() => {
+            if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
+              api.deleteMember(el.id)
+              window.location.reload()
+            } else {
 
-      }}}>
-          <IoAndroidDelete/>
-        </button>
+            }
+          }}>
+            <IoAndroidDelete/>
+          </button>
+        </div>
       </div>
-    </div>
-  )
+    )
 
   return (
     <div className='GlobalContainer'>
@@ -37,7 +37,7 @@ const AdminMembers = ({ members }) => {
       </Link>
       <div className='AdminTitles yellow'>Membres de l'équipe :</div>
       <div className='AdminCardHalfWidthContainer'>
-      {displayMembers}
+        {displayMembers}
       </div>
     </div>
   )

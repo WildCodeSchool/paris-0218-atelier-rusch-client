@@ -1,70 +1,70 @@
 /* ADMIN WELCOME PAGE */
 
 .AdminHomeWelcome {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	padding: 5rem;
-	text-align: center;
-	font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 5rem;
+  text-align: center;
+  font-size: 5rem;
 }
 
 .AdminHomeWelcome p {
-	font-size: 1.5rem;
-	line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 .AdminHomeContainer {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
 }
 
 .AdminHomeLinkTo {
-	width: 25vw;
-	height: 25vw;
-	background-color: #fbd052;
-	display: flex;
-	justify-content: center;
-  	box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
-	align-items: center;
-	font-family: 'HeimatMono';
-	font-size: 2rem;
+  width: 25vw;
+  height: 25vw;
+  background-color: #fbd052;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  font-family: 'HeimatMono';
+  font-size: 2rem;
 }
 
 .AdminHomeLinkTo:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* BUTTONS */
 
 button {
-	padding: 5px;
-	margin-left: 20px;
-	width: 20px;
-	cursor: pointer;
+  padding: 5px;
+  margin-left: 20px;
+  width: 20px;
+  cursor: pointer;
 }
 
 .ButtonCreateElement {
-	display: flex;
-	justify-content: center;
-	width: 70vw;
-	padding: 7vh 2vw;
-	border: solid 1px #5aff6e;
-	background-color: transparent;
-	font-family: 'HeimatMono', monospace;
-	font-size: 1.5rem;
-	color: #5aff6e;
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  padding: 7vh 2vw;
+  border: solid 1px #5aff6e;
+  background-color: transparent;
+  font-family: 'HeimatMono', monospace;
+  font-size: 1.5rem;
+  color: #5aff6e;
 }
 
 .ButtonCreateElement:hover {
-	background-color: #5aff6e;
-	color: white;
+  background-color: #5aff6e;
+  color: white;
 }
 
 .ButtonCreateElement:hover .ReactIconAdd {
-	fill: white;
+  fill: white;
 }
 
 .formTitle {
@@ -76,102 +76,102 @@ button {
 }
 
 .hasStar {
-	font-size: 1rem;
-	color: #fbd052;
-	cursor: default;
+  font-size: 1rem;
+  color: #fbd052;
+  cursor: default;
 }
 
 .hasNoStar {
-	color: lightgrey;
-	cursor: default;
-	font-size: 1rem;
-	z-index: 2000;
+  color: lightgrey;
+  cursor: default;
+  font-size: 1rem;
+  z-index: 2000;
 }
 
 .ReactIcon {
-	font-size: 1rem;
-	opacity: 0.65;
+  font-size: 1rem;
+  opacity: 0.65;
 }
 
 .ReactIcon:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
 .ReactIconAdd {
-	fill: #5aff6e;
-	margin-right: 20px;
+  fill: #5aff6e;
+  margin-right: 20px;
 }
 
 /* CONTAINERS */ 
 
 .AdminLoginLogoBlock {
-	width: 48vw;
-	height: 100vh;
-	background-color: #5aff6e;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 48vw;
+  height: 100vh;
+  background-color: #5aff6e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .LogInForm {
-	width: 52vw;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	justify-content: flex-start;
+  width: 52vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
 }
 
 div.LogInTitle {
-	text-align: center;
-	margin: 9rem 0 4rem 0;
+  text-align: center;
+  margin: 9rem 0 4rem 0;
 }
 
 .GlobalContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding: 10vh 12.5vw; 	
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10vh 12.5vw; 	
 }
 
 .AdminCardFullWidth {
-	padding: 20px;
-	width: 75vw;
-	margin: 10px 0;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: nowrap;
+  padding: 20px;
+  width: 75vw;
+  margin: 10px 0;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .AdminCardHalfWidth {
-	padding: 20px;
-	min-width: 30vw;
-	max-width: 30vw;
-	margin: 10px 1vw;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  padding: 20px;
+  min-width: 30vw;
+  max-width: 30vw;
+  margin: 10px 1vw;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .AdminCardHalfWidthContainer {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 75vw;
 }
 
 .EditButtonsContainer {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .LogOut {
-	font-size: 1.4rem;
-	cursor: pointer;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .LogOut:hover {
-	fill: #5aff6e;
+  fill: #5aff6e;
 }

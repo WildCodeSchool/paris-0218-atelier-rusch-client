@@ -3,12 +3,11 @@ import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminMemberForm extends Component {
-
   state = {
     name: this.props.member.name || '',
     image: this.props.member.image || '',
     position: this.props.member.position || '',
-    description: this.props.member.description|| '',
+    description: this.props.member.description || '',
     carreer: this.props.member.carreer || '',
     linkedIn: this.props.member.linkedIn || '',
     errorPost: ''
@@ -35,7 +34,7 @@ class AdminMemberForm extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className='formTitle yellow'>Nouveau membre :</div>
@@ -60,7 +59,8 @@ class AdminMemberForm extends Component {
         <input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
       </form>
-  )}
+    )
+  }
 }
 
 export default AdminMemberForm

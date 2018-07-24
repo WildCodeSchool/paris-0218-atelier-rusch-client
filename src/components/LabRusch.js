@@ -7,7 +7,6 @@ import SectionTitleBlock from './SectionTitleBlock.js'
 import store from '../store.js'
 import { applyFiltersToSection } from './FilteringFunctions.js'
 
-
 const LabRusch = (props) => {
   const state = store.getState()
   const articles = state.articles.allArticles

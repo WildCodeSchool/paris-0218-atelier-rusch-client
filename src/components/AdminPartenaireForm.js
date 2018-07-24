@@ -3,7 +3,6 @@ import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminPartenaireForm extends Component {
-
   state = {
     name: this.props.partenaire.name || '',
     image: this.props.partenaire.image || '',
@@ -11,12 +10,12 @@ class AdminPartenaireForm extends Component {
     errorPost: ''
   }
 
-	handleChange = event => {
-		const key = event.target.name
-    this.setState({ ...this.state.partenaire, [key]: event.target.value, errorPost: '' })
-  }
+handleChange = event => {
+  const key = event.target.name
+  this.setState({ ...this.state.partenaire, [key]: event.target.value, errorPost: '' })
+}
 
-	handleSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault()
     console.log(this.state)
     if (this.state.name === '') {
@@ -31,24 +30,25 @@ class AdminPartenaireForm extends Component {
     }
   }
 
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit}>
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
         <div className='formTitle yellow'>Nouveau partenaire :</div>
         <label>Nom du partenaire :<br/>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
         </label>
-				<label>Logo du partenaire :<br/>
-					<input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
-				</label>
-				<label>Description du partenaire :<br/>
-					<textarea type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
-				</label>
+        <label>Logo du partenaire :<br/>
+          <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
+        </label>
+        <label>Description du partenaire :<br/>
+          <textarea type="text" name="shortDescription" value={this.state.shortDescription} onChange={this.handleChange} />
+        </label>
 
-				<input className='submit' type="submit" value="Publier" />
+        <input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
-			</form>
-	)}
+      </form>
+    )
+  }
 }
 
 export default AdminPartenaireForm

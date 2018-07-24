@@ -4,7 +4,6 @@ import api from '../api.js'
 import Logo from './img/logo-rusch-noir.png'
 
 class AdminLogin extends Component {
-
   state = {
     username: '',
     password: '',
@@ -30,7 +29,7 @@ class AdminLogin extends Component {
       })
   }
 
-  render() {
+  render () {
     return (
       <header className='AdminHomeContainer'>
         <div className='AdminLoginLogoBlock'><img className='LogoImg' src={Logo} alt='logo-rusch' /></div>

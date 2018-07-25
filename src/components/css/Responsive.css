@@ -9,7 +9,12 @@
     margin: 0 25rem;
   }
 
-  .ModaleBlockPreview h4, .ModaleBlockPreview p {
+  p {
+    margin: 3rem 25rem;
+  }
+
+  .ModaleBlockPreview h4,
+  .ModaleBlockPreview p {
     margin: 2.5rem 10rem 0 10rem;
   }
 
@@ -27,10 +32,6 @@
 
   .ModaleBlockPreview .quote {
     padding: 3rem 15rem;
-  }
-
-  p {
-    margin: 3rem 25rem;
   }
 
   .headerAtelier h2 {
@@ -61,7 +62,9 @@
   }
 
   /* MODALE */
-  .ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  .ModaleBlock h2,
+  .ModaleBlock h3,
+  .ModaleBlock .smallLink {
     padding: 0 10rem;
   }
 
@@ -106,7 +109,8 @@
 
   /* HOMEPAGE */
 
-  .IntroBlockRight, .LogoBlock {
+  .IntroBlockRight,
+  .LogoBlock {
     height: 50vh;
     width: 100vw;
     padding: 0;
@@ -131,7 +135,8 @@
     display: block;
   }
 
-  .carouselContainer, .carouselContainer div {
+  .carouselContainer,
+  .carouselContainer div {
     width: 100vw;
     height: 50vh;
     display: flex;
@@ -147,13 +152,16 @@
 
   /* ARTICLES THUMBNAILS */
 
-
-  .ArticleThumbnailClassic, .ArticleThumbnailHasStar, .RedirectingBlockToAllArticles {
+  .ArticleThumbnailClassic,
+  .ArticleThumbnailHasStar,
+  .RedirectingBlockToAllArticles {
     width: 50vw;
     height: 50vw;
   }
 
-  .ArticleThumbnailClassic > *, .ArticleThumbnailHasStar > *, .RedirectingBlockToAllArticles > * {
+  .ArticleThumbnailClassic > *,
+  .ArticleThumbnailHasStar > *,
+  .RedirectingBlockToAllArticles > * {
     width: 50vw;
   }
 
@@ -222,11 +230,14 @@
 
   /* MODALE */
 
-  .ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  .ModaleBlock h2,
+  .ModaleBlock h3,
+  .ModaleBlock .smallLink {
     margin: 8rem 8rem 0 10rem;
   }
 
-  .ModaleBlock h3, .ModaleBlock .smallLink {
+  .ModaleBlock h3,
+  .ModaleBlock .smallLink {
     margin: 1.5rem 8rem 0 10rem;
   }
 
@@ -336,12 +347,16 @@
 
   /* ARTICLES THUMBNAILS */
 
-  .ArticleThumbnailClassic, .ArticleThumbnailHasStar, .RedirectingBlockToAllArticles {
+  .ArticleThumbnailClassic,
+  .ArticleThumbnailHasStar,
+  .RedirectingBlockToAllArticles {
     width: 100vw;
     height: 50vh;
   }
 
-  .ArticleThumbnailClassic > *, .RedirectingBlockToAllArticles > *, .ArticleThumbnailHasStar > * {
+  .ArticleThumbnailClassic > *,
+  .RedirectingBlockToAllArticles > *,
+  .ArticleThumbnailHasStar > * {
     width: 100vw;
   }
 
@@ -424,7 +439,9 @@
 
   /* MODALE */
 
-  .ModaleBlock h2, .ModaleBlock h3, .ModaleBlock .smallLink {
+  .ModaleBlock h2,
+  .ModaleBlock h3,
+  .ModaleBlock .smallLink {
     margin: 1rem 3rem 0 3rem;
   }
 
@@ -462,7 +479,6 @@
     margin: 3rem 3.5rem;
     flex-direction: column;
   }
-
 
   .address div:first-child {
     margin: 0 0 2.2rem 0;

@@ -29,7 +29,7 @@
   justify-content: center;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.05);
   align-items: center;
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-size: 2rem;
 }
 
@@ -61,6 +61,11 @@ button {
 .ButtonCreateElement:hover {
   background-color: #5aff6e;
   color: white;
+}
+
+.ReactIconAdd {
+  fill: #5aff6e;
+  margin-right: 20px;
 }
 
 .ButtonCreateElement:hover .ReactIconAdd {
@@ -97,12 +102,7 @@ button {
   opacity: 1;
 }
 
-.ReactIconAdd {
-  fill: #5aff6e;
-  margin-right: 20px;
-}
-
-/* CONTAINERS */ 
+/* CONTAINERS */
 
 .AdminLoginLogoBlock {
   width: 48vw;
@@ -130,7 +130,7 @@ div.LogInTitle {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10vh 12.5vw; 	
+  padding: 10vh 12.5vw;
 }
 
 .AdminCardFullWidth {

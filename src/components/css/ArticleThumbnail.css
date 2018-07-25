@@ -1,7 +1,7 @@
 .ArticlesBlock {
   display: flex;
   flex-wrap: wrap;
-  width:100vw;
+  width: 100vw;
 }
 
 .ArticleThumbnailClassic {
@@ -48,10 +48,6 @@
   color: white;
 }
 
-.ArticleThumbnailClassic:hover .ArticleThumbnailFilterBlack {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .ArticleThumbnailFilterBlack {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -62,6 +58,10 @@
   height: 100%;
   backdrop-filter: saturate(0);
   -webkit-backdrop-filter: saturate(0);
+}
+
+.ArticleThumbnailClassic:hover .ArticleThumbnailFilterBlack {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .ArticleThumbnailFilterBlack > * {

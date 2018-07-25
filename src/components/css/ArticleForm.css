@@ -17,7 +17,8 @@ form button {
   width: 100vw;
 }
 
-.item-left, .item-right {
+.item-left,
+.item-right {
   width: 50vw;
   position: fixed;
   top: 0;
@@ -45,7 +46,8 @@ textarea {
   white-space: pre-line;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -62,17 +64,18 @@ select {
 
 label {
   width: 35vw;
-  font-family: 'IBMPlex';
+  font-family: 'IBMPlex', monospace;
   display: flex;
   flex-wrap: wrap;
 }
 
-input[type="submit"], .draft {
+input[type="submit"],
+.draft {
   cursor: pointer;
   height: 35px;
   background-color: #f9f9f9;
   border-radius: 5px;
-  font-family: 'IBMPlex';
+  font-family: 'IBMPlex', monospace;
   font-size: 1rem;
   margin-bottom: 5rem;
 }
@@ -170,7 +173,7 @@ input[type="submit"].draft:hover {
   border-radius: 4px;
   padding: 7px 15px;
   margin: 10px 10px 0 0;
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-size: 0.7rem;
   text-align: center;
   width: auto;
@@ -194,7 +197,7 @@ input[type="submit"].draft:hover {
   border-radius: 4px;
   padding: 7px 15px;
   margin: 10px 10px 0 0;
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   font-size: 0.7rem;
   text-align: center;
   width: auto;
@@ -203,7 +206,7 @@ input[type="submit"].draft:hover {
 
 .errorPost {
   font-size: 0.7rem;
-  font-family: 'HeimatMono';
+  font-family: 'HeimatMono', monospace;
   color: red;
   margin: -3rem 0 3rem 0;
 }

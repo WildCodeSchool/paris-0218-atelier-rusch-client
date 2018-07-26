@@ -13,6 +13,10 @@
     margin: 3rem 25rem;
   }
 
+  .RedirectingBlockToAllArticles img {
+    width: 100px;
+  }
+
   .ModaleBlockPreview h4,
   .ModaleBlockPreview p {
     margin: 2.5rem 10rem 0 10rem;
@@ -163,6 +167,10 @@
   .ArticleThumbnailHasStar > *,
   .RedirectingBlockToAllArticles > * {
     width: 50vw;
+  }
+
+  .RedirectingBlockToAllArticles img {
+    width: 100px;
   }
 
   /* PAGE ATELIER */
@@ -367,6 +375,10 @@
   .RedirectingBlockToAllArticles > *,
   .ArticleThumbnailHasStar > * {
     width: 100vw;
+  }
+
+  .RedirectingBlockToAllArticles img {
+    width: 100px;
   }
 
   /* PAGE ATELIER */

@@ -63,7 +63,7 @@ const Homepage = (props) => {
 
       <div className="ArticlesBlock">
         {articleThumbnails}
-        <RedirectingBlockToAllArticles />
+        <RedirectingBlockToAllArticles section='lab'/>
       </div>
       {modale}
 

@@ -15,8 +15,8 @@
   align-self: center;
 }
 
-.ModaleBlock img.arrowGif,
-img.arrowGif {
+img.arrowGif,
+.ModaleBlock img.arrowGif {
   width: 100px;
   text-align: center;
   align-self: center;

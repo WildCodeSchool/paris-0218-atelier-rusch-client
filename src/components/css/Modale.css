@@ -19,8 +19,6 @@
 }
 
 .ModaleHeader {
-  backdrop-filter: saturate(0);
-  -webkit-backdrop-filter: saturate(0);
   padding: 7rem 0.75rem;
 }
 
@@ -32,6 +30,18 @@
   background-color: transparent;
   cursor: pointer;
   z-index: 5000;
+}
+
+.ModaleBlock p {
+  margin: 2rem 7rem;
+}
+
+.ModaleBlock h4 {
+  margin: 0 7rem;
+}
+
+.ModaleBlock .quote {
+  padding: 3rem 12rem;
 }
 
 .ModaleBlock img,

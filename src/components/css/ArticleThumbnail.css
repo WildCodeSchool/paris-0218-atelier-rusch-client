@@ -56,8 +56,6 @@
   align-items: center;
   text-align: center;
   height: 100%;
-  backdrop-filter: saturate(0);
-  -webkit-backdrop-filter: saturate(0);
 }
 
 .ArticleThumbnailClassic:hover .ArticleThumbnailFilterBlack {

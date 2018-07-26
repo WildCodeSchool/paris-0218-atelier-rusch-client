@@ -85,10 +85,11 @@ const Modale = ({ article }) => {
       <div className='contentBlock'>
         <div className='recapBlockFixed'>
           <h6 className='recapBlockTitle'>{article.title}</h6>
-          <h6 style={{ marginTop: '1rem' }}><u>Client</u> : {article.client}</h6>
+          {article.section === 'lab' ? <h6>{article.shortDescription}</h6> : '' }
+          {article.client.length === 0 ? '' : <h6 style={{ marginTop: '1rem' }}><u>Client</u> : {article.client}</h6>}
           <h6 style={{ marginTop: '1rem' }}><u>Date</u> : {article.date}</h6>
-          <h6 style={{ marginTop: '1rem' }}><u>Lieu</u> : {article.place}</h6>
-          <h6 style={{ marginTop: '1rem' }}><u>Type</u> : {article.type}</h6>
+          {article.place.length === 0 ? '' : <h6 style={{ marginTop: '1rem' }}><u>Lieu</u> : {article.place}</h6>}
+          {article.type.length === 0 ? '' : <h6 style={{ marginTop: '1rem' }}><u>Type</u> : {article.type}</h6>}
         </div>
         <div className='content'>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

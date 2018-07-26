@@ -172,12 +172,16 @@
 
   /* PAGE ATELIER */
 
-  h4 {
-    margin: 0 10rem;
+  .AtelierSection h4 {
+    margin: 0 7rem;
   }
 
-  p {
-    margin: 3rem 10rem;
+  .AtelierSection p {
+    margin: 3rem 7rem;
+  }
+
+  .AtelierSection .quote {
+    padding: 2rem 5rem;
   }
 
   .headerAtelier h2 {
@@ -249,6 +253,10 @@
     padding: 3rem 15rem;
   }
 
+  .ModaleBlock img {
+    width: 75vw;
+  }
+
   .recapBlockFixed {
     width: calc(100vw - 15rem);
     height: auto;
@@ -267,7 +275,7 @@
     width: 35vw;
   }
 
-  h6.recapBlockTitle {
+  .recapBlockFixed h6.recapBlockTitle {
     margin: 0 0 1rem 0;
     width: 100vw;
     line-height: 1.4rem;
@@ -325,6 +333,12 @@
     margin: 0 1rem;
   }
 
+  .FiltersSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   /* MODALE */
 
   .recapBlockFixed {
@@ -371,6 +385,18 @@
     padding-bottom: 0;
   }
 
+  .AtelierSection h4 {
+    margin: 0 3rem;
+  }
+
+  .AtelierSection p {
+    margin: 3rem;
+  }
+
+  .AtelierSection .quote {
+    padding: 0 2rem;
+  }
+
   .headerAtelier {
     height: auto !important;
   }
@@ -392,13 +418,17 @@
     margin-top: 10px;
   }
 
-  h4 {
+  .ModaleBlock h4 {
     margin: 0 3rem;
   }
 
-  p {
+  .ModaleBlock p {
     margin: 3rem 3rem;
     font-size: 1.15rem;
+  }
+
+  .ModaleBlock img {
+    width: 100vw;
   }
 
   .quote {
@@ -428,6 +458,10 @@
 
   .LogoPartenaire {
     width: 25vw;
+  }
+
+  img.LogoPartenaire {
+    max-width: 30vw;
   }
 
   /* PAGES PROJETS & LAB */

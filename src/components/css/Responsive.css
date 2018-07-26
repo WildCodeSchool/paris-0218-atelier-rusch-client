@@ -165,11 +165,6 @@
     width: 50vw;
   }
 
-  .arrow {
-    font-size: 5rem;
-    padding-top: 7rem;
-  }
-
   /* PAGE ATELIER */
 
   .AtelierSection h4 {
@@ -372,11 +367,6 @@
   .RedirectingBlockToAllArticles > *,
   .ArticleThumbnailHasStar > * {
     width: 100vw;
-  }
-
-  .arrow {
-    font-size: 4.5rem;
-    padding-top: 6rem;
   }
 
   /* PAGE ATELIER */

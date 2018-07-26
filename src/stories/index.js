@@ -1,9 +1,5 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
-
-import store from '../store.js'
-
 import Modale from '../components/Modale'
 import ArticleThumbnail from '../components/ArticleThumbnail'
 import ArticleForm, { demoArticle } from '../components/ArticleForm'
@@ -21,8 +17,6 @@ import '../App.css'
 // storiesOf('NavBarLink', module)
 //   .add('normal', () => <NavBarLink />)
 //   .add('hover & active page', () => <NavBarLink />)
-
-const state = store.getState()
 
 storiesOf('Thumbnails', module)
   .add('article classic', () => <ArticleThumbnail className="ArticleThumbnailClassic" article={mockedArticles[0]} />)

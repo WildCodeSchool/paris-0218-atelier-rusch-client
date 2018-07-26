@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/Modale.css'
-import { Link } from "@reach/router"
+import { Link } from '@reach/router'
 import store from '../store.js'
 import Partenaire from './Partenaire.js'
 import ArticleThumbnail from './ArticleThumbnail.js'
@@ -12,19 +12,17 @@ const toHTML = {
   blockquote: ({ value }) => <blockquote className='quote'>{value}</blockquote>,
   caption: ({ value }) => <p className='caption'>{value}</p>,
   abstract: ({ value }) => <p className='abstract'>{value}</p>,
-  imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} alt='' />),
+  imgs: ({ value }) => value.split(',').map((url, i) => <img key={i} src={url} alt='' />)
 }
 
 const Element = ({ element }) => toHTML[element.type](element)
 
 const Modale = ({ article }) => {
-
   let treatedContent = ''
 
-  if (typeof article.content === "string") {
+  if (typeof article.content === 'string') {
     treatedContent = JSON.parse(article.content)
-  }
-  else {
+  } else {
     treatedContent = article.content
   }
 
@@ -54,12 +52,12 @@ const Modale = ({ article }) => {
     .map(partner => <Partenaire partner={partner} />)
 
   const articlesSuggestions =
-  	<div className="ArticlesBlock">
-  		<div className='articleSuggestion'>
-  		<h4>Ceci pourrait aussi vous intéresser :</h4></div>
-  		{articleThumbnails}
-  		<RedirectingBlockToAllArticles section={getSection} />
-  	</div>
+    <div className="ArticlesBlock">
+      <div className='articleSuggestion'>
+        <h4>Ceci pourrait aussi vous intéresser :</h4></div>
+      {articleThumbnails}
+      <RedirectingBlockToAllArticles section={getSection} />
+    </div>
 
   const projectLink =
     <a href={article.projectLink} target='_blank'>
@@ -73,7 +71,7 @@ const Modale = ({ article }) => {
       <Link className="closeModaleBtn" to={parentContextPath}>
         <div className="closeModaleBtn">✕</div>
       </Link>
-      <div className="ModalePic" style={{ background: `center / cover no-repeat url(${article.headerImage})`}}>
+      <div className="ModalePic" style={{background: `center / cover no-repeat url(${article.headerImage})`}}>
         <div className="ModaleHeader FilterBlack">
           <h2 className="green">
             {article.title}
@@ -98,7 +96,7 @@ const Modale = ({ article }) => {
           </div>
           {article.partners.length === 0 ? '' : <h4>Nos partenaires sur ce projet :</h4>}
           {!partners
-            ? 'Loading'
+            ? ''
             : <div className="PartenairesContainer">{partners}</div>}
           {window.location.pathname.includes('admin') ? '' : articlesSuggestions}
         </div>
@@ -106,7 +104,5 @@ const Modale = ({ article }) => {
     </div>
   )
 }
-
-
 
 export default Modale

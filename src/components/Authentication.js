@@ -1,19 +1,19 @@
-import React from "react"
+import React from 'react'
 
 const AuthContext = React.createContext()
 
 class AuthProvider extends React.Component {
-  state = { isAuth: false}
+  state = {isAuth: false}
 
   login = () => {
-    setTimeout(()=> this.setState({ isAuth: true}), 1000)
+    setTimeout(() => this.setState({isAuth: true}), 1000)
   }
 
   logout = () => {
     this.setState({ isAuth: false })
   }
 
-  render() {
+  render () {
     return (
       <AuthContext.Provider
         value={{
@@ -27,7 +27,6 @@ class AuthProvider extends React.Component {
     )
   }
 }
-
 const AuthConsumer = AuthContext.Consumer
 
-export { AuthProvider, AuthConsumer}
+export {AuthProvider, AuthConsumer}

@@ -34,7 +34,8 @@
   z-index: 5000;
 }
 
-.ModaleBlock img, .ModaleBlockPreview img {
+.ModaleBlock img,
+.ModaleBlockPreview img {
   width: 50vw;
   padding-top: 3rem;
 }

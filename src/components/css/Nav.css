@@ -41,7 +41,9 @@
   background-color: transparent;
 }
 
-.NavBarLink:hover, .NavBarLinkAdmin:hover, .active {
+.NavBarLink:hover,
+.NavBarLinkAdmin:hover,
+.active {
   border-bottom: solid 1px #5aff6e;
   cursor: pointer;
   color: #5aff6e;

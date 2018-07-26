@@ -14,40 +14,45 @@ const FiltreCard = ({ filtre }) =>
           <IoEdit/>
         </button>
       </Link>
-      	<button className="ReactIcon" onClick={()=>{api.deleteFilter(filtre.id)
-        window.location.reload()}}>
-          <IoAndroidDelete/>
-        </button>
+      <button className="ReactIcon" onClick={() => {
+        if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
+          api.deleteFilter(filtre.id)
+            .then(window.location.reload())
+        } else {
+
+        }
+      }}>
+        <IoAndroidDelete/>
+      </button>
     </div>
   </div>
 
 const AdminFiltres = ({ filtres }) => {
-
   const labFiltresList = filtres
-  .filter(filtre => filtre.section === 'lab')
-  .map(filtre =>
-    <FiltreCard key={filtre.id} filtre={filtre} />
-  )
+    .filter(filtre => filtre.section === 'lab')
+    .map(filtre =>
+      <FiltreCard key={filtre.id} filtre={filtre} />
+    )
 
   const projetsFiltresList = filtres
-  .filter(filtre => filtre.section === 'projets')
-  .map(filtre =>
-    <FiltreCard key={filtre.id} filtre={filtre} />
-  )
+    .filter(filtre => filtre.section === 'projets')
+    .map(filtre =>
+      <FiltreCard key={filtre.id} filtre={filtre} />
+    )
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau filtre</div>
       </Link>
       <div className='AdminTitles yellow'>Filtres de la section Projets :</div>
       <div className='AdminCardHalfWidthContainer'>
-      {projetsFiltresList}
+        {projetsFiltresList}
       </div>
       <br/>
       <div className='AdminTitles yellow'>Filtres de la section LabRusch :</div>
       <div className='AdminCardHalfWidthContainer'>
-      {labFiltresList}
+        {labFiltresList}
       </div>
     </div>
   )

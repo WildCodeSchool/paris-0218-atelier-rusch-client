@@ -6,25 +6,25 @@
 }
 
 .PartenaireContainer {
-	width: 20vw;
-	height: 20vw;
-	box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.075);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: nowrap;
-	flex-direction: column;
-	text-align: center;
+  width: 20vw;
+  height: 20vw;
+  box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.075);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  text-align: center;
 }
 
 .PartenaireContainer h6 {
-	margin: 0 2.5rem 2rem 2.5rem;
-	line-height: 1.2rem;
+  margin: 0 2.5rem 2rem 2.5rem;
+  line-height: 1.2rem;
 }
 
 img.LogoPartenaire {
-	min-width: 13vw;
-	max-width: 13vw;
-	margin-top: 2.5rem;
-	padding: 0;
+  min-width: 13vw;
+  max-width: 13vw;
+  margin-top: 2.5rem;
+  padding: 0;
 }

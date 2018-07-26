@@ -64,13 +64,13 @@ const updateMember = (id, member) => api.put(`/equipe/${id}`, member)
 
 const deleteMember = (id, member) => api.delete(`/equipe/${id}`, member)
 
-//credentials routes
+// credentials routes
 
 const loginUser = (user) => api.post('/sign-in', user)
 
 const logoutUser = () => api('/sign-out')
 
-//credentials routesgit
+// credentials routesgit
 
 export default {
   getArticles,

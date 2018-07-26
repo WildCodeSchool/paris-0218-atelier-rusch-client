@@ -3,12 +3,11 @@ import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminMemberForm extends Component {
-
   state = {
     name: this.props.member.name || '',
     image: this.props.member.image || '',
     position: this.props.member.position || '',
-    description: this.props.member.description|| '',
+    description: this.props.member.description || '',
     carreer: this.props.member.carreer || '',
     linkedIn: this.props.member.linkedIn || '',
     errorPost: ''
@@ -31,13 +30,15 @@ class AdminMemberForm extends Component {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitMember(this.state)
-      navigate('/admin/equipe')
+        .then(navigate('/admin/equipe'))
+        .then(window.location.reload())
     }
   }
 
-  render() {
+  render () {
     return (
       <form onSubmit={this.handleSubmit}>
+        <div className='formTitle yellow'>Nouveau membre :</div>
         <label>Nom :<br/>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
         </label>
@@ -59,7 +60,8 @@ class AdminMemberForm extends Component {
         <input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
       </form>
-  )}
+    )
+  }
 }
 
 export default AdminMemberForm

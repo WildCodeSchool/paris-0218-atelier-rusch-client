@@ -6,33 +6,38 @@ import IoEdit from 'react-icons/lib/io/edit'
 import MdAdd from 'react-icons/lib/md/add-circle-outline'
 
 const AdminMembers = ({ members }) => {
-
   const displayMembers = members
-   .map(el =>
-    <div className='AdminCardHalfWidth'>
-      <div className='currentText'> {el.name} </div>
-      <div className='EditButtonsContainer'>
-        <Link to={String(el.id)}>
-          <button className="ReactIcon">
-            <IoEdit/>
+    .map(el =>
+      <div className='AdminCardHalfWidth'>
+        <div className='currentText'> {el.name} </div>
+        <div className='EditButtonsContainer'>
+          <Link to={String(el.id)}>
+            <button className="ReactIcon">
+              <IoEdit/>
+            </button>
+          </Link>
+          <button className="ReactIcon" onClick={() => {
+            if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
+              api.deleteMember(el.id)
+                .then(window.location.reload())
+            } else {
+
+            }
+          }}>
+            <IoAndroidDelete/>
           </button>
-        </Link>
-        <button className="ReactIcon" onClick={()=>{api.deleteMember(el.id)
-        window.location.reload()}}>
-          <IoAndroidDelete/>
-        </button>
+        </div>
       </div>
-    </div>
-  )
+    )
 
   return (
     <div className='GlobalContainer'>
-      <Link to='new'>
+      <Link to='new' onClick={() => window.scrollTo(0, 0)}>
         <div className='ButtonCreateElement'><MdAdd className='ReactIconAdd' />Créer un nouveau membre</div>
       </Link>
       <div className='AdminTitles yellow'>Membres de l'équipe :</div>
       <div className='AdminCardHalfWidthContainer'>
-      {displayMembers}
+        {displayMembers}
       </div>
     </div>
   )

@@ -3,19 +3,18 @@ import { navigate } from '@reach/router'
 import './css/ArticleForm.css'
 
 class AdminFiltreForm extends Component {
-
   state = {
     filterTag: this.props.filtre.filterTag || '',
     section: this.props.filtre.section || '',
     errorPost: ''
   }
 
-	handleChange = event => {
-		const key = event.target.name
+  handleChange = event => {
+    const key = event.target.name
     this.setState({ ...this.state.filtre, [key]: event.target.value, errorPost: '' })
   }
 
-	handleSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault()
     if (this.state.filterTag === '') {
       this.setState({ errorPost: '* Il faut renseigner un nom !' })
@@ -23,27 +22,30 @@ class AdminFiltreForm extends Component {
       this.setState({ errorPost: '* Il faut sélectionner une section !' })
     } else {
       this.props.submitFiltre(this.state)
-      navigate('/admin/filtres')
+        .then(navigate('/admin/filtres'))
+        .then(window.location.reload())
     }
   }
 
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit}>
-				<label>Nom du filtre :<br/>
-				<input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange} />
-				</label>
+  render () {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className='formTitle yellow'>Nouveau filtre :</div>
+        <label>Nom du filtre :<br/>
+          <input type="text" name="filterTag" value={this.state.filterTag} onChange={this.handleChange} />
+        </label>
 
-				<select name="section" value={this.state.section} onChange={this.handleChange}>
-				  <option value="">Choisissez la section</option>
-				  <option value="lab">LabRusch</option>
-				  <option value="projets">Projets</option>
-				</select>
+        <select name="section" value={this.state.section} onChange={this.handleChange}>
+          <option value="">Choisissez la section</option>
+          <option value="lab">LabRusch</option>
+          <option value="projets">Projets</option>
+        </select>
 
-				<input className='submit' type="submit" value="Publier" />
+        <input className='submit' type="submit" value="Publier" />
         <div className='errorPost'>{this.state.errorPost}</div>
-			</form>
-	)}
+      </form>
+    )
+  }
 }
 
 export default AdminFiltreForm

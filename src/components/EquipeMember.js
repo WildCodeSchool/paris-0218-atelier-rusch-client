@@ -1,6 +1,5 @@
 import React from 'react'
 import './css/Equipe.css'
-import michael from './img/michael.jpg'
 
 const EquipeMember = ({member}) =>
   <div className="memberContainer" style={{ zIndex: `${member.id}` }}>

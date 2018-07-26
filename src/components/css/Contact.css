@@ -1,15 +1,15 @@
 .Contact img {
   width: 2rem;
   margin-right: 1rem;
-  filter: invert(100%)
+  filter: invert(100%);
 }
 
 .Contact img:hover {
-  filter: invert(0%)
+  filter: invert(0%);
 }
 
 .Contact iframe {
-    width: 100vw;
+  width: 100vw;
 }
 
 .reseaux {

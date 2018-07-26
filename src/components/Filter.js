@@ -11,7 +11,7 @@ const Filter = ({ filter, filtersLength }) => {
     <button style={ filtersLength <= 3 ? {width: '33vw'} : {width: '25vw'}}
       className={filter.isActive ? 'Filter FilterActive' : 'Filter'}
       onClick={ event => toggleFiltersAndFilterArticles()}>
-        <h6>{filter.filterTag}</h6>
+      <h6>{filter.filterTag}</h6>
     </button>
   )
 }

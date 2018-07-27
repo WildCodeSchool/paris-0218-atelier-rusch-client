@@ -21,7 +21,7 @@ const AdminPartenaires = ({ partenaires }) => {
           <button className="ReactIcon" onClick={() => {
             if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
               api.deletePartenaire(el.id)
-                .then(window.location.reload())
+                .then(() => window.location.reload())
             } else {
 
             }

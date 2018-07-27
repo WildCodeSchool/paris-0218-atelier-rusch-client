@@ -17,7 +17,7 @@ const FiltreCard = ({ filtre }) =>
       <button className="ReactIcon" onClick={() => {
         if (window.confirm('la suppression est irréversible. Pas de regrets?')) {
           api.deleteFilter(filtre.id)
-            .then(window.location.reload())
+            .then(() => window.location.reload())
         } else {
 
         }

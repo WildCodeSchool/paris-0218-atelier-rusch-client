@@ -22,8 +22,8 @@ class AdminFiltreForm extends Component {
       this.setState({ errorPost: '* Il faut sélectionner une section !' })
     } else {
       this.props.submitFiltre(this.state)
-        .then(navigate('/admin/filtres'))
-        .then(window.location.reload())
+        .then(() => navigate('/admin/filtres'))
+        .then(() => window.location.reload())
     }
   }
 

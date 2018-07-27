@@ -17,7 +17,9 @@ handleChange = event => {
 
   handleSubmit = event => {
     event.preventDefault()
-    console.log(this.state)
+
+    console.log('chienfou')
+
     if (this.state.name === '') {
       this.setState({ errorPost: '* Il faut sélectionner un nom !' })
     } else if (this.state.image === '') {
@@ -26,8 +28,8 @@ handleChange = event => {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitPartenaire(this.state)
-        .then(navigate('/admin/articles'))
-        .then(window.location.reload())
+        .then(() => navigate('/admin/partenaires'))
+        .then(() => window.location.reload())
     }
   }
 

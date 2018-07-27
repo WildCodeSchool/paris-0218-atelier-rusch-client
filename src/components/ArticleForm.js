@@ -236,8 +236,8 @@ class ArticleForm extends Component {
         .then(window.location.reload())
     } else {
       this.props.submitArticle({ ...this.state.article, isDraft: false })
-        .then(navigate('/admin/articles'))
-        .then(window.location.reload())
+        .then(() => navigate('/admin/articles'))
+        .then(() => window.location.reload())
     }
   }
 

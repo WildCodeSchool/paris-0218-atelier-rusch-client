@@ -30,8 +30,8 @@ class AdminMemberForm extends Component {
       this.setState({ errorPost: '* Il faut renseigner une description !' })
     } else {
       this.props.submitMember(this.state)
-        .then(navigate('/admin/equipe'))
-        .then(window.location.reload())
+        .then(() => navigate('/admin/equipe'))
+        .then(() => window.location.reload())
     }
   }
 
